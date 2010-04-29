@@ -1,0 +1,21 @@
+<module>
+	<rawname>directory</rawname>
+	<name>Directory</name>
+	<version>2.8.0alpha.1</version>
+	<publisher>Schmoozecom.com</publisher>
+	<license>GPLv2+</license>
+	<type>tool</type>
+	<category>System Administration</category>
+	<menuitems>
+		<directory>Directory</directory>
+	</menuitems>
+	<depends>
+		<version>2.8.0alpha1</version>
+		<module>recordings ge 3.3.8</module>
+	</depends>
+	<changelog>
+	*2.8.0.0* Initial release
+	</changelog>
+	<location>release/2.8/companydirectory-2.8.0beta1.tgz</location>
+	<md5sum>8c05eadbb5c2aa4efba1b8558355bf7b</md5sum>
+</module>
