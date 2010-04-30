@@ -19,7 +19,7 @@ $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENG
 
 outn(_('Adding directory_details table...'));
 
-$sql = "CREATE TABLE directory_details (
+$sql = "CREATE TABLE IF NOT EXISTS directory_details (
     id INT NOT NULL PRIMARY KEY $autoincrement,
     dirname varchar(50),
     description varchar(150),    
@@ -42,7 +42,7 @@ if (DB::IsError($check)) {
 out(_('ok'));
 outn(_('Adding directory_entries table...'));
 
-$sql = "CREATE TABLE directory_entries (
+$sql = "CREATE TABLE IF NOT EXISTS directory_entries (
     id INT NOT NULL PRIMARY KEY,
     name varchar(50),
     type varchar(25),
