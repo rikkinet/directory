@@ -94,7 +94,6 @@ function directory_get_config($engine) {
 			$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
 			$results=$db->getAll($sql,DB_FETCHMODE_ASSOC);
 			if($results){
-				$ext->addInclude('from-internal-additional', 'directory');
 				foreach ($results as $row) {
 					$ext->add('directory',$row['id'], '', new ext_agi('directory.agi,dir='.$row['id']));
 				}
