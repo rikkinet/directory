@@ -28,11 +28,11 @@ class Dir{
 	
 	//get agi handel/inital agi vars, called by __construct()
 	function __construct_agi(){
-		require_once('/var/lib/asterisk/agi-bin/phpagi.php');//todo: remove hardcoded path
+		require_once('phpagi.php');
 		$agi=new AGI();
 		foreach($agi->request as $key => $value){//strip agi_ prefix from keys
 			if(substr($key,0,4)=='agi_'){
-				$opts[str_replace('agi_','',$key)]=$value;
+				$opts[substr($key,4)]=$value;
 			}
 		}
 
@@ -57,7 +57,7 @@ class Dir{
 	
 	//get ami handel, called by __construct()
 	function __construct_ami(){
-		require_once($this->agi_get_var('ASTAGIDIR').'/phpagi-asmanager.php');//todo: remove hardcoded path
+		require_once('phpagi-asmanager.php');
 		$ami=new AGI_AsteriskManager();
 		return $ami;
 	}	
@@ -65,11 +65,14 @@ class Dir{
 	//get database handel, called by __construct()
 	function __construct_db(){
 		require_once("DB.php");
-		$dbhost=$this->agi_get_var('AMPDBHOST');
-		$dbname=$this->agi_get_var('AMPDBNAME');
-		$dbuser=$this->agi_get_var('AMPDBUSER');
-		$dbpass=$this->agi_get_var('AMPDBPASS');
-		$db=DB::connect('mysql://'.$dbuser.':'.$dbpass.'@'.$dbhost.'/'.$dbname);
+		$dsn=array(
+			'phptype'  => $this->agi_get_var('AMPDBENGINE'),
+			'hostspec' => $this->agi_get_var('AMPDBHOST'),
+			'database' => $this->agi_get_var('AMPDBNAME'),
+			'username' => $this->agi_get_var('AMPDBUSER'),
+			'password' => $this->agi_get_var('AMPDBPASS'),
+		);
+		$db=DB::connect($dsn);
 		return $db;
 	}
 	

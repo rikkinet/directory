@@ -2,6 +2,7 @@
 <?php
 require_once(dirname(__FILE__).'/directory.lib.php');
 $loopcounter1=$loopcounter2=0;
+$matches=false;
 $search=array();
 $dir=new Dir();
 
@@ -23,7 +24,7 @@ while($loopcounter1 < $dir->dir['repeat_loops']){
 	}
 	$matchesloop=0;
 	$matches=$dir->search($search,1);
-dbug('$matches',$matches);
+
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
 		$press=$dir->getKeypress('dir-enter-more-letters', '234567890#',3000);
