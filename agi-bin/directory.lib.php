@@ -144,7 +144,12 @@ class Dir{
 				if(is_numeric($con['audio'])){
 					$sql='SELECT filename from recordings where id = ?';
 					$rec=$this->db->getOne($sql, array($con['audio']));
-					$rec=explode('&',$rec);
+         if($rec){
+					 $rec=explode('&',$rec);
+           $ret=true;
+          }else{
+           $ret=false;
+          }
 					while(!$ret){
 						foreach($rec as $r){
 							$ret=$this->agi->stream_file($r,$keys);
@@ -161,7 +166,7 @@ class Dir{
 		if(empty($key)){return false;}//requre search term
 		//the regex in the query will match the searchstring at the beging of the string or after a space
 		$num=array(1,2,3,4,5,6,7,8,9,0,'#');
-		$alph=array('','[abc]','[def]','[ghi]','[jkl]','[mno]','[pqrs]','[tuv]','[wxyz]','( )','');
+		$alph=array('?','[abc]','[def]','[ghi]','[jkl]','[mno]','[pqrs]','[tuv]','[wxyz]','( )','');
 		
 		if(strlen($key)>1){
 			$keys=array();
