@@ -75,11 +75,15 @@ $(document).ready(function(){
 function addrow(user){
 	$.ajax({
 	  url: location.href,
-	  data: 'ajaxgettr='+user+'&quietmode=1&skip_astman=1',
+	  data: 'ajaxgettr='+user+'&quietmode=1&skip_astman=1&restrictmods=directory/core/recordings',
 	  success: function(data) {
 	    $('.result').html(data);
 	    $('#dir_entires_tbl').last().append(data);
-	  }
+	  },
+	  error: function(XMLHttpRequest, textStatus, errorThrown) {
+      var msg = "<?php echo _("An Error occurred trying to contact the server adding a row, no reply.")?>";
+      alert(msg);
+    }
 });
 
 }
