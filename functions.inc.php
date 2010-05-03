@@ -211,7 +211,10 @@ function directory_draw_entires_all_users(){
 
 function directory_save_dir_details($vals){
 	global $db;
-	$sql='REPLACE INTO directory_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+	$sql='REPLACE INTO directory_details (id,dirname,description,announcement,
+				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
+				invalid_recording,invalid_destination,retivr)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 	$foo=$db->query($sql,$vals);
 	if (DB::IsError($foo)){
     dbug($foo->getDebugInfo());
@@ -240,7 +243,7 @@ function directory_save_dir_entries($id,$entries){
 				}
 			}
 		}		
-		$sql='INSERT INTO directory_entries VALUES '.$insert;
+		$sql='INSERT INTO directory_entries (id,name,audio,dial) VALUES '.$insert;
 		$foo=$db->query($sql);
 		if (DB::IsError($foo)){
 	    dbug($foo->getDebugInfo());
