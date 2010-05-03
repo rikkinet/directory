@@ -172,7 +172,7 @@ function directory_draw_entires($id){
 		$newuser.='<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1].'</option>';
 	}
 	$newuser.='</select>';
-	/$html.='<tfoot><tr><td id="addbut"><a href="#" class="info"><input type="image" src="images/core_add.png" name="image" style="border:none;"><span>'._('Add new entry.').'</span></a></td><td id="addrow">'.$newuser.'</td></tr></tfoot>';
+	$html.='<tfoot><tr><td id="addbut"><a href="#" class="info"><img src="images/core_add.png" name="image" style="border:none;cursor:pointer;" /><span>'._('Add new entry.').'</span></a></td><td id="addrow">'.$newuser.'</td></tr></tfoot>';
 	$html.='<tbody>';
 	$entries=directory_get_dir_entries($id);
 	$arraynum=1;
