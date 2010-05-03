@@ -142,20 +142,6 @@ function directory_destinations(){
 	return isset($extens)?$extens:null;
 }
 
-function directory_drawListMenu(){
-	global $db,$id;
-	$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
-	$results=$db->getAll($sql,DB_FETCHMODE_ASSOC);
-	echo '<div class="rnav"><ul>'."\n";
-	echo "\t<li><a href=\"config.php?type=tool&display=directory&action=add\">"._('Add Directory')."</a></li>\n";
-	if($results){
-		foreach ($results as $key=>$result){
-			if(!$result['dirname']){$result['dirname']='Directory '.$result['id'];}
-			echo "\t<li><a".($id==$result['id'] ? ' class="current"':''). ' href="config.php?type=tool&display=directory&id='.$result['id'].'">'.$result['dirname']."</a></li>\n";
-		}
-	}
-	echo "</ul>\n<br /></div>";
-}
 
 function directory_draw_entires($id){
 	global $db;
