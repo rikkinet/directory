@@ -167,12 +167,12 @@ function directory_draw_entires($id){
 	$newuser='<select id="addusersel">';
 	$newuser.='<option value="none" selected> == '._('Chose One').' == </option>';
 	$newuser.='<option value="all">'._('All Users').'</option>';
-	$newuser.='<option value="">'._('Custom').'</option>';
+	$newuser.='<option value="|">'._('Custom').'</option>';
 	foreach(core_users_list() as $user){
 		$newuser.='<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1].'</option>';
 	}
 	$newuser.='</select>';
-	$html.='<tfoot><tr><td id="addbut"><a href="#" class="info"><input type="image" src="images/core_add.png" name="image" style="border:none;"><span>'._('Add new entry.').'</span></a></td><td id="addrow">'.$newuser.'</td></tr></tfoot>';
+	/$html.='<tfoot><tr><td id="addbut"><a href="#" class="info"><input type="image" src="images/core_add.png" name="image" style="border:none;"><span>'._('Add new entry.').'</span></a></td><td id="addrow">'.$newuser.'</td></tr></tfoot>';
 	$html.='<tbody>';
 	$entries=directory_get_dir_entries($id);
 	$arraynum=1;
@@ -187,7 +187,7 @@ function directory_draw_entires($id){
 function directory_draw_entires_tr($name='',$audio='',$num='',$id=''){
 	global $directory_draw_recordings_list;//make global, so its only drawn once
 	if(!$directory_draw_recordings_list){$directory_draw_recordings_list=recordings_list();}
-	if(!$id){$id=rand(100000,999999);}
+	if(!$id){$id=time().rand(100,999);}//probobly never used, here just in case
 	$select='<select name="entries['.$id.'][audio]">';
 	$select.='<option value="vm" '.(($audio=='vm')?'SELECTED':'').'>'._('Voicemail Greeting').'</option>';
 	$select.='<option value="tts" '.(($audio=='tts')?'SELECTED':'').'>'._('Text to Speech').'</option>';

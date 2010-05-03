@@ -45,7 +45,12 @@ $(document).ready(function(){
 			$('#addbut').not("span").fadeIn(250).find("span").hide();
 		});
 		if($('#addusersel').val()!='none'){
-			addrow($('#addusersel').val());
+			var rownum=$('[class^=entrie]').length+1;
+			//pick anohter id if this one already exists for some reason
+			while($('.entrie'+rownum).length==1){
+				rownum++;
+			}
+			addrow($('#addusersel').val()+'|'+rownum);
 		}
 		return false;
 	})		
