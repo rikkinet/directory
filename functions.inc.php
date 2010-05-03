@@ -75,12 +75,7 @@ function directory_configprocess(){
 			case 'edit':
 				//get real dest
 				$vars['invalid_destination']=$_REQUEST[$_REQUEST[$_REQUEST['invalid_destination']].str_replace('goto','',$_REQUEST['invalid_destination'])];
-				directory_save_dir_details($vars);
-				//if there was no id set, get the latest one that was saved
-				if($vars['id']==''){
-					$sql=(($amp_conf["AMPDBENGINE"]=="sqlite3")?'SELECT last_insert_rowid()':'SELECT LAST_INSERT_ID()');
-					$vars['id']=$db->getOne($sql);
-				}
+				$vars['id']=directory_save_dir_details($vars);
 				directory_save_dir_entries($vars['id'],$entries);
 				redirect_standard('id');
 			break;
@@ -222,7 +217,11 @@ function directory_save_dir_details($vals){
 	if (DB::IsError($foo)){
     dbug($foo->getDebugInfo());
 	}
-	dbug($db->last_query);
+	if(!$vals['id']){
+		$sql=(($amp_conf["AMPDBENGINE"]=="sqlite3")?'SELECT last_insert_rowid()':'SELECT LAST_INSERT_ID()');
+		$vals['id']=$db->getOne($sql);
+	}
+	return $vals['id'];
 }
 
 function directory_save_dir_entries($id,$entries){
