@@ -30,7 +30,8 @@ $sql = "CREATE TABLE IF NOT EXISTS directory_details (
     repeat_loops varchar(3),
     repeat_recording INT,
     invalid_recording INT,
-    invalid_destination varchar(50)
+    invalid_destination varchar(50),
+    retivr varchar(5)
 )";
 
 $check = $db->query($sql);
