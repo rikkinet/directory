@@ -211,17 +211,36 @@ function directory_draw_entires_all_users(){
 
 function directory_save_dir_details($vals){
 	global $db;
-	$sql='REPLACE INTO directory_details (id,dirname,description,announcement,
+	global $amp_conf;
+
+  //TODO: this is very error prone depending on vals being exactly right, this needs some work
+
+  //TODO: need to $db->escapeSimple() all these values
+
+  if ($vals['id']) {
+	  $sql='REPLACE INTO directory_details (id,dirname,description,announcement,
 				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
 				invalid_recording,invalid_destination,retivr)
 				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-	$foo=$db->query($sql,$vals);
-	if (DB::IsError($foo)){
-    dbug($foo->getDebugInfo());
-	}
-	if(!$vals['id']){
+    $foo=$db->query($sql,$vals);
+	  if(DB::IsError($foo)) {
+		  die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
+	  }
+  } else {
+    unset($vals['id']);
+	  $sql='INSERT INTO directory_details (dirname,description,announcement,
+				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
+				invalid_recording,invalid_destination,retivr)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    $foo=$db->query($sql,$vals);
+	  if(DB::IsError($foo)) {
+		  die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
+	  }
 		$sql=(($amp_conf["AMPDBENGINE"]=="sqlite3")?'SELECT last_insert_rowid()':'SELECT LAST_INSERT_ID()');
 		$vals['id']=$db->getOne($sql);
+	  if (DB::IsError($foo)){
+      die_freepbx($foo->getDebugInfo());
+    }
 	}
 	return $vals['id'];
 }
