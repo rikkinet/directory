@@ -43,11 +43,12 @@ out(_('ok'));
 outn(_('Adding directory_entries table...'));
 
 $sql = "CREATE TABLE IF NOT EXISTS directory_entries (
-    id INT NOT NULL PRIMARY KEY,
+    id INT NOT NULL,
     name varchar(50),
     type varchar(25),
+    foreign_id varchar(25),
     audio varchar(50),
-    dial varchar(50)
+    dial varchar(50) default ''
 );";
 
 $check = $db->query($sql);
