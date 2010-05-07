@@ -1,5 +1,4 @@
 <?php
-
 class Dir{
 	//agi class handler
 	var $agi;
@@ -16,6 +15,11 @@ class Dir{
 	//string we are searching for
 	var $searchstring;
 	
+  //PHP4 comaptibility constructor
+  function Dir(){
+    $this->__construct();
+  }
+
 	//this function is run by php automaticly when the class is initalized
 	function __construct(){
 		$this->agi=$this->__construct_agi();
@@ -80,13 +84,28 @@ class Dir{
 	function __construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
-		
-		//set defualt if keys are blank
-		if(!$row['announcement']){$row['announcement']='first-three-letters-entry';}
-		if(!$row['valid_recording']){$row['valid_recording']='first-three-letters-entry';}
-		if(!$row['repeat_recording']){$row['repeat_recording']='demo-nomatch';}
-		if(!$row['invalid_recording']){$row['invalid_recording']='goodbye';}
-		
+    //TODO: Error Checking
+
+    //If any non-defaults (non-zero id) then lookup files
+    //
+		if ($row['announcement'] || $row['valid_recording'] || $row['repeat_recording'] || $row['invalid_recording']) {
+      $sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['valid_recording'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
+			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
+	    if(DB::IsError($res)) {
+        debug("FATAL: got error from getAll query");
+        debug($res->getDebugInfo());
+      }
+      $rec_file = array();
+      foreach ($res as $entry) {
+        //TODO: check if file exists, which means splitting on & and checkking all
+        $rec_file[$entry['id']] = $entry['filename'];
+      }
+      unset($res);
+    }
+		$row['announcement'] = $row['announcement']&&isset($rec_file[$row['announcement']])?$rec_file[$row['announcement']]:'first-three-letters-entry';
+		$row['valid_recording'] = $row['valid_recording']&&isset($rec_file[$row['valid_recording']])?$rec_file[$row['valid_recording']]:'first-three-letters-entry';
+		$row['repeat_recording'] = $row['repeat_recording']&&isset($rec_file[$row['repeat_recording']])?$rec_file[$row['repeat_recording']]:'demo-nomatch';
+		$row['invalid_recording'] = $row['invalid_recording']&&isset($rec_file[$row['invalid_recording']])?$rec_file[$row['invalid_recording']]:'demo-nomatch';
 		return $row;
 	}
 
@@ -112,15 +131,22 @@ class Dir{
 	function readContact($con,$keys=''){
 		switch($con['audio']){
 			case 'vm':
+
+        $vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
+
 				//check to see if we have a greet.* and play it. otherwise, fallback to spelling the name
-				$dir=scandir($this->agi_get_var('ASTSPOOLDIR').'/voicemail/default/'.$con['dial']);
-				foreach($dir as $file){
-					if(strstr($file,'greet')){
-						$file=pathinfo($file);	
-						$ret=$this->agi->stream_file($this->agi_get_var('ASTSPOOLDIR').'/voicemail/default/'.$con['dial'].'/'.$file['filename'],$keys);
-						break 2;	
-					}	
-				}
+
+        if ($vm_dir && $vm_dir != 'novm') {
+				  $dir=scandir($this->agi_get_var('ASTSPOOLDIR').'/voicemail/'.$vm_dir.'/'.$con['dial']);
+				  foreach($dir as $file){
+					  if(strstr($file,'greet')){
+						  $file=pathinfo($file);	
+						  $ret=$this->agi->stream_file($this->agi_get_var('ASTSPOOLDIR').'/voicemail/'.$vm_dir.'/'.$con['dial'].'/'.$file['filename'],$keys);
+						  break 2;	
+					  }	
+				  }
+        }
+        //fallthough if not successfull
 			case 'spell':
 				foreach(str_split($con['name'],1) as $char){
 					switch(true){
@@ -144,19 +170,18 @@ class Dir{
 				if(is_numeric($con['audio'])){
 					$sql='SELECT filename from recordings where id = ?';
 					$rec=$this->db->getOne($sql, array($con['audio']));
-         if($rec){
-					 $rec=explode('&',$rec);
-           $ret=true;
-          }else{
-           $ret=false;
+          debug("got record id: {$con['audio']} file(s): $rec");
+          if($rec){
+            $rec=explode('&',$rec);
+            foreach($rec as $r){
+              $ret=$this->agi->stream_file($r,$keys);
+            }
+					  if(trim($ret['result'])){break;}
+          } else {
+            //TODO: handle error
+            debug("ERROR: unknown/undefined sound file");
           }
-					while(!$ret){
-						foreach($rec as $r){
-							$ret=$this->agi->stream_file($r,$keys);
-						}
-						if(trim($ret['result'])){break;}
-					}
-				}
+        }
 			break; 
 		}
 		return $ret;
@@ -165,25 +190,34 @@ class Dir{
 	function search($key,$count=0){
 		if(empty($key)){return false;}//requre search term
 		//the regex in the query will match the searchstring at the beging of the string or after a space
-		$num=array(1,2,3,4,5,6,7,8,9,0,'#');
-		$alph=array('?','[abc]','[def]','[ghi]','[jkl]','[mno]','[pqrs]','[tuv]','[wxyz]','( )','');
-		
-		if(strlen($key)>1){
-			$keys=array();
-			foreach((array)$key as $index => $digit){
-				$keys[]=str_replace($num,$alph,$digit);
-			}
-			$this->searchstring=implode($keys);
-		}else{
-			$this->searchstring=str_replace($num,$alph,$key);
-		}
-		
+		$num= array('1','2',       '3',       '4',       '5',       '6',       '7',         '8',       '9',         '0',  '#');
+		$alph=array('?','[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','( )','');
+		$this->searchstring=str_replace($num,$alph,$key);
+    debug("search string for regex: {$this->searchstring}",6);
+
+    //TODO: check db results for errors and fail gracefully
+
+    $vtable = '(SELECT DISTINCT a.audio, IF(a.name != "",a.name,b.name) name, IF(a.dial != "",a.dial,b.extension) dial FROM directory_entries a LEFT JOIN users b ON a.foreign_id = b.extension WHERE id = "'.$this->directory.'") v';
 		if($count==1){
-			$sql='SELECT COUNT(*) FROM directory_entries WHERE id = ? AND name REGEXP ?';
-			$res=$this->db->getOne($sql,array($this->directory,'(^| )'.$this->searchstring));
+      $sql="SELECT COUNT(*) FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
+			$res=$this->db->getOne($sql);
+	    if(DB::IsError($res)) {
+        debug("FATAL: got error from COUNT(*) query");
+        debug($res->getDebugInfo());
+      }
+      debug("Found $res possible matches from $key");
 		}else{
-			$sql='SELECT * FROM directory_entries WHERE id = ? AND name REGEXP ?';
-			$res=$this->db->getAll($sql,array($this->directory,'(^| )'.$this->searchstring),DB_FETCHMODE_ASSOC);
+      $sql="SELECT * FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
+			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
+	    if(DB::IsError($res)) {
+        debug("FATAL: got error from getAll query");
+        debug($res->getDebugInfo());
+      } else {
+        debug("Found the following matches:");
+        foreach ($res as $ent) {
+          debug("name: {$ent['name']}, audio: {$ent['audio']}, dial: {$ent['dial']}");
+        }
+      }
 		}
 		//$this->dbug($this->db->last_query,$res);
 		//$this->dbug('search results',$res);
@@ -252,4 +286,56 @@ class Dir{
 		file_put_contents('/tmp/freepbx_debug.log',$txt, $append);
 	}
 }
+// PHP 4 does not have file_put_contents so create an aproximation of what the real function does
+//
+if (!function_exists('file_put_contents')) {
+  function file_put_contents($filename, $data, $flags='', $context=null) {
+    $option = $flags == FILE_APPEND ? 'a' : 'w';
+    if ($context !== null) {
+      $fd = @fopen($filename, $option);
+    } else {
+      $fd = @fopen($filename, $option, false, $context);
+    }
+    if (!$fd) {
+      return false;
+    }
+    if (is_array($data)) {
+      $data = implode('',$data);
+    } else if (is_object($data)) {
+      $data = print_r($data,true);
+    }
+    $bytes = fwrite($fd,$data);
+    fclose($fd);
+
+    return $bytes;
+  }
+}
+if (!function_exists('scandir')) {
+	function scandir($path,$sort=0) {
+		$fh = opendir($path);
+		$list = array();
+		while(false !== ($filename = readdir($fh))) {
+			$list[] = $filename;
+		}
+		closedir($fh);
+    /* Not really needed here
+		if ($sort) {
+			sort($list);
+		} else {
+			rsort($list);
+		}
+    */
+		return $list;
+	}
+}
+
+// non-utf8 version for php4
+if(!function_exists('str_split')) {
+  function str_split($string, $split_length = 1) {
+    $array = explode("\r\n", chunk_split($string, $split_length));
+    array_pop($array);
+    return $array;
+  }
+}
+
 ?>

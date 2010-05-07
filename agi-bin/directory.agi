@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+#!/usr/bin/php -q
 <?php
 require_once(dirname(__FILE__).'/directory.lib.php');
 $loopcounter1=$loopcounter2=0;
@@ -7,12 +7,16 @@ $search=array();
 $dir=new Dir();
 
 $dir->agi->stream_file('dir-welcome');//say hello
-while($loopcounter1 < $dir->dir['repeat_loops']){
+debug("Got repeat_loops: ".$dir->dir['repeat_loops'],6);
+while($loopcounter1 <= $dir->dir['repeat_loops']){
+  debug("outter loop with loopcounter1: $loopcounter1",6);
 	//get inital search term
-	while($loopcounter2 < $dir->dir['repeat_loops'] && !$matches ){
+	while($loopcounter2 <= $dir->dir['repeat_loops'] && !$matches ){
+    debug("inner loop with loopcounter2: $loopcounter2",6);
 		//get any number of digits, terminated by timeout or #
-		unset($buffer);
+    $buffer = '';
 		$search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
+    debug("got buffer: $buffer code: {$search['code']} result: {$search['result']}",6);
 		$search=$search['result'];//being set so we can use it later
 		$matches=$dir->search($search,1);
 		$loopcounter2++;
@@ -53,7 +57,7 @@ while($loopcounter1 < $dir->dir['repeat_loops']){
 		if(trim($ret['result'])){
 			call($matches[chr($ret['result'])-1]);
 		}
-		$dir->wait_for_digit(10000);
+    $dir->agi->wait_for_digit(10000);
 	}elseif($matches==1){
 		//call person $macthes[0];
 		$matches=$dir->search($search);
@@ -88,8 +92,15 @@ function call($contact){
 		$dir->agi->set_variable('CALLERID(name)',$dir->dir['callid_prefix'].$dir->dir['calleridname']);
 	}
 	
+  // TODO: make sure dialstring makes sense, could it be 'custom' here?
+  //
 	$dir->agi->goto_dest('from-internal',$contact['dial'],'1');
 	exit;
+}
+
+function debug($string, $level=3) {
+	global $dir;
+  $dir->agi->verbose($string, $level);
 }
 
 //pointer function so that we dont have to write '$dir->' every time we want to call dbug from here
