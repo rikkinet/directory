@@ -6,7 +6,12 @@ $matches=false;
 $search=array();
 $dir=new Dir();
 
-$dir->agi->stream_file('dir-welcome');//say hello
+//TODO: This is a problem since they can enter digits at this poing and they are not being counted
+//      if this stays vs. being done in the loop it should accumulate any inital digits at this point
+//      and then the number of digits below adjusted appropriate - probably best to not put it here,
+//      put it in the loop and play once or something like that...
+//
+//$dir->agi->stream_file('dir-welcome');//say hello
 debug("Got repeat_loops: ".$dir->dir['repeat_loops'],6);
 while($loopcounter1 <= $dir->dir['repeat_loops']){
   debug("outter loop with loopcounter1: $loopcounter1",6);
@@ -30,8 +35,11 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	$matches=$dir->search($search,1);
 
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
+  // TODO: don't prompt every key press if no #, maybe another 3, so it does not sound so choppy
+
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
-		$press=$dir->getKeypress('dir-enter-more-letters', '234567890#',3000);
+    $compound = array('conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+		$press=$dir->getKeypress($compound, '234567890#',3000);
 		if(!empty($press['result']) || $press==0){
 			$search.=$press['result'];
 			$matches=$dir->search($search,1);

@@ -14,6 +14,8 @@ class Dir{
 	var $directory;
 	//string we are searching for
 	var $searchstring;
+
+	var $vmbasedir='';
 	
   //PHP4 comaptibility constructor
   function Dir(){
@@ -111,21 +113,42 @@ class Dir{
 
 	//get a channel varibale	
 	function agi_get_var($var){
+		global $agi_cache;
+		if (isset($agi_cache[$var])) {
+			return $agi_cache[$var];
+		}
 		$ret=$this->agi->get_variable($var);
 		if($ret['result']==1){
 			$result=$ret['data'];
+			$agi_cache[$var] = $result;
 			return $result;
 		}else{
 			return '';
 		}
 	}
 
+  // Return null on nothing pressed, false on error, otherwise the key
+  // TODO: make it so you can pass in an array:
+  //
 	function getKeypress($filename, $pressables='', $timeout=2000){
-	  $ret=$this->agi->stream_file($filename, $pressables);
+    if (!is_array($filename)) {
+      $filename = array($filename);
+    }
+    foreach ($filename as $chunk) {
+      $ret=is_int($chunk)?$this->agi->say_number($chunk,$pressables):$this->agi->stream_file($chunk,$pressables);
+	    if(!empty($ret['result'])) {break;}
+    }
 	  if(empty($ret['result'])){
 	  	$ret=$this->agi->wait_for_digit($timeout);
 	  }
-	  return chr($ret['result']);
+    switch ($ret['result']) {
+      case 0:
+        return null;
+      case -1:
+        return false;
+      default:
+        return chr($ret['result']);
+    }
   }
 	
 	function readContact($con,$keys=''){
@@ -133,15 +156,20 @@ class Dir{
 			case 'vm':
 
         $vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
+				$vm_dir = $vm_dir['data'];
+				debug("got directory $vm_dir for user {$con['dial']}",6);
 
 				//check to see if we have a greet.* and play it. otherwise, fallback to spelling the name
 
         if ($vm_dir && $vm_dir != 'novm') {
-				  $dir=scandir($this->agi_get_var('ASTSPOOLDIR').'/voicemail/'.$vm_dir.'/'.$con['dial']);
+					if (!$this->vmbasedir) {
+						$this->vmbasedir = $this->agi_get_var('ASTSPOOLDIR').'/voicemail/';
+					}
+				  $dir=scandir($this->vmbasedir.$vm_dir.'/'.$con['dial']);
 				  foreach($dir as $file){
-					  if(strstr($file,'greet')){
-						  $file=pathinfo($file);	
-						  $ret=$this->agi->stream_file($this->agi_get_var('ASTSPOOLDIR').'/voicemail/'.$vm_dir.'/'.$con['dial'].'/'.$file['filename'],$keys);
+						debug("looking for vm file $file using: ".basename($file),6);
+						if(substr($file,0,5) == 'greet' && is_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/'.$file)){
+						  $ret=$this->agi->stream_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/greet',$keys);
 						  break 2;	
 					  }	
 				  }
@@ -152,6 +180,7 @@ class Dir{
 					switch(true){
 						case ctype_alpha($char):
 							$ret=$this->agi->evaluate('SAY ALPHA '.$char.' '.$keys);
+              debug("returned from SAY ALPHA with $ret",6);
 						break;
 						case ctype_digit($char):
 							$ret=$this->agi->say_digits($char, $keys);
