@@ -14,7 +14,7 @@ class Dir{
 	var $directory;
 	//string we are searching for
 	var $searchstring;
-
+	//TODO: what is this var for?
 	var $vmbasedir='';
 	
   //PHP4 comaptibility constructor
@@ -219,7 +219,7 @@ class Dir{
 	function search($key,$count=0){
 		if(empty($key)){return false;}//requre search term
 		//the regex in the query will match the searchstring at the beging of the string or after a space
-		$num= array('1','2',       '3',       '4',       '5',       '6',       '7',         '8',       '9',         '0',  '#');
+		$num= array('1','2','3','4','5','6','7','8','9','0','#');
 		$alph=array('?','[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','( )','');
 		$this->searchstring=str_replace($num,$alph,$key);
     debug("search string for regex: {$this->searchstring}",6);
@@ -316,6 +316,7 @@ class Dir{
 	}
 }
 // PHP 4 does not have file_put_contents so create an aproximation of what the real function does
+// TODO: get rid of extinc php4 stuff as we dont support it anymore
 //
 if (!function_exists('file_put_contents')) {
   function file_put_contents($filename, $data, $flags='', $context=null) {

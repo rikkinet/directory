@@ -158,7 +158,7 @@ function directory_draw_entires($id){
 	$html='';
 	$html.='<table id="dir_entires_tbl">';
 	//$html.='<th>User</th><th>Name</th><th>Name Announcement</th><th>Dial</th>';
-	$html.='<th>Name</th><th>Name Announcement</th><th>Dial</th>';
+	$html.='<thead><th>Name</th><th>Name Announcement</th><th>Dial</th></thead>';
 	$newuser='<select id="addusersel">';
 	$newuser.='<option value="none" selected> == '._('Choose One').' == </option>';
 	$newuser.='<option value="all">'._('All Users').'</option>';
@@ -200,8 +200,8 @@ function directory_draw_entires_tr($realid, $name='',$foreign_name, $audio='',$n
     $audio_select.='</select>';
   }
 
-	$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" onclick="$(\'.entrie'.$id.'\').fadeOut(500,function(){$(this).remove()})">';
-		
+	//$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" onclick="$(\'.entrie'.$id.'\').fadeOut(500,function(){$(this).remove()})">';
+		$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" class="trash-tr">';
 	$t1_class = $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class = $realid == 'custom' ? ' title="Custom Dialstring" ' : ' title="'.$realid.'" ';
 	if (trim($num)  == '') {
@@ -280,7 +280,7 @@ function directory_save_dir_entries($id,$entries){
 				$foreign_id = $row['foreign_id'];
 			}
       $audio = $row['audio'] != '' ? $row['audio'] : ($row['foreign_id'] == 'custom' ? 'tts' : 'vm');
-			$insert.='("'.$id.'","'.$row['name'].'","'.$type.'","'.$foreign_id.'","'.$audio.'","'.$row['num'].'")';
+			$insert.='("'.$id.'","'.trim($row['name']).'","'.$type.'","'.$foreign_id.'","'.$audio.'","'.trim($row['num']).'")';
 			if(count($entries) != $idx+1){//add a , if its not the last entrie
 				$insert.=',';
 			}

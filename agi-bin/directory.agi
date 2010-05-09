@@ -11,13 +11,10 @@ $dir=new Dir();
 //      and then the number of digits below adjusted appropriate - probably best to not put it here,
 //      put it in the loop and play once or something like that...
 //
-//$dir->agi->stream_file('dir-welcome');//say hello
-debug("Got repeat_loops: ".$dir->dir['repeat_loops'],6);
+$dir->agi->stream_file('dir-welcome');//say hello
 while($loopcounter1 <= $dir->dir['repeat_loops']){
-  debug("outter loop with loopcounter1: $loopcounter1",6);
 	//get inital search term
 	while($loopcounter2 <= $dir->dir['repeat_loops'] && !$matches ){
-    debug("inner loop with loopcounter2: $loopcounter2",6);
 		//get any number of digits, terminated by timeout or #
     $buffer = '';
 		$search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
@@ -49,7 +46,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	}
 
 	//act based on the amount of matches
-	if($matches > 1 && $matches < 9){//todo: decided how many is the max
+	if($matches > 1 && $matches < 9){
 		//draw up variable of valid key presses
 		$validkeys='';
 		for($i=1;$i<count($matches)+1;$i++){$validkeys.=$i;}
@@ -106,7 +103,8 @@ function call($contact){
 	exit;
 }
 
-function debug($string, $level=3) {
+//send debug to asterisk cli
+function debug($string, $level=3){
 	global $dir;
   $dir->agi->verbose($string, $level);
 }

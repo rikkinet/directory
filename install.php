@@ -16,8 +16,7 @@ if (! function_exists("outn")) {
 
 //-----------------------------------------------------------------------------------------
 /* This forces very early testerd to uninstall and re-install their module as there is 
- * no migration code for the schema changes. There were only a few testers exposed to
- * the early module so this can be taken out once out of alpha/beta.
+ * no migration code for the schema changes. 
  */
 $modinfo = module_getinfo('directory');
 if (is_array($modinfo)) {
