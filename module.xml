@@ -19,6 +19,6 @@
 	*2.8.0.0alpha1.0* Schema changes requiring uninstall/reinstall, many enhancements and fixes
 	*2.8.0.0alpha0.2* Initial release
 	</changelog>
-	<location>release/2.8/directory-2.8.0alpha1.1.tgz</location>
-	<md5sum>5c66364effc89902c7fec96259b4ccb6</md5sum>
+	<location>release/2.8/directory-2.8.0alpha1.2.tgz</location>
+	<md5sum>5fc6fea7ec27f2106a3c8b1c209912c3</md5sum>
 </module>
