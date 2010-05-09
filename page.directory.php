@@ -100,7 +100,7 @@ function addrow(user){
 	  url: location.href,
 	  data: 'ajaxgettr='+encodeURIComponent(user)+'&quietmode=1&skip_astman=1&restrictmods=directory/core/recordings',
 	  success: function(data) {
-	    $('#dir_entires_tbl').last().append(data);
+	    $('#dir_entires_tbl > tbody:last').append(data);
       /* now re-apply toggleval - redundant but they may have appended multipe values so... */
       $(".dpt-title").toggleVal({
         populateFrom: "title",

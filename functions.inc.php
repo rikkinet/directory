@@ -24,7 +24,7 @@ function directory_configpageload() {
     }
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$currentcomponent->addguielem('', new gui_textbox('dirname', $dir['dirname'], _('Directory Name'), _('Name of this directory.')));
-		$currentcomponent->addguielem('', new gui_textbox('description', $dir['description'], _('Directory description'), _('Description of this directory.')));
+		$currentcomponent->addguielem('', new gui_textbox('description', $dir['description'], _('Directory Description'), _('Description of this directory.')));
 		$section = _('Directory Options');
 		
 		//build recordings select list
@@ -157,7 +157,8 @@ function directory_draw_entires($id){
 	$results=$db->getAll($sql,DB_FETCHMODE_ASSOC);
 	$html='';
 	$html.='<table id="dir_entires_tbl">';
-	$html.='<th>User</th><th>Name</th><th>Name Announcement</th><th>Dial</th>';
+	//$html.='<th>User</th><th>Name</th><th>Name Announcement</th><th>Dial</th>';
+	$html.='<th>Name</th><th>Name Announcement</th><th>Dial</th>';
 	$newuser='<select id="addusersel">';
 	$newuser.='<option value="none" selected> == '._('Choose One').' == </option>';
 	$newuser.='<option value="all">'._('All Users').'</option>';
@@ -207,7 +208,8 @@ function directory_draw_entires_tr($realid, $name='',$foreign_name, $audio='',$n
     $t2_class .= '" class = "dpt-title" ';
   }
   
-	$html='<tr class="entrie'.$id.'"><td><label>'.$realid.'</label><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /></td><td><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.'</td></tr>';
+	//$html='<tr class="entrie'.$id.'"><td><label>'.$realid.'</label><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /></td><td><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.'</td></tr>';
+	$html='<tr class="entrie'.$id.'"><td><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.'</td></tr>';
 	return $html;
 }
 
