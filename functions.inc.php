@@ -1,4 +1,32 @@
 <?php
+
+function directory_check_destinations($dest=true) {
+	global $active_modules;
+
+	$destlist = array();
+	if (is_array($dest) && empty($dest)) {
+		return $destlist;
+	}
+	$sql = "SELECT id, name FROM directory_details ";
+	if ($dest !== true) {
+		$sql .= "WHERE postdest in ('".implode("','",$dest)."')";
+	}
+	$results = sql($sql,"getAll",DB_FETCHMODE_ASSOC);
+
+	//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
+
+	foreach ($results as $result) {
+		$thisdest = $result['postdest'];
+		$thisid   = $result['grpnum'];
+		$destlist[] = array(
+			'dest' => $thisdest,
+			'description' => sprintf(_("Ring Group: %s (%s)"),$result['description'],$thisid),
+			'edit_url' => 'config.php?display=ringgroups&extdisplay=GRP-'.urlencode($thisid),
+		);
+	}
+	return $destlist;
+}
+
 function directory_configpageload() {
 	global $currentcomponent,$display;
 	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) { 
@@ -111,6 +139,27 @@ function directory_get_config($engine) {
 				}
 			}
 		break;
+	}
+}
+
+function directory_getdest($exten) {
+	return array("directory,$exten,1");
+}
+
+function directory_getdestinfo($dest) {
+	if (substr(trim($dest),0,10) == 'directory,') {
+		$grp = explode(',',$dest);
+		$id = $grp[1];
+		$thisdir = directory_get_dir_details($id);
+		if (empty($thisdir)) {
+			return array();
+		} else {
+			return array('description' => sprintf(_("Directory %s: "),($thisdir['dirname']?$thisdir['dirname']:$id)),
+			             'edit_url' => 'config.php?display=directory&id='.urlencode($id),
+								  );
+		}
+	} else {
+		return false;
 	}
 }
 
@@ -256,6 +305,24 @@ function directory_save_dir_details($vals){
     }
 	}
 	return $vals['id'];
+}
+
+function directory_recordings_usage($recording_id) {
+	global $active_modules;
+
+	$results = sql("SELECT `id`, `dirname` FROM `directory_details` WHERE `announcement` = '$recording_id' OR `valid_recording` = '$recording_id' OR `repeat_recording` = '$recording_id' OR `invalid_recording ` = '$recording_id'","getAll",DB_FETCHMODE_ASSOC);
+	if (empty($results)) {
+		return array();
+	} else {
+		//$type = isset($active_modules['ivr']['type'])?$active_modules['ivr']['type']:'setup';
+		foreach ($results as $result) {
+			$usage_arr[] = array(
+				'url_query' => 'config.php?display=directory&id='.urlencode($result['i']),
+				'description' => sprintf(_("Directory: %s"),($result['dirname']?$result['dirname']:$result['id'])),
+			);
+		}
+		return $usage_arr;
+	}
 }
 
 function directory_save_dir_entries($id,$entries){
