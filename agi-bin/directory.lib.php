@@ -180,7 +180,7 @@ class Dir{
 					switch(true){
 						case ctype_alpha($char):
 							$ret=$this->agi->evaluate('SAY ALPHA '.$char.' '.$keys);
-              debug("returned from SAY ALPHA with $ret",6);
+              debug("returned from SAY ALPHA with code/result {$ret['code']}/{$ret['result']}",6);
 						break;
 						case ctype_digit($char):
 							$ret=$this->agi->say_digits($char, $keys);

@@ -37,9 +37,8 @@ if($action=='' && $id==''){
 }
 
 function directory_drawListMenu(){
-	global $db,$id,$type;
-	$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
-	$results=$db->getAll($sql,DB_FETCHMODE_ASSOC);
+	global $id,$type;
+	$results=directory_list();
 	echo '<div class="rnav"><ul>'."\n";
 	echo "\t<li><a href=\"config.php?type=$type&display=directory&action=add\">"._('Add Directory')."</a></li>\n";
 	if($results){

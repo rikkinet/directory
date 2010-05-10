@@ -142,6 +142,12 @@ function directory_get_config($engine) {
 	}
 }
 
+function directory_list() {
+	$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
+	$results=sql($sql,'getAll',DB_FETCHMODE_ASSOC);
+  return $results;
+}
+
 function directory_getdest($exten) {
 	return array("directory,$exten,1");
 }
