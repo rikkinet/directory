@@ -4,7 +4,7 @@
 if(isset($_REQUEST['ajaxgettr'])){//got ajax request
   $opts = $opts=explode('|',urldecode($_REQUEST['ajaxgettr']));
 	if($opts[0] == 'all') {
-    echo directory_draw_entires_all_users($opts[1]);
+    echo directory_draw_entries_all_users($opts[1]);
 	}else{
 		if ($opts[0] != '') {
 			$real_id = $opts[0];
@@ -17,7 +17,7 @@ if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 			$realname = 'Custom Entry';
 			$audio = 'tts';
 		}
-		echo directory_draw_entires_tr($real_id, $name, $realname, $audio,'',$opts[2]);
+		echo directory_draw_entries_tr($real_id, $name, $realname, $audio,'',$opts[2]);
 	}
 	exit;
 }
@@ -114,7 +114,7 @@ function addrow(user){
 	  url: location.href,
 	  data: 'ajaxgettr='+encodeURIComponent(user)+'&quietmode=1&skip_astman=1&restrictmods=directory/core/recordings',
 	  success: function(data) {
-	    $('#dir_entires_tbl > tbody:last').append(data);
+	    $('#dir_entries_tbl > tbody:last').append(data);
       /* now re-apply toggleval - redundant but they may have appended multipe values so... */
       $(".dpt-title").not('.text-normal').toggleVal({
         populateFrom: "title",
@@ -132,7 +132,7 @@ function addrow(user){
 
 <style type="text/css">
 #addrow{display:none;}
-#dir_entires_tbl :not(tfoot) tr:nth-child(odd){background-color:#FCE7CE;}
+#dir_entries_tbl :not(tfoot) tr:nth-child(odd){background-color:#FCE7CE;}
 .dpt-title {color: #CCCCCC;}
 .text-normal {color: inherit;}
 </style>

@@ -68,7 +68,9 @@ class Dir{
 		return $ami;
 	}	
 	
-	//get database handel, called by __construct()
+	//get database handle, called by __construct()
+  // TODO: hardcoded mysql, deal with sqlite...
+  //
 	function __construct_db(){
 		require_once("DB.php");
 		$dsn=array(
@@ -83,6 +85,7 @@ class Dir{
 	}
 	
 	//get options associated with the current dir
+  // TODO: handle getRow failures
 	function __construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
@@ -192,6 +195,7 @@ class Dir{
 					if(trim($ret['result'])){break;}
 				}
 			break;
+      //TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 			case 'tts':
 				$ret=$this->agi->exec('Flite '.$con['name'].'|'.$keys);
 			break;
@@ -216,6 +220,7 @@ class Dir{
 		return $ret;
 	}
 	
+  // TODO: how to deal with problem cases like "'" (O'Neil) or "." (Jr.) - maybe use '1' for those
 	function search($key,$count=0){
 		if(empty($key)){return false;}//requre search term
 		//the regex in the query will match the searchstring at the beging of the string or after a space
@@ -367,5 +372,4 @@ if(!function_exists('str_split')) {
     return $array;
   }
 }
-
 ?>

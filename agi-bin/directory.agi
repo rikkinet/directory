@@ -6,10 +6,8 @@ $matches=false;
 $search=array();
 $dir=new Dir();
 
-//TODO: This is a problem since they can enter digits at this poing and they are not being counted
-//      if this stays vs. being done in the loop it should accumulate any inital digits at this point
-//      and then the number of digits below adjusted appropriate - probably best to not put it here,
-//      put it in the loop and play once or something like that...
+$matches = false;
+// TODO: BUG - this eats digits, makes it error prone when user pushes digits too early. Needs to be removed or fixed appropriately
 //
 $dir->agi->stream_file('dir-welcome');//say hello
 while($loopcounter1 <= $dir->dir['repeat_loops']){
@@ -30,7 +28,6 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	}
 	$matchesloop=0;
 	$matches=$dir->search($search,1);
-
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
   // TODO: don't prompt every key press if no #, maybe another 3, so it does not sound so choppy
 
@@ -51,7 +48,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$validkeys='';
 		for($i=1;$i<count($matches)+1;$i++){$validkeys.=$i;}
 		
-		//playback entires
+		//playback entries
 		$matches=$dir->search($search);
 		foreach($matches as $idx => $match){
 			$ret=$dir->getKeypress('for',$validkeys,0);if(trim($ret['result'])){break;}
@@ -74,6 +71,8 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	}
 }
 
+// TODO: would we be better off returning to the dialplan to deal with these destination decisions (and executing from it?) - allows splices, etc?
+//       also makes it more clear to follow when reading the code and debugging?
 if($loopcounter1){
 	//do something if we are exiting due to to many tries
 	$dir->agi->stream_file($dir->dir['invalid_recording']);
