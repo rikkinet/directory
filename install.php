@@ -49,7 +49,8 @@ $sql = "CREATE TABLE IF NOT EXISTS directory_details (
     repeat_recording INT,
     invalid_recording INT,
     invalid_destination varchar(50),
-    retivr varchar(5)
+    retivr varchar(5),
+    say_extension varchar(5)
 )";
 
 $check = $db->query($sql);
@@ -77,4 +78,18 @@ if (DB::IsError($check)) {
 }
 out(_('ok'));
 
+$sql = "SELECT say_extension FROM directory_details";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(DB::IsError($check)) {
+  // add new field
+  outn(_("adding say_extension field to directory_details.."));
+  $sql = "ALTER TABLE directory_details ADD say_extension VARCHAR(5)";
+  $result = $db->query($sql);
+  if(DB::IsError($result)) { 
+    out(_("fatal error"));
+    die_freepbx($result->getDebugInfo()); 
+  } else {
+    out(_("ok"));
+  }
+}
 ?>

@@ -17,6 +17,7 @@ function directory_configpageload() {
       $dir['invalid_destination'] = '';
       $dir['retivr'] = '';
       $dir['default_directory'] = '';
+      $dir['say_extension'] = '';
     } else {
 		  $dir=directory_get_dir_details($_REQUEST['id']);
 			$label=sprintf(_("Delete Directory %s"),$dir['dirname']?$dir['dirname']:$dir['id']);
@@ -49,6 +50,7 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($section, new gui_selectbox('invalid_recording', $currentcomponent->getoptlist('recordings'), $dir['invalid_recording'], _('Invalid Recording'), _('Prompt to be played before sending the caller to an alternate destination due to receiving the maximum amount of invalid/unmatched responses (as determaind by Invalid Retries)'), false));
 		$currentcomponent->addguielem($section, new gui_drawselects('invalid_destination', 0, $dir['invalid_destination'], _('Invalid Destination'), _('Destination to send the call to after Invalid Recording is played.'), false));
 		$currentcomponent->addguielem($section, new gui_checkbox('retivr', $dir['retivr'], _('Return to IVR'), _('When selected, if the call passed through an IVR that had "Return to IVR" selected, the call will be returned there instead of the Invalid destination.'),true));
+		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transfered to will be announced prior to the transfer'),true));
 		$currentcomponent->addguielem($section, new gui_checkbox('default_directory', $dir['default_directory'], _('Default Directory'), _('When checked, this becomes the default directory and replaces any other directory as the default directory. This has the effect of exposing entries for this directory into the Extension/User page'),true));
 		$currentcomponent->addguielem($section, new gui_hidden('id', $dir['id']));
 		$currentcomponent->addguielem($section, new gui_hidden('action', 'edit'));
@@ -98,7 +100,7 @@ function directory_configprocess(){
 		//get variables for directory_details
 		$requestvars=array('id','dirname','description','announcement','valid_recording',
 												'callid_prefix','alert_info','repeat_loops','repeat_recording',
-												'invalid_recording','invalid_destination','retivr','default_directory');
+												'invalid_recording','invalid_destination','retivr','say_extension','default_directory');
 		foreach($requestvars as $var){
 			$vars[$var]=isset($_REQUEST[$var])?$_REQUEST[$var]:'';
 		}
@@ -113,10 +115,12 @@ function directory_configprocess(){
 				$vars['invalid_destination']=$_REQUEST[$_REQUEST[$_REQUEST['invalid_destination']].str_replace('goto','',$_REQUEST['invalid_destination'])];
 				$vars['id']=directory_save_dir_details($vars);
 				directory_save_dir_entries($vars['id'],$entries);
+				needreload();
 				redirect_standard('id');
 			break;
 			case 'delete':
 				directory_delete($vars['id']);
+				needreload();
 				redirect_standard();
 			break;
 		}
@@ -127,15 +131,28 @@ function directory_get_config($engine) {
 	global $ext,$db;
 	switch ($engine) {
 		case 'asterisk':
-			$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
-			$results=$db->getAll($sql,DB_FETCHMODE_ASSOC);
+			$sql='SELECT id,dirname,say_extension FROM directory_details ORDER BY dirname';
+			$results=sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 			if($results){
+        $context = 'directory';
+        // Note create a dial-id label for each directory to allow other modules to hook on a per
+        // directory basis. (Otherwise we could have consolidated this into a call extension)
 				foreach ($results as $row) {
-          // TODO: modify dialplan so Return to IVR happens in dialplan and is hookcable
-          // TODO: modify to return and and go to final destination so it is hookcable.
-          // TODO: no ringing when being transfered, could be above suggestion can apply Progress or something to fix
-					$ext->add('directory',$row['id'], '', new ext_agi('directory.agi,dir='.$row['id']));
+					$ext->add($context,$row['id'], '', new ext_agi('directory.agi,dir='.$row['id']));
+          if ($row['say_extension']) {
+            $ext->add($context,$row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
+            $ext->add($context,$row['id'], '', new ext_saydigits('${DIR_DIAL}'));
+          }
+          $ext->add($context,$row['id'], 'dial-'.$row['id'], new ext_ringing());
+          $ext->add($context,$row['id'], '', new ext_goto('1','${DIR_DIAL}','from-internal'));
 				}
+        $ext->add($context,'invalid', 'invalid', new ext_playback('${DIR_INVALID_RECORDING}'));
+        $ext->add($context,'invalid', '', new ext_ringing());
+        $ext->add($context,'invalid', '', new ext_goto('${DIR_INVALID_PRI}','${DIR_INVALID_EXTEN}','${DIR_INVALID_CONTEXT}'));
+        $ext->add($context,'retivr', 'retivr', new ext_playback('${DIR_INVALID_RECORDING}'));
+        $ext->add($context,'retivr', '', new ext_goto('1','return','${IVR_CONTEXT}'));
+        $ext->add($context,'h', '', new ext_macro('hangupcall'));
+
 			}
 		break;
 	}
@@ -281,8 +298,8 @@ function directory_save_dir_details($vals){
   if ($vals['id']) {
 	  $sql='REPLACE INTO directory_details (id,dirname,description,announcement,
 				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
-				invalid_recording,invalid_destination,retivr)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+				invalid_recording,invalid_destination,retivr,say_extension)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     $foo=$db->query($sql,$vals);
 	  if(DB::IsError($foo)) {
 		  die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
@@ -291,8 +308,8 @@ function directory_save_dir_details($vals){
     unset($vals['id']);
 	  $sql='INSERT INTO directory_details (dirname,description,announcement,
 				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
-				invalid_recording,invalid_destination,retivr)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+				invalid_recording,invalid_destination,retivr,say_extension)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     $foo=$db->query($sql,$vals);
 	  if(DB::IsError($foo)) {
 		  die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());

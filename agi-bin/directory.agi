@@ -7,16 +7,21 @@ $search=array();
 $dir=new Dir();
 
 $matches = false;
-// TODO: BUG - this eats digits, makes it error prone when user pushes digits too early. Needs to be removed or fixed appropriately
-//
-$dir->agi->stream_file('dir-welcome');//say hello
+$needs_welcome = true;
 while($loopcounter1 <= $dir->dir['repeat_loops']){
 	//get inital search term
 	while($loopcounter2 <= $dir->dir['repeat_loops'] && !$matches ){
 		//get any number of digits, terminated by timeout or #
     $buffer = '';
-		$search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
-    debug("got buffer: $buffer code: {$search['code']} result: {$search['result']}",6);
+    if ($needs_welcome) {
+      $needs_welcome = false;
+		  $search=$dir->agi->fastpass_get_data($buffer, 'dir-welcome',100,3);
+      if (strlen($buffer) < 3) {
+		    $search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
+      }
+    } else {
+		  $search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
+    }
 		$search=$search['result'];//being set so we can use it later
 		$matches=$dir->search($search,1);
 		$loopcounter2++;
@@ -29,10 +34,9 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	$matchesloop=0;
 	$matches=$dir->search($search,1);
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
-  // TODO: don't prompt every key press if no #, maybe another 3, so it does not sound so choppy
 
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
-    $compound = array('conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+    $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
 		$press=$dir->getKeypress($compound, '234567890#',3000);
 		if(!empty($press['result']) || $press==0){
 			$search.=$press['result'];
@@ -71,34 +75,33 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	}
 }
 
-// TODO: would we be better off returning to the dialplan to deal with these destination decisions (and executing from it?) - allows splices, etc?
-//       also makes it more clear to follow when reading the code and debugging?
 if($loopcounter1){
 	//do something if we are exiting due to to many tries
-	$dir->agi->stream_file($dir->dir['invalid_recording']);
+  //
+	$dir->agi->set_variable('DIR_INVALID_RECORDING',$dir->dir['invalid_recording']);
 	if($dir->agi_get_var('IVR_CONTEXT')){
-		$dir->agi->goto_dest('${IVR_CONTEXT}','return','1');
+    $dir->agi->set_extension('retivr');
 	}else{
-		$dir->agi->goto_dest($dir->dir['invalid_destination'],'return','1');
+    $dest = explode(',',$dir->dir['invalid_destination']);
+    $dir->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
+    $dir->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
+    $dir->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
+    $dir->agi->set_extension('invalid');
 	}
+  $dir->agi->set_priority('1');
+  exit;
 }
-
-$dir->agi->stream_file($dir->dir['invalid_recording']);
 
 function call($contact){
 	global $dir;
-	$dir->dbug('function call',$contact);
 	$dir->readContact($contact,$validkeys,0);
-	if($dir->dir['alert_info']){
+	if($dir->dir['alert_info'] != ''){
 		$dir->agi->set_alertinfo($dir->dir['alert_info']);
 	}
-	if($dir->dir['callid_prefix']){
+	if($dir->dir['callid_prefix'] != ''){
 		$dir->agi->set_variable('CALLERID(name)',$dir->dir['callid_prefix'].$dir->dir['calleridname']);
 	}
-	
-  // TODO: make sure dialstring makes sense, could it be 'custom' here?
-  //
-	$dir->agi->goto_dest('from-internal',$contact['dial'],'1');
+	$dir->agi->set_variable('DIR_DIAL',$contact['dial']);
 	exit;
 }
 
