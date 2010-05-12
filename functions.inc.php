@@ -149,6 +149,9 @@ function directory_list() {
 
 function directory_get_dir_entries($id){
 	global $db;
+  if ($id == '') {
+    return array();
+  }
   $id = $db->escapeSimple($id);
 	$sql = "SELECT a.name, a.type, a.audio, a.dial, a.foreign_id, b.name foreign_name, IF(a.name != \"\",a.name,b.name) realname 
 		FROM directory_entries a LEFT JOIN users b ON a.foreign_id = b.extension WHERE id = $id ORDER BY realname";
