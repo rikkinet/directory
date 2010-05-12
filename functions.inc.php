@@ -266,7 +266,7 @@ function directory_draw_entries_tr($realid, $name='',$foreign_name, $audio='',$n
   } else {
     $user = '';
   }
-	$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" class="trash-tr">';
+	$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr">';
 	$t1_class = $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class = $realid == 'custom' ? ' title="Custom Dialstring" ' : ' title="'.$realid.'" ';
 	if (trim($num)  == '') {
