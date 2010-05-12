@@ -239,6 +239,7 @@ function directory_draw_entries($id){
 
 //used to add row's the entry table
 function directory_draw_entries_tr($realid, $name='',$foreign_name, $audio='',$num='',$id, $reuse_audio=false){
+  global $amp_conf;
 	global $directory_draw_recordings_list;//make global, so its only drawn once
 	if(!$directory_draw_recordings_list){$directory_draw_recordings_list=recordings_list();}
 
@@ -257,16 +258,21 @@ function directory_draw_entries_tr($realid, $name='',$foreign_name, $audio='',$n
     $audio_select.='</select>';
   }
 
-	//$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" onclick="$(\'.entrie'.$id.'\').fadeOut(500,function(){$(this).remove()})">';
-		$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" class="trash-tr">';
+  if ($realid != 'custom') {
+    $user_type =  $amp_conf['AMPEXTENSION'] == 'deviceanduser' ? 'user' : 'extension';
+    $tlabel =  sprintf(_("Edit %s: %s"),$user_type,$realid);
+    $label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/user_edit.png"/>&nbsp;</span>';
+    $user = ' <a href="/admin/config.php?type=setup&display='.$user_type.'s&skip=0&extdisplay='.$realid.'">'.$label.'</a> ';
+  } else {
+    $user = '';
+  }
+	$delete='<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this pattern').'" class="trash-tr">';
 	$t1_class = $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class = $realid == 'custom' ? ' title="Custom Dialstring" ' : ' title="'.$realid.'" ';
 	if (trim($num)  == '') {
     $t2_class .= '" class = "dpt-title" ';
   }
-  
-	//$html='<tr class="entrie'.$id.'"><td><label>'.$realid.'</label><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /></td><td><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.'</td></tr>';
-	$html='<tr class="entrie'.$id.'"><td><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.'</td></tr>';
+	$html='<tr class="entrie'.$id.'"><td><input type="hidden" readonly="readonly" name="entries['.$id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" /></td><td>'.$audio_select.'</td><td><input type="text" name="entries['.$id.'][num]" '.$t2_class.' value="'.$num.'" /></td><td>'.$delete.$user.'</td></tr>';
 	return $html;
 }
 

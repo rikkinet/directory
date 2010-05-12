@@ -44,6 +44,10 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		}else{
 			$matchesloop++;
 		}
+    // if they timeout and there are 3 or fewer matches then just play them
+    if (empty($press['result']) && $matches <=3) {
+      break;
+    }
 	}
 
 	//act based on the amount of matches
