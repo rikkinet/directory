@@ -35,7 +35,7 @@ if (is_array($modinfo)) {
 
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
 
-outn(_('Adding directory_details table...'));
+outn(_('Adding directory_details table if needed...'));
 
 $sql = "CREATE TABLE IF NOT EXISTS directory_details (
     id INT NOT NULL PRIMARY KEY $autoincrement,
@@ -60,7 +60,7 @@ if (DB::IsError($check)) {
   return false;
 }
 out(_('ok'));
-outn(_('Adding directory_entries table...'));
+outn(_('Adding directory_entries table if needed...'));
 
 $sql = "CREATE TABLE IF NOT EXISTS directory_entries (
     id INT NOT NULL,
