@@ -253,8 +253,6 @@ class Dir{
         }
       }
 		}
-		//$this->dbug($this->db->last_query,$res);
-		//$this->dbug('search results',$res);
 		return $res;
 	}
 
