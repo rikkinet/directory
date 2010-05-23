@@ -5,19 +5,35 @@ function directory_configpageload() {
 		$currentcomponent->addguielem('_top', new gui_pageheading('title', _('Directory')), 0);
 					
     if ($_REQUEST['action'] == 'add') {
-      $dir['dirname'] = '';
-      $dir['description'] = '';
-      $dir['repeat_loops'] = 2;
-      $dir['announcement'] = 0;
-      $dir['valid_recording'] = 0;
-      $dir['repeat_recording'] = 0;
-      $dir['invalid_recording'] = 0;
-      $dir['callid_prefix'] = '';
-      $dir['alert_info'] = '';
-      $dir['invalid_destination'] = '';
-      $dir['retivr'] = '';
-      $dir['default_directory'] = '';
-      $dir['say_extension'] = '';
+    	$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
+										'valid_recording', 'repeat_recording', 'invalid_recording', 
+										'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
+										'default_directory', 'say_extension', 'id');
+      
+			foreach ($deet as $d) {
+				switch ($d){
+					case 'repeat_loops';
+						$dir[$d] = 2;
+						break;
+					case 'announcement':
+					case 'valid_recording':
+					case 'repeat_recording':
+					case 'invalid_recording':
+						$dir[$d] = 0;
+						break;
+					case 'dirname':
+		      case 'description':
+		      case 'callid_prefix':
+		      case 'alert_info':
+		      case 'invalid_destination':
+		      case 'retivr':
+		      case 'default_directory':
+		      case 'say_extension':
+		      case 'id':
+		      	$dir[$d] = '';
+						break;
+				}
+			}
     } else {
 		  $dir=directory_get_dir_details($_REQUEST['id']);
 			$label=sprintf(_("Delete Directory %s"),$dir['dirname']?$dir['dirname']:$dir['id']);
@@ -58,7 +74,7 @@ function directory_configpageload() {
     //TODO: the &nbsp; needs to be here instead of a space, guielements freaks for some reason with this specific section name
 		$section = _('Directory&nbsp;Entries');
 		//draw the entries part of the table. A bit hacky perhaps, but hey - it works!
-		$currentcomponent->addguielem($section, new guielement('rawhtml', directory_draw_entries($_REQUEST['id']), ''));
+		$currentcomponent->addguielem($section, new guielement('rawhtml', directory_draw_entries($dir['id']), ''));
 	}
 }
 
