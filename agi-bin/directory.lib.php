@@ -97,7 +97,7 @@ class Dir{
       $sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['valid_recording'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
 	    if(DB::IsError($res)) {
-        debug("FATAL: got error from getAll query");
+        debug("FATAL: got error from getAll query",1);
         debug($res->getDebugInfo());
       }
       $rec_file = array();
@@ -220,12 +220,17 @@ class Dir{
 		return $ret;
 	}
 	
-  // TODO: how to deal with problem cases like "'" (O'Neil) or "." (Jr.) - maybe use '1' for those
 	function search($key,$count=0){
-		if(empty($key)){return false;}//requre search term
+		if($key == ''){return false;}//requre search term
+
+    if(strstr($key,'0') !== false) {
+      debug("user pressed 0 - bailing out");
+      $this->bail();
+    }
+
 		//the regex in the query will match the searchstring at the beging of the string or after a space
 		$num= array('1','2','3','4','5','6','7','8','9','0','#');
-		$alph=array('?','[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','( )','');
+		$alph=array("[\s@,-!/+=.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
 		$this->searchstring=str_replace($num,$alph,$key);
     debug("search string for regex: {$this->searchstring}",6);
 
@@ -256,7 +261,24 @@ class Dir{
 		return $res;
 	}
 
-  
+  function bail() {
+	  //do something if we are exiting due to to many tries
+    //
+    debug("User pressed zero, passing back recording of {$this->dir['invalid_recording']}");
+	  $this->agi->set_variable('DIR_INVALID_RECORDING',$this->dir['invalid_recording']);
+	  if($this->agi_get_var('IVR_CONTEXT')){
+      $this->agi->set_extension('retivr');
+	  }else{
+      $dest = explode(',',$this->dir['invalid_destination']);
+      $this->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
+      $this->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
+      $this->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
+      $this->agi->set_extension('invalid');
+	  }
+    $this->agi->set_priority('1');
+    exit;
+  }
+
  /* 
   * FreePBX Debuging function
   * This function can be called as follows:

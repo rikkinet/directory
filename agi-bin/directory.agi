@@ -16,7 +16,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
     if ($needs_welcome) {
       $needs_welcome = false;
 		  $search=$dir->agi->fastpass_get_data($buffer, 'dir-welcome',100,3);
-      if (strlen($buffer) < 3) {
+      if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
 		    $search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
       }
     } else {
@@ -80,20 +80,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 }
 
 if($loopcounter1){
-	//do something if we are exiting due to to many tries
-  //
-	$dir->agi->set_variable('DIR_INVALID_RECORDING',$dir->dir['invalid_recording']);
-	if($dir->agi_get_var('IVR_CONTEXT')){
-    $dir->agi->set_extension('retivr');
-	}else{
-    $dest = explode(',',$dir->dir['invalid_destination']);
-    $dir->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
-    $dir->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
-    $dir->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
-    $dir->agi->set_extension('invalid');
-	}
-  $dir->agi->set_priority('1');
-  exit;
+  $dir->bail();
 }
 
 function call($contact){
