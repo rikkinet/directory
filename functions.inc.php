@@ -154,6 +154,8 @@ function directory_get_config($engine) {
         // Note create a dial-id label for each directory to allow other modules to hook on a per
         // directory basis. (Otherwise we could have consolidated this into a call extension)
 				foreach ($results as $row) {
+          $ext->add($context,$row['id'], '', new ext_answer(''));
+          $ext->add($context,$row['id'], '', new ext_wait('1'));
 					$ext->add($context,$row['id'], '', new ext_agi('directory.agi,dir='.$row['id']));
           if ($row['say_extension']) {
             $ext->add($context,$row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
