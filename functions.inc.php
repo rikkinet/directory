@@ -21,25 +21,21 @@ function directory_configpageload() {
 					case 'invalid_recording':
 						$dir[$d] = 0;
 						break;
-					case 'dirname':
-		      case 'description':
-		      case 'callid_prefix':
-		      case 'alert_info':
-		      case 'invalid_destination':
-		      case 'retivr':
-		      case 'default_directory':
-		      case 'say_extension':
-		      case 'id':
+					default:
 		      	$dir[$d] = '';
 						break;
 				}
 			}
     } else {
 		  $dir=directory_get_dir_details($_REQUEST['id']);
+			//display usage
+		  $usage_list = framework_display_destination_usage(directory_getdest($dir['id']));
+		  $currentcomponent->addguielem('_top', new gui_link_label('usage', $usage_list['text'], $usage_list['tooltip']), 0);
+			//display delete link
 			$label=sprintf(_("Delete Directory %s"),$dir['dirname']?$dir['dirname']:$dir['id']);
 			$label='<span><img width="16" height="16" border="0" title="'.$label.'" alt="" src="images/core_delete.png"/>&nbsp;'.$label.'</span>';
 			$currentcomponent->addguielem('_top', new gui_link('del', $label, $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete', true, false), 0);
-    }
+		}
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$currentcomponent->addguielem('', new gui_textbox('dirname', $dir['dirname'], _('Directory Name'), _('Name of this directory.')));
 		$currentcomponent->addguielem('', new gui_textbox('description', $dir['description'], _('Directory Description'), _('Description of this directory.')));
@@ -466,7 +462,7 @@ function directory_configprocess_exten() {
 
 //----------------------------------------------------------------------------
 // Dynamic Destination Registry and Recordings Registry Functions
-/*
+
 function directory_check_destinations($dest=true) {
 	global $active_modules;
 
@@ -474,28 +470,26 @@ function directory_check_destinations($dest=true) {
 	if (is_array($dest) && empty($dest)) {
 		return $destlist;
 	}
-	$sql = "SELECT id, name FROM directory_details ";
+	$sql = "SELECT id, dirname, invalid_destination FROM directory_details ";
 	if ($dest !== true) {
-		$sql .= "WHERE postdest in ('".implode("','",$dest)."')";
+		$sql .= "WHERE invalid_destination in ('".implode("','",$dest)."')";
 	}
 	$results = sql($sql,"getAll",DB_FETCHMODE_ASSOC);
 
-	//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
-
 	foreach ($results as $result) {
-		$thisdest = $result['postdest'];
-		$thisid   = $result['grpnum'];
+		$thisdest = $result['invalid_destination'];
+		$thisid   = $result['id'];
 		$destlist[] = array(
 			'dest' => $thisdest,
-			'description' => sprintf(_("Ring Group: %s (%s)"),$result['description'],$thisid),
-			'edit_url' => 'config.php?display=ringgroups&extdisplay=GRP-'.urlencode($thisid),
+			'description' => sprintf(_("Directory: %s "),($result['dirname']?$result['dirname']:$result['id'])),
+			'edit_url' => 'config.php?display=directory&id='.urlencode($result['id']),
 		);
 	}
 	return $destlist;
 }
 
-function directory_getdest($exten) {
-	return array("directory,$exten,1");
+function directory_getdest($id) {
+	return array("directory,$id,1");
 }
 
 function directory_getdestinfo($dest) {
@@ -503,6 +497,7 @@ function directory_getdestinfo($dest) {
 		$grp = explode(',',$dest);
 		$id = $grp[1];
 		$thisdir = directory_get_dir_details($id);
+
 		if (empty($thisdir)) {
 			return array();
 		} else {
@@ -518,19 +513,25 @@ function directory_getdestinfo($dest) {
 function directory_recordings_usage($recording_id) {
 	global $active_modules;
 
-	$results = sql("SELECT `id`, `dirname` FROM `directory_details` WHERE `announcement` = '$recording_id' OR `valid_recording` = '$recording_id' OR `repeat_recording` = '$recording_id' OR `invalid_recording ` = '$recording_id'","getAll",DB_FETCHMODE_ASSOC);
+	$results = sql("SELECT `id`, `dirname` FROM `directory_details` 
+								WHERE	`announcement` = '$recording_id' 
+								OR `valid_recording` = '$recording_id' 
+								OR `repeat_recording` = '$recording_id' 
+								OR `invalid_recording` = '$recording_id'",
+								"getAll",DB_FETCHMODE_ASSOC);
 	if (empty($results)) {
 		return array();
 	} else {
 		//$type = isset($active_modules['ivr']['type'])?$active_modules['ivr']['type']:'setup';
 		foreach ($results as $result) {
+			dbug('$result',$result);
 			$usage_arr[] = array(
-				'url_query' => 'config.php?display=directory&id='.urlencode($result['i']),
+				'url_query' => 'config.php?display=directory&id='.urlencode($result['id']),
 				'description' => sprintf(_("Directory: %s"),($result['dirname']?$result['dirname']:$result['id'])),
 			);
 		}
 		return $usage_arr;
 	}
 }
-*/
+
 ?>
