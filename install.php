@@ -15,12 +15,12 @@ if (! function_exists("outn")) {
 }
 
 //-----------------------------------------------------------------------------------------
-/* This forces very early testerd to uninstall and re-install their module as there is 
+/* This forces very early testers to uninstall and re-install their module as there is 
  * no migration code for the schema changes. 
  */
-$modinfo = module_getinfo('directory');
+$modinfo = modules_getversion('directory');
 if (is_array($modinfo)) {
-	$ver = $modinfo['directory']['dbversion'];
+	$ver = isset($modinfo['directory']['dbversion']) ? $modinfo['directory']['dbversion'] : '0.0';
   $status = $modinfo['directory']['status'];
 	if ($status != MODULE_STATUS_NOTINSTALLED && version_compare($ver,'2.8.0alpha1','lt')) {
     out(_('ERROR: with directory module upgrade:'));
