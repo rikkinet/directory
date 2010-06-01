@@ -524,7 +524,6 @@ function directory_recordings_usage($recording_id) {
 	} else {
 		//$type = isset($active_modules['ivr']['type'])?$active_modules['ivr']['type']:'setup';
 		foreach ($results as $result) {
-			dbug('$result',$result);
 			$usage_arr[] = array(
 				'url_query' => 'config.php?display=directory&id='.urlencode($result['id']),
 				'description' => sprintf(_("Directory: %s"),($result['dirname']?$result['dirname']:$result['id'])),
