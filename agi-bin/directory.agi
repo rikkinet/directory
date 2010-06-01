@@ -37,7 +37,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
     $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
-		$press=$dir->getKeypress($compound, '234567890#',3000);
+		$press=$dir->getKeypress($compound, '1234567890#',3000);
 		if(!empty($press['result']) || $press==0){
 			$search.=$press['result'];
 			$matches=$dir->search($search,1);

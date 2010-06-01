@@ -230,8 +230,8 @@ class Dir{
 
 		//the regex in the query will match the searchstring at the beging of the string or after a space
 		$num= array('1','2','3','4','5','6','7','8','9','0','#');
-		$alph=array("[\s@,-!/+=.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
-		$this->searchstring=str_replace($num,$alph,$key);
+		$alph=array("[ \s@,-\!/+=\.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
+    $this->searchstring=$this->db->escapeSimple(str_replace($num,$alph,$key));
     debug("search string for regex: {$this->searchstring}",6);
 
     //TODO: check db results for errors and fail gracefully
