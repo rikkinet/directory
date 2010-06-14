@@ -14,25 +14,6 @@ if (! function_exists("outn")) {
 	}
 }
 
-//-----------------------------------------------------------------------------------------
-/* This forces very early testers to uninstall and re-install their module as there is 
- * no migration code for the schema changes. 
- */
-$modinfo = modules_getversion('directory');
-if (is_array($modinfo)) {
-	$ver = isset($modinfo['directory']['dbversion']) ? $modinfo['directory']['dbversion'] : '0.0';
-  $status = $modinfo['directory']['status'];
-	if ($status != MODULE_STATUS_NOTINSTALLED && version_compare($ver,'2.8.0alpha1','lt')) {
-    out(_('ERROR: with directory module upgrade:'));
-    out(_('You must uninstall this version to upgrade.'));
-    out(_('Use the browser back button to go to Module Admin,'));
-    out(_('then uninstall the directory module and reinstall.'));
-    exit;
-  }
-}
-//-----------------------------------------------------------------------------------------
-
-
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
 
 outn(_('Adding directory_details table if needed...'));
