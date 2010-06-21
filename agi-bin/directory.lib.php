@@ -93,8 +93,8 @@ class Dir{
 
     //If any non-defaults (non-zero id) then lookup files
     //
-		if ($row['announcement'] || $row['valid_recording'] || $row['repeat_recording'] || $row['invalid_recording']) {
-      $sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['valid_recording'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
+		if ($row['announcement'] || $row['repeat_recording'] || $row['invalid_recording']) {
+      $sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
 	    if(DB::IsError($res)) {
         debug("FATAL: got error from getAll query",1);
@@ -108,7 +108,6 @@ class Dir{
       unset($res);
     }
 		$row['announcement'] = $row['announcement']&&isset($rec_file[$row['announcement']])?$rec_file[$row['announcement']]:'first-three-letters-entry';
-		$row['valid_recording'] = $row['valid_recording']&&isset($rec_file[$row['valid_recording']])?$rec_file[$row['valid_recording']]:'first-three-letters-entry';
 		$row['repeat_recording'] = $row['repeat_recording']&&isset($rec_file[$row['repeat_recording']])?$rec_file[$row['repeat_recording']]:'demo-nomatch';
 		$row['invalid_recording'] = $row['invalid_recording']&&isset($rec_file[$row['invalid_recording']])?$rec_file[$row['invalid_recording']]:'demo-nomatch';
 		return $row;

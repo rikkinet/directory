@@ -23,7 +23,6 @@ $sql = "CREATE TABLE IF NOT EXISTS directory_details (
     dirname varchar(50),
     description varchar(150),    
     announcement INT,
-    valid_recording INT,
     callid_prefix varchar(10),
     alert_info varchar(50),
     repeat_loops varchar(3),
@@ -72,5 +71,18 @@ if(DB::IsError($check)) {
   } else {
     out(_("ok"));
   }
+}
+
+$sql = "SELECT valid_recording FROM directory_details";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(!DB::IsError($check)) {
+outn(_("dropping valid_details field.."));
+	$sql = "ALTER TABLE `directory_details` DROP `valid_recording`";
+ 	$result = $db->query($sql);
+ 	if(DB::IsError($result)) { 
+		out(_("no valid_recording field???"));
+	} else {
+		out(_("ok"));
+	}
 }
 ?>

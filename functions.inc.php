@@ -6,7 +6,7 @@ function directory_configpageload() {
 					
     if ($_REQUEST['action'] == 'add') {
     	$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
-										'valid_recording', 'repeat_recording', 'invalid_recording', 
+										'repeat_recording', 'invalid_recording', 
 										'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
 										'default_directory', 'say_extension', 'id');
       
@@ -16,7 +16,6 @@ function directory_configpageload() {
 						$dir[$d] = 2;
 						break;
 					case 'announcement':
-					case 'valid_recording':
 					case 'repeat_recording':
 					case 'invalid_recording':
 						$dir[$d] = 0;
@@ -54,7 +53,6 @@ function directory_configpageload() {
 		
 		//generate page
 		$currentcomponent->addguielem($section, new gui_selectbox('announcement', $currentcomponent->getoptlist('recordings'), $dir['announcement'], _('Announcement'), _('Greetinging to be played on entry to the directory'), false));
-		$currentcomponent->addguielem($section, new gui_selectbox('valid_recording', $currentcomponent->getoptlist('recordings'), $dir['valid_recording'], _('Valid Recording'), _('Prompt to be played to caller prior to sending them to their requested destination.'), false));
 		$currentcomponent->addguielem($section, new gui_textbox('callid_prefix', $dir['callid_prefix'], _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')));
 		$currentcomponent->addguielem($section, new gui_textbox('alert_info', $dir['alert_info'], _('Alert Info'), _('ALERT_INFO to be sent with called from this Directory. Can be used for ditinctive ring for SIP devices.')));
 		$currentcomponent->addguielem($section, new gui_selectbox('repeat_loops', $currentcomponent->getoptlist('repeat_loops'), $dir['repeat_loops'], _('Invalid Retries'), _('Number of times to retry when receving an invalid/unmatched response from the caller'), false));
@@ -110,7 +108,7 @@ function directory_configprocess(){
 	if($_REQUEST['display']=='directory'){
 		global $db,$amp_conf;
 		//get variables for directory_details
-		$requestvars=array('id','dirname','description','announcement','valid_recording',
+		$requestvars=array('id','dirname','description','announcement',
 												'callid_prefix','alert_info','repeat_loops','repeat_recording',
 												'invalid_recording','invalid_destination','retivr','say_extension','default_directory');
 		foreach($requestvars as $var){
@@ -317,7 +315,7 @@ function directory_save_dir_details($vals){
 
   if ($vals['id']) {
 	  $sql='REPLACE INTO directory_details (id,dirname,description,announcement,
-				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
+				callid_prefix,alert_info,repeat_loops,repeat_recording,
 				invalid_recording,invalid_destination,retivr,say_extension)
 				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     $foo=$db->query($sql,$vals);
@@ -327,7 +325,7 @@ function directory_save_dir_details($vals){
   } else {
     unset($vals['id']);
 	  $sql='INSERT INTO directory_details (dirname,description,announcement,
-				valid_recording,callid_prefix,alert_info,repeat_loops,repeat_recording,
+				callid_prefix,alert_info,repeat_loops,repeat_recording,
 				invalid_recording,invalid_destination,retivr,say_extension)
 				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     $foo=$db->query($sql,$vals);
@@ -515,7 +513,6 @@ function directory_recordings_usage($recording_id) {
 
 	$results = sql("SELECT `id`, `dirname` FROM `directory_details` 
 								WHERE	`announcement` = '$recording_id' 
-								OR `valid_recording` = '$recording_id' 
 								OR `repeat_recording` = '$recording_id' 
 								OR `invalid_recording` = '$recording_id'",
 								"getAll",DB_FETCHMODE_ASSOC);
