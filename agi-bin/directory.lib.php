@@ -173,6 +173,7 @@ class Dir{
 						debug("looking for vm file $file using: ".basename($file),6);
 						if(substr($file,0,5) == 'greet' && is_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/'.$file)){
 						  $ret=$this->agi->stream_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/greet',$keys);
+              if ($ret['result']){$ret['result']=chr($ret['result']);}
 						  break 2;	
 					  }	
 				  }
@@ -192,12 +193,13 @@ class Dir{
 							$ret=$this->agi->wait_for_digit(750);
 						break;					
 					}
-					if(trim($ret['result'])){break;}
+					if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
 				}
 			break;
       //TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 			case 'tts':
-				$ret=$this->agi->exec('Flite '.$con['name'].'|'.$keys);
+				$ret=$this->agi->exec('Flite "'.$con['name'].'"|'.$keys);
+        if ($ret['result']){$ret['result']=chr($ret['result']);}
 			break;
 			default:
 				if(is_numeric($con['audio'])){
@@ -208,8 +210,8 @@ class Dir{
             $rec=explode('&',$rec);
             foreach($rec as $r){
               $ret=$this->agi->stream_file($r,$keys);
+					    if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
             }
-					  if(trim($ret['result'])){break;}
           } else {
             //TODO: handle error
             debug("ERROR: unknown/undefined sound file");

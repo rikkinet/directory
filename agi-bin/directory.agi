@@ -36,11 +36,22 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
 
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
-    $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
-		$press=$dir->getKeypress($compound, '1234567890#',3000);
+    if ($matches < 10) {
+      $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+      $validdigits = '1234567890#';
+    } else {
+      // don't allow #, get new recording that indicates such
+      $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+      $validdigits = '1234567890';
+    }
+	  $press=$dir->getKeypress($compound, $validdigits, 3000);
 		if(!empty($press['result']) || $press==0){
 			$search.=$press['result'];
 			$matches=$dir->search($search,1);
+      if ($matches > 9) {
+        $search = rtrim($search,'#');
+        debug("Too many found: $matches, remove # if set and try again");
+      }
 		}else{
 			$matchesloop++;
 		}
@@ -54,18 +65,20 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	if($matches > 1 && $matches < 9){
 		//draw up variable of valid key presses
 		$validkeys='';
-		for($i=1;$i<count($matches)+1;$i++){$validkeys.=$i;}
+		for($i=1;$i<$matches+1;$i++){$validkeys.=$i;}
+    debug("valid keys for entries are: $validkeys");
 		
 		//playback entries
 		$matches=$dir->search($search);
 		foreach($matches as $idx => $match){
 			$ret=$dir->getKeypress('for',$validkeys,0);if(trim($ret['result'])){break;}
 			$ret=$dir->readContact($matches[$idx],$validkeys,0);if(trim($ret['result'])){break;}
-			$ret=$dir->getKeypress('press',$validkeys,0);if(trim($ret['result'])){break;}
-			$ret=$dir->agi->say_digits($idx+1);if(trim($ret['result'])){break;}
+			$ret=$dir->getKeypress('press',$validkeys,0);if(trim($ret['result'])){;break;}
+			$ret=$dir->agi->say_digits($idx+1,$validkeys);if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
 		}
+    debug("got result: ".$ret['result']);
 		if(trim($ret['result'])){
-			call($matches[chr($ret['result'])-1]);
+			call($matches[$ret['result']-1]);
 		}
     $dir->agi->wait_for_digit(10000);
 	}elseif($matches==1){
