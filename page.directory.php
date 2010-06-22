@@ -1,5 +1,10 @@
 <?php
 
+#Dummy text for localization of Submit button
+if (false) {
+    _("Submit");
+    }
+
 //check for ajax request and process that immediately 
 if(isset($_REQUEST['ajaxgettr'])){//got ajax request
   $opts = $opts=explode('|',urldecode($_REQUEST['ajaxgettr']));
