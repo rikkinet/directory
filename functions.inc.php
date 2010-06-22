@@ -372,10 +372,10 @@ function directory_save_dir_entries($id,$entries){
 				$foreign_id = $db->escapeSimple($row['foreign_id']);
 			}
       $audio = $row['audio'] != '' ? $db->escapeSimple($row['audio']) : ($row['foreign_id'] == 'custom' ? 'tts' : 'vm');
-			$insert.='("'.$id.'","'.$db->escapeSimple(trim($row['name'])).'","'.$type.'","'.$foreign_id.'","'.$audio.'","'.$db->escapeSimple(trim($row['num'])).'")';
-			if(count($entries) != $idx+1){//add a , if its not the last entrie
-				$insert.=',';
+      if (!empty($insert)) {
+        $insert .= ',';
 			}
+      $insert.='("'.$id.'","'.$db->escapeSimple(trim($row['name'])).'","'.$type.'","'.$foreign_id.'","'.$audio.'","'.$db->escapeSimple(trim($row['num'])).'")';
 		}		
 		sql('INSERT INTO directory_entries (id,name,type,foreign_id,audio,dial) VALUES '.$insert);
 	}
