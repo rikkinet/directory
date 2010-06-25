@@ -15,7 +15,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
     $buffer = '';
     if ($needs_welcome) {
       $needs_welcome = false;
-		  $search=$dir->agi->fastpass_get_data($buffer, 'dir-welcome',100,3);
+		  $search=$dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
       if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
 		    $search=$dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
       }
@@ -29,6 +29,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	//hangup if we failed to receive anything meanigfull
 	if($loopcounter2 == 3){//seem like we ran out of tries... 
 		$dir->agi->stream_file('sorry-youre-having-problems');
+    $dir->bail();
 		break;
 	}
 	$matchesloop=0;
@@ -37,11 +38,11 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 
 	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
     if ($matches < 10) {
-      $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+      $compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-or-pound');
       $validdigits = '1234567890#';
     } else {
       // don't allow #, get new recording that indicates such
-      $compound = array('silence/1','conf-thereare',(integer)$matches,'users','in-the','directory','dir-enter-more-letters');
+      $compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-continue');
       $validdigits = '1234567890';
     }
 	  $press=$dir->getKeypress($compound, $validdigits, 3000);
