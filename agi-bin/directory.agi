@@ -63,7 +63,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	}
 
 	//act based on the amount of matches
-	if($matches > 1 && $matches < 9){
+	if($matches > 1 && $matches <= 9){
 		//draw up variable of valid key presses
 		$validkeys='';
 		for($i=1;$i<$matches+1;$i++){$validkeys.=$i;}
