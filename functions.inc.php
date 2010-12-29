@@ -486,6 +486,11 @@ function directory_check_destinations($dest=true) {
 	return $destlist;
 }
 
+function directory_change_destination($old_dest, $new_dest) {
+	$sql = 'UPDATE directory_details SET invalid_destination = "' . $new_dest . '" WHERE invalid_destination = "' . $old_dest . '"';
+	sql($sql, "query");
+}
+
 function directory_getdest($id) {
 	return array("directory,$id,1");
 }
@@ -529,5 +534,4 @@ function directory_recordings_usage($recording_id) {
 		return $usage_arr;
 	}
 }
-
 ?>
