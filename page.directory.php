@@ -37,7 +37,7 @@ directory_drawListMenu();
 
 if($action=='' && $id==''){
 	echo '<h2 id="title">Directory</h2>';
-	echo '<br /><br /><input type="button" value="'._('Add a new Directory').'" onclick="window.location.href=\'/admin/config.php?type='.$type.'&display=directory&action=add\';"/>';
+	echo '<br /><br /><input type="button" value="'._('Add a new Directory').'" onclick="window.location.href=\'config.php?type='.$type.'&display=directory&action=add\';"/>';
 	echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
 }
 
