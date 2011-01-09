@@ -1,115 +1,99 @@
 #!/usr/bin/php -q
 <?php
 error_reporting(1);
-set_error_handler("error_handler");
-
-verbose('entered dir!',6);
 require_once(dirname(__FILE__).'/directory.lib.php');
-$loopcounter1	= 0;
-$loopcounter2 	= 0;
-$matches		= false;
-$matches 		= false;
-$needs_welcome 	= true;
-$search			= array();
-$dir			= new Dir();
+$loopcounter1=$loopcounter2=0;
+$matches=false;
+$search=array();
+$dir=new Dir();
+$matches = false;
+$needs_welcome = true;
 
-while ($loopcounter1 <= $dir->dir['repeat_loops']) {
+if ($dir->agivar['keypress']) {
+	$needs_welcome = false;
+	$search = $dir->agivar['keypress'];
+	$matches = true;
+}
+
+while($loopcounter1 <= $dir->dir['repeat_loops']){
 	//get inital search term
-	while ($loopcounter2 <= $dir->dir['repeat_loops'] && !$matches ) {
+	while($loopcounter2 <= $dir->dir['repeat_loops'] && !$matches ){
 		//get any number of digits, terminated by timeout or #
-    $buffer = '';
-	if ($needs_welcome) {
-		$needs_welcome = false;
-		$search = $dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
-      if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
- 		$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'], 3000, 3);
-      }
-    } else {
-		$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
+		$buffer = '';
+		if ($needs_welcome) {
+			$needs_welcome = false;
+			$search = $dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
+			if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
+				$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
+			}
+		} else {
+ 			$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'], 3000, 3);
     }
 		$search = $search['result'];//being set so we can use it later
 		$matches = $dir->search($search,1);
 		$loopcounter2++;
 	}
 	//hangup if we failed to receive anything meanigfull
-	if ($loopcounter2 == 3) {//seem like we ran out of tries... 
+	if($loopcounter2 == 3){//seem like we ran out of tries... 
 		$dir->agi->stream_file('sorry-youre-having-problems');
-    $dir->bail();
+		$dir->bail();
 		break;
 	}
 	$matchesloop = 0;
 	$matches = $dir->search($search,1);
 	//prompt the caller for more info if there are too many results (and he didnt terminate with #)
 
-	while($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#'){
-	    if ($matches < 10) {
-	      $compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-or-pound');
-	      $validdigits = '1234567890#';
-	    } else {
-	      // don't allow #, get new recording that indicates such
-	      $compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-continue');
-	      $validdigits = '1234567890';
-	    }
-		  $press = $dir->getKeypress($compound, $validdigits, 3000);
-			if (!empty($press['result']) || $press==0) {
-				$search .= $press['result'];
-				$matches = $dir->search($search,1);
-	      if ($matches > 9) {
-	        $search = rtrim($search,'#');
-	        verbose("Too many found: $matches, remove # if set and try again",6);
-	      }
-			} else {
-				$matchesloop++;
+	while ($matches > 1 && $matchesloop < $dir->dir['repeat_loops'] && substr($search,-1)!='#') {
+		if ($matches < 10) {
+			$compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-or-pound');
+			$validdigits = '1234567890#';
+		} else {
+			// don't allow #, get new recording that indicates such
+			$compound = array('silence/1','cdir-there-are',(integer)$matches,'cdir-matching-entries-continue');
+			$validdigits = '1234567890';
+		}
+		$press=$dir->getKeypress($compound, $validdigits, 3000);
+		if(!empty($press['result']) || $press==0){
+			$search.=$press['result'];
+			$matches=$dir->search($search,1);
+			if ($matches > 9) {
+				$search = rtrim($search,'#');
+				dbug("Too many found: $matches, remove # if set and try again");
 			}
-	    // if they timeout and there are 3 or fewer matches then just play them
-	    if (empty($press['result']) && $matches <=3) {
-	      break;
-	    }
+		}else{
+			$matchesloop++;
+		}
+		// if they timeout and there are 3 or fewer matches then just play them
+		if (empty($press['result']) && $matches <=3) {
+			break;
+		}
 	}
 
 	//act based on the amount of matches
-	if ($matches > 1 && $matches <= 9) {
+	if($matches > 1 && $matches <= 9){
 		//draw up variable of valid key presses
-		$validkeys = '';
-		for ($i=1; $i < $matches+1; $i++) {
+		$validkeys='';
+		for ($i=1; $i<$matches+1; $i++) { 
 			$validkeys .= $i;
 		}
-    	verbose("valid keys for entries are: $validkeys",6);
+		dbug("valid keys for entries are: $validkeys");
 		
 		//playback entries
-		$matches = $dir->search($search);
-		foreach ($matches as $idx => $match) {
-			$ret = $dir->getKeypress('for',$validkeys,0);
-			if (trim($ret['result'])) {
-				break;
-			}
-			$ret = $dir->readContact($matches[$idx],$validkeys,0);
-			if (trim($ret['result'])) {
-				break;
-			}
-			$ret = $dir->getKeypress('press',$validkeys,0);
-			if (trim($ret['result'])) {
-				break;
-			}
-			$ret = $dir->agi->say_digits($idx+1,$validkeys);
-			if (trim($ret['result'])) {
-				$ret['result'] = chr($ret['result']);
-				break;
-			}
+		$matches=$dir->search($search);
+		foreach($matches as $idx => $match){
+			$ret=$dir->getKeypress('for',$validkeys,0);if(trim($ret['result'])){break;}
+			$ret=$dir->readContact($matches[$idx],$validkeys,0);if(trim($ret['result'])){break;}
+			$ret=$dir->getKeypress('press',$validkeys,0);if(trim($ret['result'])){;break;}
+			$ret=$dir->agi->say_digits($idx+1,$validkeys);if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
 		}
-		//wait for a responce before restarting loop
-    	$ret = $dir->agi->wait_for_digit(10000);
-		if (trim($ret['result'])) {
-			$ret['result'] = chr($ret['result']);
-		}
-		
-		verbose("got result: ".$ret['result'],6);
-		if (trim($ret['result'])) {
+		dbug("got result: ".$ret['result']);
+		if(trim($ret['result'])){
 			call($matches[$ret['result']-1]);
 		}
-	} elseif ($matches==1) {
+		$dir->agi->wait_for_digit(10000);
+	} elseif($matches == 1) {
 		//call person $macthes[0];
-		$matches = $dir->search($search);
+		$matches=$dir->search($search);
 		call($matches[0]);
 	} else {
 		$dir->agi->stream_file($dir->dir['repeat_recording']);
@@ -118,43 +102,35 @@ while ($loopcounter1 <= $dir->dir['repeat_loops']) {
 	}
 }
 
-if($loopcounter1){
+if ($loopcounter1) {
   $dir->bail();
 }
 
 function call($contact){
 	global $dir;
 	$dir->readContact($contact,$validkeys,0);
-	if ($dir->dir['alert_info'] != '') {
+	if($dir->dir['alert_info'] != ''){
 		$dir->agi->set_alertinfo($dir->dir['alert_info']);
 	}
-	if ($dir->dir['callid_prefix'] != '') {
+	if($dir->dir['callid_prefix'] != ''){
 		$dir->agi->set_variable('CALLERID(name)',$dir->dir['callid_prefix'].$dir->dir['calleridname']);
 	}
 	$dir->agi->set_variable('DIR_DIAL',$contact['dial']);
 	exit;
 }
 
-//send debug to asterisk cli
-function verbose($string, $level=3){
-	global $dir;
-  $dir->agi->verbose($string, $level);
+/* 
+ * FreePBX dbuging function
+ * This function can be called as follows:
+ * dbug() - will just print a time stamp to the dbug log file ($amp_conf['FPBXDBUGFILE'])
+ * dbug('string') - same as above + will print the string
+ * dbug('string',$array) - same as above + will print_r the array after the message
+ * dbug($array) - will print_r the array with no message (just a time stamp)  
+ * dbug('string',$array,1) - same as above + will var_dump the array
+ * dbug($array,1) - will var_dump the array with no message  (just a time stamp)
+ * 	 
+*/  
 
-  // send same message to debug log if enabled
-  dbug($string);
-}
-
- /* 
-  * FreePBX Debugging function
-  * This function can be called as follows:
-  * dbug() - will just print a time stamp to the debug log file ($amp_conf['FPBXDBUGFILE'])
-  * dbug('string') - same as above + will print the string
-  * dbug('string',$array) - same as above + will print_r the array after the message
-  * dbug($array) - will print_r the array with no message (just a time stamp)  
-  * dbug('string',$array,1) - same as above + will var_dump the array
-  * dbug($array,1) - will var_dump the array with no message  (just a time stamp)
-  * 	 
- 	*/  
 function dbug(){
 	$opts = func_get_args();
 
@@ -180,7 +156,7 @@ function dbug(){
 			break;	
 	}
 	
-	if (isset($disc) && $disc) {
+	if ($disc) {
 		$disc = ' \'' . $disc . '\':';
 	}
 	
@@ -188,7 +164,7 @@ function dbug(){
 	$txt = date("Y-M-d H:i:s") 
 		. "\t" . $bt[0]['file'] . ':' . $bt[0]['line'] 
 		. "\n\n"
-		. (isset($disc) ? $disc : '' )
+		. $disc 
 		. "\n"; //add timestamp + file info
 	dbug_write($txt);
 	if ($dump==1) {//force output via var_dump
@@ -205,6 +181,7 @@ function dbug(){
 }
 
 function dbug_write($txt,$check=''){
+	global $amp_conf;
 	$append=false;
 	//optionaly ensure that dbug file is smaller than $max_size
 	if($check){
@@ -223,10 +200,12 @@ function dbug_write($txt,$check=''){
 function error_handler($errno, $errstr, $errfile, $errline, $errcontext){
 	if ($errno == 2048){return;} //keeps out erros related to pear::db
 	$error = "\n\n";
-	$error .= date("Y-M-d H:i:s").$disc."\t"; //add timestamp
-	$error .= $errfile."[".$errline."]\n";
-	$error .= 'Error ['.$errno."]: ".$errstr."\n";
+	$error .= date("Y-M-d H:i:s").$disc."\n"; //add timestamp
+	$error .= 'Error Number '.$errno.": ".$errstr."\n";
+	$error .= 'In file: '.$errfile."\n";
+	$error .=  'At line number: '.$errline."\n";
 	//$error .=  print_r($errcontext)."\n";
-	dbug_write($error);
+	file_put_contents('/tmp/freepbx_debug.log',$error, FILE_APPEND);
 }
+set_error_handler("error_handler");
 ?>
