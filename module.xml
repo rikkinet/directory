@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.8.0.1</version>
+	<version>2.9.0.0</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -15,6 +15,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+	*2.9.0.0* #4502, #4655, #4614, #4566, #4723
 	*2.8.0.1* #4614
 	*2.8.0.0* #4502
 	*2.8.0rc1.0* proper sounds files added
@@ -31,6 +32,6 @@
 	*2.8.0.0alpha1.0* Schema changes requiring uninstall/reinstall, many enhancements and fixes
 	*2.8.0.0alpha0.2* Initial release
 	</changelog>
-	<location>release/2.8/directory-2.8.0.1.tgz</location>
-	<md5sum>4a2a12c0c63f0b24ffb69a00fa23bbc1</md5sum>
+	<location>release/2.9/directory-2.9.0.0.tgz</location>
+	<md5sum>e454856b221458c4feeb717b51cc4a98</md5sum>
 </module>
