@@ -92,24 +92,24 @@ class Dir{
 	function __construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
-    //TODO: Error Checking
+		//TODO: Error Checking
 
-    //If any non-defaults (non-zero id) then lookup files
+		//If any non-defaults (non-zero id) then lookup files
     //
 		if ($row['announcement'] || $row['repeat_recording'] || $row['invalid_recording']) {
-      $sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
+			$sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
-	    if(DB::IsError($res)) {
-        dbug("FATAL: got error from getAll query",1);
-        dbug($res->getdbugInfo());
-      }
-      $rec_file = array();
-      foreach ($res as $entry) {
-        //TODO: check if file exists, which means splitting on & and checkking all
-        $rec_file[$entry['id']] = $entry['filename'];
-      }
-      unset($res);
-    }
+			if(DB::IsError($res)) {
+				dbug("FATAL: got error from getAll query",1);
+				dbug($res->getDebugInfo());
+			}
+			$rec_file = array();
+			foreach ($res as $entry) {
+				//TODO: check if file exists, which means splitting on & and checkking all
+				$rec_file[$entry['id']] = $entry['filename'];
+			}
+			unset($res);
+		}
 		$row['announcement'] = $row['announcement']&&isset($rec_file[$row['announcement']])?$rec_file[$row['announcement']]:'cdir-please-enter-first-three';
 		$row['repeat_recording'] = $row['repeat_recording']&&isset($rec_file[$row['repeat_recording']])?$rec_file[$row['repeat_recording']]:'cdir-sorry-no-entries';
 		$row['invalid_recording'] = $row['invalid_recording']&&isset($rec_file[$row['invalid_recording']])?$rec_file[$row['invalid_recording']]:'cdir-transferring-further-assistance';
@@ -132,157 +132,159 @@ class Dir{
 		}
 	}
 
-  // Return null on nothing pressed, false on error, otherwise the key
-  // TODO: make it so you can pass in an array:
-  //
+	// Return null on nothing pressed, false on error, otherwise the key
+	// TODO: make it so you can pass in an array:
+	//
 	function getKeypress($filename, $pressables='', $timeout=2000){
-    if (!is_array($filename)) {
-      $filename = array($filename);
-    }
-    foreach ($filename as $chunk) {
-      $ret=is_int($chunk)?$this->agi->say_number($chunk,$pressables):$this->agi->stream_file($chunk,$pressables);
-	    if(!empty($ret['result'])) {break;}
-    }
-	  if(empty($ret['result'])){
-	  	$ret=$this->agi->wait_for_digit($timeout);
-	  }
-    switch ($ret['result']) {
-      case 0:
-        return null;
-      case -1:
-        return false;
-      default:
-        return chr($ret['result']);
-    }
-  }
+		if (!is_array($filename)) {
+			$filename = array($filename);
+		}
+		foreach ($filename as $chunk) {
+			$ret=is_int($chunk)?$this->agi->say_number($chunk,$pressables):$this->agi->stream_file($chunk,$pressables);
+			if(!empty($ret['result'])) {break;}
+		}
+		if(empty($ret['result'])){
+			$ret=$this->agi->wait_for_digit($timeout);
+		}
+		switch ($ret['result']) {
+			case 0:
+				return null;
+			case -1:
+				return false;
+			default:
+				return chr($ret['result']);
+		}
+	}
 	
 	function readContact($con,$keys=''){
 		switch($con['audio']){
 			case 'vm':
-
-        $vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
+				$vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
 				$vm_dir = $vm_dir['data'];
-				dbug("got directory $vm_dir for user {$con['dial']}",6);
-
+				debug("got directory $vm_dir for user {$con['dial']}",6);
 				//check to see if we have a greet.* and play it. otherwise, fallback to spelling the name
 
-        if ($vm_dir && $vm_dir != 'novm') {
+				if ($vm_dir && $vm_dir != 'novm') {
 					if (!$this->vmbasedir) {
 						$this->vmbasedir = $this->agi_get_var('ASTSPOOLDIR').'/voicemail/';
 					}
-				  $dir=scandir($this->vmbasedir.$vm_dir.'/'.$con['dial']);
-				  foreach($dir as $file){
+					$dir=scandir($this->vmbasedir.$vm_dir.'/'.$con['dial']);
+					foreach($dir as $file){
 						dbug("looking for vm file $file using: ".basename($file),6);
 						if(substr($file,0,5) == 'greet' && is_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/'.$file)){
-						  $ret=$this->agi->stream_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/greet',$keys);
-              if ($ret['result']){$ret['result']=chr($ret['result']);}
-						  break 2;	
-					  }	
-				  }
-        }
-        //fallthough if not successfull
+							$ret=$this->agi->stream_file($this->vmbasedir.$vm_dir.'/'.$con['dial'].'/greet',$keys);
+							if ($ret['result']) {
+								$ret['result']=chr($ret['result']);
+							}
+							break 2;	
+						}	
+					}
+				}
+				//fallthough if not successfull
 			case 'spell':
 				foreach(str_split($con['name'],1) as $char){
 					switch(true){
 						case ctype_alpha($char):
 							$ret=$this->agi->evaluate('SAY ALPHA '.$char.' '.$keys);
-              dbug("returned from SAY ALPHA with code/result {$ret['code']}/{$ret['result']}",6);
-						break;
+							dbug("returned from SAY ALPHA with code/result {$ret['code']}/{$ret['result']}",6);
+							break;
 						case ctype_digit($char):
 							$ret=$this->agi->say_digits($char, $keys);
-						break;
+							break;
 						case ctype_space($char)://pause
 							$ret=$this->agi->wait_for_digit(750);
-						break;					
+							break;					
 					}
-					if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
+					if(trim($ret['result'])) {
+						$ret['result'] = chr($ret['result']);
+						break;
+					}
 				}
-			break;
-      //TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
+				break;
+				//TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 			case 'tts':
 				$ret=$this->agi->exec('Flite "'.$con['name'].'"|'.$keys);
-        if ($ret['result']){$ret['result']=chr($ret['result']);}
-			break;
+				if ($ret['result']){$ret['result']=chr($ret['result']);}
+				break;
 			default:
 				if(is_numeric($con['audio'])){
 					$sql='SELECT filename from recordings where id = ?';
 					$rec=$this->db->getOne($sql, array($con['audio']));
-          dbug("got record id: {$con['audio']} file(s): $rec");
-          if($rec){
-            $rec=explode('&',$rec);
-            foreach($rec as $r){
-              $ret=$this->agi->stream_file($r,$keys);
-					    if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
-            }
-          } else {
-            //TODO: handle error
-            dbug("ERROR: unknown/undefined sound file");
-          }
-        }
-			break; 
+					dbug("got record id: {$con['audio']} file(s): $rec");
+					if($rec){
+						$rec=explode('&',$rec);
+						foreach($rec as $r){
+							$ret=$this->agi->stream_file($r,$keys);
+							if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
+						}
+					} else {
+						//TODO: handle error
+						dbug("ERROR: unknown/undefined sound file");
+					}
+				}
+				break; 
+			}
+			return $ret;
 		}
-		return $ret;
-	}
 	
 	function search($key,$count=0){
 		if($key == ''){return false;}//requre search term
 
-    if(strstr($key,'0') !== false) {
-      dbug("user pressed 0 - bailing out");
-      $this->bail();
-    }
+		if(strstr($key,'0') !== false) {
+			debug("user pressed 0 - bailing out");
+			$this->bail();
+		}
 
 		//the regex in the query will match the searchstring at the beging of the string or after a space
 		$num= array('1','2','3','4','5','6','7','8','9','0','#');
 		$alph=array("[ \s@,-\!/+=\.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
-    $this->searchstring=$this->db->escapeSimple(str_replace($num,$alph,$key));
-    dbug("search string for regex: {$this->searchstring}",6);
+		$this->searchstring=$this->db->escapeSimple(str_replace($num,$alph,$key));
+		dbug("search string for regex: {$this->searchstring}",6);
 
-    //TODO: check db results for errors and fail gracefully
+		//TODO: check db results for errors and fail gracefully
 
-    $vtable = '(SELECT DISTINCT a.audio, IF(a.name != "",a.name,b.name) name, IF(a.dial != "",a.dial,b.extension) dial FROM directory_entries a LEFT JOIN users b ON a.foreign_id = b.extension WHERE id = "'.$this->directory.'") v';
+		$vtable = '(SELECT DISTINCT a.audio, IF(a.name != "",a.name,b.name) name, IF(a.dial != "",a.dial,b.extension) dial FROM directory_entries a LEFT JOIN users b ON a.foreign_id = b.extension WHERE id = "'.$this->directory.'") v';
 		if($count==1){
-      $sql="SELECT COUNT(*) FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
+			$sql="SELECT COUNT(*) FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
 			$res=$this->db->getOne($sql);
-	    if(DB::IsError($res)) {
-        dbug("FATAL: got error from COUNT(*) query");
-        dbug($res->getdbugInfo());
-      }
-      dbug("Found $res possible matches from $key");
+			if(DB::IsError($res)) {
+				dbug("FATAL: got error from COUNT(*) query");
+				dbug($res->getDebugInfo());
+			}
+			dbug("Found $res possible matches from $key");
 		}else{
-      $sql="SELECT * FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
+			$sql="SELECT * FROM $vtable WHERE name REGEXP \"(^| ){$this->searchstring}\"";
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
-	    if(DB::IsError($res)) {
-        dbug("FATAL: got error from getAll query");
-        dbug($res->getdbugInfo());
-      } else {
-        dbug("Found the following matches:");
-        foreach ($res as $ent) {
-          dbug("name: {$ent['name']}, audio: {$ent['audio']}, dial: {$ent['dial']}");
-        }
-      }
+			if(DB::IsError($res)) {
+				dbug("FATAL: got error from getAll query");
+				dbug($res->getDebugInfo());
+			} else {
+				dbug("Found the following matches:");
+				foreach ($res as $ent) {
+					dbug("name: {$ent['name']}, audio: {$ent['audio']}, dial: {$ent['dial']}");
+				}
+			}
 		}
 		return $res;
 	}
 
-  function bail() {
-	  //do something if we are exiting due to to many tries
-    //
-    dbug("User pressed zero, passing back recording of {$this->dir['invalid_recording']}");
-	  $this->agi->set_variable('DIR_INVALID_RECORDING',$this->dir['invalid_recording']);
-	  if($this->agi_get_var('IVR_CONTEXT')){
-      $this->agi->set_extension('retivr');
-	  }else{
-      $dest = explode(',',$this->dir['invalid_destination']);
-      $this->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
-      $this->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
-      $this->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
-      $this->agi->set_extension('invalid');
-	  }
-    $this->agi->set_priority('1');
-    exit;
-  }
-
+	function bail() {
+		//do something if we are exiting due to to many tries
+		//
+		dbug("User pressed zero, passing back recording of {$this->dir['invalid_recording']}");
+		$this->agi->set_variable('DIR_INVALID_RECORDING',$this->dir['invalid_recording']);
+		if($this->agi_get_var('IVR_CONTEXT')){
+			$this->agi->set_extension('retivr');
+		}else{
+	 		$dest = explode(',',$this->dir['invalid_destination']);
+			$this->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
+			$this->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
+			$this->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
+			$this->agi->set_extension('invalid');
+		}
+		$this->agi->set_priority('1');
+		exit;
+	}
 }
 
 ?>
