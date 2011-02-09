@@ -88,14 +88,14 @@ class Dir{
 	}
 	
 	//get options associated with the current dir
-  // TODO: handle getRow failures
+ 	// TODO: handle getRow failures
 	function __construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
 		//TODO: Error Checking
 
 		//If any non-defaults (non-zero id) then lookup files
-    //
+ 		//
 		if ($row['announcement'] || $row['repeat_recording'] || $row['invalid_recording']) {
 			$sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);
@@ -156,18 +156,19 @@ class Dir{
 		}
 	}
 	
-	function readContact($con,$keys=''){
+	function readContact($con, $keys='#'){
 		switch($con['audio']){
 			case 'vm':
 				$vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
 				$vm_dir = $vm_dir['data'];
-				debug("got directory $vm_dir for user {$con['dial']}",6);
+				dbug('got directory ' . $vm_dir . ' for user ' . $con['dial']);
 				//check to see if we have a greet.* and play it. otherwise, fallback to spelling the name
 
 				if ($vm_dir && $vm_dir != 'novm') {
 					if (!$this->vmbasedir) {
 						$this->vmbasedir = $this->agi_get_var('ASTSPOOLDIR').'/voicemail/';
 					}
+					
 					$dir=scandir($this->vmbasedir.$vm_dir.'/'.$con['dial']);
 					foreach($dir as $file){
 						dbug("looking for vm file $file using: ".basename($file),6);
@@ -182,17 +183,18 @@ class Dir{
 				}
 				//fallthough if not successfull
 			case 'spell':
-				foreach(str_split($con['name'],1) as $char){
+				foreach(str_split(strtolower($con['name']),1) as $char){
+					dbug('saying '.$char.' from string '.strtolower($con['name']));
 					switch(true){
 						case ctype_alpha($char):
-							$ret=$this->agi->evaluate('SAY ALPHA '.$char.' '.$keys);
+							$ret = $this->agi->evaluate('SAY ALPHA '.$char.' '.$keys);
 							dbug("returned from SAY ALPHA with code/result {$ret['code']}/{$ret['result']}",6);
 							break;
 						case ctype_digit($char):
-							$ret=$this->agi->say_digits($char, $keys);
+							$ret = $this->agi->say_digits($char, $keys);
 							break;
 						case ctype_space($char)://pause
-							$ret=$this->agi->wait_for_digit(750);
+							$ret = $this->agi->wait_for_digit(750);
 							break;					
 					}
 					if(trim($ret['result'])) {
@@ -239,7 +241,7 @@ class Dir{
 		$num= array('1','2','3','4','5','6','7','8','9','0','#');
 		$alph=array("[ \s@,-\!/+=\.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
 		$this->searchstring=$this->db->escapeSimple(str_replace($num,$alph,$key));
-		dbug("search string for regex: {$this->searchstring}",6);
+		dbug("search string for regex: {$this->searchstring}");
 
 		//TODO: check db results for errors and fail gracefully
 

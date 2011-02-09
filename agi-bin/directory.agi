@@ -108,7 +108,7 @@ if ($loopcounter1) {
 
 function call($contact){
 	global $dir;
-	$dir->readContact($contact,$validkeys,0);
+	$dir->readContact($contact);
 	if($dir->dir['alert_info'] != ''){
 		$dir->agi->set_alertinfo($dir->dir['alert_info']);
 	}
