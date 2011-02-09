@@ -81,16 +81,37 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		//playback entries
 		$matches=$dir->search($search);
 		foreach($matches as $idx => $match){
-			$ret=$dir->getKeypress('for',$validkeys,0);if(trim($ret['result'])){break;}
-			$ret=$dir->readContact($matches[$idx],$validkeys,0);if(trim($ret['result'])){break;}
-			$ret=$dir->getKeypress('press',$validkeys,0);if(trim($ret['result'])){;break;}
-			$ret=$dir->agi->say_digits($idx+1,$validkeys);if(trim($ret['result'])){$ret['result']=chr($ret['result']);break;}
+			$ret = $dir->getKeypress('for',$validkeys,0);
+			if (trim($ret['result'])) {
+				break;
+			}
+			$ret = $dir->readContact($matches[$idx],$validkeys,0);
+			if (trim($ret['result'])) {
+				break;
+			}
+			$ret = $dir->getKeypress('press',$validkeys,0);
+			if (trim($ret['result'])) {
+				break;
+			}
+			$ret = $dir->agi->say_digits($idx+1,$validkeys);
+			if (trim($ret['result'])) {
+				$ret['result'] = chr($ret['result']);
+				break;
+			}
 		}
-		dbug("got result: ".$ret['result']);
+		//wait for a responce before restarting loop
+		if (!isset($ret) || !$ret) {
+			$ret = $dir->agi->wait_for_digit(10000);
+			if (trim($ret['result'])) {
+				$ret['result'] = chr($ret['result']);
+			}
+		} 
+
+
+		debug("got result: ".$ret['result']);
 		if(trim($ret['result'])){
 			call($matches[$ret['result']-1]);
 		}
-		$dir->agi->wait_for_digit(10000);
 	} elseif($matches == 1) {
 		//call person $macthes[0];
 		$matches=$dir->search($search);
