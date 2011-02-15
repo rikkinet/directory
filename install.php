@@ -3,7 +3,7 @@ global $db, $amp_conf;
 
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
 
-outn(_('Adding directory_details table if needed...'));
+out(_('Adding directory tables if needed'));
 
 $sql[] = "CREATE TABLE IF NOT EXISTS directory_details (
     id INT NOT NULL PRIMARY KEY $autoincrement,
