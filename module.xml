@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.9.0.1</version>
+	<version>2.9.0.2</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -15,6 +15,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+	*2.9.0.2* #4750
 	*2.9.0.1* removed duplicate functions
 	*2.9.0.0* #4502, #4655, #4614, #4566, #4723
 	*2.8.0.1* #4614
@@ -33,6 +34,6 @@
 	*2.8.0.0alpha1.0* Schema changes requiring uninstall/reinstall, many enhancements and fixes
 	*2.8.0.0alpha0.2* Initial release
 	</changelog>
-	<location>release/2.9/directory-2.9.0.1.tgz</location>
-	<md5sum>6697f025d3218c27eae5ad8a1a001b3b</md5sum>
+	<location>release/2.9/directory-2.9.0.2.tgz</location>
+	<md5sum>a0ba397f27d797aafc1a87ea72a4f9a7</md5sum>
 </module>
