@@ -2,8 +2,8 @@
 
 #Dummy text for localization of Submit button
 if (false) {
-    _("Submit");
-    }
+	_("Submit");
+}
 
 //check for ajax request and process that immediately 
 if(isset($_REQUEST['ajaxgettr'])){//got ajax request
@@ -33,13 +33,9 @@ foreach ($requestvars as $var){
 	$$var = isset($_REQUEST[$var])?$_REQUEST[$var]:'';
 }
 
-/* TODO: mbrevda, what is this? it breaks the default_directory stuff (though if you change def_dire to default_directory
- *       here and above it fixes it but redundantly by saving it twice.
- *
-if (isset($Submit) && $Submit == 'Submit' && isset($def_dir)) {
+if (isset($Submit) && $Submit == 'Submit' && isset($def_dir) && $def_dir) {
 	directory_save_default_dir($def_dir);
 }
- */
 
 //draw right nav bar
 directory_drawListMenu();

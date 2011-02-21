@@ -9,7 +9,7 @@ function directory_configpageload() {
 			$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
 						'repeat_recording', 'invalid_recording', 
 						'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
-						'default_directory', 'say_extension', 'id');
+						'say_extension', 'id');
       
 			foreach ($deet as $d) {
 				switch ($d){
@@ -67,7 +67,6 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($section, new gui_drawselects('invalid_destination', 0, $dir['invalid_destination'], _('Invalid Destination'), _('Destination to send the call to after Invalid Recording is played.'), false));
 		$currentcomponent->addguielem($section, new gui_checkbox('retivr', $dir['retivr'], _('Return to IVR'), _('When selected, if the call passed through an IVR that had "Return to IVR" selected, the call will be returned there instead of the Invalid destination.'),true));
 		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transfered to will be announced prior to the transfer'),true));
-		$currentcomponent->addguielem($section, new gui_checkbox('default_directory', $dir['default_directory'], _('Default Directory'), _('When checked, this becomes the default directory and replaces any other directory as the default directory. This has the effect of exposing entries for this directory into the Extension/User page'),true));
 		$currentcomponent->addguielem($section, new gui_hidden('id', $dir['id']));
 		$currentcomponent->addguielem($section, new gui_hidden('action', 'edit'));
 		
@@ -117,7 +116,7 @@ function directory_configprocess(){
 		$requestvars = array('id','dirname','description','announcement',
 							'callid_prefix','alert_info','repeat_loops',
 							'repeat_recording','invalid_recording',
-							'invalid_destination','retivr','say_extension','default_directory');
+							'invalid_destination','retivr','say_extension');
 		foreach($requestvars as $var){
 			$vars[$var] = isset($_REQUEST[$var]) 	? $_REQUEST[$var]		: '';
 		}
@@ -199,13 +198,13 @@ function directory_get_dir_details($id){
 	$clean_id					= $db->escapeSimple($id);
 	$sql						= "SELECT * FROM directory_details WHERE ID = $clean_id";
 	$row						= sql($sql,'getRow',DB_FETCHMODE_ASSOC);
-  $row['default_directory'] = directory_get_default_dir();
 	return $row;
 }
 
 function directory_delete($id){
 	global $db;
 	$id = $db->escapeSimple($id);
+	sql("DELETE FROM directory_details WHERE id = $id");
 	sql("DELETE FROM directory_entries WHERE id = $id");
 	if (directory_get_default_dir() == $id) {
 		directory_save_default_dir('');
@@ -361,22 +360,19 @@ function directory_save_default_dir($default_directory) {
 function directory_get_default_dir() {
 	global $db;
 
-	$ret = sql("SELECT value FROM admin WHERE variable = 'default_directory' LIMIT 1",'getOne');
+	$ret = sql("SELECT value FROM `admin` WHERE `variable` = 'default_directory'", 'getOne');
 	return $ret ? $ret : '';
+
 }
 
+// TODO: clean this up passing in $vals with expected positions for insert is very error prone!
+//
 function directory_save_dir_details($vals){
 	global $db, $amp_conf;
 
 	foreach($vals as $key => $value) {
 		$vals[$key] = $db->escapeSimple($value);
 	}
-  if (isset($vals['default_directory'])) {
-    $default_directory = $vals['default_directory'];
-    unset($vals['default_directory']);
-  } else {
-    $default_directory = false;
-  }
 
 	if ($vals['id']) {
 		$sql = 'REPLACE INTO directory_details (id,dirname,description,announcement,
@@ -403,7 +399,6 @@ function directory_save_dir_details($vals){
 			die_freepbx($foo->getDebugInfo());
 		}
 	}
-  directory_save_default_dir($default_directory);
 
 	return $vals['id'];
 }
@@ -455,14 +450,11 @@ function directory_set_default($extension, $value) {
 	if ($default_directory_id == '') {
 		return false;
 	}
-  if ($value) {
-    $entries = sql("SELECT COUNT(*) FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'","getOne");
-    if (!$entries) {
-      sql("INSERT INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
-    }
-  } else {
-    sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
-  }
+	if ($value) {
+		sql("REPLACE INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
+	} else {
+		sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
+	}
 }
 
 function directory_applyhooks() {
