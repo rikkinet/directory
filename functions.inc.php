@@ -67,6 +67,7 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($section, new gui_drawselects('invalid_destination', 0, $dir['invalid_destination'], _('Invalid Destination'), _('Destination to send the call to after Invalid Recording is played.'), false));
 		$currentcomponent->addguielem($section, new gui_checkbox('retivr', $dir['retivr'], _('Return to IVR'), _('When selected, if the call passed through an IVR that had "Return to IVR" selected, the call will be returned there instead of the Invalid destination.'),true));
 		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transfered to will be announced prior to the transfer'),true));
+		$currentcomponent->addguielem($section, new gui_checkbox('default_directory', $dir['default_directory'], _('Default Directory'), _('When checked, this becomes the default directory and replaces any other directory as the default directory. This has the effect of exposing entries for this directory into the Extension/User page'),true));
 		$currentcomponent->addguielem($section, new gui_hidden('id', $dir['id']));
 		$currentcomponent->addguielem($section, new gui_hidden('action', 'edit'));
 		
