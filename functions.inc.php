@@ -9,7 +9,7 @@ function directory_configpageload() {
 			$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
 						'repeat_recording', 'invalid_recording', 
 						'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
-						'say_extension', 'id');
+						'default_directory', 'say_extension', 'id');
       
 			foreach ($deet as $d) {
 				switch ($d){
@@ -117,7 +117,7 @@ function directory_configprocess(){
 		$requestvars = array('id','dirname','description','announcement',
 							'callid_prefix','alert_info','repeat_loops',
 							'repeat_recording','invalid_recording',
-							'invalid_destination','retivr','say_extension');
+							'invalid_destination','retivr','say_extension','default_directory');
 		foreach($requestvars as $var){
 			$vars[$var] = isset($_REQUEST[$var]) 	? $_REQUEST[$var]		: '';
 		}
@@ -199,6 +199,7 @@ function directory_get_dir_details($id){
 	$clean_id					= $db->escapeSimple($id);
 	$sql						= "SELECT * FROM directory_details WHERE ID = $clean_id";
 	$row						= sql($sql,'getRow',DB_FETCHMODE_ASSOC);
+  $row['default_directory'] = directory_get_default_dir();
 	return $row;
 }
 
@@ -360,7 +361,7 @@ function directory_save_default_dir($default_directory) {
 function directory_get_default_dir() {
 	global $db;
 
-	$sql = sql("SELECT value FROM admin WHERE variable = 'default_directory' LIMIT 1",'getOne');
+	$ret = sql("SELECT value FROM admin WHERE variable = 'default_directory' LIMIT 1",'getOne');
 	return $ret ? $ret : '';
 }
 
@@ -370,6 +371,12 @@ function directory_save_dir_details($vals){
 	foreach($vals as $key => $value) {
 		$vals[$key] = $db->escapeSimple($value);
 	}
+  if (isset($vals['default_directory'])) {
+    $default_directory = $vals['default_directory'];
+    unset($vals['default_directory']);
+  } else {
+    $default_directory = false;
+  }
 
 	if ($vals['id']) {
 		$sql = 'REPLACE INTO directory_details (id,dirname,description,announcement,
@@ -396,6 +403,7 @@ function directory_save_dir_details($vals){
 			die_freepbx($foo->getDebugInfo());
 		}
 	}
+  directory_save_default_dir($default_directory);
 
 	return $vals['id'];
 }
