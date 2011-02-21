@@ -205,7 +205,6 @@ function directory_get_dir_details($id){
 function directory_delete($id){
 	global $db;
 	$id = $db->escapeSimple($id);
-	sql("DELETE FROM directory_details WHERE id = $id");
 	sql("DELETE FROM directory_entries WHERE id = $id");
 	if (directory_get_default_dir() == $id) {
 		directory_save_default_dir('');
@@ -361,13 +360,10 @@ function directory_save_default_dir($default_directory) {
 function directory_get_default_dir() {
 	global $db;
 
-	$ret = sql("SELECT value FROM `admin` WHERE `variable` = 'default_directory'", 'getOne');
+	$sql = sql("SELECT value FROM admin WHERE variable = 'default_directory' LIMIT 1",'getOne');
 	return $ret ? $ret : '';
-
 }
 
-// TODO: clean this up passing in $vals with expected positions for insert is very error prone!
-//
 function directory_save_dir_details($vals){
 	global $db, $amp_conf;
 
