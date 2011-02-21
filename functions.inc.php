@@ -447,11 +447,14 @@ function directory_set_default($extension, $value) {
 	if ($default_directory_id == '') {
 		return false;
 	}
-	if ($value) {
-		sql("REPLACE INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
-	} else {
-		sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
-	}
+  if ($value) {
+    $entries = sql("SELECT COUNT(*) FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'","getOne");
+    if (!$entries) {
+      sql("INSERT INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
+    }
+  } else {
+    sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
+  }
 }
 
 function directory_applyhooks() {
