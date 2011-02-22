@@ -3,9 +3,9 @@
 function directory_configpageload() {
 	global $currentcomponent,$display;
 	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) { 
-		$currentcomponent->addguielem('_top', new gui_pageheading('title', _('Directory')), 0);
-					
 		if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'add') {
+		  $currentcomponent->addguielem('_top', new gui_pageheading('title', _('Add Directory')), 0);
+
 			$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
 						'repeat_recording', 'invalid_recording', 
 						'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
@@ -28,11 +28,20 @@ function directory_configpageload() {
 			}
 		} else {
 			$dir				= directory_get_dir_details($_REQUEST['id']);
+
+			$label 				= sprintf(_("Edit Directory: %s"), $dir['dirname'] ? $dir['dirname'] : 'ID '.$dir['id']);
+      $def_dir = directory_get_default_dir();
+      if ($dir['id'] == $def_dir) {
+        $label .= ' ' . _("[SYSTEM DEFAULT]");
+      }
+		  $currentcomponent->addguielem('_top', new gui_pageheading('title', $label), 0);
 			//display usage
 			$usage_list			= framework_display_destination_usage(directory_getdest($dir['id']));
 			$usage_list_text	= isset($usage_list['text']) ? $usage_list['text'] : '';
 			$usage_list_tooltip	= isset($usage_list['tooltip']) ? $usage_list['tooltip'] : '';
-			$currentcomponent->addguielem('_top', new gui_link_label('usage', $usage_list_text, $usage_list_tooltip), 0);
+      if (!empty($usage_list)) {
+			  $currentcomponent->addguielem('_top', new gui_link_label('usage', $usage_list_text, $usage_list_tooltip), 0);
+      }
 			//display delete link
 			$label 				= sprintf(_("Delete Directory %s"), $dir['dirname'] ? $dir['dirname'] : $dir['id']);
 			$label 				= '<span><img width="16" height="16" border="0" title="' 
@@ -204,7 +213,6 @@ function directory_get_dir_details($id){
 function directory_delete($id){
 	global $db;
 	$id = $db->escapeSimple($id);
-	sql("DELETE FROM directory_details WHERE id = $id");
 	sql("DELETE FROM directory_entries WHERE id = $id");
 	if (directory_get_default_dir() == $id) {
 		directory_save_default_dir('');
@@ -451,7 +459,10 @@ function directory_set_default($extension, $value) {
 		return false;
 	}
 	if ($value) {
-		sql("REPLACE INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
+    $entries = sql("SELECT COUNT(*) FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'","getOne");
+    if (!$entries) {
+		  sql("INSERT INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
+    }
 	} else {
 		sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
 	}
