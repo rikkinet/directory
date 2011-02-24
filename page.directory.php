@@ -176,7 +176,7 @@ function addrow(user){
 
 <style type="text/css">
 #addrow{display:none;}
-#dir_entries_tbl :not(tfoot) tr:nth-child(odd){background-color:#FCE7CE;}
+/*#dir_entries_tbl :not(tfoot) tr:nth-child(odd){background-color:#FCE7CE;}*/
 .dpt-title {color: #CCCCCC;}
 .text-normal {color: inherit;}
 .dirhr{width: 50%; margin-left: 0px;}

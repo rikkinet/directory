@@ -239,7 +239,7 @@ function directory_draw_entries($id){
 	$sql='SELECT id,name FROM directory_entries ORDER BY name';
 	$results	= sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 	$html		= '';
-	$html		.= '<table id="dir_entries_tbl">';
+	$html		.= '<table id="dir_entries_tbl" class="alt_table">';
 	$headers	= mod_func_iterator('draw_entries_table_header_directory');
 
 	$html 		.= '<thead><tr>';
