@@ -289,4 +289,56 @@ class Dir{
 	}
 }
 
+/* PHP4 Compatibility functions */
+
+if (!function_exists('file_put_contents')) {
+  function file_put_contents($filename, $data, $flags='', $context=null) {
+    $option = $flags == FILE_APPEND ? 'a' : 'w';
+    if ($context !== null) {
+      $fd = @fopen($filename, $option);
+    } else {
+      $fd = @fopen($filename, $option, false, $context);
+    }
+    if (!$fd) {
+      return false;
+    }
+    if (is_array($data)) {
+      $data = implode('',$data);
+    } else if (is_object($data)) {
+      $data = print_r($data,true);
+    }
+    $bytes = fwrite($fd,$data);
+    fclose($fd);
+
+    return $bytes;
+  }
+}
+if (!function_exists('scandir')) {
+	function scandir($path,$sort=0) {
+		$fh = opendir($path);
+		$list = array();
+		while(false !== ($filename = readdir($fh))) {
+			$list[] = $filename;
+		}
+		closedir($fh);
+    /* Not really needed here
+		if ($sort) {
+			sort($list);
+		} else {
+			rsort($list);
+		}
+    */
+		return $list;
+	}
+}
+
+// non-utf8 version for php4
+if(!function_exists('str_split')) {
+  function str_split($string, $split_length = 1) {
+    $array = explode("\r\n", chunk_split($string, $split_length));
+    array_pop($array);
+    return $array;
+  }
+}
+
 ?>
