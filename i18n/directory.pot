@@ -14,28 +14,35 @@
 #    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 #
 # FreePBX language template for directory
-# Copyright (C) 2008, 2009, 2010 Bandwith.com
+# Copyright (C) 2008, 2009, 2010, 2011 Bandwith.com
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-22 22:38+0200\n"
+"POT-Creation-Date: 2011-03-10 22:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Directory"
+msgid "Add Directory"
 msgstr ""
 
-msgid "Inbound Call Control"
+#, php-format
+msgid "Edit Directory: %s"
+msgstr ""
+
+msgid "[SYSTEM DEFAULT]"
 msgstr ""
 
 #, php-format
 msgid "Delete Directory %s"
+msgstr ""
+
+msgid "Directory General Options"
 msgstr ""
 
 msgid "Directory Name"
@@ -50,18 +57,6 @@ msgstr ""
 msgid "Description of this directory."
 msgstr ""
 
-msgid "Directory Options"
-msgstr ""
-
-msgid "Default"
-msgstr ""
-
-msgid "Announcement"
-msgstr ""
-
-msgid "Greeting to be played on entry to the directory"
-msgstr ""
-
 msgid "CallerID Name Prefix"
 msgstr ""
 
@@ -73,7 +68,19 @@ msgstr ""
 
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
-"ditinctive ring for SIP devices."
+"distinctive ring for SIP devices."
+msgstr ""
+
+msgid "Directory Options (DTMF)"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Announcement"
+msgstr ""
+
+msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
 msgid "Invalid Retries"
@@ -119,20 +126,23 @@ msgid "Announce Extension"
 msgstr ""
 
 msgid ""
-"When checked, the extension number being transfered to will be announced "
+"When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
-msgid "Default Directory"
-msgstr ""
-
-msgid ""
-"When checked, this becomes the default directory and replaces any other "
-"directory as the default directory. This has the effect of exposing entries "
-"for this directory into the Extension/User page"
-msgstr ""
-
 msgid "Directory&nbsp;Entries"
+msgstr ""
+
+msgid "Directory"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name Announcement"
+msgstr ""
+
+msgid "Dial"
 msgstr ""
 
 msgid "Choose One"
@@ -178,6 +188,9 @@ msgstr ""
 msgid "Default Group Inclusion"
 msgstr ""
 
+msgid "Default Directory"
+msgstr ""
+
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -195,22 +208,10 @@ msgstr ""
 msgid "Directory: %s"
 msgstr ""
 
-msgid "Adding directory_details table if needed..."
+msgid "Adding directory tables if needed"
 msgstr ""
 
-msgid "failed"
-msgstr ""
-
-msgid "Can not create `directory_details` table: "
-msgstr ""
-
-msgid "ok"
-msgstr ""
-
-msgid "Adding directory_entries table if needed..."
-msgstr ""
-
-msgid "Can not create `directory_entries` table: "
+msgid "Can not create table: "
 msgstr ""
 
 msgid "adding say_extension field to directory_details.."
@@ -219,23 +220,76 @@ msgstr ""
 msgid "fatal error"
 msgstr ""
 
+msgid "ok"
+msgstr ""
+
 msgid "dropping valid_details field.."
 msgstr ""
 
 msgid "no valid_recording field???"
 msgstr ""
 
+msgid "cannot add field e_id to table directory_entries \n"
+msgstr ""
+
+msgid "e_id added to table directory_entries"
+msgstr ""
+
+msgid "cannot set e_id for directory_id = "
+msgstr ""
+
+msgid "id"
+msgstr ""
+
+msgid ". Please resubmit this directory manually to correct this issue."
+msgstr ""
+
+msgid "Migrating Directory"
+msgstr ""
+
+msgid ""
+"Error migrating to new directory! ERROR: Could not create new Directory."
+msgstr ""
+
+msgid ""
+"Error migrating to new directory! ERROR: Could not populate new Directory "
+msgstr ""
+
+msgid "Setting migrated directory as default"
+msgstr ""
+
+msgid ""
+"Error migrating to new directory! ERROR: Unable to mark Directory as "
+"migrated. Migration will probably be run again at next install/upgrade of "
+"this module. "
+msgstr ""
+
+msgid "Migration Complete!"
+msgstr ""
+
 msgid "Submit"
+msgstr ""
+
+msgid "none"
 msgstr ""
 
 msgid "Add a new Directory"
 msgstr ""
 
-msgid "Add Directory"
+msgid "Directory Options"
+msgstr ""
+
+msgid ""
+"When checked, this becomes the default directory and replaces any other "
+"directory as the default directory. This has the effect of exposing entries "
+"for this directory into the Extension/User page"
 msgstr ""
 
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
 msgid "dropping directory_details, directory_entries.."
+msgstr ""
+
+msgid "deleting default_directory and migration tracking keys.."
 msgstr ""
