@@ -53,7 +53,7 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($gen_section, new gui_textbox('dirname', $dir['dirname'], _('Directory Name'), _('Name of this directory.')));
 		$currentcomponent->addguielem($gen_section, new gui_textbox('description', $dir['description'], _('Directory Description'), _('Description of this directory.')));
 		$currentcomponent->addguielem($gen_section, new gui_textbox('callid_prefix', $dir['callid_prefix'], _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')));
-		$currentcomponent->addguielem($gen_section, new gui_textbox('alert_info', $dir['alert_info'], _('Alert Info'), _('ALERT_INFO to be sent when called from this Directory. Can be used for ditinctive ring for SIP devices.')));
+		$currentcomponent->addguielem($gen_section, new gui_textbox('alert_info', $dir['alert_info'], _('Alert Info'), _('ALERT_INFO to be sent when called from this Directory. Can be used for distinctive ring for SIP devices.')));
 		
 		$section = _('Directory Options (DTMF)');
 		
@@ -75,7 +75,7 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($section, new gui_selectbox('invalid_recording', $currentcomponent->getoptlist('recordings'), $dir['invalid_recording'], _('Invalid Recording'), _('Prompt to be played before sending the caller to an alternate destination due to the caller pressing 0 or receiving the maximum amount of invalid/unmatched responses (as determined by Invalid Retries)'), false));
 		$currentcomponent->addguielem($section, new gui_drawselects('invalid_destination', 0, $dir['invalid_destination'], _('Invalid Destination'), _('Destination to send the call to after Invalid Recording is played.'), false));
 		$currentcomponent->addguielem($section, new gui_checkbox('retivr', $dir['retivr'], _('Return to IVR'), _('When selected, if the call passed through an IVR that had "Return to IVR" selected, the call will be returned there instead of the Invalid destination.'),true));
-		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transfered to will be announced prior to the transfer'),true));
+		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transferred to will be announced prior to the transfer'),true));
 		$currentcomponent->addguielem($section, new gui_hidden('id', $dir['id']));
 		$currentcomponent->addguielem($section, new gui_hidden('action', 'edit'));
 		

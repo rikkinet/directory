@@ -166,7 +166,7 @@ if (!$migrated) {
 	$migrated_dir = (isset($newdir) && $newdir != "") ? $newdir : 'true';
 	$q = $db->query("REPLACE INTO `admin` (`variable`, value) VALUES ('directory28_migrated', '$migrated_dir')");
 	if(DB::IsError($q)) { 
-		die_freepbx(_('Error migrating to new directory! ERROR: Unable to mark Directory as migrated. Migration will probobly be run again at next install/upgrade of this module. ' . $q->getDebugInfo()));
+		die_freepbx(_('Error migrating to new directory! ERROR: Unable to mark Directory as migrated. Migration will probably be run again at next install/upgrade of this module. ' . $q->getDebugInfo()));
 	}
 	out(_('Migration Complete!'));
 }
