@@ -30,10 +30,10 @@ if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 //get vars
 $requestvars = array('id', 'action', 'entries', 'newentries', 'def_dir', 'Submit');
 foreach ($requestvars as $var){
-	$$var = isset($_REQUEST[$var])?$_REQUEST[$var]:'';
+	$$var = isset($_REQUEST[$var]) ? $_REQUEST[$var] : '';
 }
 
-if (isset($Submit) && $Submit == 'Submit' && isset($def_dir) && $def_dir) {
+if (isset($Submit) && $Submit == 'Submit' && isset($def_dir) && $def_dir !== false) {
 	directory_save_default_dir($def_dir);
 }
 
