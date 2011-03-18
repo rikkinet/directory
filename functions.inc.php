@@ -213,10 +213,12 @@ function directory_get_dir_details($id){
 function directory_delete($id){
 	global $db;
 	$id = $db->escapeSimple($id);
-	sql("DELETE FROM directory_entries WHERE id = $id");
+
 	if (directory_get_default_dir() == $id) {
 		directory_save_default_dir('');
 	}
+	sql("DELETE FROM directory_entries WHERE id = $id");
+	sql("DELETE FROM directory_details WHERE id = $id");
 }
 
 function directory_destinations(){
