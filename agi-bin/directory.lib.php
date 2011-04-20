@@ -205,7 +205,7 @@ class Dir{
 				break;
 				//TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 			case 'tts':
-				$ret=$this->agi->exec('Flite "'.$con['name'].'"|'.$keys);
+				$ret=$this->agi->exec('Flite "'.$con['name'].'",'.$keys);
 				if ($ret['result']){$ret['result']=chr($ret['result']);}
 				break;
 			default:
