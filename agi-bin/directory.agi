@@ -98,17 +98,17 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 				$ret['result'] = chr($ret['result']);
 				break;
 			}
+					
 		}
+
 		//wait for a responce before restarting loop
-		if (!isset($ret) || !$ret) {
+		if (!isset($ret) || !$ret || $ret['result'] == '0') {
 			$ret = $dir->agi->wait_for_digit(10000);
 			if (trim($ret['result'])) {
 				$ret['result'] = chr($ret['result']);
 			}
 		} 
 
-
-		debug("got result: ".$ret['result']);
 		if(trim($ret['result'])){
 			call($matches[$ret['result']-1]);
 		}
