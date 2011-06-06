@@ -1,7 +1,7 @@
 <?php
 
 function directory_configpageload() {
-	global $currentcomponent,$display;
+	global $currentcomponent, $display;
 	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) { 
 		if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'add') {
 		  $currentcomponent->addguielem('_top', new gui_pageheading('title', _('Add Directory')), 0);
@@ -28,7 +28,6 @@ function directory_configpageload() {
 			}
 		} else {
 			$dir				= directory_get_dir_details($_REQUEST['id']);
-
 			$label 				= sprintf(_("Edit Directory: %s"), $dir['dirname'] ? $dir['dirname'] : 'ID '.$dir['id']);
       $def_dir = directory_get_default_dir();
       if ($dir['id'] == $def_dir) {
@@ -50,10 +49,10 @@ function directory_configpageload() {
 		}
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$gen_section = _('Directory General Options');
-		$currentcomponent->addguielem($gen_section, new gui_textbox('dirname', $dir['dirname'], _('Directory Name'), _('Name of this directory.')));
-		$currentcomponent->addguielem($gen_section, new gui_textbox('description', $dir['description'], _('Directory Description'), _('Description of this directory.')));
-		$currentcomponent->addguielem($gen_section, new gui_textbox('callid_prefix', $dir['callid_prefix'], _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')));
-		$currentcomponent->addguielem($gen_section, new gui_textbox('alert_info', $dir['alert_info'], _('Alert Info'), _('ALERT_INFO to be sent when called from this Directory. Can be used for distinctive ring for SIP devices.')));
+		$currentcomponent->addguielem($gen_section, new gui_textbox('dirname', stripslashes($dir['dirname']), _('Directory Name'), _('Name of this directory.')));
+		$currentcomponent->addguielem($gen_section, new gui_textbox('description', stripslashes($dir['description']), _('Directory Description'), _('Description of this directory.')));
+		$currentcomponent->addguielem($gen_section, new gui_textbox('callid_prefix', stripslashes($dir['callid_prefix']), _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')));
+		$currentcomponent->addguielem($gen_section, new gui_textbox('alert_info', stripslashes($dir['alert_info']), _('Alert Info'), _('ALERT_INFO to be sent when called from this Directory. Can be used for distinctive ring for SIP devices.')));
 		
 		$section = _('Directory Options (DTMF)');
 		
@@ -266,8 +265,7 @@ function directory_draw_entries($id){
 	$newuser .= '<option value="|">'._('Custom').'</option>';
 
   //TODO: could this cause a problem with the '|' separator if a name has a '|' in it? (probably not check for comment where parsed
-  //
-	foreach(core_users_list() as $user){
+	foreach((array) core_users_list() as $user){
 		$newuser .= '<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1]."</option>\n";
 	}
 	$newuser	.= '</select>';
