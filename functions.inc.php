@@ -1,5 +1,21 @@
 <?php
 
+function directory_configpageload_ivr() {
+	global $currentcomponent, $display;
+	if (isset($_REQUEST['action']) && $_REQUEST['action']  == 'add' || $_REQUEST['action']  == 'edit') {
+		
+		//add help text
+		$currentcomponent->addgeneralarrayitem('directdial_help', 'directory', 
+				_('Tied to a Directory allowing all entries in that directory to be dialed directly, as they appear in the directory'));
+		
+		//add gui items
+		foreach ((array) directory_list() as $dir) {
+			$name = $dir['dirname'] ? $dir['dirname'] : 'Directory ' . $dir['id'];
+			$currentcomponent->addoptlistitem('directdial', $dir['id'], $name);
+		}
+	}
+}
+
 function directory_configpageload() {
 	global $currentcomponent, $display;
 	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) { 
@@ -90,6 +106,10 @@ function directory_configpageinit($pagename) {
 	if($pagename == 'directory'){
 		$currentcomponent->addprocessfunc('directory_configprocess');
 		$currentcomponent->addguifunc('directory_configpageload');
+    return true;
+	}
+	if($pagename == 'ivr'){
+		$currentcomponent->addguifunc('directory_configpageload_ivr');
     return true;
 	}
 
