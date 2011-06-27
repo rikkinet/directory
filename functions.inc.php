@@ -2,7 +2,7 @@
 
 function directory_configpageload_ivr() {
 	global $currentcomponent, $display;
-	if (isset($_REQUEST['action']) && $_REQUEST['action']  == 'add' || $_REQUEST['action']  == 'edit') {
+	if (isset($_REQUEST['action']) && ($_REQUEST['action']  == 'add' || $_REQUEST['action']  == 'edit')) {
 		
 		//add help text
 		$currentcomponent->addgeneralarrayitem('directdial_help', 'directory', 
