@@ -5,8 +5,7 @@
 	<version>2.9.0.7</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
-	<type>setup</type>
-	<category>Inbound Call Control</category>
+	<category>Apps</category>
 	<menuitems>
 		<directory>Directory</directory>
 	</menuitems>
