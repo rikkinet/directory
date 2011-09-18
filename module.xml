@@ -2,10 +2,11 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.9.0.7</version>
+	<version>2.9.0.11</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
-	<category>Apps</category>
+	<type>setup</type>
+	<category>Inbound Call Control</category>
 	<menuitems>
 		<directory>Directory</directory>
 	</menuitems>
@@ -14,6 +15,9 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+	*2.9.0.11* #5310
+	*2.9.0.10* #5262
+	*2.9.0.9* #5127, #5054, #5049, #5140, #5142
 	*2.9.0.7* #5088
 	*2.9.0.6* #4973, #4974
 	*2.9.0.5* #4905
@@ -38,6 +42,6 @@
 	*2.8.0.0alpha1.0* Schema changes requiring uninstall/reinstall, many enhancements and fixes
 	*2.8.0.0alpha0.2* Initial release
 	</changelog>
-	<location>release/2.9/directory-2.9.0.7.tgz</location>
-	<md5sum>ae8ccc441fd78cf63f9b992e02691155</md5sum>
+	<location>release/2.9/directory-2.9.0.10.tgz</location>
+	<md5sum>3a971189789812235410cd329dc9df82</md5sum>
 </module>

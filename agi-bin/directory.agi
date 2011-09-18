@@ -109,7 +109,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 			}
 		} 
 
-		if(trim($ret['result']) && strpos($validkeys, trim($ret['result']))){
+		if(trim($ret['result']) && strpos($validkeys, trim($ret['result'])) !== false){
 			call($matches[$ret['result']-1]);
 		}
 	} elseif($matches == 1) {
