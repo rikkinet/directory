@@ -6,7 +6,7 @@
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
-	<category>Apps</category>
+	<category>Applications</category>
 	<menuitems>
 		<directory>Directory</directory>
 	</menuitems>
