@@ -233,7 +233,7 @@ class Dir{
 		if($key == ''){return false;}//requre search term
 
 		if(strstr($key,'0') !== false) {
-			debug("user pressed 0 - bailing out");
+			dbug("user pressed 0 - bailing out");
 			$this->bail();
 		}
 
