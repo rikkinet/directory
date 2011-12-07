@@ -493,8 +493,8 @@ function directory_applyhooks() {
 
 	// Add the 'process' function - this gets called when the page is loaded, to hook into 
 	// displaying stuff on the page.
-	$currentcomponent->addoptlistitem('directory_group', '0', dgettext('directory',_("Exclude")));
-	$currentcomponent->addoptlistitem('directory_group', '1', dgettext('directory',_("Include")));
+	$currentcomponent->addoptlistitem('directory_group', '0', _("Exclude"));
+	$currentcomponent->addoptlistitem('directory_group', '1', _("Include"));
 	$currentcomponent->setoptlistopts('directory_group', 'sort', false);
 
 	$currentcomponent->addguifunc('directory_configpageload_exten');
