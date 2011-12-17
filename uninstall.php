@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 outn(_('dropping directory_details, directory_entries..'));
 sql('DROP TABLE IF EXISTS directory_details, directory_entries');
 out(_('ok'));

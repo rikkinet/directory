@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 #Dummy text for localization of Submit button
 if (false) {
