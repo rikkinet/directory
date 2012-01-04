@@ -204,9 +204,20 @@ class Dir{
 				}
 				break;
 				//TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
+				//we dont call the flite app cirectly as it still uses | as a parameter separator
 			case 'tts':
-				$ret=$this->agi->exec('Flite "'.$con['name'].'",'.$keys);
-				if ($ret['result']){$ret['result']=chr($ret['result']);}
+				$tmp = $this->agi_get_var('ASTSPOOLDIR') . '/tmp/directory-tts-' . time() . rand(100, 999);
+				system('flite -t "' . $con['name'] .'" -o ' . $tmp . '.wav', $exit_code);
+				if ($exit_code === 0) {
+						$ret = $this->agi->stream_file($tmp, $keys);
+						if ($ret['result']) {
+							$ret['result'] = chr($ret['result']);
+						}
+						unlink($tmp . '.wav');
+				} else {
+					$ret = array('result' => '');
+				}
+	
 				break;
 			default:
 				if(is_numeric($con['audio'])){
@@ -287,58 +298,6 @@ class Dir{
 		$this->agi->set_priority('1');
 		exit;
 	}
-}
-
-/* PHP4 Compatibility functions */
-
-if (!function_exists('file_put_contents')) {
-  function file_put_contents($filename, $data, $flags='', $context=null) {
-    $option = $flags == FILE_APPEND ? 'a' : 'w';
-    if ($context !== null) {
-      $fd = @fopen($filename, $option);
-    } else {
-      $fd = @fopen($filename, $option, false, $context);
-    }
-    if (!$fd) {
-      return false;
-    }
-    if (is_array($data)) {
-      $data = implode('',$data);
-    } else if (is_object($data)) {
-      $data = print_r($data,true);
-    }
-    $bytes = fwrite($fd,$data);
-    fclose($fd);
-
-    return $bytes;
-  }
-}
-if (!function_exists('scandir')) {
-	function scandir($path,$sort=0) {
-		$fh = opendir($path);
-		$list = array();
-		while(false !== ($filename = readdir($fh))) {
-			$list[] = $filename;
-		}
-		closedir($fh);
-    /* Not really needed here
-		if ($sort) {
-			sort($list);
-		} else {
-			rsort($list);
-		}
-    */
-		return $list;
-	}
-}
-
-// non-utf8 version for php4
-if(!function_exists('str_split')) {
-  function str_split($string, $split_length = 1) {
-    $array = explode("\r\n", chunk_split($string, $split_length));
-    array_pop($array);
-    return $array;
-  }
 }
 
 ?>
