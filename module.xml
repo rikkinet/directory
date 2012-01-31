@@ -15,11 +15,14 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
-		2.10.0.7 smother experience when using flite 
-		2.10.0.6 re #1076, #1067 - clarify help text, fix directory hook for ivr 
-		2.10.0.5 Security update; downstream changes 
-		2.10.0.4 Security update; downstream changes 
-		2.10.0.3 Security update; downstream changes
+		*2.10.0.7* smoother experience when using flite 
+		*2.10.0.6* re #1076, #1067 - clarify help text, fix directory hook for ivr 
+		*2.10.0.5* Security update; downstream changes 
+		*2.10.0.4* Security update; downstream changes 
+		*2.10.0.3* Security update; downstream changes
+		*2.10.0.2* #5463
+		*2.10.0.1* #5389
+		*2.10.0.0* new version changes
 	</changelog>
 	<location>release/2.10/directory-2.10.0.7.tgz</location>
 	<md5sum>db6f36ad84ecef9c1bd35d6720b98a05</md5sum>
