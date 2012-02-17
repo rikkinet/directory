@@ -19,6 +19,10 @@ class Dir{
 	var $searchstring;
 	//TODO: what is this var for?
 	var $vmbasedir='';
+
+	// determine if annoucement is default so we can choose whether or not to play the
+	// "welcome-to-the-directory" recording
+	var $default_annoucement = false;
 	
   //PHP4 comaptibility constructor
   function Dir(){
@@ -94,6 +98,8 @@ class Dir{
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
 		//TODO: Error Checking
 
+		$this->default_annoucement = $row['announcement'] === '0' ? true : false;
+
 		//If any non-defaults (non-zero id) then lookup files
  		//
 		if ($row['announcement'] || $row['repeat_recording'] || $row['invalid_recording']) {
@@ -114,6 +120,10 @@ class Dir{
 		$row['repeat_recording'] = $row['repeat_recording']&&isset($rec_file[$row['repeat_recording']])?$rec_file[$row['repeat_recording']]:'cdir-sorry-no-entries';
 		$row['invalid_recording'] = $row['invalid_recording']&&isset($rec_file[$row['invalid_recording']])?$rec_file[$row['invalid_recording']]:'cdir-transferring-further-assistance';
 		return $row;
+	}
+
+	function default_annoucement() {
+		return $this->default_annoucement;
 	}
 
 	//get a channel varibale	

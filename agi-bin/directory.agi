@@ -3,7 +3,7 @@
 require_once(dirname(__FILE__).'/directory.lib.php');
 $loopcounter1=$loopcounter2=0;
 $matches=false;
-$search=array();
+$search=array('result' => '');
 $dir=new Dir();
 $matches = false;
 $needs_welcome = true;
@@ -21,7 +21,9 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$buffer = '';
 		if ($needs_welcome) {
 			$needs_welcome = false;
-			$search = $dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
+			if ($dir->default_annoucement()) {
+				$search = $dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
+			}
 			if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
 				$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
 			}
