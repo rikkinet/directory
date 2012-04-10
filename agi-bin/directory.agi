@@ -54,7 +54,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 			$validdigits = '1234567890';
 		}
 		$press=$dir->getKeypress($compound, $validdigits, 3000);
-		if(!empty($press['result']) || $press==0){
+		if(!empty($press['result']) || $press === 0){
 			$search.=$press['result'];
 			$matches=$dir->search($search,1);
 			if ($matches > 9) {

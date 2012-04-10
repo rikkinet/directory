@@ -181,7 +181,10 @@ function directory_get_config($engine) {
 				foreach ($results as $row) {
 					$ext->add($c, $row['id'], '', new ext_answer(''));
 					$ext->add($c, $row['id'], '', new ext_wait('1'));
-					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] . ',keypress=${keypress}'));
+					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] 
+											. ',keypress=' . $keypress
+											. ',retivr=' . ($row['retivr'] ? 'true' : 'false') 
+											));
 					if ($row['say_extension']) {
 						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
 						$ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
