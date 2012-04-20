@@ -88,14 +88,17 @@ function directory_configpageload() {
 
 function directory_configpageinit($pagename) {
 	global $currentcomponent;
-	if($pagename == 'directory'){
+	if ($pagename == 'directory') {
 		$currentcomponent->addprocessfunc('directory_configprocess');
 		$currentcomponent->addguifunc('directory_configpageload');
-    return true;
+    	return true;
 	}
-	if($pagename == 'ivr'){
-		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-		if ($action && ($action  == 'add' || $action  == 'edit')) {
+	if ($pagename == 'ivr') {
+		$action	= isset($_REQUEST['action']) 
+				? $_REQUEST['action'] : '';
+		$id		= isset($_REQUEST['id']) 
+				? $_REQUEST['id'] : '';
+		if ($action || $id) {
 			//add help text
 			$currentcomponent->addgeneralarrayitem('directdial_help', 'directory', 
 					_('Tied to a Directory allowing all entries in that directory '
