@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.10.0.9</version>
+	<version>2.10.0.10</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -15,6 +15,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*2.10.0.10* re #5784 - 
 		*2.10.0.9* assotred bug fixes 
 		*2.10.0.8* #5551
 		*2.10.0.7* smoother experience when using flite 
@@ -26,6 +27,6 @@
 		*2.10.0.1* #5389
 		*2.10.0.0* new version changes
 	</changelog>
-	<location>release/2.10/directory-2.10.0.9.tgz</location>
-	<md5sum>912a4a7014a316ec2194314cf8350055</md5sum>
+	<location>release/2.10/directory-2.10.0.10.tgz</location>
+	<md5sum>5b8d4f9465732fd315139b293fad1c59</md5sum>
 </module>
