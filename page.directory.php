@@ -71,7 +71,7 @@ if($action == '' && $id == ''){
 		}
 	}
 	echo '</select>';
-	echo '<br /><br /><input type="submit" name="Submit">';
+	echo '<br /><br /><input type="submit" name="Submit" value="Submit">';
 	echo '</form><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
 }
 
