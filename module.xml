@@ -27,6 +27,6 @@
 		*2.10.0.1* #5389
 		*2.10.0.0* new version changes
 	</changelog>
-	<location>release/2.10/directory-2.10.0.10.tgz</location>
-	<md5sum>5b8d4f9465732fd315139b293fad1c59</md5sum>
+	<location>release/2.11/directory-2.10.0.10.tgz</location>
+	<md5sum>c747cbb03c3c28b37c132ada24ce9da1</md5sum>
 </module>
