@@ -10,6 +10,12 @@
 	<menuitems>
 		<directory>Directory</directory>
 	</menuitems>
+	<popovers>
+		<directory>
+			<display>directory</display>
+			<action>add</action>
+		</directory>
+ 	</popovers>
 	<depends>
 		<version>2.8.0alpha1</version>
 		<module>recordings ge 3.3.8</module>

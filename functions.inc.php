@@ -159,6 +159,8 @@ function directory_configprocess(){
 				$vars['invalid_destination'] = $_REQUEST[$_REQUEST[$_REQUEST['invalid_destination']].str_replace('goto','',$_REQUEST['invalid_destination'])];
 				$vars['id'] = directory_save_dir_details($vars);
 				directory_save_dir_entries($vars['id'],$entries);
+				$this_dest = directory_getdest($vars['id']);
+				fwmsg::set_dest($this_dest[0]);
 				needreload();
 				redirect_standard_continue('id');
 			break;
