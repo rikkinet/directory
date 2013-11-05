@@ -31,7 +31,15 @@ if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 //get vars
 $requestvars = array('id', 'action', 'entries', 'newentries', 'def_dir', 'Submit');
 foreach ($requestvars as $var){
-	$$var = isset($_REQUEST[$var]) ? $_REQUEST[$var] : '';
+	switch($var) {
+		case 'def_dir':
+	    	$rvars_def = false;
+	    	break;
+	    default:
+			$rvars_def = '';
+			break;
+	}
+	$$var = isset($_REQUEST[$var]) ? $_REQUEST[$var] : $rvars_def;
 }
 
 if (isset($Submit) && $Submit == 'Submit' && isset($def_dir) && $def_dir !== false) {
