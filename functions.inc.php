@@ -177,7 +177,7 @@ function directory_get_config($engine) {
 	global $ext,$db;
 	switch ($engine) {
 		case 'asterisk':
-			$sql = 'SELECT id,dirname,say_extension FROM directory_details ORDER BY dirname';
+			$sql = 'SELECT id,dirname,say_extension,retivr FROM directory_details ORDER BY dirname';
 			$results=sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 			if($results){
 				$c = 'directory';
@@ -187,7 +187,6 @@ function directory_get_config($engine) {
 					$ext->add($c, $row['id'], '', new ext_answer(''));
 					$ext->add($c, $row['id'], '', new ext_wait('1'));
 					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] 
-											. ',keypress=' . $keypress
 											. ',retivr=' . ($row['retivr'] ? 'true' : 'false') 
 											));
 					if ($row['say_extension']) {
