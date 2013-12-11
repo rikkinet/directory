@@ -296,7 +296,7 @@ class Dir{
 		//
 		dbug("User pressed zero, passing back recording of {$this->dir['invalid_recording']}");
 		$this->agi->set_variable('DIR_INVALID_RECORDING',$this->dir['invalid_recording']);
-		if($this->dir['retivr'] == true && $this->agi_get_var('IVR_CONTEXT')){
+		if($this->agivar['retivr'] == 'true' && $this->agi_get_var('IVR_CONTEXT')){
 			$this->agi->set_extension('retivr');
 		}else{
 	 		$dest = explode(',',$this->dir['invalid_destination']);
