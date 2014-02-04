@@ -88,14 +88,17 @@ function directory_configpageload() {
 
 function directory_configpageinit($pagename) {
 	global $currentcomponent;
-	if($pagename == 'directory'){
+	if ($pagename == 'directory') {
 		$currentcomponent->addprocessfunc('directory_configprocess');
 		$currentcomponent->addguifunc('directory_configpageload');
-    return true;
+    	return true;
 	}
-	if($pagename == 'ivr'){
-		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-		if ($action && ($action  == 'add' || $action  == 'edit')) {
+	if ($pagename == 'ivr') {
+		$action	= isset($_REQUEST['action']) 
+				? $_REQUEST['action'] : '';
+		$id		= isset($_REQUEST['id']) 
+				? $_REQUEST['id'] : '';
+		if ($action || $id) {
 			//add help text
 			$currentcomponent->addgeneralarrayitem('directdial_help', 'directory', 
 					_('Tied to a Directory allowing all entries in that directory '
@@ -181,7 +184,10 @@ function directory_get_config($engine) {
 				foreach ($results as $row) {
 					$ext->add($c, $row['id'], '', new ext_answer(''));
 					$ext->add($c, $row['id'], '', new ext_wait('1'));
-					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] . ',keypress=${keypress}'));
+					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] 
+											. ',keypress=' . $keypress
+											. ',retivr=' . ($row['retivr'] ? 'true' : 'false') 
+											));
 					if ($row['say_extension']) {
 						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
 						$ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
