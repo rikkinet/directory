@@ -24,11 +24,6 @@ class Dir{
 	// "welcome-to-the-directory" recording
 	var $default_annoucement = false;
 	
-  //PHP4 comaptibility constructor
-  function Dir(){
-    $this->__construct();
-  }
-
 	//this function is run by php automaticly when the class is initalized
 	function __construct(){
 		$this->agi=$this->__construct_agi();
