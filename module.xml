@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.11.0.3</version>
+	<version>2.11.0.4</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -21,17 +21,18 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*2.11.0.4* FREEPBX-7244 The Asterisk Manager connnection needs to be made regardless.
 		*2.11.0.3* #6354
 		*2.11.0.2* #6354, #6840
 		*2.11.0.1* #6882, #6913
 		*2.11.0.0* #6051
-		*2.10.0.10* re #5784 - 
-		*2.10.0.9* assotred bug fixes 
+		*2.10.0.10* re #5784 -
+		*2.10.0.9* assotred bug fixes
 		*2.10.0.8* #5551
-		*2.10.0.7* smoother experience when using flite 
-		*2.10.0.6* re #1076, #1067 - clarify help text, fix directory hook for ivr 
-		*2.10.0.5* Security update; downstream changes 
-		*2.10.0.4* Security update; downstream changes 
+		*2.10.0.7* smoother experience when using flite
+		*2.10.0.6* re #1076, #1067 - clarify help text, fix directory hook for ivr
+		*2.10.0.5* Security update; downstream changes
+		*2.10.0.4* Security update; downstream changes
 		*2.10.0.3* Security update; downstream changes
 		*2.10.0.2* #5463
 		*2.10.0.1* #5389

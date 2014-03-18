@@ -8,7 +8,7 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-	
+
 	//add row button
 	$('#addrow').change(function(){
 		$(this).fadeOut(250,
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		}
 		return false;
 	});
-	
+
 	//set toggle value for text-box hint text
   $(".dpt-title").toggleVal({
     populateFrom: "title",
@@ -39,7 +39,7 @@ $(document).ready(function(){
       }
     });
 	});
-	
+
 	//delete row when trash can is clicked
 	$('.trash-tr').live('click', function(){
 	$(this).parents('tr').fadeOut(500,
@@ -47,8 +47,8 @@ $(document).ready(function(){
 			$(this).remove()
 		})
 	});
-	
-	
+
+
 });
 
 
@@ -57,7 +57,7 @@ function addrow(user){
 	$.ajax({
 		type: 'POST',
 	  url: location.href,
-	  data: 'ajaxgettr='+encodeURIComponent(user)+'&quietmode=1&skip_astman=1',
+	  data: 'ajaxgettr='+encodeURIComponent(user)+'&quietmode=1',
 	  success: function(data) {
 	    $('#dir_entries_tbl > tbody:last').append(data);
       /* now re-apply toggleval - redundant but they may have appended multipe values so... */
