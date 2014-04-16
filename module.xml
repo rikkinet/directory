@@ -2,9 +2,10 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.11.0.4</version>
-	<publisher>Schmoozecom.com</publisher>
-	<license>GPLv2+</license>
+	<version>2.11.0.5</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<type>setup</type>
 	<category>Applications</category>
 	<menuitems>
@@ -21,6 +22,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*2.11.0.5* Include license file
 		*2.11.0.4* FREEPBX-7244 The Asterisk Manager connnection needs to be made regardless.
 		*2.11.0.3* #6354
 		*2.11.0.2* #6354, #6840
