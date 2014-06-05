@@ -27,11 +27,6 @@ $(document).ready(function(){
 	});
 
 	//set toggle value for text-box hint text
-  $(".dpt-title").toggleVal({
-    populateFrom: "title",
-    changedClass: "text-normal",
-    focusClass: "text-normal"
-  });
 	$("form").submit(function() {
     $(".dpt-title").each(function() {
       if($(this).val() == $(this).data("defText")) {
@@ -60,12 +55,6 @@ function addrow(user){
 	  data: 'ajaxgettr='+encodeURIComponent(user)+'&quietmode=1',
 	  success: function(data) {
 	    $('#dir_entries_tbl > tbody:last').append(data);
-      /* now re-apply toggleval - redundant but they may have appended multipe values so... */
-      $(".dpt-title").not('.text-normal').toggleVal({
-        populateFrom: "title",
-        changedClass: "text-normal",
-        focusClass: "text-normal"
-      });
 	  },
 	  error: function(XMLHttpRequest, textStatus, errorThrown) {
       var msg = "An Error occurred trying to contact the server adding a row, no reply.";

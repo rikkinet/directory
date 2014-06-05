@@ -3,15 +3,15 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 function directory_configpageload() {
 	global $currentcomponent, $display;
-	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) { 
+	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) {
 		if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'add') {
 		  $currentcomponent->addguielem('_top', new gui_pageheading('title', _('Add Directory')), 0);
 
 			$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
-						'repeat_recording', 'invalid_recording', 
+						'repeat_recording', 'invalid_recording',
 						'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
 						'say_extension', 'id');
-      
+
 			foreach ($deet as $d) {
 				switch ($d){
 					case 'repeat_loops';
@@ -44,7 +44,7 @@ function directory_configpageload() {
       }
 			//display delete link
 			$label 				= sprintf(_("Delete Directory %s"), $dir['dirname'] ? $dir['dirname'] : $dir['id']);
-			$label 				= '<span><img width="16" height="16" border="0" title="' 
+			$label 				= '<span><img width="16" height="16" border="0" title="'
 								. $label . '" alt="" src="images/core_delete.png"/>&nbsp;' . $label . '</span>';
 			$currentcomponent->addguielem('_top', new gui_link('del', $label, $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'] . '&action=delete', true, false), 0);
 		}
@@ -54,9 +54,9 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($gen_section, new gui_textbox('description', stripslashes($dir['description']), _('Directory Description'), _('Description of this directory.')));
 		$currentcomponent->addguielem($gen_section, new gui_textbox('callid_prefix', stripslashes($dir['callid_prefix']), _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')));
 		$currentcomponent->addguielem($gen_section, new gui_textbox('alert_info', stripslashes($dir['alert_info']), _('Alert Info'), _('ALERT_INFO to be sent when called from this Directory. Can be used for distinctive ring for SIP devices.')));
-		
+
 		$section = _('Directory Options (DTMF)');
-		
+
 		//build recordings select list
 		$currentcomponent->addoptlistitem('recordings', 0, _('Default'));
 		foreach(recordings_list() as $r){
@@ -67,7 +67,7 @@ function directory_configpageload() {
 		for($i=0; $i <11; $i++){
 			$currentcomponent->addoptlistitem('repeat_loops', $i, $i);
 		}
-		
+
 		//generate page
 		$currentcomponent->addguielem($section, new gui_selectbox('announcement', $currentcomponent->getoptlist('recordings'), $dir['announcement'], _('Announcement'), _('Greeting to be played on entry to the directory.'), false));
 		$currentcomponent->addguielem($section, new gui_selectbox('repeat_loops', $currentcomponent->getoptlist('repeat_loops'), $dir['repeat_loops'], _('Invalid Retries'), _('Number of times to retry when receiving an invalid/unmatched response from the caller'), false));
@@ -78,7 +78,7 @@ function directory_configpageload() {
 		$currentcomponent->addguielem($section, new gui_checkbox('say_extension', $dir['say_extension'], _('Announce Extension'), _('When checked, the extension number being transferred to will be announced prior to the transfer'),true));
 		$currentcomponent->addguielem($section, new gui_hidden('id', $dir['id']));
 		$currentcomponent->addguielem($section, new gui_hidden('action', 'edit'));
-		
+
     //TODO: the &nbsp; needs to be here instead of a space, guielements freaks for some reason with this specific section name
 		$section = _('Directory&nbsp;Entries');
 		//draw the entries part of the table. A bit hacky perhaps, but hey - it works!
@@ -94,13 +94,13 @@ function directory_configpageinit($pagename) {
     	return true;
 	}
 	if ($pagename == 'ivr') {
-		$action	= isset($_REQUEST['action']) 
+		$action	= isset($_REQUEST['action'])
 				? $_REQUEST['action'] : '';
-		$id		= isset($_REQUEST['id']) 
+		$id		= isset($_REQUEST['id'])
 				? $_REQUEST['id'] : '';
 		if ($action || $id) {
 			//add help text
-			$currentcomponent->addgeneralarrayitem('directdial_help', 'directory', 
+			$currentcomponent->addgeneralarrayitem('directdial_help', 'directory',
 					_('Tied to a Directory allowing all entries in that directory '
 					. 'to be dialed directly, as they appear in the directory'));
 
@@ -186,8 +186,8 @@ function directory_get_config($engine) {
 				foreach ($results as $row) {
 					$ext->add($c, $row['id'], '', new ext_answer(''));
 					$ext->add($c, $row['id'], '', new ext_wait('1'));
-					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id'] 
-											. ',retivr=' . ($row['retivr'] ? 'true' : 'false') 
+					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id']
+											. ',retivr=' . ($row['retivr'] ? 'true' : 'false')
 											));
 					if ($row['say_extension']) {
 						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
@@ -219,7 +219,7 @@ function directory_get_dir_entries($id){
 		return array();
 	}
 	$id = $db->escapeSimple($id);
-	$sql = "SELECT a.name, a.type, a.audio, a.dial, a.foreign_id, a.e_id, b.name foreign_name, IF(a.name != \"\",a.name,b.name) realname 
+	$sql = "SELECT a.name, a.type, a.audio, a.dial, a.foreign_id, a.e_id, b.name foreign_name, IF(a.name != \"\",a.name,b.name) realname
 		FROM directory_entries a LEFT JOIN users b ON a.foreign_id = b.extension WHERE id = $id ORDER BY realname";
 	$results = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 	return $results;
@@ -276,7 +276,7 @@ function directory_draw_entries($id){
 				$html .= '</th>';
 			} else {
 				$html .= '<th>' . $h . '</th>';
-				
+
 			}
 		}
 
@@ -335,25 +335,25 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	}
 	$delete			= '<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr">';
 	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
-	$t2_class 		= $realid == 'custom' ? ' title="Custom Dialstring" ' : ' title="' . $realid . '" ';
+	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
 		$t2_class 	.= '" class = "dpt-title" ';
 	}
-	
-	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" title="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
+
+	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
 	$td[] = $audio_select;
 	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" />';
 	$opts = array('id' => $id, 'e_id' => $e_id, 'realid' => $realid, 'name' => $name, 'audio' => $audio, 'num' => $num);
-	
+
 	$more_td = mod_func_iterator('draw_entries_tr_directory', $opts);
 	foreach ($more_td as $mod) {
 		foreach ($mod as $m){
 			$td[] = $m;
 		}
 	}
-	
+
 	$td[] = $delete.$user;
-	
+
 	//build html
 	$html = '<tr class="entrie'.$e_id.'">';
 	foreach ($td as $t) {
@@ -381,7 +381,7 @@ function directory_draw_entries_all_users($id){
 
 function directory_save_default_dir($default_directory) {
 	global $db;
-	
+
 	if ($default_directory) {
 		sql("REPLACE INTO `admin` (`variable`, value) VALUES ('default_directory', '$default_directory')");
 	} else {
@@ -462,7 +462,7 @@ function directory_save_dir_entries($id,$entries){
 				$insert .= ',';
 			}
 			$insert.='("'.$id.'","'.$idx.'","'.$db->escapeSimple(trim($row['name'])).'","'.$type.'","'.$foreign_id.'","'.$audio.'","'.$db->escapeSimple(trim($row['num'])).'")';
-		}		
+		}
 		sql('INSERT INTO directory_entries (id, e_id, name,type,foreign_id,audio,dial) VALUES '.$insert);
 	}
 }
@@ -495,7 +495,7 @@ function directory_set_default($extension, $value) {
 function directory_applyhooks() {
 	global $currentcomponent;
 
-	// Add the 'process' function - this gets called when the page is loaded, to hook into 
+	// Add the 'process' function - this gets called when the page is loaded, to hook into
 	// displaying stuff on the page.
 	$currentcomponent->addoptlistitem('directory_group', '0', _("Exclude"));
 	$currentcomponent->addoptlistitem('directory_group', '1', _("Include"));
@@ -511,7 +511,7 @@ function directory_configpageload_exten() {
 	// Init vars from $_REQUEST[]
 	$action = isset($_REQUEST['action']) ? $_REQUEST['action']:null;
 	$extdisplay = isset($_REQUEST['extdisplay']) ? $_REQUEST['extdisplay']:null;
-	
+
 	// Don't display this stuff it it's on a 'This xtn has been deleted' page.
 	if ($action != 'del') {
 
@@ -520,7 +520,7 @@ function directory_configpageload_exten() {
 		if ($default_directory_id != "") {
 			$in_default_directory = directory_check_default($extdisplay);
 			$currentcomponent->addguielem($section, new gui_selectbox('in_default_directory', $currentcomponent->getoptlist('directory_group'), $in_default_directory, _('Default Directory'), _('You can include or exclude this extension/user from being part of the default directory when creating or editing.'), false));
-		} 
+		}
 	}
 }
 
@@ -535,7 +535,7 @@ function directory_configprocess_exten() {
 	$in_default_directory	= isset($_REQUEST['in_default_directory'])	? $_REQUEST['in_default_directory']	: false;
 
 	$extdisplay 			= ($ext === '') ? $extn : $ext;
-	
+
 	if (($action == "add" || $action == "edit")) {
 		if (!isset($GLOBALS['abort']) || $GLOBALS['abort'] !== true) {
 			if ($in_default_directory !== false) {
@@ -612,9 +612,9 @@ function directory_get_next_id($realid) {
 function directory_recordings_usage($recording_id) {
 	global $active_modules;
 
-	$results = sql("SELECT `id`, `dirname` FROM `directory_details` 
-					WHERE	`announcement` = '$recording_id' 
-					OR `repeat_recording` = '$recording_id' 
+	$results = sql("SELECT `id`, `dirname` FROM `directory_details`
+					WHERE	`announcement` = '$recording_id'
+					OR `repeat_recording` = '$recording_id'
 					OR `invalid_recording` = '$recording_id'",
 					"getAll",DB_FETCHMODE_ASSOC);
 	if (empty($results)) {
