@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>2.11.0.4</version>
+	<version>12.0.0</version>
 	<publisher>Schmoozecom.com</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -17,10 +17,11 @@
 		</directory>
  	</popovers>
 	<depends>
-		<version>2.8.0alpha1</version>
+		<version>12.0.1beta11</version>
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*12.0.0* Remove Toggle Val, use HTML5 placeholder instead
 		*2.11.0.4* FREEPBX-7244 The Asterisk Manager connnection needs to be made regardless.
 		*2.11.0.3* #6354
 		*2.11.0.2* #6354, #6840
@@ -39,7 +40,7 @@
 		*2.10.0.0* new version changes
 	</changelog>
 	<supported>
-		<version>2.11</version>
+		<version>12.0</version>
 	</supported>
 	<location>release/2.11/directory-2.11.0.2.tgz</location>
 	<md5sum>29c493148b5a23e216eab918ed33e213</md5sum>
