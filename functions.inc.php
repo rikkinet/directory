@@ -46,7 +46,7 @@ function directory_configpageload() {
 			$label 				= sprintf(_("Delete Directory %s"), $dir['dirname'] ? $dir['dirname'] : $dir['id']);
 			$label 				= '<span><img width="16" height="16" border="0" title="'
 								. $label . '" alt="" src="images/core_delete.png"/>&nbsp;' . $label . '</span>';
-			$currentcomponent->addguielem('_top', new gui_link('del', $label, $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'] . '&action=delete', true, false), 0);
+			$currentcomponent->addguielem('_top', new gui_link('del', $label, '?' . $_SERVER['QUERY_STRING'] . '&action=delete', true, false), 0);
 		}
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$gen_section = _('Directory General Options');
