@@ -6,7 +6,7 @@ class Dir{
 	//agi class handler
 	var $agi;
 	//inital agi pased variables
-	var $agivar;	
+	var $agivar;
 	//asterisk manager class handler
 	var $ami;
 	//pear::db database object handel
@@ -23,11 +23,11 @@ class Dir{
 	// determine if annoucement is default so we can choose whether or not to play the
 	// "welcome-to-the-directory" recording
 	var $default_annoucement = false;
-	
-  //PHP4 comaptibility constructor
-  function Dir(){
-    $this->__construct();
-  }
+
+	//PHP4 comaptibility constructor
+	function Dir(){
+		$this->__construct();
+	}
 
 	//this function is run by php automaticly when the class is initalized
 	function __construct(){
@@ -38,7 +38,7 @@ class Dir{
 		$this->directory=$this->agivar['dir'];
 		$this->dir=$this->__construct_dir_opts();
 	}
-	
+
 	//get agi handel/inital agi vars, called by __construct()
 	function __construct_agi(){
 		require_once('phpagi.php');
@@ -56,7 +56,7 @@ class Dir{
 				unset($opts[$key]);
 			}
 		}
-		
+
 		array_shift($_SERVER['argv']);
 		foreach($_SERVER['argv'] as $arg){
 			$arg=explode('=',$arg);
@@ -67,14 +67,14 @@ class Dir{
 		$this->agivar=$opts;
 		return $agi;
 	}
-	
+
 	//get ami handel, called by __construct()
 	function __construct_ami(){
 		require_once('phpagi-asmanager.php');
 		$ami=new AGI_AsteriskManager();
 		return $ami;
-	}	
-	
+	}
+
 	//get database handle, called by __construct()
   // TODO: hardcoded mysql, deal with sqlite...
   //
@@ -90,7 +90,7 @@ class Dir{
 		$db=DB::connect($dsn);
 		return $db;
 	}
-	
+
 	//get options associated with the current dir
  	// TODO: handle getRow failures
 	function __construct_dir_opts(){
@@ -126,7 +126,7 @@ class Dir{
 		return $this->default_annoucement;
 	}
 
-	//get a channel varibale	
+	//get a channel varibale
 	function agi_get_var($var){
 		global $agi_cache;
 		if (isset($agi_cache[$var])) {
@@ -165,7 +165,7 @@ class Dir{
 				return chr($ret['result']);
 		}
 	}
-	
+
 	function readContact($con, $keys='#'){
 		switch($con['audio']){
 			case 'vm':
@@ -178,7 +178,7 @@ class Dir{
 					if (!$this->vmbasedir) {
 						$this->vmbasedir = $this->agi_get_var('ASTSPOOLDIR').'/voicemail/';
 					}
-					
+
 					$dir=scandir($this->vmbasedir.$vm_dir.'/'.$con['dial']);
 					foreach($dir as $file){
 						dbug("looking for vm file $file using: ".basename($file),6);
@@ -187,13 +187,13 @@ class Dir{
 							if ($ret['result']) {
 								$ret['result']=chr($ret['result']);
 							}
-							break 2;	
-						}	
+							break 2;
+						}
 					}
 				}
 				//fallthough if not successfull
 			case 'spell':
-				foreach(str_split(strtolower($con['name']),1) as $char){
+				foreach(str_split(strtolower($this->strip_accent($con['name'])),1) as $char){
 					dbug('saying '.$char.' from string '.strtolower($con['name']));
 					switch(true){
 						case ctype_alpha($char):
@@ -205,7 +205,7 @@ class Dir{
 							break;
 						case ctype_space($char)://pause
 							$ret = $this->agi->wait_for_digit(750);
-							break;					
+							break;
 					}
 					if(trim($ret['result'])) {
 						$ret['result'] = chr($ret['result']);
@@ -227,7 +227,7 @@ class Dir{
 				} else {
 					$ret = array('result' => '');
 				}
-	
+
 				break;
 			default:
 				if(is_numeric($con['audio'])){
@@ -245,11 +245,11 @@ class Dir{
 						dbug("ERROR: unknown/undefined sound file");
 					}
 				}
-				break; 
+				break;
 			}
 			return $ret;
 		}
-	
+
 	function search($key,$count=0){
 		if($key == ''){return false;}//requre search term
 
@@ -260,7 +260,7 @@ class Dir{
 
 		//the regex in the query will match the searchstring at the beging of the string or after a space
 		$num= array('1','2','3','4','5','6','7','8','9','0','#');
-		$alph=array("[ \s@,-\!/+=\.']",'[abcABC]','[defDEF]','[ghiGHI]','[jklJKL]','[mnoMNO]','[pqrsPQRS]','[tuvTUV]','[wxyzWXYZ]','','');
+		$alph=array("[ \s@,-\!/+=\.']",'[aàâäáãåbcçAÀÂÄÁÃÅBCÇ]','[deéèêëfDEÉÈÊËF]','[ghiîïìíGHIÎÏÌÍ]','[jklJKL]','[mnñoôöòóõøMNÑOÔÖÒÓÕØ]','[pqrsPQRS]','[tuùûüúvTUÙÛÜÚV]','[wxyÿzWXYŸZ]','','');
 		$this->searchstring=$this->db->escapeSimple(str_replace($num,$alph,$key));
 		dbug("search string for regex: {$this->searchstring}");
 
@@ -299,7 +299,7 @@ class Dir{
 		if($this->agivar['retivr'] == 'true' && $this->agi_get_var('IVR_CONTEXT')){
 			$this->agi->set_extension('retivr');
 		}else{
-	 		$dest = explode(',',$this->dir['invalid_destination']);
+			$dest = explode(',',$this->dir['invalid_destination']);
 			$this->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
 			$this->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
 			$this->agi->set_variable('DIR_INVALID_PRI',$dest['2']);
@@ -307,6 +307,42 @@ class Dir{
 		}
 		$this->agi->set_priority('1');
 		exit;
+	}
+
+	function strip_accent($texte) {
+		$texte = str_replace(
+			array(
+				'à', 'â', 'ä', 'á', 'ã', 'å',
+				'î', 'ï', 'ì', 'í',
+				'ô', 'ö', 'ò', 'ó', 'õ', 'ø',
+				'ù', 'û', 'ü', 'ú',
+				'é', 'è', 'ê', 'ë',
+				'ç', 'ÿ', 'ñ',
+				'À', 'Â', 'Ä', 'Á', 'Ã', 'Å',
+				'Î', 'Ï', 'Ì', 'Í',
+				'Ô', 'Ö', 'Ò', 'Ó', 'Õ', 'Ø',
+				'Ù', 'Û', 'Ü', 'Ú',
+				'É', 'È', 'Ê', 'Ë',
+				'Ç', 'Ÿ', 'Ñ',
+			),
+			array(
+				'a', 'a', 'a', 'a', 'a', 'a',
+				'i', 'i', 'i', 'i',
+				'o', 'o', 'o', 'o', 'o', 'o',
+				'u', 'u', 'u', 'u',
+				'e', 'e', 'e', 'e',
+				'c', 'y', 'n',
+				'A', 'A', 'A', 'A', 'A', 'A',
+				'I', 'I', 'I', 'I',
+				'O', 'O', 'O', 'O', 'O', 'O',
+				'U', 'U', 'U', 'U',
+				'E', 'E', 'E', 'E',
+				'C', 'Y', 'N',
+			),
+			$texte
+		);
+
+		return $texte;
 	}
 }
 
