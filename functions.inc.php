@@ -1,6 +1,8 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
 function directory_configpageload() {
 	global $currentcomponent, $display;
 	if ($display == 'directory' && (isset($_REQUEST['action']) && $_REQUEST['action']=='add'|| isset($_REQUEST['id']) && $_REQUEST['id']!='')) {
@@ -46,7 +48,7 @@ function directory_configpageload() {
 			$label 				= sprintf(_("Delete Directory %s"), $dir['dirname'] ? $dir['dirname'] : $dir['id']);
 			$label 				= '<span><img width="16" height="16" border="0" title="'
 								. $label . '" alt="" src="images/core_delete.png"/>&nbsp;' . $label . '</span>';
-			$currentcomponent->addguielem('_top', new gui_link('del', $label, $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'] . '&action=delete', true, false), 0);
+			$currentcomponent->addguielem('_top', new gui_link('del', $label, '?' . $_SERVER['QUERY_STRING'] . '&action=delete', true, false), 0);
 		}
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$gen_section = _('Directory General Options');
