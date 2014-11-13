@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>12.0.0</version>
+	<version>13.0.0</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -42,7 +42,7 @@
 		*2.10.0.0* new version changes
 	</changelog>
 	<supported>
-		<version>12.0</version>
+		<version>13.0</version>
 	</supported>
 	<location>release/2.11/directory-2.11.0.2.tgz</location>
 	<md5sum>29c493148b5a23e216eab918ed33e213</md5sum>
