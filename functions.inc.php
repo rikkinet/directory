@@ -52,7 +52,7 @@ function directory_configpageload() {
 		}
 		//delete link, dont show if we dont have an id (i.e. directory wasnt created yet)
 		$gen_section = _('Directory General Options');
-		$category = "advanced";
+		$category = "other";
 		$currentcomponent->addguielem($gen_section, new gui_textbox('dirname', stripslashes($dir['dirname']), _('Directory Name'), _('Name of this directory.')),$category);
 		$currentcomponent->addguielem($gen_section, new gui_textbox('description', stripslashes($dir['description']), _('Directory Description'), _('Description of this directory.')),$category);
 		$currentcomponent->addguielem($gen_section, new gui_textbox('callid_prefix', stripslashes($dir['callid_prefix']), _('CallerID Name Prefix'), _('Prefix to be appended to current CallerID Name.')),$category);
