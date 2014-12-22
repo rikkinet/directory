@@ -8,7 +8,7 @@ $dir=new Dir();
 $matches = false;
 $needs_welcome = true;
 
-if (isset($dir->agivar['keypress']) && $dir->agivar['keypress']) {
+if (isset($dir->agivar['keypress'])) {
 	$needs_welcome = false;
 	$search = $dir->agivar['keypress'];
 	$matches = true;
