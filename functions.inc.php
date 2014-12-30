@@ -487,7 +487,9 @@ function directory_set_default($extension, $value) {
 	if ($value) {
     $entries = sql("SELECT COUNT(*) FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'","getOne");
     if (!$entries) {
-		  sql("INSERT INTO directory_entries (id, foreign_id) VALUES ($default_directory_id, '$extension')");
+			$e_id = sql("SELECT MAX(e_id) FROM directory_entries WHERE e_id IS NOT null", "getOne");
+			$e_id = $e_id + 1;
+		  sql("INSERT INTO directory_entries (id, e_id, type, foreign_id, audio) VALUES ($default_directory_id, '$e_id', 'user', '$extension', 'vm')");
     }
 	} else {
 		sql("DELETE FROM directory_entries WHERE id = $default_directory_id AND foreign_id = '$extension'");
