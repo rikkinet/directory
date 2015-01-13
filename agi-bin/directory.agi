@@ -8,7 +8,7 @@ $dir=new Dir();
 $matches = false;
 $needs_welcome = true;
 
-if ($dir->agivar['keypress']) {
+if (isset($dir->agivar['keypress'])) {
 	$needs_welcome = false;
 	$search = $dir->agivar['keypress'];
 	$matches = true;
@@ -35,7 +35,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$loopcounter2++;
 	}
 	//hangup if we failed to receive anything meanigfull
-	if($loopcounter2 == 3){//seem like we ran out of tries... 
+	if($loopcounter2 == 3){//seem like we ran out of tries...
 		$dir->agi->stream_file('sorry-youre-having-problems');
 		$dir->bail();
 		break;
@@ -74,11 +74,11 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 	if($matches > 1 && $matches <= 9){
 		//draw up variable of valid key presses
 		$validkeys='';
-		for ($i=1; $i<$matches+1; $i++) { 
+		for ($i=1; $i<$matches+1; $i++) {
 			$validkeys .= $i;
 		}
 		dbug("valid keys for entries are: $validkeys");
-		
+
 		//playback entries
 		$matches=$dir->search($search);
 		foreach($matches as $idx => $match){
@@ -99,7 +99,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 				$ret['result'] = chr($ret['result']);
 				break;
 			}
-					
+
 		}
 
 		//wait for a responce before restarting loop
@@ -108,7 +108,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 			if (trim($ret['result'])) {
 				$ret['result'] = chr($ret['result']);
 			}
-		} 
+		}
 
 		if(trim($ret['result']) && strpos($validkeys, trim($ret['result'])) !== false){
 			call($matches[$ret['result']-1]);
@@ -142,17 +142,17 @@ function call($contact){
 	exit;
 }
 
-/* 
+/*
  * FreePBX dbuging function
  * This function can be called as follows:
  * dbug() - will just print a time stamp to the dbug log file ($amp_conf['FPBXDBUGFILE'])
  * dbug('string') - same as above + will print the string
  * dbug('string',$array) - same as above + will print_r the array after the message
- * dbug($array) - will print_r the array with no message (just a time stamp)  
+ * dbug($array) - will print_r the array with no message (just a time stamp)
  * dbug('string',$array,1) - same as above + will var_dump the array
  * dbug($array,1) - will var_dump the array with no message  (just a time stamp)
- * 	 
-*/  
+ *
+*/
 
 function dbug(){
 	$opts = func_get_args();
@@ -176,20 +176,20 @@ function dbug(){
 			$disc		= $opts[0];
 			$msg		= $opts[1];
 			$dump		= $opts[2];
-			break;	
+			break;
 	}
-	
+
 	if (isset($disc) && $disc) {
 		$disc = ' \'' . $disc . '\':';
 	} else {
 		$disc = '';
 	}
-	
+
 	$bt = debug_backtrace();
-	$txt = date("Y-M-d H:i:s") 
-		. "\t" . $bt[0]['file'] . ':' . $bt[0]['line'] 
+	$txt = date("Y-M-d H:i:s")
+		. "\t" . $bt[0]['file'] . ':' . $bt[0]['line']
 		. "\n\n"
-		. $disc 
+		. $disc
 		. "\n"; //add timestamp + file info
 	dbug_write($txt);
 	if ($dump==1) {//force output via var_dump
@@ -219,7 +219,7 @@ function dbug_write($txt,$check=''){
 	} else {
 		file_put_contents('/tmp/freepbx_debug.log',$txt, FILE_APPEND);
 	}
-	
+
 }
 
 function error_handler($errno, $errstr, $errfile, $errline, $errcontext){
