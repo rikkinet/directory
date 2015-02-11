@@ -6,141 +6,295 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-30 00:04+0400\n"
+"POT-Creation-Date: 2015-02-11 17:46-0500\n"
 "PO-Revision-Date: 2014-02-28 04:51+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
-"Language-Team: Russian "
-"<http://example.com/projects/freepbx-211/directory/ru/>\n"
-"Language: ru_RU\n"
+"Language-Team: Russian <http://example.com/projects/freepbx-211/directory/ru/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-msgid "Directory"
-msgstr "Директории"
-
-msgid "Applications"
-msgstr "Приложения"
-
-msgid "Add Directory"
-msgstr "Добавить директорию"
-
-#, php-format
-msgid "Edit Directory: %s"
-msgstr "Редактировать директорию: %s"
-
-msgid "[SYSTEM DEFAULT]"
-msgstr "[Системные по умолчанию]"
-
-#, php-format
-msgid "Delete Directory %s"
-msgstr "Удалить директорию %s"
-
-msgid "Directory General Options"
-msgstr "Основные свойства директории"
-
-msgid "Directory Name"
-msgstr "Название директории"
-
-msgid "Name of this directory."
-msgstr "Имя текущей директории."
-
-msgid "Directory Description"
-msgstr "Описание директории"
-
-msgid "Description of this directory."
-msgstr "Описание текущего каталога."
-
-msgid "CallerID Name Prefix"
-msgstr "Имя префикса CallerID"
-
-msgid "Prefix to be appended to current CallerID Name."
-msgstr "Префикc добавлямый к текущему имени CallerID"
-
-msgid "Alert Info"
-msgstr "Информация для оповещения"
-
+#: /usr/src/freepbx/directory/functions.inc.php:58
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
 msgstr ""
-"ALERT_INFO посылается при вызове из текущей директории. "
-"Можно использовать для отличия вызовов от разных SIP устройств."
+"ALERT_INFO посылается при вызове из текущей директории. Можно использовать "
+"для отличия вызовов от разных SIP устройств."
 
-msgid "Directory Options (DTMF)"
-msgstr "Опции директории (DTMF)"
+#: /usr/src/freepbx/directory/functions.inc.php:10
+#: /usr/src/freepbx/directory/page.directory.php:91
+msgid "Add Directory"
+msgstr "Добавить директорию"
 
-msgid "Default"
-msgstr "По умолчанию"
+#: /usr/src/freepbx/directory/page.directory.php:66
+msgid "Add a new Directory"
+msgstr "Добавить новую директорию"
 
+#: /usr/src/freepbx/directory/functions.inc.php:298
+msgid "Add new entry."
+msgstr "Добавить новую запись."
+
+#: /usr/src/freepbx/directory/install.php:7
+msgid "Adding directory tables if needed"
+msgstr "Добавление таблиц в директории, если есть необходимость"
+
+#: /usr/src/freepbx/directory/functions.inc.php:58
+msgid "Alert Info"
+msgstr "Информация для оповещения"
+
+#: /usr/src/freepbx/directory/functions.inc.php:290
+msgid "All Users"
+msgstr "Все пользователи"
+
+#: /usr/src/freepbx/directory/functions.inc.php:80
+msgid "Announce Extension"
+msgstr "Анонс внутреннего номера"
+
+#: /usr/src/freepbx/directory/functions.inc.php:74
 msgid "Announcement"
 msgstr "Приветствие"
 
+#: /usr/src/freepbx/directory/functions.inc.php:57
+msgid "CallerID Name Prefix"
+msgstr "Имя префикса CallerID"
+
+#: /usr/src/freepbx/directory/install.php:37
+msgid "Can not create table: "
+msgstr "Не создаётся таблица: "
+
+#: /usr/src/freepbx/directory/functions.inc.php:289
+msgid "Choose One"
+msgstr "Выберите"
+
+#: /usr/src/freepbx/directory/functions.inc.php:338
+msgid "Click here to remove this entry"
+msgstr "Кликнуть чтобы убрать эту запись"
+
+#: /usr/src/freepbx/directory/functions.inc.php:291
+msgid "Custom"
+msgstr "Особое"
+
+#: /usr/src/freepbx/directory/functions.inc.php:63
+msgid "Default"
+msgstr "По умолчанию"
+
+#: /usr/src/freepbx/directory/functions.inc.php:526
+#: /usr/src/freepbx/directory/page.directory.php:69
+msgid "Default Directory"
+msgstr "Директория по умолчанию"
+
+#: /usr/src/freepbx/directory/functions.inc.php:523
+msgid "Default Group Inclusion"
+msgstr "Включение в дефолтную группу"
+
+#: /usr/src/freepbx/directory/functions.inc.php:48
+#, php-format
+msgid "Delete Directory %s"
+msgstr "Удалить директорию %s"
+
+#: /usr/src/freepbx/directory/functions.inc.php:56
+msgid "Description of this directory."
+msgstr "Описание текущего каталога."
+
+#: /usr/src/freepbx/directory/functions.inc.php:78
+msgid "Destination to send the call to after Invalid Recording is played."
+msgstr ""
+"Назначение, куда перенаправляется вызов после воспроизведения Сообщения о "
+"неверно набранном номере."
+
+#: /usr/src/freepbx/directory/functions.inc.php:262
+msgid "Dial"
+msgstr "Набор"
+
+#: /usr/src/freepbx/directory/functions.inc.php:256
+#: /usr/src/freepbx/directory/page.directory.php:65
+#: /usr/src/freepbx/directory/page.directory.php:77
+msgid "Directory"
+msgstr "Директории"
+
+#: /usr/src/freepbx/directory/functions.inc.php:601
+#, php-format
+msgid "Directory %s: "
+msgstr "Директория %s:  "
+
+#: /usr/src/freepbx/directory/functions.inc.php:56
+msgid "Directory Description"
+msgstr "Описание директории"
+
+#: /usr/src/freepbx/directory/functions.inc.php:54
+msgid "Directory General Options"
+msgstr "Основные свойства директории"
+
+#: /usr/src/freepbx/directory/functions.inc.php:55
+msgid "Directory Name"
+msgstr "Название директории"
+
+#: /usr/src/freepbx/directory/page.directory.php:68
+msgid "Directory Options"
+msgstr "Опции директории"
+
+#: /usr/src/freepbx/directory/functions.inc.php:60
+msgid "Directory Options (DTMF)"
+msgstr "Опции директории (DTMF)"
+
+#: /usr/src/freepbx/directory/functions.inc.php:85
+msgid "Directory&nbsp;Entries"
+msgstr "Директория&nbsp;&nbsp;Значение"
+
+#: /usr/src/freepbx/directory/functions.inc.php:631
+#, php-format
+msgid "Directory: %s"
+msgstr "Директория: %s"
+
+#: /usr/src/freepbx/directory/functions.inc.php:576
+#, php-format
+msgid "Directory: %s "
+msgstr "Директория:  %s "
+
+#: /usr/src/freepbx/directory/functions.inc.php:332
+#, php-format
+msgid "Edit %s: %s"
+msgstr "Редактировать %s: %s"
+
+#: /usr/src/freepbx/directory/functions.inc.php:34
+#, php-format
+msgid "Edit Directory: %s"
+msgstr "Редактировать директорию: %s"
+
+#: /usr/src/freepbx/directory/install.php:138
+msgid ""
+"Error migrating to new directory! ERROR: Could not create new Directory."
+msgstr ""
+"Ошибка при миграции в новую директорию! ОШИБКА: невозможно создать новую "
+"директорию."
+
+#: /usr/src/freepbx/directory/install.php:154
+msgid ""
+"Error migrating to new directory! ERROR: Could not populate new Directory "
+msgstr ""
+"Ошибка при миграции в новую директорию! ОШИБКА: невозможно расширить новую "
+"директорию."
+
+#: /usr/src/freepbx/directory/install.php:170
+msgid ""
+"Error migrating to new directory! ERROR: Unable to mark Directory as "
+"migrated. Migration will probably be run again at next install/upgrade of "
+"this module. "
+msgstr ""
+"Ошибка при миграции в новую директорию! ОШИБКА: невозможно отметить "
+"директорию как перемещённую в процессе миграции. Возможно надо начать "
+"процесс миграции сначала, при инсталляции/обновлении модуля."
+
+#: /usr/src/freepbx/directory/functions.inc.php:504
+msgid "Exclude"
+msgstr "Исключая"
+
+#: /usr/src/freepbx/directory/functions.inc.php:74
 msgid "Greeting to be played on entry to the directory."
 msgstr "Сообщение, воспроизводимое при попадании в директорию."
 
+#: /usr/src/freepbx/directory/functions.inc.php:505
+msgid "Include"
+msgstr "Включая"
+
+#: /usr/src/freepbx/directory/functions.inc.php:78
+msgid "Invalid Destination"
+msgstr "Назначение для неверно набранных номеров"
+
+#: /usr/src/freepbx/directory/functions.inc.php:77
+msgid "Invalid Recording"
+msgstr "Сообщение о неверно набранном номере"
+
+#: /usr/src/freepbx/directory/functions.inc.php:75
 msgid "Invalid Retries"
 msgstr "Неверных попыток"
 
+#: /usr/src/freepbx/directory/functions.inc.php:76
+msgid "Invalid Retry Recording"
+msgstr "Сообшение о неверных попытках"
+
+#: /usr/src/freepbx/directory/install.php:128
+msgid "Migrating Directory"
+msgstr "Миграция Директорий"
+
+#: /usr/src/freepbx/directory/install.php:172
+msgid "Migration Complete!"
+msgstr "Миграция завершена!"
+
+#: /usr/src/freepbx/directory/functions.inc.php:262
+msgid "Name"
+msgstr "Имя"
+
+#: /usr/src/freepbx/directory/functions.inc.php:262
+msgid "Name Announcement"
+msgstr "Название Приветствия"
+
+#: /usr/src/freepbx/directory/functions.inc.php:55
+msgid "Name of this directory."
+msgstr "Имя текущей директории."
+
+#: /usr/src/freepbx/directory/functions.inc.php:75
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
-"Количество неверных попыток, во время которых сообщается о неверно набранном номере "
-"или отсутствии совпадений."
+"Количество неверных попыток, во время которых сообщается о неверно набранном "
+"номере или отсутствии совпадений."
 
-msgid "Invalid Retry Recording"
-msgstr "Сообшение о неверных попытках"
+#: /usr/src/freepbx/directory/functions.inc.php:57
+msgid "Prefix to be appended to current CallerID Name."
+msgstr "Префикc добавлямый к текущему имени CallerID"
 
-msgid ""
-"Prompt to be played when an invalid/unmatched response is received, before "
-"prompting the caller to try again"
-msgstr ""
-"Сообщение, воспроизводимое при неверно набранном номере, прежде чем будет предложено "
-"попробовать набрать ещё раз."
-
-msgid "Invalid Recording"
-msgstr "Сообщение о неверно набранном номере"
-
+#: /usr/src/freepbx/directory/functions.inc.php:77
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
-"Сообщение, воспроизводимое позвонившему перед посылкой на альтернативное назначение при набраном 0 "
-"или достижении числа максимальных попыток неверно набранного номера (указанного в пункте Неверных попыток)."
+"Сообщение, воспроизводимое позвонившему перед посылкой на альтернативное "
+"назначение при набраном 0 или достижении числа максимальных попыток неверно "
+"набранного номера (указанного в пункте Неверных попыток)."
 
-msgid "Invalid Destination"
-msgstr "Назначение для неверно набранных номеров"
+#: /usr/src/freepbx/directory/functions.inc.php:76
+msgid ""
+"Prompt to be played when an invalid/unmatched response is received, before "
+"prompting the caller to try again"
+msgstr ""
+"Сообщение, воспроизводимое при неверно набранном номере, прежде чем будет "
+"предложено попробовать набрать ещё раз."
 
-msgid "Destination to send the call to after Invalid Recording is played."
-msgstr "Назначение, куда перенаправляется вызов после воспроизведения Сообщения о неверно набранном номере."
-
+#: /usr/src/freepbx/directory/functions.inc.php:79
 msgid "Return to IVR"
 msgstr "Возврат в Интерактивное меню"
 
-msgid ""
-"When selected, if the call passed through an IVR that had \"Return to IVR\" "
-"selected, the call will be returned there instead of the Invalid destination."
-msgstr ""
-"Если отмечено, то при неверно набранных номерах вызов будет возвращаться в текущее интерактивное меню, вместо того, "
-"чтобы уйти по назначению для неверно набранных номеров."
+#: /usr/src/freepbx/directory/install.php:160
+msgid "Setting migrated directory as default"
+msgstr "Установить директорию для миграции как директорию по умолчанию"
 
-msgid "Announce Extension"
-msgstr "Анонс внутреннего номера"
+#: /usr/src/freepbx/directory/functions.inc.php:322
+msgid "Spell Name"
+msgstr "Имя Spell"
 
-msgid ""
-"When checked, the extension number being transferred to will be announced "
-"prior to the transfer"
-msgstr ""
-"Если отмечено, будет сообщаться внутренний номер при переводе вызова."
+#: /usr/src/freepbx/directory/page.directory.php:6
+#: /usr/src/freepbx/directory/page.directory.php:82
+msgid "Submit"
+msgstr "Подтвердить"
 
-msgid "Directory&nbsp;Entries"
-msgstr "Директория&nbsp;&nbsp;Значение"
+#: /usr/src/freepbx/directory/functions.inc.php:323
+msgid "System Recordings:"
+msgstr "Записи в системе:"
 
+#: /usr/src/freepbx/directory/functions.inc.php:321
+msgid "Text to Speech"
+msgstr "Проговорить текст"
+
+#: /usr/src/freepbx/directory/functions.inc.php:106
 msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
@@ -148,61 +302,37 @@ msgstr ""
 "Возможность прямого набора по всем значениям в директории так, как они "
 "отображаются в списке."
 
-msgid "Name"
-msgstr "Имя"
-
-msgid "Name Announcement"
-msgstr "Название Приветствия"
-
-msgid "Dial"
-msgstr "Набор"
-
-msgid "Choose One"
-msgstr "Выберите"
-
-msgid "All Users"
-msgstr "Все пользователи"
-
-msgid "Custom"
-msgstr "Особое"
-
-msgid "Add new entry."
-msgstr "Добавить новую запись."
-
+#: /usr/src/freepbx/directory/functions.inc.php:320
 msgid "Voicemail Greeting"
 msgstr "Приветствие голосовой почты"
 
-msgid "Text to Speech"
-msgstr "Проговорить текст"
+#: /usr/src/freepbx/directory/functions.inc.php:80
+msgid ""
+"When checked, the extension number being transferred to will be announced "
+"prior to the transfer"
+msgstr "Если отмечено, будет сообщаться внутренний номер при переводе вызова."
 
-msgid "Spell Name"
-msgstr "Имя Spell"
+#: /usr/src/freepbx/directory/page.directory.php:70
+msgid ""
+"When checked, this becomes the default directory and replaces any other "
+"directory as the default directory. This has the effect of exposing entries "
+"for this directory into the Extension/User page"
+msgstr ""
+"Если отмечено, текущая директория становится директорией по умолчанию и эта "
+"опция изменяет все предыдущие указания на дефолтные директории. Это даёт "
+"возможность отображать записи этой директории на странице настроек "
+"внутреннего номера/пользователя."
 
-msgid "System Recordings:"
-msgstr "Записи в системе:"
+#: /usr/src/freepbx/directory/functions.inc.php:79
+msgid ""
+"When selected, if the call passed through an IVR that had \"Return to IVR\" "
+"selected, the call will be returned there instead of the Invalid destination."
+msgstr ""
+"Если отмечено, то при неверно набранных номерах вызов будет возвращаться в "
+"текущее интерактивное меню, вместо того, чтобы уйти по назначению для "
+"неверно набранных номеров."
 
-#, php-format
-msgid "Edit %s: %s"
-msgstr "Редактировать %s: %s"
-
-msgid "remove"
-msgstr "удалить"
-
-msgid "Click here to remove this entry"
-msgstr "Кликнуть чтобы убрать эту запись"
-
-msgid "Exclude"
-msgstr "Исключая"
-
-msgid "Include"
-msgstr "Включая"
-
-msgid "Default Group Inclusion"
-msgstr "Включение в дефолтную группу"
-
-msgid "Default Directory"
-msgstr "Директория по умолчанию"
-
+#: /usr/src/freepbx/directory/functions.inc.php:526
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -210,97 +340,60 @@ msgstr ""
 "Можно включить/исключить внутренний номер/пользователя из любой части "
 "директории по умолчанию при создании или редактировании."
 
-#, php-format
-msgid "Directory: %s "
-msgstr "Директория:  %s "
+#: /usr/src/freepbx/directory/functions.inc.php:37
+msgid "[SYSTEM DEFAULT]"
+msgstr "[Системные по умолчанию]"
 
-#, php-format
-msgid "Directory %s: "
-msgstr "Директория %s:  "
-
-#, php-format
-msgid "Directory: %s"
-msgstr "Директория: %s"
-
-msgid "Adding directory tables if needed"
-msgstr "Добавление таблиц в директории, если есть необходимость"
-
-msgid "Can not create table: "
-msgstr "Не создаётся таблица: "
-
+#: /usr/src/freepbx/directory/install.php:46
 msgid "adding say_extension field to directory_details.."
 msgstr "добавление поля say_extension в directory_details.."
 
-msgid "fatal error"
-msgstr "неустранимая ошибка"
-
-msgid "ok"
-msgstr "ok"
-
-msgid "dropping valid_details field.."
-msgstr "сбрасывается поле valid_details.."
-
-msgid "no valid_recording field???"
-msgstr "отсутствует поле valid_recording???"
-
+#: /usr/src/freepbx/directory/install.php:81
 msgid "cannot add field e_id to table directory_entries \n"
 msgstr "не возможно добавить поле e_id в таблицу directory_entries \n"
 
-msgid "e_id added to table directory_entries"
-msgstr "e_id добавлено в таблицу directory_entries"
-
+#: /usr/src/freepbx/directory/install.php:102
 msgid "cannot set e_id for directory_id = "
 msgstr "невозможно установить e_id для directory_id = "
 
-msgid "Migrating Directory"
-msgstr "Миграция Директорий"
+#: /usr/src/freepbx/directory/uninstall.php:7
+msgid "deleting default_directory and migration tracking keys.."
+msgstr "удаляем default_directory и метки отслеживания миграции.."
 
-msgid ""
-"Error migrating to new directory! ERROR: Could not create new Directory."
-msgstr "Ошибка при миграции в новую директорию! ОШИБКА: невозможно создать новую директорию."
-
-msgid ""
-"Error migrating to new directory! ERROR: Could not populate new Directory "
-msgstr "Ошибка при миграции в новую директорию! ОШИБКА: невозможно расширить новую директорию."
-
-msgid "Setting migrated directory as default"
-msgstr "Установить директорию для миграции как директорию по умолчанию"
-
-msgid ""
-"Error migrating to new directory! ERROR: Unable to mark Directory as "
-"migrated. Migration will probably be run again at next install/upgrade of "
-"this module. "
-msgstr ""
-"Ошибка при миграции в новую директорию! ОШИБКА: невозможно отметить директорию как перемещённую "
-"в процессе миграции. Возможно надо начать процесс миграции сначала, при инсталляции/обновлении "
-"модуля."
-
-msgid "Migration Complete!"
-msgstr "Миграция завершена!"
-
-msgid "Submit"
-msgstr "Подтвердить"
-
-msgid "none"
-msgstr "нет"
-
-msgid "Add a new Directory"
-msgstr "Добавить новую директорию"
-
-msgid "Directory Options"
-msgstr "Опции директории"
-
-msgid ""
-"When checked, this becomes the default directory and replaces any other "
-"directory as the default directory. This has the effect of exposing entries "
-"for this directory into the Extension/User page"
-msgstr ""
-"Если отмечено, текущая директория становится директорией по умолчанию и эта опция "
-"изменяет все предыдущие указания на дефолтные директории. Это даёт возможность отображать "
-"записи этой директории на странице настроек внутреннего номера/пользователя."
-
+#: /usr/src/freepbx/directory/uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
 msgstr "сбрасываем directory_details, directory_entries.."
 
-msgid "deleting default_directory and migration tracking keys.."
-msgstr "удаляем default_directory и метки отслеживания миграции.."
+#: /usr/src/freepbx/directory/install.php:60
+msgid "dropping valid_details field.."
+msgstr "сбрасывается поле valid_details.."
+
+#: /usr/src/freepbx/directory/install.php:83
+msgid "e_id added to table directory_entries"
+msgstr "e_id добавлено в таблицу directory_entries"
+
+#: /usr/src/freepbx/directory/install.php:50
+msgid "fatal error"
+msgstr "неустранимая ошибка"
+
+#: /usr/src/freepbx/directory/install.php:64
+msgid "no valid_recording field???"
+msgstr "отсутствует поле valid_recording???"
+
+#: /usr/src/freepbx/directory/page.directory.php:63
+msgid "none"
+msgstr "нет"
+
+#: /usr/src/freepbx/directory/install.php:53
+#: /usr/src/freepbx/directory/install.php:66
+#: /usr/src/freepbx/directory/uninstall.php:5
+#: /usr/src/freepbx/directory/uninstall.php:10
+msgid "ok"
+msgstr "ok"
+
+#: /usr/src/freepbx/directory/functions.inc.php:338
+msgid "remove"
+msgstr "удалить"
+
+#~ msgid "Applications"
+#~ msgstr "Приложения"
