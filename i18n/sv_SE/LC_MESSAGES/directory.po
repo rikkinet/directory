@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX Directory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 17:46-0500\n"
+"POT-Creation-Date: 2015-02-20 19:22-0500\n"
 "PO-Revision-Date: 2010-06-22 22:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team:  <mickecamino@gmail.com>\n"
@@ -31,228 +31,229 @@ msgstr ""
 "X-Poedit-Country: SWEDEN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: /usr/src/freepbx/directory/functions.inc.php:58
+#: functions.inc.php:58
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:10
-#: /usr/src/freepbx/directory/page.directory.php:91
+#: functions.inc.php:10 page.directory.php:91
 msgid "Add Directory"
 msgstr "Lägg till katalog"
 
-#: /usr/src/freepbx/directory/page.directory.php:66
+#: page.directory.php:66
 msgid "Add a new Directory"
 msgstr "Lägg till ny katalog"
 
-#: /usr/src/freepbx/directory/functions.inc.php:298
+#: functions.inc.php:298
 msgid "Add new entry."
 msgstr "Lägg till ny post."
 
-#: /usr/src/freepbx/directory/install.php:7
+#: install.php:7
 msgid "Adding directory tables if needed"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:58
+#: functions.inc.php:58
 msgid "Alert Info"
 msgstr "Alert Info"
 
-#: /usr/src/freepbx/directory/functions.inc.php:290
+#: functions.inc.php:290
 msgid "All Users"
 msgstr "Alla användare"
 
-#: /usr/src/freepbx/directory/functions.inc.php:80
+#: functions.inc.php:80
 msgid "Announce Extension"
 msgstr "Meddela anknytning"
 
-#: /usr/src/freepbx/directory/functions.inc.php:74
+#: functions.inc.php:74
 msgid "Announcement"
 msgstr "Välkomsthälsning"
 
-#: /usr/src/freepbx/directory/functions.inc.php:57
+#: directory.i18n.php:4
+msgid "Applications"
+msgstr ""
+
+#: functions.inc.php:57
 msgid "CallerID Name Prefix"
 msgstr "Prefix för nummerpresentation"
 
-#: /usr/src/freepbx/directory/install.php:37
+#: install.php:37
 msgid "Can not create table: "
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:289
+#: functions.inc.php:289
 msgid "Choose One"
 msgstr "Välj en"
 
-#: /usr/src/freepbx/directory/functions.inc.php:338
+#: functions.inc.php:338
 msgid "Click here to remove this entry"
 msgstr "Klicka här för att ta bort posten"
 
-#: /usr/src/freepbx/directory/functions.inc.php:291
+#: functions.inc.php:291
 msgid "Custom"
 msgstr "Anpassad"
 
-#: /usr/src/freepbx/directory/functions.inc.php:63
+#: functions.inc.php:63
 msgid "Default"
 msgstr "Standard"
 
-#: /usr/src/freepbx/directory/functions.inc.php:526
-#: /usr/src/freepbx/directory/page.directory.php:69
+#: functions.inc.php:526 page.directory.php:69
 msgid "Default Directory"
 msgstr "Standardkatalog"
 
-#: /usr/src/freepbx/directory/functions.inc.php:523
+#: functions.inc.php:523
 msgid "Default Group Inclusion"
 msgstr "Inkludera i standardgrupp"
 
-#: /usr/src/freepbx/directory/functions.inc.php:48
+#: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
 msgstr "Ta bort katalog %s"
 
-#: /usr/src/freepbx/directory/functions.inc.php:56
+#: functions.inc.php:56
 msgid "Description of this directory."
 msgstr "Ge en meningsfull beskrivning för denna katalog"
 
-#: /usr/src/freepbx/directory/functions.inc.php:78
+#: functions.inc.php:78
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 "Destination att skicka samtalet till efter Ogiltigt meddelande spelats upp"
 
-#: /usr/src/freepbx/directory/functions.inc.php:262
+#: functions.inc.php:262
 msgid "Dial"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:256
-#: /usr/src/freepbx/directory/page.directory.php:65
-#: /usr/src/freepbx/directory/page.directory.php:77
+#: directory.i18n.php:3 directory.i18n.php:5 functions.inc.php:256
+#: page.directory.php:65 page.directory.php:77
 msgid "Directory"
 msgstr "Katalog"
 
-#: /usr/src/freepbx/directory/functions.inc.php:601
+#: functions.inc.php:601
 #, php-format
 msgid "Directory %s: "
 msgstr "Katalog %s: "
 
-#: /usr/src/freepbx/directory/functions.inc.php:56
+#: functions.inc.php:56
 msgid "Directory Description"
 msgstr "Beskrivning"
 
-#: /usr/src/freepbx/directory/functions.inc.php:54
+#: functions.inc.php:54
 msgid "Directory General Options"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:55
+#: functions.inc.php:55
 msgid "Directory Name"
 msgstr "Katalognamn"
 
-#: /usr/src/freepbx/directory/page.directory.php:68
+#: page.directory.php:68
 msgid "Directory Options"
 msgstr "Katalogval"
 
-#: /usr/src/freepbx/directory/functions.inc.php:60
+#: functions.inc.php:60
 msgid "Directory Options (DTMF)"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:85
+#: functions.inc.php:85
 msgid "Directory&nbsp;Entries"
 msgstr "Katalogval"
 
-#: /usr/src/freepbx/directory/functions.inc.php:631
+#: functions.inc.php:631
 #, php-format
 msgid "Directory: %s"
 msgstr "Katalog: %s"
 
-#: /usr/src/freepbx/directory/functions.inc.php:576
+#: functions.inc.php:576
 #, php-format
 msgid "Directory: %s "
 msgstr "Katalog: %s "
 
-#: /usr/src/freepbx/directory/functions.inc.php:332
+#: functions.inc.php:332
 #, php-format
 msgid "Edit %s: %s"
 msgstr "Redigera %s: %s"
 
-#: /usr/src/freepbx/directory/functions.inc.php:34
+#: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:138
+#: install.php:138
 msgid ""
 "Error migrating to new directory! ERROR: Could not create new Directory."
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:154
+#: install.php:154
 msgid ""
 "Error migrating to new directory! ERROR: Could not populate new Directory "
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:170
+#: install.php:170
 msgid ""
 "Error migrating to new directory! ERROR: Unable to mark Directory as "
 "migrated. Migration will probably be run again at next install/upgrade of "
 "this module. "
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:504
+#: functions.inc.php:504
 msgid "Exclude"
 msgstr "Exkludera"
 
-#: /usr/src/freepbx/directory/functions.inc.php:74
+#: functions.inc.php:74
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:505
+#: functions.inc.php:505
 msgid "Include"
 msgstr "Inkludera"
 
-#: /usr/src/freepbx/directory/functions.inc.php:78
+#: functions.inc.php:78
 msgid "Invalid Destination"
 msgstr "Destination för ogiltigt svar"
 
-#: /usr/src/freepbx/directory/functions.inc.php:77
+#: functions.inc.php:77
 msgid "Invalid Recording"
 msgstr "Ogiltigt meddelande"
 
-#: /usr/src/freepbx/directory/functions.inc.php:75
+#: functions.inc.php:75
 msgid "Invalid Retries"
 msgstr "Ogiltiga försök"
 
-#: /usr/src/freepbx/directory/functions.inc.php:76
+#: functions.inc.php:76
 msgid "Invalid Retry Recording"
 msgstr "Meddelande vid ogiltiga försök"
 
-#: /usr/src/freepbx/directory/install.php:128
+#: install.php:128
 msgid "Migrating Directory"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:172
+#: install.php:172
 msgid "Migration Complete!"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:262
+#: functions.inc.php:262
 msgid "Name"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:262
+#: functions.inc.php:262
 msgid "Name Announcement"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:55
+#: functions.inc.php:55
 msgid "Name of this directory."
 msgstr "Ge denna katalog ett beskrivande namn"
 
-#: /usr/src/freepbx/directory/functions.inc.php:75
+#: functions.inc.php:75
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
 "Antal gånger att försöka vid ogiltigt/icke matchat försök från uppringaren"
 
-#: /usr/src/freepbx/directory/functions.inc.php:57
+#: functions.inc.php:57
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "Skriv in ett prefix att lägga till befintlig nummerpresentation"
 
-#: /usr/src/freepbx/directory/functions.inc.php:77
+#: functions.inc.php:77
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -262,7 +263,7 @@ msgstr ""
 "alternativ destination då uppringaren slagit 0 eller det maximala antalet "
 "ogiltiga försök (angivet i fältet Ogiltiga försök)"
 
-#: /usr/src/freepbx/directory/functions.inc.php:76
+#: functions.inc.php:76
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -270,48 +271,47 @@ msgstr ""
 "Meddelande att spela upp vid ogiltigt/icke matchat försök från uppringaren, "
 "spelas upp innan uppringaren ombeds försöka igen"
 
-#: /usr/src/freepbx/directory/functions.inc.php:79
+#: functions.inc.php:79
 msgid "Return to IVR"
 msgstr "Återgå till IVR"
 
-#: /usr/src/freepbx/directory/install.php:160
+#: install.php:160
 msgid "Setting migrated directory as default"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:322
+#: functions.inc.php:322
 msgid "Spell Name"
 msgstr "Stava namn"
 
-#: /usr/src/freepbx/directory/page.directory.php:6
-#: /usr/src/freepbx/directory/page.directory.php:82
+#: page.directory.php:6 page.directory.php:82
 msgid "Submit"
 msgstr "Spara ändringar"
 
-#: /usr/src/freepbx/directory/functions.inc.php:323
+#: functions.inc.php:323
 msgid "System Recordings:"
 msgstr "Systeminspelning:"
 
-#: /usr/src/freepbx/directory/functions.inc.php:321
+#: functions.inc.php:321
 msgid "Text to Speech"
 msgstr "Text-till-tal"
 
-#: /usr/src/freepbx/directory/functions.inc.php:106
+#: functions.inc.php:106
 msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
 msgstr ""
 
-#: /usr/src/freepbx/directory/functions.inc.php:320
+#: functions.inc.php:320
 msgid "Voicemail Greeting"
 msgstr "Välkomstmeddelande för röstbrevlåda"
 
-#: /usr/src/freepbx/directory/functions.inc.php:80
+#: functions.inc.php:80
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
-#: /usr/src/freepbx/directory/page.directory.php:70
+#: page.directory.php:70
 msgid ""
 "When checked, this becomes the default directory and replaces any other "
 "directory as the default directory. This has the effect of exposing entries "
@@ -321,7 +321,7 @@ msgstr ""
 "kommer att ersätta standardkatalogen om den är definierad. Detta val visar "
 "även ett val för katalogen för Anknytningar/Användare"
 
-#: /usr/src/freepbx/directory/functions.inc.php:79
+#: functions.inc.php:79
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -330,7 +330,7 @@ msgstr ""
 "IVR som har \"Återgå till IVR\" valt, att returneras dit i stället för "
 "Destination vid ogiltigt svar."
 
-#: /usr/src/freepbx/directory/functions.inc.php:526
+#: functions.inc.php:526
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -338,58 +338,55 @@ msgstr ""
 "Du kan inkludera eller exkludera denna anknytning/användare från att vara "
 "med i standardkatalogen."
 
-#: /usr/src/freepbx/directory/functions.inc.php:37
+#: functions.inc.php:37
 msgid "[SYSTEM DEFAULT]"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:46
+#: install.php:46
 msgid "adding say_extension field to directory_details.."
 msgstr "lägger till fältet say_extension till tabellen directory_details.."
 
-#: /usr/src/freepbx/directory/install.php:81
+#: install.php:81
 msgid "cannot add field e_id to table directory_entries \n"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:102
+#: install.php:102
 msgid "cannot set e_id for directory_id = "
 msgstr ""
 
-#: /usr/src/freepbx/directory/uninstall.php:7
+#: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
 msgstr ""
 
-#: /usr/src/freepbx/directory/uninstall.php:3
+#: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
 msgstr "tar bort tabellerna directory_details, directory_entries.."
 
-#: /usr/src/freepbx/directory/install.php:60
+#: install.php:60
 msgid "dropping valid_details field.."
 msgstr "tar bort fältet valid_details.."
 
-#: /usr/src/freepbx/directory/install.php:83
+#: install.php:83
 msgid "e_id added to table directory_entries"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:50
+#: install.php:50
 msgid "fatal error"
 msgstr "allvarligt fel"
 
-#: /usr/src/freepbx/directory/install.php:64
+#: install.php:64
 msgid "no valid_recording field???"
 msgstr "inget fält med namnet valid_recording???"
 
-#: /usr/src/freepbx/directory/page.directory.php:63
+#: page.directory.php:63
 msgid "none"
 msgstr ""
 
-#: /usr/src/freepbx/directory/install.php:53
-#: /usr/src/freepbx/directory/install.php:66
-#: /usr/src/freepbx/directory/uninstall.php:5
-#: /usr/src/freepbx/directory/uninstall.php:10
+#: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
 msgid "ok"
 msgstr "ok"
 
-#: /usr/src/freepbx/directory/functions.inc.php:338
+#: functions.inc.php:338
 msgid "remove"
 msgstr "ta bort"
 
