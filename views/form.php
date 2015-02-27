@@ -44,7 +44,7 @@ if(function_exists('recordings_list')){
 ?>
 <h2><?php echo $subhead ?></h2>
 <?php echo $inusehtml?>
-<form action="" method="post" class="fpbx-submit" id="dirform">
+<form action="" method="post" class="fpbx-submit" id="dirform" data-fpbx-delete="?display=directory&action=delete&id=<?php echo $id?>">
 
 <!--Directory Name-->
 <div class="element-container">
@@ -322,6 +322,7 @@ if(function_exists('recordings_list')){
 	</div>
 </div>
 <!--END Announce Extension-->
+<?php echo directory_draw_entries($dir['id'])?>
 <input type='hidden' name="action" value="edit">
 <input type='hidden' name="id" value="<?php echo $id?>">
 <input type='hidden' name="display" value="directory">

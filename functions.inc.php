@@ -260,14 +260,14 @@ function directory_destinations(){
 }
 
 function directory_draw_entries_table_header_directory() {
-	return  array(_('Name'), _('Name Announcement'), _('Dial'));
+	return  array(_('Name'), _('Name Announcement'), _('Dial'),_('Actions'));
 }
 
 function directory_draw_entries($id){
 	$sql='SELECT id,name FROM directory_entries ORDER BY name';
 	$results	= sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 	$html		= '';
-	$html		.= '<table id="dir_entries_tbl" class="alt_table">';
+	$html		.= '<table id="dir_entries_tbl" class="table table-striped">';
 	$headers	= mod_func_iterator('draw_entries_table_header_directory');
 
 	$html 		.= '<thead><tr>';
@@ -286,7 +286,7 @@ function directory_draw_entries($id){
 	}
 	$html .= '</tr></thead>';
 
-	$newuser = '<select id="addusersel">';
+	$newuser = '<select id="addusersel" class="form-control">';
 	$newuser .= '<option value="none" selected> == '._('Choose One').' == </option>';
 	$newuser .= '<option value="all">'._('All Users').'</option>';
 	$newuser .= '<option value="|">'._('Custom').'</option>';
@@ -317,7 +317,7 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	$e_id = $e_id ? $e_id : directory_get_next_id($realid);
 	if (!$audio_select || !$reuse_audio) {
  		unset($audio_select);
-		$audio_select = '<select name="entries['.$e_id.'][audio]">';
+		$audio_select = '<select name="entries['.$e_id.'][audio]" class="form-control">';
 		$audio_select .= '<option value="vm" '.(($audio=='vm')?'SELECTED':'').'>'._('Voicemail Greeting').'</option>';
 		$audio_select .= '<option value="tts" '.(($audio=='tts')?'SELECTED':'').'>'._('Text to Speech').'</option>';
 		$audio_select .= '<option value="spell" '.(($audio=='spell')?'SELECTED':'').'>'._('Spell Name').'</option>';
@@ -331,12 +331,12 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	if ($realid != 'custom') {
 		$user_type	=  (isset($amp_conf['AMPEXTENSION']) && $amp_conf['AMPEXTENSION']) == 'deviceanduser' ? 'user' : 'extension';
 		$tlabel		=  sprintf(_("Edit %s: %s"), $user_type ,$realid);
-		$label		= '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/user_edit.png"/>&nbsp;</span>';
+		$label		= '<span><i width="16" height="16" border="0" title="'.$tlabel.'" alt="" class="fa fa-edit"/>&nbsp;</span>';
 		$user		= ' <a href="/admin/config.php?type=setup&display='.$user_type.'s&skip=0&extdisplay='.$realid.'">'.$label.'</a> ';
 	} else {
 		$user		= '';
 	}
-	$delete			= '<img src="images/trash.png" style="cursor:pointer;" alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr">';
+	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash">';
 	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
@@ -345,7 +345,7 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 
 	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
 	$td[] = $audio_select;
-	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" />';
+	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" class="form-control" />';
 	$opts = array('id' => $id, 'e_id' => $e_id, 'realid' => $realid, 'name' => $name, 'audio' => $audio, 'num' => $num);
 
 	$more_td = mod_func_iterator('draw_entries_tr_directory', $opts);

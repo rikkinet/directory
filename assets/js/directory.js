@@ -76,7 +76,6 @@ $(document).ready(function(){
 		cache: false,
 		striped: true,
 		showColumns: false,
-		width: 800,
 		columns: [
 			{
 				title: _("Direcrory"),
@@ -99,7 +98,7 @@ $(document).ready(function(){
 
 function linkFormatter(value){
 	var html = '<a href="?display=directory&view=form&id='+value['id']+'"><i class="fa fa-pencil"></i></a>';
-	html += '&nbsp;<a href="?display=paging&view=form&id='+value['id']+'"><i class="fa fa-trash"></i></a>';
+	html += '&nbsp;<a href="?display=directory&action=delete&id='+value['id']+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 function defaultFormatter(value){
