@@ -1,3 +1,9 @@
+$(document).ready(function() {
+ $('#new_dir').click(function(){
+	window.location.href = 'config.php?type=<?php echo $type ?>&display=directory&action=add';
+	})
+});
+
 $(document).ready(function(){
 	//show/hide add button/dropdown
 	$('#addbut').click(function(){
@@ -61,4 +67,55 @@ function addrow(user){
       alert(msg);
     }
   });
+}
+
+$(document).ready(function(){
+	$("#dirgrid").bootstrapTable({
+		method: 'get',
+		url: '?display=directory&action=getJSON&jdata=grid&quietmode=1',
+		cache: false,
+		striped: true,
+		showColumns: false,
+		width: 800,
+		columns: [
+			{
+				title: _("Direcrory"),
+				field: 'name',
+			},
+			{
+				title: _("Actions"),
+				field: 'link',
+				formatter: linkFormatter,
+
+			},
+			{
+				title: _("Default Direcrory"),
+				field: 'default',
+				formatter: defaultFormatter,
+			}
+			]
+	});
+});
+
+function linkFormatter(value){
+	var html = '<a href="?display=directory&view=form&id='+value['id']+'"><i class="fa fa-pencil"></i></a>';
+	html += '&nbsp;<a href="?display=paging&view=form&id='+value['id']+'"><i class="fa fa-trash"></i></a>';
+	return html;
+}
+function defaultFormatter(value){
+	var sy = '';
+	var sn = '';
+	if(value['default']){
+		sy = ' CHECKED';
+	}
+	var html;
+		html = '<span class="radioset">';
+		html += '<input type="radio" name="default" id="default'+value['id']+'" value="V'+value['id']+'" '+sy+' onChange="dirUpdateDefault(this)">';
+		html += '<label for="default'+value['id']+'">'+_("Select")+'</label>';
+		html += '</span>';
+	return html;
+}
+function dirUpdateDefault(item){
+	var id = $(item).val().replace('V','');
+	$.get("?display=directory&Submit=Submit&def_dir="+id);
 }

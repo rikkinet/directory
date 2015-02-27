@@ -92,8 +92,8 @@ function directory_configpageload() {
 function directory_configpageinit($pagename) {
 	global $currentcomponent;
 	if ($pagename == 'directory') {
-		$currentcomponent->addprocessfunc('directory_configprocess');
-		$currentcomponent->addguifunc('directory_configpageload');
+		//$currentcomponent->addprocessfunc('directory_configprocess');
+		//$currentcomponent->addguifunc('directory_configpageload');
     	return true;
 	}
 	if ($pagename == 'ivr') {
@@ -413,7 +413,9 @@ function directory_save_dir_details($vals){
 		$sql = 'REPLACE INTO directory_details (id,dirname,description,announcement,
 				callid_prefix,alert_info,repeat_loops,repeat_recording,
 				invalid_recording,invalid_destination,retivr,say_extension)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+				VALUES (:id,:dirname,:description,:announcement,
+				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
+				:invalid_recording,:invalid_destination,:retivr,:say_extension)';
 		$foo = $db->query($sql,$vals);
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
@@ -423,7 +425,9 @@ function directory_save_dir_details($vals){
 		$sql = 'INSERT INTO directory_details (dirname,description,announcement,
 				callid_prefix,alert_info,repeat_loops,repeat_recording,
 				invalid_recording,invalid_destination,retivr,say_extension)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+				VALUES (:dirname,:description,:announcement,
+				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
+				:invalid_recording,:invalid_destination,:retivr,:say_extension)';
 		$foo = $db->query($sql,$vals);
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
