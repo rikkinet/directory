@@ -69,33 +69,6 @@ function addrow(user){
   });
 }
 
-$(document).ready(function(){
-	$("#dirgrid").bootstrapTable({
-		method: 'get',
-		url: '?display=directory&action=getJSON&jdata=grid&quietmode=1',
-		cache: false,
-		striped: true,
-		showColumns: false,
-		columns: [
-			{
-				title: _("Direcrory"),
-				field: 'name',
-			},
-			{
-				title: _("Actions"),
-				field: 'link',
-				formatter: linkFormatter,
-
-			},
-			{
-				title: _("Default Direcrory"),
-				field: 'default',
-				formatter: defaultFormatter,
-			}
-			]
-	});
-});
-
 function linkFormatter(value){
 	var html = '<a href="?display=directory&view=form&id='+value['id']+'"><i class="fa fa-pencil"></i></a>';
 	html += '&nbsp;<a href="?display=directory&action=delete&id='+value['id']+'" class="delAction"><i class="fa fa-trash"></i></a>';
