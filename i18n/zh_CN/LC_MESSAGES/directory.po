@@ -10,11 +10,12 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:22-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2015-02-20 19:22-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: functions.inc.php:58
@@ -23,54 +24,53 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:10
-#: page.directory.php:91
+#: functions.inc.php:10 page.directory.php:91
 msgid "Add Directory"
-msgstr ""
+msgstr "添加目录"
 
 #: page.directory.php:66
 msgid "Add a new Directory"
-msgstr ""
+msgstr "添加新目录"
 
 #: functions.inc.php:298
 msgid "Add new entry."
-msgstr ""
+msgstr "添加新对象"
 
 #: install.php:7
 msgid "Adding directory tables if needed"
-msgstr ""
+msgstr "需要时添加目录表"
 
 #: functions.inc.php:58
 msgid "Alert Info"
-msgstr ""
+msgstr "告警信息"
 
 #: functions.inc.php:290
 msgid "All Users"
-msgstr ""
+msgstr "所有用户"
 
 #: functions.inc.php:80
 msgid "Announce Extension"
-msgstr ""
+msgstr "播放分机"
 
 #: functions.inc.php:74
 msgid "Announcement"
-msgstr ""
+msgstr "公告"
 
 #: directory.i18n.php:4
 msgid "Applications"
-msgstr ""
+msgstr "应用"
 
 #: functions.inc.php:57
 msgid "CallerID Name Prefix"
-msgstr ""
+msgstr "来电显示名称前缀"
 
 #: install.php:37
 msgid "Can not create table: "
-msgstr ""
+msgstr "不能创建表"
 
 #: functions.inc.php:289
 msgid "Choose One"
-msgstr ""
+msgstr "选择一个"
 
 #: functions.inc.php:338
 msgid "Click here to remove this entry"
@@ -78,29 +78,28 @@ msgstr ""
 
 #: functions.inc.php:291
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: functions.inc.php:63
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
-#: functions.inc.php:526
-#: page.directory.php:69
+#: functions.inc.php:526 page.directory.php:69
 msgid "Default Directory"
-msgstr ""
+msgstr "默认目录"
 
 #: functions.inc.php:523
 msgid "Default Group Inclusion"
-msgstr ""
+msgstr "默认组"
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr ""
+msgstr "删除目录 %s"
 
 #: functions.inc.php:56
 msgid "Description of this directory."
-msgstr ""
+msgstr "此目录描述"
 
 #: functions.inc.php:78
 msgid "Destination to send the call to after Invalid Recording is played."
@@ -108,15 +107,12 @@ msgstr ""
 
 #: functions.inc.php:262
 msgid "Dial"
-msgstr ""
+msgstr "拨打"
 
-#: directory.i18n.php:3
-#: directory.i18n.php:5
-#: functions.inc.php:256
-#: page.directory.php:65
-#: page.directory.php:77
+#: directory.i18n.php:3 directory.i18n.php:5 functions.inc.php:256
+#: page.directory.php:65 page.directory.php:77
 msgid "Directory"
-msgstr ""
+msgstr "目录"
 
 #: functions.inc.php:601
 #, php-format
@@ -125,23 +121,23 @@ msgstr ""
 
 #: functions.inc.php:56
 msgid "Directory Description"
-msgstr ""
+msgstr "目录描述"
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr ""
+msgstr "目录标准选项"
 
 #: functions.inc.php:55
 msgid "Directory Name"
-msgstr ""
+msgstr "目录名称"
 
 #: page.directory.php:68
 msgid "Directory Options"
-msgstr ""
+msgstr "目录选项"
 
 #: functions.inc.php:60
 msgid "Directory Options (DTMF)"
-msgstr ""
+msgstr "目录可选DTMF"
 
 #: functions.inc.php:85
 msgid "Directory&nbsp;Entries"
@@ -155,17 +151,17 @@ msgstr ""
 #: functions.inc.php:576
 #, php-format
 msgid "Directory: %s "
-msgstr ""
+msgstr "目录: %s"
 
 #: functions.inc.php:332
 #, php-format
 msgid "Edit %s: %s"
-msgstr ""
+msgstr "编辑 %s: %s"
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr ""
+msgstr "编辑目录: %s"
 
 #: install.php:138
 msgid ""
@@ -186,51 +182,51 @@ msgstr ""
 
 #: functions.inc.php:504
 msgid "Exclude"
-msgstr ""
+msgstr "排除"
 
 #: functions.inc.php:74
 msgid "Greeting to be played on entry to the directory."
-msgstr ""
+msgstr "播放进入此目录的问候语"
 
 #: functions.inc.php:505
 msgid "Include"
-msgstr ""
+msgstr "包含"
 
 #: functions.inc.php:78
 msgid "Invalid Destination"
-msgstr ""
+msgstr "无效目的地"
 
 #: functions.inc.php:77
 msgid "Invalid Recording"
-msgstr ""
+msgstr "无效录音"
 
 #: functions.inc.php:75
 msgid "Invalid Retries"
-msgstr ""
+msgstr "无效尝试"
 
 #: functions.inc.php:76
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "无效的录音"
 
 #: install.php:128
 msgid "Migrating Directory"
-msgstr ""
+msgstr "合并目录"
 
 #: install.php:172
 msgid "Migration Complete!"
-msgstr ""
+msgstr "合并完成"
 
 #: functions.inc.php:262
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: functions.inc.php:262
 msgid "Name Announcement"
-msgstr ""
+msgstr "名称公告"
 
 #: functions.inc.php:55
 msgid "Name of this directory."
-msgstr ""
+msgstr "此目录名称"
 
 #: functions.inc.php:75
 msgid ""
@@ -257,7 +253,7 @@ msgstr ""
 
 #: functions.inc.php:79
 msgid "Return to IVR"
-msgstr ""
+msgstr "返回IVR"
 
 #: install.php:160
 msgid "Setting migrated directory as default"
@@ -265,20 +261,19 @@ msgstr ""
 
 #: functions.inc.php:322
 msgid "Spell Name"
-msgstr ""
+msgstr "拼写名称"
 
-#: page.directory.php:6
-#: page.directory.php:82
+#: page.directory.php:6 page.directory.php:82
 msgid "Submit"
-msgstr ""
+msgstr "提交"
 
 #: functions.inc.php:323
 msgid "System Recordings:"
-msgstr ""
+msgstr "系统录音"
 
 #: functions.inc.php:321
 msgid "Text to Speech"
-msgstr ""
+msgstr "语音识别"
 
 #: functions.inc.php:106
 msgid ""
@@ -288,7 +283,7 @@ msgstr ""
 
 #: functions.inc.php:320
 msgid "Voicemail Greeting"
-msgstr ""
+msgstr "语音邮箱问候"
 
 #: functions.inc.php:80
 msgid ""
@@ -349,7 +344,7 @@ msgstr ""
 
 #: install.php:50
 msgid "fatal error"
-msgstr ""
+msgstr "致命错误"
 
 #: install.php:64
 msgid "no valid_recording field???"
@@ -357,15 +352,12 @@ msgstr ""
 
 #: page.directory.php:63
 msgid "none"
-msgstr ""
+msgstr "无"
 
-#: install.php:53
-#: install.php:66
-#: uninstall.php:5
-#: uninstall.php:10
+#: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
 msgid "ok"
 msgstr ""
 
 #: functions.inc.php:338
 msgid "remove"
-msgstr ""
+msgstr "删除"
