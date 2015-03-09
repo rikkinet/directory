@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:22-0500\n"
+"POT-Creation-Date: 2015-03-09 12:37-0400\n"
 "PO-Revision-Date: 2014-02-28 04:51+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://example.com/projects/freepbx-211/directory/ru/"
@@ -19,7 +19,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-#: functions.inc.php:58
+#: functions.inc.php:59 views/form.php:140
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -27,15 +27,15 @@ msgstr ""
 "ALERT_INFO посылается при вызове из текущей директории. Можно использовать "
 "для отличия вызовов от разных SIP устройств."
 
-#: functions.inc.php:10 page.directory.php:91
+#: functions.inc.php:263 views/grid.php:11
+msgid "Actions"
+msgstr ""
+
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
 msgid "Add Directory"
 msgstr "Добавить директорию"
 
-#: page.directory.php:66
-msgid "Add a new Directory"
-msgstr "Добавить новую директорию"
-
-#: functions.inc.php:298
+#: functions.inc.php:299
 msgid "Add new entry."
 msgstr "Добавить новую запись."
 
@@ -43,27 +43,27 @@ msgstr "Добавить новую запись."
 msgid "Adding directory tables if needed"
 msgstr "Добавление таблиц в директории, если есть необходимость"
 
-#: functions.inc.php:58
+#: functions.inc.php:59 views/form.php:128
 msgid "Alert Info"
 msgstr "Информация для оповещения"
 
-#: functions.inc.php:290
+#: functions.inc.php:291
 msgid "All Users"
 msgstr "Все пользователи"
 
-#: functions.inc.php:80
+#: functions.inc.php:81 views/form.php:305
 msgid "Announce Extension"
 msgstr "Анонс внутреннего номера"
 
-#: functions.inc.php:74
+#: functions.inc.php:75 views/form.php:152
 msgid "Announcement"
 msgstr "Приветствие"
 
-#: directory.i18n.php:4
+#: directory.i18n.php:6 directory.i18n.php:10
 msgid "Applications"
 msgstr "Приложения"
 
-#: functions.inc.php:57
+#: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "Имя префикса CallerID"
 
@@ -71,60 +71,72 @@ msgstr "Имя префикса CallerID"
 msgid "Can not create table: "
 msgstr "Не создаётся таблица: "
 
-#: functions.inc.php:289
+#: functions.inc.php:290
 msgid "Choose One"
 msgstr "Выберите"
 
-#: functions.inc.php:338
+#: functions.inc.php:339
 msgid "Click here to remove this entry"
 msgstr "Кликнуть чтобы убрать эту запись"
 
-#: functions.inc.php:291
+#: functions.inc.php:292
 msgid "Custom"
 msgstr "Особое"
 
-#: functions.inc.php:63
+#: functions.inc.php:64 views/form.php:23 views/form.php:30 views/form.php:37
 msgid "Default"
 msgstr "По умолчанию"
 
-#: functions.inc.php:526 page.directory.php:69
+#: views/grid.php:12
+msgid "Default Direcrory"
+msgstr ""
+
+#: functions.inc.php:532
 msgid "Default Directory"
 msgstr "Директория по умолчанию"
 
-#: functions.inc.php:523
+#: functions.inc.php:528
 msgid "Default Group Inclusion"
 msgstr "Включение в дефолтную группу"
+
+#: Directory.class.php:139
+msgid "Delete"
+msgstr ""
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
 msgstr "Удалить директорию %s"
 
-#: functions.inc.php:56
+#: functions.inc.php:57 views/form.php:92
 msgid "Description of this directory."
 msgstr "Описание текущего каталога."
 
-#: functions.inc.php:78
+#: functions.inc.php:79 views/form.php:266
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 "Назначение, куда перенаправляется вызов после воспроизведения Сообщения о "
 "неверно набранном номере."
 
-#: functions.inc.php:262
+#: functions.inc.php:263
 msgid "Dial"
 msgstr "Набор"
 
-#: directory.i18n.php:3 directory.i18n.php:5 functions.inc.php:256
-#: page.directory.php:65 page.directory.php:77
+#: views/grid.php:10
+msgid "Direcrory"
+msgstr ""
+
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:257
+#: page.directory.php:7
 msgid "Directory"
 msgstr "Директории"
 
-#: functions.inc.php:601
+#: functions.inc.php:607
 #, php-format
 msgid "Directory %s: "
 msgstr "Директория %s:  "
 
-#: functions.inc.php:56
+#: functions.inc.php:57 views/form.php:80
 msgid "Directory Description"
 msgstr "Описание директории"
 
@@ -132,36 +144,36 @@ msgstr "Описание директории"
 msgid "Directory General Options"
 msgstr "Основные свойства директории"
 
-#: functions.inc.php:55
+#: functions.inc.php:56 views/form.php:56
 msgid "Directory Name"
 msgstr "Название директории"
 
-#: page.directory.php:68
-msgid "Directory Options"
-msgstr "Опции директории"
-
-#: functions.inc.php:60
+#: functions.inc.php:61
 msgid "Directory Options (DTMF)"
 msgstr "Опции директории (DTMF)"
 
-#: functions.inc.php:85
+#: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
 msgstr "Директория&nbsp;&nbsp;Значение"
 
-#: functions.inc.php:631
+#: functions.inc.php:637
 #, php-format
 msgid "Directory: %s"
 msgstr "Директория: %s"
 
-#: functions.inc.php:576
+#: functions.inc.php:582
 #, php-format
 msgid "Directory: %s "
 msgstr "Директория:  %s "
 
-#: functions.inc.php:332
+#: functions.inc.php:333
 #, php-format
 msgid "Edit %s: %s"
 msgstr "Редактировать %s: %s"
+
+#: views/form.php:6
+msgid "Edit Directory"
+msgstr ""
 
 #: functions.inc.php:34
 #, php-format
@@ -192,33 +204,41 @@ msgstr ""
 "директорию как перемещённую в процессе миграции. Возможно надо начать "
 "процесс миграции сначала, при инсталляции/обновлении модуля."
 
-#: functions.inc.php:504
+#: functions.inc.php:509
 msgid "Exclude"
 msgstr "Исключая"
 
-#: functions.inc.php:74
+#: functions.inc.php:75 views/form.php:166
 msgid "Greeting to be played on entry to the directory."
 msgstr "Сообщение, воспроизводимое при попадании в директорию."
 
-#: functions.inc.php:505
+#: functions.inc.php:510
 msgid "Include"
 msgstr "Включая"
 
-#: functions.inc.php:78
+#: functions.inc.php:79 views/form.php:254
 msgid "Invalid Destination"
 msgstr "Назначение для неверно набранных номеров"
 
-#: functions.inc.php:77
+#: functions.inc.php:78 views/form.php:228
 msgid "Invalid Recording"
 msgstr "Сообщение о неверно набранном номере"
 
-#: functions.inc.php:75
+#: Directory.class.php:32
+msgid "Invalid Request"
+msgstr ""
+
+#: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "Неверных попыток"
 
-#: functions.inc.php:76
+#: functions.inc.php:77 views/form.php:202
 msgid "Invalid Retry Recording"
 msgstr "Сообшение о неверных попытках"
+
+#: views/bootnav.php:1
+msgid "List Directories"
+msgstr ""
 
 #: install.php:128
 msgid "Migrating Directory"
@@ -228,19 +248,27 @@ msgstr "Миграция Директорий"
 msgid "Migration Complete!"
 msgstr "Миграция завершена!"
 
-#: functions.inc.php:262
+#: functions.inc.php:263
 msgid "Name"
 msgstr "Имя"
 
-#: functions.inc.php:262
+#: functions.inc.php:263
 msgid "Name Announcement"
 msgstr "Название Приветствия"
 
-#: functions.inc.php:55
+#: views/form.php:68
+msgid "Name of this directory"
+msgstr ""
+
+#: functions.inc.php:56
 msgid "Name of this directory."
 msgstr "Имя текущей директории."
 
-#: functions.inc.php:75
+#: views/form.php:285 views/form.php:312
+msgid "No"
+msgstr ""
+
+#: functions.inc.php:76 views/form.php:190
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
@@ -248,11 +276,11 @@ msgstr ""
 "Количество неверных попыток, во время которых сообщается о неверно набранном "
 "номере или отсутствии совпадений."
 
-#: functions.inc.php:57
+#: functions.inc.php:58 views/form.php:116
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "Префикc добавлямый к текущему имени CallerID"
 
-#: functions.inc.php:77
+#: functions.inc.php:78 views/form.php:242
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -262,7 +290,7 @@ msgstr ""
 "назначение при набраном 0 или достижении числа максимальных попыток неверно "
 "набранного номера (указанного в пункте Неверных попыток)."
 
-#: functions.inc.php:76
+#: functions.inc.php:77 views/form.php:216
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -270,31 +298,39 @@ msgstr ""
 "Сообщение, воспроизводимое при неверно набранном номере, прежде чем будет "
 "предложено попробовать набрать ещё раз."
 
-#: functions.inc.php:79
+#: Directory.class.php:144
+msgid "Reset"
+msgstr ""
+
+#: functions.inc.php:80 views/form.php:278
 msgid "Return to IVR"
 msgstr "Возврат в Интерактивное меню"
+
+#: assets/js/directory.js:86
+msgid "Select"
+msgstr ""
 
 #: install.php:160
 msgid "Setting migrated directory as default"
 msgstr "Установить директорию для миграции как директорию по умолчанию"
 
-#: functions.inc.php:322
+#: functions.inc.php:323
 msgid "Spell Name"
 msgstr "Имя Spell"
 
-#: page.directory.php:6 page.directory.php:82
+#: Directory.class.php:149
 msgid "Submit"
 msgstr "Подтвердить"
 
-#: functions.inc.php:323
+#: functions.inc.php:324
 msgid "System Recordings:"
 msgstr "Записи в системе:"
 
-#: functions.inc.php:321
+#: functions.inc.php:322
 msgid "Text to Speech"
 msgstr "Проговорить текст"
 
-#: functions.inc.php:106
+#: functions.inc.php:107
 msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
@@ -302,28 +338,17 @@ msgstr ""
 "Возможность прямого набора по всем значениям в директории так, как они "
 "отображаются в списке."
 
-#: functions.inc.php:320
+#: functions.inc.php:321
 msgid "Voicemail Greeting"
 msgstr "Приветствие голосовой почты"
 
-#: functions.inc.php:80
+#: functions.inc.php:81 views/form.php:320
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr "Если отмечено, будет сообщаться внутренний номер при переводе вызова."
 
-#: page.directory.php:70
-msgid ""
-"When checked, this becomes the default directory and replaces any other "
-"directory as the default directory. This has the effect of exposing entries "
-"for this directory into the Extension/User page"
-msgstr ""
-"Если отмечено, текущая директория становится директорией по умолчанию и эта "
-"опция изменяет все предыдущие указания на дефолтные директории. Это даёт "
-"возможность отображать записи этой директории на странице настроек "
-"внутреннего номера/пользователя."
-
-#: functions.inc.php:79
+#: functions.inc.php:80 views/form.php:293
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -332,7 +357,11 @@ msgstr ""
 "текущее интерактивное меню, вместо того, чтобы уйти по назначению для "
 "неверно набранных номеров."
 
-#: functions.inc.php:526
+#: views/form.php:283 views/form.php:310
+msgid "Yes"
+msgstr ""
+
+#: functions.inc.php:532
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -380,14 +409,29 @@ msgstr "неустранимая ошибка"
 msgid "no valid_recording field???"
 msgstr "отсутствует поле valid_recording???"
 
-#: page.directory.php:63
-msgid "none"
-msgstr "нет"
-
 #: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
 msgid "ok"
 msgstr "ok"
 
-#: functions.inc.php:338
+#: functions.inc.php:339
 msgid "remove"
 msgstr "удалить"
+
+#~ msgid "Add a new Directory"
+#~ msgstr "Добавить новую директорию"
+
+#~ msgid "Directory Options"
+#~ msgstr "Опции директории"
+
+#~ msgid ""
+#~ "When checked, this becomes the default directory and replaces any other "
+#~ "directory as the default directory. This has the effect of exposing "
+#~ "entries for this directory into the Extension/User page"
+#~ msgstr ""
+#~ "Если отмечено, текущая директория становится директорией по умолчанию и "
+#~ "эта опция изменяет все предыдущие указания на дефолтные директории. Это "
+#~ "даёт возможность отображать записи этой директории на странице настроек "
+#~ "внутреннего номера/пользователя."
+
+#~ msgid "none"
+#~ msgstr "нет"
