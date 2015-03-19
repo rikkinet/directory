@@ -85,7 +85,6 @@ class Directory implements \BMO {
 			$action		= isset($_REQUEST['action'])	? $_REQUEST['action']	: null;
 			$entries	= isset($_REQUEST['entries'])	? $_REQUEST['entries']	: null;
 			//$entries=(($entries)?array_values($entries):'');//reset keys
-			debug($_REQUEST);
 			switch($action){
 				case 'edit':
 					//get real dest
@@ -107,7 +106,6 @@ class Directory implements \BMO {
 	public function getGrid(){
 		$results = directory_list();
 		$def_dir = directory_get_default_dir();
-		debug($def_dir);
 		$dirs = array();
 		if($results){
 			foreach ($results as $key=>$result){
