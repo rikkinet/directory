@@ -10,14 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:22-0500\n"
-"PO-Revision-Date: 2015-02-20 19:22-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-03-27 12:20+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/directory/es_ES/>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: functions.inc.php:58
 msgid ""
@@ -61,7 +63,7 @@ msgstr "Anuncio"
 
 #: directory.i18n.php:4
 msgid "Applications"
-msgstr ""
+msgstr "Aplicaciones"
 
 #: functions.inc.php:57
 msgid "CallerID Name Prefix"
@@ -298,6 +300,8 @@ msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
 msgstr ""
+"Asociado a un Directorio permitiendo que todas las entradas en ese "
+"directorio puedan discarse directamente, tal cual aparecen en el mismo"
 
 #: functions.inc.php:320
 msgid "Voicemail Greeting"
