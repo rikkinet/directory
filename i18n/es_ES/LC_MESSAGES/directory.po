@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:22-0500\n"
-"PO-Revision-Date: 2015-03-27 12:20+0200\n"
+"PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/directory/es_ES/>\n"
@@ -71,7 +71,7 @@ msgstr "Nombre prefijo CallerID"
 
 #: install.php:37
 msgid "Can not create table: "
-msgstr "No se puede crear la tabla:"
+msgstr "No se puede crear la tabla: "
 
 #: functions.inc.php:289
 msgid "Choose One"
@@ -190,7 +190,7 @@ msgid ""
 msgstr ""
 "Error al migrar a nuevo directorio ERROR: No se puede marcar como Directorio "
 "migrado. La migracion probablemente se llevara a cabo nuevamente en la "
-"siguiente instalacion/actualizacion de este modulo."
+"siguiente instalacion/actualizacion de este modulo. "
 
 #: functions.inc.php:504
 msgid "Exclude"
@@ -238,7 +238,7 @@ msgstr "Nombre Anuncio"
 
 #: functions.inc.php:55
 msgid "Name of this directory."
-msgstr "Nombre para este Directorio"
+msgstr "Nombre para este Directorio."
 
 #: functions.inc.php:75
 msgid ""
