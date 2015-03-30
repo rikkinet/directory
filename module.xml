@@ -14,7 +14,7 @@
 	<popovers>
 		<directory>
 			<display>directory</display>
-			<action>add</action>
+			<view>form</view>
 		</directory>
  	</popovers>
 	<depends>
