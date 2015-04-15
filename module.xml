@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.1alpha1</version>
+	<version>13.0.1alpha2</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -22,6 +22,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.1alpha2* Fix popover resolves FREEPBX-8993 for directory
 		*12.0.0* Remove Toggle Val, use HTML5 placeholder instead
 		*2.11.0.5* Include license file
 		*2.11.0.4* FREEPBX-7244 The Asterisk Manager connnection needs to be made regardless.
