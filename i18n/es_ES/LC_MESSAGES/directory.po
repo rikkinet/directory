@@ -1,0 +1,396 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for directory
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-20 19:22-0500\n"
+"PO-Revision-Date: 2015-03-27 12:21+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/directory/es_ES/>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+#: functions.inc.php:58
+msgid ""
+"ALERT_INFO to be sent when called from this Directory. Can be used for "
+"distinctive ring for SIP devices."
+msgstr ""
+"ALERT_INFO que se enviará cuando se llama desde este Directorio. Puede ser "
+"utilizado como timbre especial para los dispositivos SIP."
+
+#: functions.inc.php:10 page.directory.php:91
+msgid "Add Directory"
+msgstr "Agregar Directorio"
+
+#: page.directory.php:66
+msgid "Add a new Directory"
+msgstr "Agregar Nuevo Directorio"
+
+#: functions.inc.php:298
+msgid "Add new entry."
+msgstr "Agregar nueva entrada."
+
+#: install.php:7
+msgid "Adding directory tables if needed"
+msgstr "QAgregando tablas directory si es necesario"
+
+#: functions.inc.php:58
+msgid "Alert Info"
+msgstr "Info Alerta"
+
+#: functions.inc.php:290
+msgid "All Users"
+msgstr "Todos los Usuarios"
+
+#: functions.inc.php:80
+msgid "Announce Extension"
+msgstr "Anunciar Extensión"
+
+#: functions.inc.php:74
+msgid "Announcement"
+msgstr "Anuncio"
+
+#: directory.i18n.php:4
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: functions.inc.php:57
+msgid "CallerID Name Prefix"
+msgstr "Nombre prefijo CallerID"
+
+#: install.php:37
+msgid "Can not create table: "
+msgstr "No se puede crear la tabla: "
+
+#: functions.inc.php:289
+msgid "Choose One"
+msgstr "Seleccione Uno"
+
+#: functions.inc.php:338
+msgid "Click here to remove this entry"
+msgstr "Click aquí para eliminar entrada"
+
+#: functions.inc.php:291
+msgid "Custom"
+msgstr "Personalizado"
+
+#: functions.inc.php:63
+msgid "Default"
+msgstr "Por defecto"
+
+#: functions.inc.php:526 page.directory.php:69
+msgid "Default Directory"
+msgstr "Directorio Por Defecto"
+
+#: functions.inc.php:523
+msgid "Default Group Inclusion"
+msgstr "Grupo Inclusión por defecto"
+
+#: functions.inc.php:48
+#, php-format
+msgid "Delete Directory %s"
+msgstr "Eliminar Directorio %s"
+
+#: functions.inc.php:56
+msgid "Description of this directory."
+msgstr "Una descripción para este Directorio."
+
+#: functions.inc.php:78
+msgid "Destination to send the call to after Invalid Recording is played."
+msgstr "Destino para enviar la llamada después de reproducir Mensaje Inválido."
+
+#: functions.inc.php:262
+msgid "Dial"
+msgstr "Marcar"
+
+#: directory.i18n.php:3 directory.i18n.php:5 functions.inc.php:256
+#: page.directory.php:65 page.directory.php:77
+msgid "Directory"
+msgstr "Directorio"
+
+#: functions.inc.php:601
+#, php-format
+msgid "Directory %s: "
+msgstr "Directorio %s: "
+
+#: functions.inc.php:56
+msgid "Directory Description"
+msgstr "Descripción Directorio"
+
+#: functions.inc.php:54
+msgid "Directory General Options"
+msgstr "Opciones Generales Directorio"
+
+#: functions.inc.php:55
+msgid "Directory Name"
+msgstr "Nombre Directorio"
+
+#: page.directory.php:68
+msgid "Directory Options"
+msgstr "Opciones de Directorio"
+
+#: functions.inc.php:60
+msgid "Directory Options (DTMF)"
+msgstr "Opciones (DTMF) Directorio"
+
+#: functions.inc.php:85
+msgid "Directory&nbsp;Entries"
+msgstr "Entradas de Directorio"
+
+#: functions.inc.php:631
+#, php-format
+msgid "Directory: %s"
+msgstr "Directorio: %s"
+
+#: functions.inc.php:576
+#, php-format
+msgid "Directory: %s "
+msgstr "Directorio: %s "
+
+#: functions.inc.php:332
+#, php-format
+msgid "Edit %s: %s"
+msgstr "Editar %s: %s"
+
+#: functions.inc.php:34
+#, php-format
+msgid "Edit Directory: %s"
+msgstr "Editar Directorio: %s"
+
+#: install.php:138
+msgid ""
+"Error migrating to new directory! ERROR: Could not create new Directory."
+msgstr ""
+"Error al migrar a nuevo directorio! ERROR: No se pudo crear el nuevo "
+"directorio."
+
+#: install.php:154
+msgid ""
+"Error migrating to new directory! ERROR: Could not populate new Directory "
+msgstr ""
+"Error al migrar a nuevo directorio ERROR: No se puede rellenar nuevo "
+"Directorio "
+
+#: install.php:170
+msgid ""
+"Error migrating to new directory! ERROR: Unable to mark Directory as "
+"migrated. Migration will probably be run again at next install/upgrade of "
+"this module. "
+msgstr ""
+"Error al migrar a nuevo directorio ERROR: No se puede marcar como Directorio "
+"migrado. La migracion probablemente se llevara a cabo nuevamente en la "
+"siguiente instalacion/actualizacion de este modulo. "
+
+#: functions.inc.php:504
+msgid "Exclude"
+msgstr "Excluir"
+
+#: functions.inc.php:74
+msgid "Greeting to be played on entry to the directory."
+msgstr "Mensaje que será reproducido al entrar en el Directorio."
+
+#: functions.inc.php:505
+msgid "Include"
+msgstr "Incluir"
+
+#: functions.inc.php:78
+msgid "Invalid Destination"
+msgstr "Destino Inválido"
+
+#: functions.inc.php:77
+msgid "Invalid Recording"
+msgstr "Mensaje Inválido"
+
+#: functions.inc.php:75
+msgid "Invalid Retries"
+msgstr "Reintentos Inválidos"
+
+#: functions.inc.php:76
+msgid "Invalid Retry Recording"
+msgstr "Mensaje Intentos Inválidos"
+
+#: install.php:128
+msgid "Migrating Directory"
+msgstr "Migrando Directorio"
+
+#: install.php:172
+msgid "Migration Complete!"
+msgstr "Migracion Completa!"
+
+#: functions.inc.php:262
+msgid "Name"
+msgstr "Nombre"
+
+#: functions.inc.php:262
+msgid "Name Announcement"
+msgstr "Nombre Anuncio"
+
+#: functions.inc.php:55
+msgid "Name of this directory."
+msgstr "Nombre para este Directorio."
+
+#: functions.inc.php:75
+msgid ""
+"Number of times to retry when receiving an invalid/unmatched response from "
+"the caller"
+msgstr ""
+"Número de veces para volver a intentar cuando se recibe una respuesta "
+"inválida/no coincidente desde la persona que llama"
+
+#: functions.inc.php:57
+msgid "Prefix to be appended to current CallerID Name."
+msgstr "Prefijo que se agregará al actual nombre de CallerID."
+
+#: functions.inc.php:77
+msgid ""
+"Prompt to be played before sending the caller to an alternate destination "
+"due to the caller pressing 0 or receiving the maximum amount of invalid/"
+"unmatched responses (as determined by Invalid Retries)"
+msgstr ""
+"Mensaje que se reproduce antes de enviar la llamada a un destino alternativo "
+"ya sea porque el llamante presione 0 o debido a recibir la máxima cantidad "
+"de respuestas inválidas/no coincidentes (según lo determinado por Reintentos "
+"Inválidos)"
+
+#: functions.inc.php:76
+msgid ""
+"Prompt to be played when an invalid/unmatched response is received, before "
+"prompting the caller to try again"
+msgstr ""
+"Mensaje que se reproduce cuando una respuesta inválida/no coincidente se "
+"recibe, antes de que la persona que llama vuelva a intentarlo"
+
+#: functions.inc.php:79
+msgid "Return to IVR"
+msgstr "Volver al IVR"
+
+#: install.php:160
+msgid "Setting migrated directory as default"
+msgstr "Fijando Directorio migrado como por defecto"
+
+#: functions.inc.php:322
+msgid "Spell Name"
+msgstr "Decir Nombre"
+
+#: page.directory.php:6 page.directory.php:82
+msgid "Submit"
+msgstr "Aplicar"
+
+#: functions.inc.php:323
+msgid "System Recordings:"
+msgstr "Grabaciones Sistema:"
+
+#: functions.inc.php:321
+msgid "Text to Speech"
+msgstr "Texto a voz"
+
+#: functions.inc.php:106
+msgid ""
+"Tied to a Directory allowing all entries in that directory to be dialed "
+"directly, as they appear in the directory"
+msgstr ""
+"Asociado a un Directorio permitiendo que todas las entradas en ese "
+"directorio puedan discarse directamente, tal cual aparecen en el mismo"
+
+#: functions.inc.php:320
+msgid "Voicemail Greeting"
+msgstr "Saludo Correo Vocal"
+
+#: functions.inc.php:80
+msgid ""
+"When checked, the extension number being transferred to will be announced "
+"prior to the transfer"
+msgstr ""
+"Cuando se activa, el número de extensión a donde se pasa la llamada se dará "
+"a conocer antes de la transferencia"
+
+#: page.directory.php:70
+msgid ""
+"When checked, this becomes the default directory and replaces any other "
+"directory as the default directory. This has the effect of exposing entries "
+"for this directory into the Extension/User page"
+msgstr ""
+"Si se marca, este se convierte en el directorio por defecto y reemplaza "
+"cualquier otro directorio como el directorio por defecto. Esto tiene el "
+"efecto insertar las entradas para este directorio en la p&aacute;gina de las "
+"extensiones y/o de los usuarios"
+
+#: functions.inc.php:79
+msgid ""
+"When selected, if the call passed through an IVR that had \"Return to IVR\" "
+"selected, the call will be returned there instead of the Invalid destination."
+msgstr ""
+"Cuando se selecciona, si la llamada pasa a través de un IVR que había \""
+"Volver al IVR\" seleccionado, hará que la llamada sea devuelta allí en lugar "
+"de un destino inválido."
+
+#: functions.inc.php:526
+msgid ""
+"You can include or exclude this extension/user from being part of the "
+"default directory when creating or editing."
+msgstr ""
+"Usted puede incluir o excluir esta extensión/usuario para formar parte del "
+"directorio por defecto al crear o modificar."
+
+#: functions.inc.php:37
+msgid "[SYSTEM DEFAULT]"
+msgstr "[DEFAULT SISTEMA]"
+
+#: install.php:46
+msgid "adding say_extension field to directory_details.."
+msgstr "Agregando campo say_extension a tabla directory_details.."
+
+#: install.php:81
+msgid "cannot add field e_id to table directory_entries \n"
+msgstr "no se puede agregar el campo e_id a tabla directory_entries \n"
+
+#: install.php:102
+msgid "cannot set e_id for directory_id = "
+msgstr "no se puede fijar e_id para directory_id = "
+
+#: uninstall.php:7
+msgid "deleting default_directory and migration tracking keys.."
+msgstr "eliminando default_directory y migrando llaves.."
+
+#: uninstall.php:3
+msgid "dropping directory_details, directory_entries.."
+msgstr "parando directory_details, directory_entries.."
+
+#: install.php:60
+msgid "dropping valid_details field.."
+msgstr "parando campo valid_details.."
+
+#: install.php:83
+msgid "e_id added to table directory_entries"
+msgstr "e_id agregado a tabla directory_entries"
+
+#: install.php:50
+msgid "fatal error"
+msgstr "error fatal"
+
+#: install.php:64
+msgid "no valid_recording field???"
+msgstr "campo valid_recording no valido???"
+
+#: page.directory.php:63
+msgid "none"
+msgstr "ninguno"
+
+#: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
+msgid "ok"
+msgstr "ok"
+
+#: functions.inc.php:338
+msgid "remove"
+msgstr "eliminar"
