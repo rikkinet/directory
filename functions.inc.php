@@ -331,12 +331,11 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	if ($realid != 'custom') {
 		$user_type	=  (isset($amp_conf['AMPEXTENSION']) && $amp_conf['AMPEXTENSION']) == 'deviceanduser' ? 'user' : 'extension';
 		$tlabel		=  sprintf(_("Edit %s: %s"), $user_type ,$realid);
-		$label		= '<span><i width="16" height="16" border="0" title="'.$tlabel.'" alt="" class="fa fa-edit"/>&nbsp;</span>';
-		$user		= ' <a href="/admin/config.php?type=setup&display='.$user_type.'s&skip=0&extdisplay='.$realid.'">'.$label.'</a> ';
+		$user		= ' <a href="/admin/config.php?type=setup&display='.$user_type.'s&skip=0&extdisplay='.$realid.'"><i class="fa fa-user"></i></a> ';
 	} else {
 		$user		= '';
 	}
-	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash">';
+	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;"></i>';
 	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
