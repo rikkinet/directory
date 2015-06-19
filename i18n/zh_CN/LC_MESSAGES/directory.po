@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 21:49-0400\n"
+"POT-Creation-Date: 2015-06-19 12:13-0400\n"
 "PO-Revision-Date: 2015-02-20 19:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -56,10 +56,6 @@ msgstr "播放分机"
 msgid "Announcement"
 msgstr "公告"
 
-#: directory.i18n.php:6 directory.i18n.php:10
-msgid "Applications"
-msgstr "应用"
-
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "来电显示名称前缀"
@@ -72,7 +68,7 @@ msgstr "不能创建表"
 msgid "Choose One"
 msgstr "选择一个"
 
-#: functions.inc.php:339
+#: functions.inc.php:341
 msgid "Click here to remove this entry"
 msgstr ""
 
@@ -88,11 +84,11 @@ msgstr "默认"
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:532
+#: functions.inc.php:534
 msgid "Default Directory"
 msgstr "默认目录"
 
-#: functions.inc.php:528
+#: functions.inc.php:530
 msgid "Default Group Inclusion"
 msgstr "默认组"
 
@@ -121,12 +117,11 @@ msgstr "拨打"
 msgid "Direcrory"
 msgstr ""
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:257
-#: page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6
 msgid "Directory"
 msgstr "目录"
 
-#: functions.inc.php:607
+#: functions.inc.php:609
 #, php-format
 msgid "Directory %s: "
 msgstr ""
@@ -151,17 +146,17 @@ msgstr "目录可选DTMF"
 msgid "Directory&nbsp;Entries"
 msgstr ""
 
-#: functions.inc.php:637
+#: functions.inc.php:639
 #, php-format
 msgid "Directory: %s"
 msgstr ""
 
-#: functions.inc.php:582
+#: functions.inc.php:584
 #, php-format
 msgid "Directory: %s "
 msgstr "目录: %s"
 
-#: functions.inc.php:333
+#: functions.inc.php:336
 #, php-format
 msgid "Edit %s: %s"
 msgstr "编辑 %s: %s"
@@ -192,7 +187,7 @@ msgid ""
 "this module. "
 msgstr ""
 
-#: functions.inc.php:509
+#: functions.inc.php:511
 msgid "Exclude"
 msgstr "排除"
 
@@ -200,7 +195,7 @@ msgstr "排除"
 msgid "Greeting to be played on entry to the directory."
 msgstr "播放进入此目录的问候语"
 
-#: functions.inc.php:510
+#: functions.inc.php:512
 msgid "Include"
 msgstr "包含"
 
@@ -287,7 +282,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr "返回IVR"
 
-#: assets/js/directory.js:86
+#: assets/js/directory.js:101
 msgid "Select"
 msgstr ""
 
@@ -295,7 +290,7 @@ msgstr ""
 msgid "Setting migrated directory as default"
 msgstr ""
 
-#: functions.inc.php:323
+#: functions.inc.php:326
 msgid "Spell Name"
 msgstr "拼写名称"
 
@@ -303,13 +298,17 @@ msgstr "拼写名称"
 msgid "Submit"
 msgstr "提交"
 
-#: functions.inc.php:324
+#: functions.inc.php:327
 msgid "System Recordings:"
 msgstr "系统录音"
 
-#: functions.inc.php:322
+#: functions.inc.php:325
 msgid "Text to Speech"
 msgstr "语音识别"
+
+#: assets/js/directory.js:23
+msgid "This entry has already been added"
+msgstr ""
 
 #: functions.inc.php:107
 msgid ""
@@ -317,7 +316,7 @@ msgid ""
 "directly, as they appear in the directory"
 msgstr ""
 
-#: functions.inc.php:321
+#: functions.inc.php:324
 msgid "Voicemail Greeting"
 msgstr "语音邮箱问候"
 
@@ -337,7 +336,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:532
+#: functions.inc.php:534
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -387,9 +386,12 @@ msgstr ""
 msgid "ok"
 msgstr ""
 
-#: functions.inc.php:339
+#: functions.inc.php:341
 msgid "remove"
 msgstr "删除"
+
+#~ msgid "Applications"
+#~ msgstr "应用"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "添加新目录"

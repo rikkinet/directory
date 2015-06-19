@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 21:49-0400\n"
+"POT-Creation-Date: 2015-06-19 12:13-0400\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -61,10 +61,6 @@ msgstr "Anunciar Extensión"
 msgid "Announcement"
 msgstr "Anuncio"
 
-#: directory.i18n.php:6 directory.i18n.php:10
-msgid "Applications"
-msgstr "Aplicaciones"
-
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "Nombre prefijo CallerID"
@@ -77,7 +73,7 @@ msgstr "No se puede crear la tabla: "
 msgid "Choose One"
 msgstr "Seleccione Uno"
 
-#: functions.inc.php:339
+#: functions.inc.php:341
 msgid "Click here to remove this entry"
 msgstr "Click aquí para eliminar entrada"
 
@@ -93,11 +89,11 @@ msgstr "Por defecto"
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:532
+#: functions.inc.php:534
 msgid "Default Directory"
 msgstr "Directorio Por Defecto"
 
-#: functions.inc.php:528
+#: functions.inc.php:530
 msgid "Default Group Inclusion"
 msgstr "Grupo Inclusión por defecto"
 
@@ -126,12 +122,11 @@ msgstr "Marcar"
 msgid "Direcrory"
 msgstr ""
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:257
-#: page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6
 msgid "Directory"
 msgstr "Directorio"
 
-#: functions.inc.php:607
+#: functions.inc.php:609
 #, php-format
 msgid "Directory %s: "
 msgstr "Directorio %s: "
@@ -156,17 +151,17 @@ msgstr "Opciones (DTMF) Directorio"
 msgid "Directory&nbsp;Entries"
 msgstr "Entradas de Directorio"
 
-#: functions.inc.php:637
+#: functions.inc.php:639
 #, php-format
 msgid "Directory: %s"
 msgstr "Directorio: %s"
 
-#: functions.inc.php:582
+#: functions.inc.php:584
 #, php-format
 msgid "Directory: %s "
 msgstr "Directorio: %s "
 
-#: functions.inc.php:333
+#: functions.inc.php:336
 #, php-format
 msgid "Edit %s: %s"
 msgstr "Editar %s: %s"
@@ -204,7 +199,7 @@ msgstr ""
 "migrado. La migracion probablemente se llevara a cabo nuevamente en la "
 "siguiente instalacion/actualizacion de este modulo. "
 
-#: functions.inc.php:509
+#: functions.inc.php:511
 msgid "Exclude"
 msgstr "Excluir"
 
@@ -212,7 +207,7 @@ msgstr "Excluir"
 msgid "Greeting to be played on entry to the directory."
 msgstr "Mensaje que será reproducido al entrar en el Directorio."
 
-#: functions.inc.php:510
+#: functions.inc.php:512
 msgid "Include"
 msgstr "Incluir"
 
@@ -307,7 +302,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr "Volver al IVR"
 
-#: assets/js/directory.js:86
+#: assets/js/directory.js:101
 msgid "Select"
 msgstr ""
 
@@ -315,7 +310,7 @@ msgstr ""
 msgid "Setting migrated directory as default"
 msgstr "Fijando Directorio migrado como por defecto"
 
-#: functions.inc.php:323
+#: functions.inc.php:326
 msgid "Spell Name"
 msgstr "Decir Nombre"
 
@@ -323,13 +318,17 @@ msgstr "Decir Nombre"
 msgid "Submit"
 msgstr "Aplicar"
 
-#: functions.inc.php:324
+#: functions.inc.php:327
 msgid "System Recordings:"
 msgstr "Grabaciones Sistema:"
 
-#: functions.inc.php:322
+#: functions.inc.php:325
 msgid "Text to Speech"
 msgstr "Texto a voz"
+
+#: assets/js/directory.js:23
+msgid "This entry has already been added"
+msgstr ""
 
 #: functions.inc.php:107
 msgid ""
@@ -339,7 +338,7 @@ msgstr ""
 "Asociado a un Directorio permitiendo que todas las entradas en ese "
 "directorio puedan discarse directamente, tal cual aparecen en el mismo"
 
-#: functions.inc.php:321
+#: functions.inc.php:324
 msgid "Voicemail Greeting"
 msgstr "Saludo Correo Vocal"
 
@@ -364,7 +363,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:532
+#: functions.inc.php:534
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -416,9 +415,12 @@ msgstr "campo valid_recording no valido???"
 msgid "ok"
 msgstr "ok"
 
-#: functions.inc.php:339
+#: functions.inc.php:341
 msgid "remove"
 msgstr "eliminar"
+
+#~ msgid "Applications"
+#~ msgstr "Aplicaciones"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "Agregar Nuevo Directorio"
