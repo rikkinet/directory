@@ -296,20 +296,23 @@ function directory_draw_entries($id){
 		$newuser .= '<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1]."</option>\n";
 	}
 	$newuser	.= '</select>';
-	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><img src="images/core_add.png" name="image" style="border:none;cursor:pointer;" /><span>'._('Add new entry.').'</span></a></td><td colspan="3"id="addrow">'.$newuser.'</td></tr></tfoot>';
+	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><i class="fa fa-plus" name="image" style="font-size: 20px;cursor:pointer;color:#0070a3;" /><span>'._('Add new entry.').'</span></a></td><td colspan="'.(count(directory_draw_entries_table_header_directory()) - 1).'"id="addrow">'.$newuser.'</td></tr></tfoot>';
 	$html		.= '<tbody>';
 	$entries	= directory_get_dir_entries($id);
+	$inuse = array();
 	foreach($entries as $e){
 		$realid = $e['type'] == 'custom' ? 'custom' : $e['foreign_id'];
 		$foreign_name = $e['foreign_name'] == '' ? 'Custom Entry' : $e['foreign_name'];
-		$html .= directory_draw_entries_tr($id, $realid, $e['name'], $foreign_name, $e['audio'], $e['dial'], $e['e_id']);
+		$html .= directory_draw_entries_tr($id, $realid, $e['name'], $foreign_name, $e['audio'], $e['dial'], $e['e_id'], false, $e['foreign_id']."|".$e['foreign_name']);
+		$inuse[] = $e['foreign_id']."|".$e['foreign_name'];
 	}
 	$html .= '</tbody></table>';
+	$html .= '<script>var inuse = '.json_encode($inuse).'</script>';
 	return $html;
 }
 
 //used to add row's the entry table
-function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false){
+function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false, $name = null){
 	global $amp_conf,  $directory_draw_recordings_list, $audio_select;
 	if (!$directory_draw_recordings_list) {
 		$directory_draw_recordings_list = recordings_list();
@@ -335,7 +338,7 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	} else {
 		$user		= '';
 	}
-	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;"></i>';
+	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;" data-name="'.$name.'"></i>';
 	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {

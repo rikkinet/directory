@@ -3,23 +3,34 @@ $(document).ready(function() {
 	window.location.href = 'config.php?type=<?php echo $type ?>&display=directory&action=add';
 	})
 });
-
 $(document).ready(function(){
 	//show/hide add button/dropdown
 	$('#addbut').click(function(){
 		$('#addusersel').val('none');//reset select box
 		$(this).fadeOut(250,
 		function(){
-			$('#addrow').fadeIn(250);
+			$('#addrow').fadeIn(250, function() {
+        $(this).prop("colspan",5);
+      });
 		});
 		return false;
 	});
 
 	//add row button
 	$('#addrow').change(function(){
+    var val = $('#addusersel').val();
+    if($.inArray(val, inuse) > -1) {
+      alert(_("This entry has already been added"));
+      $('#addusersel').val('none');
+      return false;
+    }
+    inuse.push(val);
 		$(this).fadeOut(250,
 		function(){
-			$('#addbut').not("span").fadeIn(250).find("span").hide();
+			$('#addbut').not("span").fadeIn(250, function() {
+        $(this).find("span").hide();
+        $(this).prop("colspan", 5);
+      });
 		});
 		if($('#addusersel').val() != 'none'){
 			var rownum=$('[class^=entrie]').length+1;
@@ -42,11 +53,15 @@ $(document).ready(function(){
 	});
 
 	//delete row when trash can is clicked
-	$('.trash-tr').live('click', function(){
+	$('.trash-tr').on('click', function(){
+    var $this = this;
 	$(this).parents('tr').fadeOut(500,
 		function(){
-			$(this).remove()
-		})
+      if($.inArray($($this).data("name"), inuse) > -1) {
+        delete(inuse[$.inArray($($this).data("name"), inuse)]);
+      }
+      $(this).remove();
+		});
 	});
 
 
