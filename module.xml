@@ -17,6 +17,11 @@
 			<view>form</view>
 		</directory>
  	</popovers>
+	<hooks>
+  <ivr namespace="FreePBX\modules" class="Ivr">
+    <method namespace="FreePBX\Modules" class="Directory" callingMethod="pageHook">ivrHook</method>
+  </ivr>
+</hooks>
 	<depends>
 		<version>12.0.1beta11</version>
 		<module>recordings ge 3.3.8</module>

@@ -27,14 +27,14 @@ class Directory implements \BMO {
 							echo $this->getGrid();
 							exit();
 						break;
-						
+
 						default:
 							json_encode(array("Error"=>_("Invalid Request")));
 							exit();
 						break;
 					}
 				}
-				//check for ajax request and process that immediately 
+				//check for ajax request and process that immediately
 				if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 					$opts = $opts=explode('|', urldecode($_REQUEST['ajaxgettr']));
 					if($opts[0] == 'all') {
@@ -156,5 +156,36 @@ class Directory implements \BMO {
 			break;
 		}
 		return $buttons;
+	}
+	public function ivrHook($request){
+		if(isset($request['id'])){
+			$ivr = \FreePBX::Ivr()->getDetails($request['id']);
+		}
+		$directdial = isset($ivr['directdial'])?$ivr['directdial']:'';
+		$dirs = directory_list();
+		$options = '$("<option />", {text: \''._("Disabled").'\'}).appendTo(sel);';
+		$options .= '$("<option />", {val: \'ext-local\', text: \''._("Enabled").'\'}).appendTo(sel);';
+		foreach ($dirs as $dir) {
+			$name = $dir['dirname'] ? $dir['dirname'] : 'Directory ' . $dir['id'];
+			$options .= '$("<option />", {val: \''.$dir['id'].'\', text: \''.$name.'\'}).appendTo(sel);';
+		}
+		$html = '
+			<script type="text/javascript">
+				var sel = $("<select id=\"directdial\" name=\"directdial\" class=\"form-control\" />");
+				var target = $("#directdialyes").parent();
+			';
+		$html .= $options;
+		$html .='
+				$(target).html(sel);
+				$("#directdial").find("option").each( function() {
+  				var $this = $(this);
+  					if ($this.val() == "'.$directdial.'") {
+     					$this.attr("selected","selected");
+     					return false;
+  					}
+					});
+			</script>
+		';
+		return $html;
 	}
 }
