@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 12:13-0400\n"
+"POT-Creation-Date: 2015-07-09 12:36-0400\n"
 "PO-Revision-Date: 2014-04-17 09:53+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/directory/"
@@ -190,6 +190,10 @@ msgstr "ディレクトリ： %s"
 msgid "Directory: %s "
 msgstr "ディレクトリ： %s "
 
+#: Directory.class.php:166
+msgid "Disabled"
+msgstr ""
+
 #: functions.inc.php:336
 #, php-format
 msgid "Edit %s: %s"
@@ -203,6 +207,10 @@ msgstr ""
 #, php-format
 msgid "Edit Directory: %s"
 msgstr "ディレクトリを編集： %s"
+
+#: Directory.class.php:167
+msgid "Enabled"
+msgstr ""
 
 #: install.php:138
 msgid ""

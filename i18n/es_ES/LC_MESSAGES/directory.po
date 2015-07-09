@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 12:13-0400\n"
+"POT-Creation-Date: 2015-07-09 12:36-0400\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -161,6 +161,10 @@ msgstr "Directorio: %s"
 msgid "Directory: %s "
 msgstr "Directorio: %s "
 
+#: Directory.class.php:166
+msgid "Disabled"
+msgstr ""
+
 #: functions.inc.php:336
 #, php-format
 msgid "Edit %s: %s"
@@ -174,6 +178,10 @@ msgstr ""
 #, php-format
 msgid "Edit Directory: %s"
 msgstr "Editar Directorio: %s"
+
+#: Directory.class.php:167
+msgid "Enabled"
+msgstr ""
 
 #: install.php:138
 msgid ""
