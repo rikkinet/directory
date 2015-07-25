@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:31-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 
 #: functions.inc.php:263
-#: views/grid.php:11
+#: views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -94,15 +94,15 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr ""
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr ""
 
@@ -129,16 +129,13 @@ msgstr ""
 msgid "Dial"
 msgstr ""
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
 #: functions.inc.php:257
 #: page.directory.php:6
+#: views/grid.php:10
 msgid "Directory"
 msgstr ""
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr ""
@@ -165,12 +162,12 @@ msgstr ""
 msgid "Directory&nbsp;Entries"
 msgstr ""
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr ""
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr ""
@@ -214,7 +211,7 @@ msgid ""
 "this module. "
 msgstr ""
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr ""
 
@@ -223,7 +220,7 @@ msgstr ""
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr ""
 
@@ -377,7 +374,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."

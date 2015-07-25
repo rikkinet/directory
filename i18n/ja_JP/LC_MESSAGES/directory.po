@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:31-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: 2014-04-17 09:53+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/directory/"
@@ -58,7 +58,7 @@ msgstr ""
 "音に使用することができます。このディレクトリから呼び出された際に送信されるア"
 "ラート情報。SIPデバイスの着信音に使用することができます。"
 
-#: functions.inc.php:263 views/grid.php:11
+#: functions.inc.php:263 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -118,15 +118,15 @@ msgstr "カスタム"
 msgid "Default"
 msgstr "デフォルト"
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr "デフォルトディレクトリ"
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr "デフォルトグループに含まれる"
 
@@ -151,15 +151,11 @@ msgstr "無効な録音が再生された場合に、呼が送られる宛先。
 msgid "Dial"
 msgstr "ダイヤル"
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
-#: functions.inc.php:257 page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "ディレクトリー"
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr "ディレクトリ： %s"
@@ -184,12 +180,12 @@ msgstr "ディレクトリオプション(DTMF)"
 msgid "Directory&nbsp;Entries"
 msgstr "ディレクトリ&nbsp;エントリー"
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr "ディレクトリ： %s"
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr "ディレクトリ： %s "
@@ -238,7 +234,7 @@ msgstr ""
 "とができません。このモジュールを次にインストール/アップグレードした際におそら"
 "く再度移行が実行されます。"
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr "除外"
 
@@ -246,7 +242,7 @@ msgstr "除外"
 msgid "Greeting to be played on entry to the directory."
 msgstr "ディレクトリに入る際に再生される挨拶メッセージ。"
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr "含む"
 
@@ -394,7 +390,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."

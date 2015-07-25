@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX Directory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:31-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: 2010-06-22 22:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team:  <mickecamino@gmail.com>\n"
@@ -37,7 +37,7 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:263 views/grid.php:11
+#: functions.inc.php:263 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -99,15 +99,15 @@ msgstr "Anpassad"
 msgid "Default"
 msgstr "Standard"
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr "Standardkatalog"
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr "Inkludera i standardgrupp"
 
@@ -133,15 +133,11 @@ msgstr ""
 msgid "Dial"
 msgstr ""
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
-#: functions.inc.php:257 page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "Katalog"
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr "Katalog %s: "
@@ -166,12 +162,12 @@ msgstr ""
 msgid "Directory&nbsp;Entries"
 msgstr "Katalogval"
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr "Katalog: %s"
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr "Katalog: %s "
@@ -215,7 +211,7 @@ msgid ""
 "this module. "
 msgstr ""
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr "Exkludera"
 
@@ -223,7 +219,7 @@ msgstr "Exkludera"
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr "Inkludera"
 
@@ -373,7 +369,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."

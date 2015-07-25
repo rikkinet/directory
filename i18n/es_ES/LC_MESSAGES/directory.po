@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:31-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr ""
 "ALERT_INFO que se enviará cuando se llama desde este Directorio. Puede ser "
 "utilizado como timbre especial para los dispositivos SIP."
 
-#: functions.inc.php:263 views/grid.php:11
+#: functions.inc.php:263 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -89,15 +89,15 @@ msgstr "Personalizado"
 msgid "Default"
 msgstr "Por defecto"
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr "Directorio Por Defecto"
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr "Grupo Inclusión por defecto"
 
@@ -122,15 +122,11 @@ msgstr "Destino para enviar la llamada después de reproducir Mensaje Inválido.
 msgid "Dial"
 msgstr "Marcar"
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
-#: functions.inc.php:257 page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "Directorio"
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr "Directorio %s: "
@@ -155,12 +151,12 @@ msgstr "Opciones (DTMF) Directorio"
 msgid "Directory&nbsp;Entries"
 msgstr "Entradas de Directorio"
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr "Directorio: %s"
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr "Directorio: %s "
@@ -211,7 +207,7 @@ msgstr ""
 "migrado. La migracion probablemente se llevara a cabo nuevamente en la "
 "siguiente instalacion/actualizacion de este modulo. "
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr "Excluir"
 
@@ -219,7 +215,7 @@ msgstr "Excluir"
 msgid "Greeting to be played on entry to the directory."
 msgstr "Mensaje que será reproducido al entrar en el Directorio."
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr "Incluir"
 
@@ -375,7 +371,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
