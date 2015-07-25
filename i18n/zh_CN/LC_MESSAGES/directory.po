@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 12:36-0400\n"
+"POT-Creation-Date: 2015-07-24 20:31-0400\n"
 "PO-Revision-Date: 2015-02-20 19:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -47,6 +47,10 @@ msgstr "告警信息"
 #: functions.inc.php:291
 msgid "All Users"
 msgstr "所有用户"
+
+#: assets/js/directory.js:83
+msgid "An Error occurred trying to contact the server adding a row, no reply."
+msgstr ""
 
 #: functions.inc.php:81 views/form.php:305
 msgid "Announce Extension"
@@ -92,7 +96,7 @@ msgstr "默认目录"
 msgid "Default Group Inclusion"
 msgstr "默认组"
 
-#: Directory.class.php:137
+#: Directory.class.php:138
 msgid "Delete"
 msgstr ""
 
@@ -156,7 +160,7 @@ msgstr ""
 msgid "Directory: %s "
 msgstr "目录: %s"
 
-#: Directory.class.php:166
+#: Directory.class.php:167
 msgid "Disabled"
 msgstr ""
 
@@ -174,7 +178,7 @@ msgstr ""
 msgid "Edit Directory: %s"
 msgstr "编辑目录: %s"
 
-#: Directory.class.php:167
+#: Directory.class.php:168
 msgid "Enabled"
 msgstr ""
 
@@ -215,7 +219,7 @@ msgstr "无效目的地"
 msgid "Invalid Recording"
 msgstr "无效录音"
 
-#: Directory.class.php:32
+#: Directory.class.php:33
 msgid "Invalid Request"
 msgstr ""
 
@@ -282,7 +286,7 @@ msgid ""
 "prompting the caller to try again"
 msgstr ""
 
-#: Directory.class.php:142
+#: Directory.class.php:143
 msgid "Reset"
 msgstr ""
 
@@ -290,7 +294,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr "返回IVR"
 
-#: assets/js/directory.js:101
+#: assets/js/directory.js:103
 msgid "Select"
 msgstr ""
 
@@ -302,7 +306,7 @@ msgstr ""
 msgid "Spell Name"
 msgstr "拼写名称"
 
-#: Directory.class.php:147
+#: Directory.class.php:148
 msgid "Submit"
 msgstr "提交"
 
@@ -314,7 +318,7 @@ msgstr "系统录音"
 msgid "Text to Speech"
 msgstr "语音识别"
 
-#: assets/js/directory.js:23
+#: assets/js/directory.js:24
 msgid "This entry has already been added"
 msgstr ""
 

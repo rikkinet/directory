@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 12:36-0400\n"
+"POT-Creation-Date: 2015-07-24 20:31-0400\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -52,6 +52,10 @@ msgstr "Info Alerta"
 #: functions.inc.php:291
 msgid "All Users"
 msgstr "Todos los Usuarios"
+
+#: assets/js/directory.js:83
+msgid "An Error occurred trying to contact the server adding a row, no reply."
+msgstr ""
 
 #: functions.inc.php:81 views/form.php:305
 msgid "Announce Extension"
@@ -97,7 +101,7 @@ msgstr "Directorio Por Defecto"
 msgid "Default Group Inclusion"
 msgstr "Grupo Inclusión por defecto"
 
-#: Directory.class.php:137
+#: Directory.class.php:138
 msgid "Delete"
 msgstr ""
 
@@ -161,7 +165,7 @@ msgstr "Directorio: %s"
 msgid "Directory: %s "
 msgstr "Directorio: %s "
 
-#: Directory.class.php:166
+#: Directory.class.php:167
 msgid "Disabled"
 msgstr ""
 
@@ -179,7 +183,7 @@ msgstr ""
 msgid "Edit Directory: %s"
 msgstr "Editar Directorio: %s"
 
-#: Directory.class.php:167
+#: Directory.class.php:168
 msgid "Enabled"
 msgstr ""
 
@@ -227,7 +231,7 @@ msgstr "Destino Inválido"
 msgid "Invalid Recording"
 msgstr "Mensaje Inválido"
 
-#: Directory.class.php:32
+#: Directory.class.php:33
 msgid "Invalid Request"
 msgstr ""
 
@@ -302,7 +306,7 @@ msgstr ""
 "Mensaje que se reproduce cuando una respuesta inválida/no coincidente se "
 "recibe, antes de que la persona que llama vuelva a intentarlo"
 
-#: Directory.class.php:142
+#: Directory.class.php:143
 msgid "Reset"
 msgstr ""
 
@@ -310,7 +314,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr "Volver al IVR"
 
-#: assets/js/directory.js:101
+#: assets/js/directory.js:103
 msgid "Select"
 msgstr ""
 
@@ -322,7 +326,7 @@ msgstr "Fijando Directorio migrado como por defecto"
 msgid "Spell Name"
 msgstr "Decir Nombre"
 
-#: Directory.class.php:147
+#: Directory.class.php:148
 msgid "Submit"
 msgstr "Aplicar"
 
@@ -334,7 +338,7 @@ msgstr "Grabaciones Sistema:"
 msgid "Text to Speech"
 msgstr "Texto a voz"
 
-#: assets/js/directory.js:23
+#: assets/js/directory.js:24
 msgid "This entry has already been added"
 msgstr ""
 
