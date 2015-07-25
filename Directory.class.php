@@ -18,6 +18,7 @@ class Directory implements \BMO {
 	public function restore($backup) {}
 	public function doConfigPageInit($page) {
 		$request = $_REQUEST;
+		$request['action'] = !empty($request['action']) ? $request['action'] : "";
 		switch($page){
 			case 'directory':
 				if($request['action'] == "getJSON"){

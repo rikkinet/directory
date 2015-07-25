@@ -296,7 +296,7 @@ function directory_draw_entries($id){
 		$newuser .= '<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1]."</option>\n";
 	}
 	$newuser	.= '</select>';
-	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><i class="fa fa-plus" name="image" style="font-size: 20px;cursor:pointer;color:#0070a3;" /><span>'._('Add new entry.').'</span></a></td><td colspan="'.(count(directory_draw_entries_table_header_directory()) - 1).'"id="addrow">'.$newuser.'</td></tr></tfoot>';
+	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><i class="fa fa-plus" name="image" style="font-size: 20px;cursor:pointer;color:#0070a3;" /><span>'._('Add new entry.').'</span></a></td><td colspan="'.(count(directory_draw_entries_table_header_directory()) - 1).'"id="addrow" style="display: none;">'.$newuser.'</td></tr></tfoot>';
 	$html		.= '<tbody>';
 	$entries	= directory_get_dir_entries($id);
 	$inuse = array();
@@ -339,15 +339,15 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 		$user		= '';
 	}
 	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;" data-name="'.$name.'"></i>';
-	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
+	$t1_class 		= $name == '' ? ' class = "dpt-title form-control" ' : '';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
-		$t2_class 	.= '" class = "dpt-title" ';
+		$t2_class 	.= '" class = "dpt-title form-control" ';
 	}
 
-	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
+	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" class="form-control" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
 	$td[] = $audio_select;
-	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" class="form-control" />';
+	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" />';
 	$opts = array('id' => $id, 'e_id' => $e_id, 'realid' => $realid, 'name' => $name, 'audio' => $audio, 'num' => $num);
 
 	$more_td = mod_func_iterator('draw_entries_tr_directory', $opts);
