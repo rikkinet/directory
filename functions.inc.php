@@ -139,43 +139,6 @@ function directory_configpageinit($pagename) {
 	}
 }
 
-//prosses received arguments
-function directory_configprocess(){
-	if($_REQUEST['display'] == 'directory'){
-		global $db,$amp_conf;
-		//get variables for directory_details
-		$requestvars = array('id','dirname','description','announcement',
-							'callid_prefix','alert_info','repeat_loops',
-							'repeat_recording','invalid_recording',
-							'invalid_destination','retivr','say_extension');
-		foreach($requestvars as $var){
-			$vars[$var] = isset($_REQUEST[$var]) 	? $_REQUEST[$var]		: '';
-		}
-
-		$action		= isset($_REQUEST['action'])	? $_REQUEST['action']	: '';
-		$entries	= isset($_REQUEST['entries'])	? $_REQUEST['entries']	: '';
-		//$entries=(($entries)?array_values($entries):'');//reset keys
-
-		switch($action){
-			case 'edit':
-				//get real dest
-				$vars['invalid_destination'] = $_REQUEST[$_REQUEST[$_REQUEST['invalid_destination']].str_replace('goto','',$_REQUEST['invalid_destination'])];
-				$vars['id'] = directory_save_dir_details($vars);
-				directory_save_dir_entries($vars['id'],$entries);
-				$this_dest = directory_getdest($vars['id']);
-				fwmsg::set_dest($this_dest[0]);
-				needreload();
-				redirect_standard_continue('id');
-			break;
-			case 'delete':
-				directory_delete($vars['id']);
-				needreload();
-				redirect_standard_continue();
-			break;
-		}
-	}
-}
-
 function directory_get_config($engine) {
 	global $ext,$db;
 	switch ($engine) {
@@ -302,9 +265,14 @@ function directory_draw_entries($id){
 	$inuse = array();
 	foreach($entries as $e){
 		$realid = $e['type'] == 'custom' ? 'custom' : $e['foreign_id'];
+		$value = $e['foreign_id']."|".$e['foreign_name'];
 		$foreign_name = $e['foreign_name'] == '' ? 'Custom Entry' : $e['foreign_name'];
-		$html .= directory_draw_entries_tr($id, $realid, $e['name'], $foreign_name, $e['audio'], $e['dial'], $e['e_id'], false, $e['foreign_id']."|".$e['foreign_name']);
-		$inuse[] = $e['foreign_id']."|".$e['foreign_name'];
+		$html .= directory_draw_entries_tr($id, $realid, $e['name'], $foreign_name, $e['audio'], $e['dial'], $e['e_id'], false, $value);
+		if($e['type'] == 'custom'){
+			$inuse[] = $e['name'];
+		}else{
+			$inuse[] = $e['foreign_id']."|".$e['foreign_name'];
+		}
 	}
 	$html .= '</tbody></table>';
 	$html .= '<script>var inuse = '.json_encode($inuse).'</script>';
@@ -312,7 +280,7 @@ function directory_draw_entries($id){
 }
 
 //used to add row's the entry table
-function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false, $name = null){
+function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false, $nameb = null){
 	global $amp_conf,  $directory_draw_recordings_list, $audio_select;
 	if (!$directory_draw_recordings_list) {
 		$directory_draw_recordings_list = recordings_list();
@@ -339,10 +307,10 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 		$user		= '';
 	}
 	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;" data-name="'.$name.'"></i>';
-	$t1_class 		= $name == '' ? ' class = "dpt-title" ' : '';
+	$t1_class 		= $name == '' ? ' class = "dpt-title form-control" ' : ' class = "form-control" ';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
-		$t2_class 	.= '" class = "dpt-title" ';
+		$t2_class 	.= '" class = "dpt-title form-control" ';
 	}
 
 	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';

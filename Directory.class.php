@@ -90,7 +90,7 @@ class Directory implements \BMO {
 					//get real dest
 					$vars['invalid_destination'] = $_REQUEST[$_REQUEST['goto0'].'0'];
 					$vars['id'] = directory_save_dir_details($vars);
-					directory_save_dir_entries($vars['id'],$entries);
+					\directory_save_dir_entries($vars['id'],$entries);
 					$this_dest = directory_getdest($vars['id']);
 					\fwmsg::set_dest($this_dest[0]);
 					needreload();
