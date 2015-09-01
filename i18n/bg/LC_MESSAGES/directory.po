@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 12:36-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: 2014-07-22 15:33+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/directory/"
@@ -38,7 +38,7 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:263 views/grid.php:11
+#: functions.inc.php:263 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -60,6 +60,10 @@ msgstr ""
 
 #: functions.inc.php:291
 msgid "All Users"
+msgstr ""
+
+#: assets/js/directory.js:83
+msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
 #: functions.inc.php:81 views/form.php:305
@@ -94,19 +98,19 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr ""
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr ""
 
-#: Directory.class.php:137
+#: Directory.class.php:138
 msgid "Delete"
 msgstr ""
 
@@ -127,15 +131,11 @@ msgstr ""
 msgid "Dial"
 msgstr ""
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
-#: functions.inc.php:257 page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "Директория"
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr ""
@@ -160,17 +160,17 @@ msgstr ""
 msgid "Directory&nbsp;Entries"
 msgstr ""
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr ""
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr ""
 
-#: Directory.class.php:166
+#: Directory.class.php:167
 msgid "Disabled"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Edit Directory: %s"
 msgstr ""
 
-#: Directory.class.php:167
+#: Directory.class.php:168
 msgid "Enabled"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgid ""
 "this module. "
 msgstr ""
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Invalid Recording"
 msgstr ""
 
-#: Directory.class.php:32
+#: Directory.class.php:33
 msgid "Invalid Request"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgid ""
 "prompting the caller to try again"
 msgstr ""
 
-#: Directory.class.php:142
+#: Directory.class.php:143
 msgid "Reset"
 msgstr ""
 
@@ -304,7 +304,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr ""
 
-#: assets/js/directory.js:101
+#: assets/js/directory.js:103
 msgid "Select"
 msgstr ""
 
@@ -316,7 +316,7 @@ msgstr ""
 msgid "Spell Name"
 msgstr ""
 
-#: Directory.class.php:147
+#: Directory.class.php:148
 msgid "Submit"
 msgstr ""
 
@@ -328,7 +328,7 @@ msgstr ""
 msgid "Text to Speech"
 msgstr ""
 
-#: assets/js/directory.js:23
+#: assets/js/directory.js:24
 msgid "This entry has already been added"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."

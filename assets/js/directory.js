@@ -18,13 +18,15 @@ $(document).ready(function(){
 
 	//add row button
 	$('#addrow').change(function(){
-    var val = $('#addusersel').val();
-    if($.inArray(val, inuse) > -1) {
-      alert(_("This entry has already been added"));
-      $('#addusersel').val('none');
-      return false;
+    var val = $('#addusersel').val().trim();
+    if(val != "|") {
+      if($.inArray(val, inuse) > -1) {
+        alert(_("This entry has already been added"));
+        $('#addusersel').val('none');
+        return false;
+      }
+      inuse.push(val);
     }
-    inuse.push(val);
 		$(this).fadeOut(250,
 		function(){
 			$('#addbut').not("span").fadeIn(250, function() {
@@ -53,7 +55,7 @@ $(document).ready(function(){
 	});
 
 	//delete row when trash can is clicked
-	$('.trash-tr').on('click', function(){
+	$(document).on('click', '.trash-tr', function() {
     var $this = this;
 	$(this).parents('tr').fadeOut(500,
 		function(){
@@ -78,7 +80,7 @@ function addrow(user){
 	    $('#dir_entries_tbl > tbody:last').append(data);
 	  },
 	  error: function(XMLHttpRequest, textStatus, errorThrown) {
-      var msg = "An Error occurred trying to contact the server adding a row, no reply.";
+      var msg = _("An Error occurred trying to contact the server adding a row, no reply.");
       alert(msg);
     }
   });

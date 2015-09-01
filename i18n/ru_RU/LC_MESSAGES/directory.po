@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-09 12:36-0400\n"
+"POT-Creation-Date: 2015-07-24 20:51-0400\n"
 "PO-Revision-Date: 2015-04-22 16:59+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -27,7 +27,7 @@ msgstr ""
 "ALERT_INFO посылается при вызове из текущей директории. Можно использовать "
 "для отличия вызовов от разных SIP устройств."
 
-#: functions.inc.php:263 views/grid.php:11
+#: functions.inc.php:263 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -50,6 +50,10 @@ msgstr "Информация для оповещения"
 #: functions.inc.php:291
 msgid "All Users"
 msgstr "Все пользователи"
+
+#: assets/js/directory.js:83
+msgid "An Error occurred trying to contact the server adding a row, no reply."
+msgstr ""
 
 #: functions.inc.php:81 views/form.php:305
 msgid "Announce Extension"
@@ -83,19 +87,19 @@ msgstr "Особое"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: views/grid.php:12
+#: views/grid.php:11
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid "Default Directory"
 msgstr "Директория по умолчанию"
 
-#: functions.inc.php:530
+#: functions.inc.php:531
 msgid "Default Group Inclusion"
 msgstr "Включение в дефолтную группу"
 
-#: Directory.class.php:137
+#: Directory.class.php:138
 msgid "Delete"
 msgstr ""
 
@@ -118,15 +122,11 @@ msgstr ""
 msgid "Dial"
 msgstr "Набор"
 
-#: views/grid.php:10
-msgid "Direcrory"
-msgstr ""
-
-#: functions.inc.php:257 page.directory.php:6
+#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "Директории"
 
-#: functions.inc.php:609
+#: functions.inc.php:610
 #, php-format
 msgid "Directory %s: "
 msgstr "Директория %s: "
@@ -151,17 +151,17 @@ msgstr "Опции директории (DTMF)"
 msgid "Directory&nbsp;Entries"
 msgstr "Директория&nbsp;&nbsp;Значение"
 
-#: functions.inc.php:639
+#: functions.inc.php:640
 #, php-format
 msgid "Directory: %s"
 msgstr "Директория: %s"
 
-#: functions.inc.php:584
+#: functions.inc.php:585
 #, php-format
 msgid "Directory: %s "
 msgstr "Директория:  %s "
 
-#: Directory.class.php:166
+#: Directory.class.php:167
 msgid "Disabled"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Edit Directory: %s"
 msgstr "Редактировать директорию: %s"
 
-#: Directory.class.php:167
+#: Directory.class.php:168
 msgid "Enabled"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 "директорию как перемещенную в процессе миграции. Возможно надо начать "
 "процесс миграции сначала, при инсталляции/обновлении модуля. "
 
-#: functions.inc.php:511
+#: functions.inc.php:512
 msgid "Exclude"
 msgstr "Исключая"
 
@@ -215,7 +215,7 @@ msgstr "Исключая"
 msgid "Greeting to be played on entry to the directory."
 msgstr "Сообщение, воспроизводимое при попадании в директорию."
 
-#: functions.inc.php:512
+#: functions.inc.php:513
 msgid "Include"
 msgstr "Включая"
 
@@ -227,7 +227,7 @@ msgstr "Назначение для неверно набранных номер
 msgid "Invalid Recording"
 msgstr "Сообщение о неверно набранном номере"
 
-#: Directory.class.php:32
+#: Directory.class.php:33
 msgid "Invalid Request"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 "Сообщение, воспроизводимое при неверно набранном номере, прежде чем будет "
 "предложено попробовать набрать ещё раз"
 
-#: Directory.class.php:142
+#: Directory.class.php:143
 msgid "Reset"
 msgstr ""
 
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Return to IVR"
 msgstr "Возврат в Интерактивное меню"
 
-#: assets/js/directory.js:101
+#: assets/js/directory.js:103
 msgid "Select"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr "Установить директорию для миграции как
 msgid "Spell Name"
 msgstr "Имя Spell"
 
-#: Directory.class.php:147
+#: Directory.class.php:148
 msgid "Submit"
 msgstr "Подтвердить"
 
@@ -333,7 +333,7 @@ msgstr "Записи в системе:"
 msgid "Text to Speech"
 msgstr "Проговорить текст"
 
-#: assets/js/directory.js:23
+#: assets/js/directory.js:24
 msgid "This entry has already been added"
 msgstr ""
 
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."

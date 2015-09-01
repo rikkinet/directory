@@ -18,6 +18,7 @@ class Directory implements \BMO {
 	public function restore($backup) {}
 	public function doConfigPageInit($page) {
 		$request = $_REQUEST;
+		$request['action'] = !empty($request['action']) ? $request['action'] : "";
 		switch($page){
 			case 'directory':
 				if($request['action'] == "getJSON"){
@@ -38,8 +39,8 @@ class Directory implements \BMO {
 				if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 					$opts = $opts=explode('|', urldecode($_REQUEST['ajaxgettr']));
 					if($opts[0] == 'all') {
-					echo directory_draw_entries_all_users($opts[1]);
-					}else{
+						echo directory_draw_entries_all_users($opts[1]);
+					} else {
 						if ($opts[0] != '') {
 							$real_id = $opts[0];
 							$name = '';

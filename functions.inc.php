@@ -259,7 +259,7 @@ function directory_draw_entries($id){
 		$newuser .= '<option value="'.$user[0].'|'.$user[1].'">('.$user[0].') '.$user[1]."</option>\n";
 	}
 	$newuser	.= '</select>';
-	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><i class="fa fa-plus" name="image" style="font-size: 20px;cursor:pointer;color:#0070a3;" /><span>'._('Add new entry.').'</span></a></td><td colspan="'.(count(directory_draw_entries_table_header_directory()) - 1).'"id="addrow">'.$newuser.'</td></tr></tfoot>';
+	$html		.= '<tfoot><tr><td id="addbut"><a href="#" class="info"><i class="fa fa-plus" name="image" style="font-size: 20px;cursor:pointer;color:#0070a3;" /><span>'._('Add new entry.').'</span></a></td><td colspan="'.(count(directory_draw_entries_table_header_directory()) - 1).'"id="addrow" style="display: none;">'.$newuser.'</td></tr></tfoot>';
 	$html		.= '<tbody>';
 	$entries	= directory_get_dir_entries($id);
 	$inuse = array();
@@ -280,7 +280,8 @@ function directory_draw_entries($id){
 }
 
 //used to add row's the entry table
-function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false, $nameb = null){
+
+function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audio = '',$num = '',$e_id = '', $reuse_audio = false, $dataname = null){
 	global $amp_conf,  $directory_draw_recordings_list, $audio_select;
 	if (!$directory_draw_recordings_list) {
 		$directory_draw_recordings_list = recordings_list();
@@ -302,20 +303,21 @@ function directory_draw_entries_tr($id, $realid, $name = '',$foreign_name, $audi
 	if ($realid != 'custom') {
 		$user_type	=  (isset($amp_conf['AMPEXTENSION']) && $amp_conf['AMPEXTENSION']) == 'deviceanduser' ? 'user' : 'extension';
 		$tlabel		=  sprintf(_("Edit %s: %s"), $user_type ,$realid);
-		$user		= ' <a href="/admin/config.php?type=setup&display='.$user_type.'s&skip=0&extdisplay='.$realid.'"><i class="fa fa-user"></i></a> ';
+		$user		= ' <a href="?display='.$user_type.'s&skip=0&extdisplay='.$realid.'"><i class="fa fa-user"></i></a> ';
 	} else {
 		$user		= '';
 	}
-	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;" data-name="'.$name.'"></i>';
-	$t1_class 		= $name == '' ? ' class = "dpt-title form-control" ' : ' class = "form-control" ';
+	$delete			= '<i alt="'._('remove').'" title="'._('Click here to remove this entry').'" class="trash-tr fa fa-trash" style="color:#2779aa;" data-name="'.$dataname.'"></i>';
+	$t1_class 		= $name == '' ? ' class = "dpt-title form-control" ' : 'class="form-control"';
 	$t2_class 		= $realid == 'custom' ? ' placeholder="Custom Dialstring" ' : ' placeholder="' . $realid . '" ';
 	if (trim($num)  == '') {
 		$t2_class 	.= '" class = "dpt-title form-control" ';
+	} else {
+		$t2_class		.= '" class = "form-control"';
 	}
-
 	$td[] = '<input type="hidden" readonly="readonly" name="entries['.$e_id.'][foreign_id]" value="'.$realid.'" /><input type="text" name="entries['.$e_id.'][name]" placeholder="'.$foreign_name.'"'.$t1_class.' value="'.$name.'" />';
 	$td[] = $audio_select;
-	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" class="form-control" />';
+	$td[] = '<input type="text" name="entries['.$e_id.'][num]" '.$t2_class.' value="'.$num.'" />';
 	$opts = array('id' => $id, 'e_id' => $e_id, 'realid' => $realid, 'name' => $name, 'audio' => $audio, 'num' => $num);
 
 	$more_td = mod_func_iterator('draw_entries_tr_directory', $opts);
@@ -610,4 +612,3 @@ function directory_recordings_usage($recording_id) {
 		return $usage_arr;
 	}
 }
-?>
