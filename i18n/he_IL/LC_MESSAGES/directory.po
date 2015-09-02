@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:51-0400\n"
+"POT-Creation-Date: 2015-09-02 09:00-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:263 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Add Directory"
 msgstr ""
 
-#: functions.inc.php:299
+#: functions.inc.php:262
 msgid "Add new entry."
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Alert Info"
 msgstr ""
 
-#: functions.inc.php:291
+#: functions.inc.php:254
 msgid "All Users"
 msgstr ""
 
@@ -78,15 +78,15 @@ msgstr ""
 msgid "Can not create table: "
 msgstr ""
 
-#: functions.inc.php:290
+#: functions.inc.php:253
 msgid "Choose One"
 msgstr ""
 
-#: functions.inc.php:341
+#: functions.inc.php:310
 msgid "Click here to remove this entry"
 msgstr ""
 
-#: functions.inc.php:292
+#: functions.inc.php:255
 msgid "Custom"
 msgstr ""
 
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:504
 msgid "Default Directory"
 msgstr ""
 
-#: functions.inc.php:531
+#: functions.inc.php:500
 msgid "Default Group Inclusion"
 msgstr ""
 
@@ -123,15 +123,15 @@ msgstr ""
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Dial"
 msgstr ""
 
-#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
+#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr ""
 
-#: functions.inc.php:610
+#: functions.inc.php:579
 #, php-format
 msgid "Directory %s: "
 msgstr ""
@@ -156,12 +156,12 @@ msgstr ""
 msgid "Directory&nbsp;Entries"
 msgstr ""
 
-#: functions.inc.php:640
+#: functions.inc.php:609
 #, php-format
 msgid "Directory: %s"
 msgstr ""
 
-#: functions.inc.php:585
+#: functions.inc.php:554
 #, php-format
 msgid "Directory: %s "
 msgstr ""
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Disabled"
 msgstr ""
 
-#: functions.inc.php:336
+#: functions.inc.php:305
 #, php-format
 msgid "Edit %s: %s"
 msgstr ""
@@ -205,7 +205,7 @@ msgid ""
 "this module. "
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:481
 msgid "Exclude"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: functions.inc.php:513
+#: functions.inc.php:482
 msgid "Include"
 msgstr ""
 
@@ -249,11 +249,11 @@ msgstr ""
 msgid "Migration Complete!"
 msgstr ""
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Name"
 msgstr ""
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Name Announcement"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 msgid "Setting migrated directory as default"
 msgstr ""
 
-#: functions.inc.php:326
+#: functions.inc.php:295
 msgid "Spell Name"
 msgstr ""
 
@@ -316,11 +316,11 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: functions.inc.php:327
+#: functions.inc.php:296
 msgid "System Recordings:"
 msgstr ""
 
-#: functions.inc.php:325
+#: functions.inc.php:294
 msgid "Text to Speech"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgid ""
 "directly, as they appear in the directory"
 msgstr ""
 
-#: functions.inc.php:324
+#: functions.inc.php:293
 msgid "Voicemail Greeting"
 msgstr ""
 
@@ -354,7 +354,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:504
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -404,6 +404,6 @@ msgstr ""
 msgid "ok"
 msgstr ""
 
-#: functions.inc.php:341
+#: functions.inc.php:310
 msgid "remove"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 20:51-0400\n"
+"POT-Creation-Date: 2015-09-02 09:00-0700\n"
 "PO-Revision-Date: 2015-04-22 16:59+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -27,7 +27,7 @@ msgstr ""
 "ALERT_INFO посылается при вызове из текущей директории. Можно использовать "
 "для отличия вызовов от разных SIP устройств."
 
-#: functions.inc.php:263 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:12
 msgid "Actions"
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Add Directory"
 msgstr "Добавить директорию"
 
-#: functions.inc.php:299
+#: functions.inc.php:262
 msgid "Add new entry."
 msgstr "Добавить новую запись."
 
@@ -47,7 +47,7 @@ msgstr "Добавление таблиц в директории, если ес
 msgid "Alert Info"
 msgstr "Информация для оповещения"
 
-#: functions.inc.php:291
+#: functions.inc.php:254
 msgid "All Users"
 msgstr "Все пользователи"
 
@@ -71,15 +71,15 @@ msgstr "Имя префикса CallerID"
 msgid "Can not create table: "
 msgstr "Не создаётся таблица: "
 
-#: functions.inc.php:290
+#: functions.inc.php:253
 msgid "Choose One"
 msgstr "Выберите"
 
-#: functions.inc.php:341
+#: functions.inc.php:310
 msgid "Click here to remove this entry"
 msgstr "Кликнуть чтобы убрать эту запись"
 
-#: functions.inc.php:292
+#: functions.inc.php:255
 msgid "Custom"
 msgstr "Особое"
 
@@ -91,11 +91,11 @@ msgstr "По умолчанию"
 msgid "Default Direcrory"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:504
 msgid "Default Directory"
 msgstr "Директория по умолчанию"
 
-#: functions.inc.php:531
+#: functions.inc.php:500
 msgid "Default Group Inclusion"
 msgstr "Включение в дефолтную группу"
 
@@ -118,15 +118,15 @@ msgstr ""
 "Назначение перенаправления вызова после воспроизведения Сообщения о неверном "
 "вводе."
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Dial"
 msgstr "Набор"
 
-#: functions.inc.php:257 page.directory.php:6 views/grid.php:10
+#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
 msgid "Directory"
 msgstr "Директории"
 
-#: functions.inc.php:610
+#: functions.inc.php:579
 #, php-format
 msgid "Directory %s: "
 msgstr "Директория %s: "
@@ -151,12 +151,12 @@ msgstr "Опции директории (DTMF)"
 msgid "Directory&nbsp;Entries"
 msgstr "Директория&nbsp;&nbsp;Значение"
 
-#: functions.inc.php:640
+#: functions.inc.php:609
 #, php-format
 msgid "Directory: %s"
 msgstr "Директория: %s"
 
-#: functions.inc.php:585
+#: functions.inc.php:554
 #, php-format
 msgid "Directory: %s "
 msgstr "Директория:  %s "
@@ -165,7 +165,7 @@ msgstr "Директория:  %s "
 msgid "Disabled"
 msgstr ""
 
-#: functions.inc.php:336
+#: functions.inc.php:305
 #, php-format
 msgid "Edit %s: %s"
 msgstr "Редактировать %s: %s"
@@ -207,7 +207,7 @@ msgstr ""
 "директорию как перемещенную в процессе миграции. Возможно надо начать "
 "процесс миграции сначала, при инсталляции/обновлении модуля. "
 
-#: functions.inc.php:512
+#: functions.inc.php:481
 msgid "Exclude"
 msgstr "Исключая"
 
@@ -215,7 +215,7 @@ msgstr "Исключая"
 msgid "Greeting to be played on entry to the directory."
 msgstr "Сообщение, воспроизводимое при попадании в директорию."
 
-#: functions.inc.php:513
+#: functions.inc.php:482
 msgid "Include"
 msgstr "Включая"
 
@@ -251,11 +251,11 @@ msgstr "Миграция Директорий"
 msgid "Migration Complete!"
 msgstr "Миграция завершена!"
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Name"
 msgstr "Имя"
 
-#: functions.inc.php:263
+#: functions.inc.php:226
 msgid "Name Announcement"
 msgstr "Название Приветствия"
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Setting migrated directory as default"
 msgstr "Установить директорию для миграции как директорию по умолчанию"
 
-#: functions.inc.php:326
+#: functions.inc.php:295
 msgid "Spell Name"
 msgstr "Имя Spell"
 
@@ -325,11 +325,11 @@ msgstr "Имя Spell"
 msgid "Submit"
 msgstr "Подтвердить"
 
-#: functions.inc.php:327
+#: functions.inc.php:296
 msgid "System Recordings:"
 msgstr "Записи в системе:"
 
-#: functions.inc.php:325
+#: functions.inc.php:294
 msgid "Text to Speech"
 msgstr "Проговорить текст"
 
@@ -345,7 +345,7 @@ msgstr ""
 "Возможность прямого набора по всем значениям в директории так, как они "
 "отображаются в списке"
 
-#: functions.inc.php:324
+#: functions.inc.php:293
 msgid "Voicemail Greeting"
 msgstr "Приветствие голосовой почты"
 
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:504
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -420,7 +420,7 @@ msgstr "отсутствует поле valid_recording???"
 msgid "ok"
 msgstr "ok"
 
-#: functions.inc.php:341
+#: functions.inc.php:310
 msgid "remove"
 msgstr "удалить"
 
