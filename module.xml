@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.6</version>
+	<version>13.0.7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -27,7 +27,8 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
-		*13.0.5* FREEPBX-10118 Spelling
+		*13.0.7* FREEPBX-10119 Fix recording prompts. 
+		*13.0.6* FREEPBX-10118 Spelling
 		*13.0.5* FREEPBX-10121 Fix custom entries
 		*13.0.4* FREEPBX-9821 Fix validations on adding custom entries, also spruce up visuals
 		*13.0.3* FREEPBX-9609 Option to Limit IVR Direct Dialing to a Directory
