@@ -8,7 +8,7 @@
 	<thead>
 			<tr>
 			<th data-field="name"><?php echo _("Directory")?></th>
-			<th data-field="default" data-formatter="defaultFormatter"><?php echo _("Default Direcrory")?></th>
+			<th data-field="default" data-formatter="defaultFormatter"><?php echo _("Default Directory")?></th>
 			<th data-field="link" data-formatter="linkFormatter"><?php echo _("Actions")?></th>
 		</tr>
 	</thead>
