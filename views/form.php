@@ -31,14 +31,14 @@ $invreprecoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
 	foreach(recordings_list() as $r){
 		$r['id'] == $repeat_recording?' SELECTED':'';
-		$recoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
+		$invreprecoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
 	}
 }
 $invrecoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
 	foreach(recordings_list() as $r){
 		$r['id'] == $invalid_recording?' SELECTED':'';
-		$recoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
+		$invrecoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
 	}
 }
 ?>
