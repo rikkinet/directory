@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 09:00-0700\n"
+"POT-Creation-Date: 2015-09-08 10:25-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,11 +94,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: views/grid.php:11
-msgid "Default Direcrory"
-msgstr ""
-
-#: functions.inc.php:504
+#: functions.inc.php:504 views/grid.php:11
 msgid "Default Directory"
 msgstr ""
 

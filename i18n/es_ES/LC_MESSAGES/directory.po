@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 09:00-0700\n"
+"POT-Creation-Date: 2015-09-08 10:25-0700\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -89,11 +89,7 @@ msgstr "Personalizado"
 msgid "Default"
 msgstr "Por defecto"
 
-#: views/grid.php:11
-msgid "Default Direcrory"
-msgstr ""
-
-#: functions.inc.php:504
+#: functions.inc.php:504 views/grid.php:11
 msgid "Default Directory"
 msgstr "Directorio Por Defecto"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 09:00-0700\n"
+"POT-Creation-Date: 2015-09-08 10:25-0700\n"
 "PO-Revision-Date: 2015-02-20 19:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -84,11 +84,7 @@ msgstr "自定义"
 msgid "Default"
 msgstr "默认"
 
-#: views/grid.php:11
-msgid "Default Direcrory"
-msgstr ""
-
-#: functions.inc.php:504
+#: functions.inc.php:504 views/grid.php:11
 msgid "Default Directory"
 msgstr "默认目录"
 

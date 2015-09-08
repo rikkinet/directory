@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 09:00-0700\n"
+"POT-Creation-Date: 2015-09-08 10:25-0700\n"
 "PO-Revision-Date: 2015-04-22 16:59+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -87,11 +87,7 @@ msgstr "Особое"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: views/grid.php:11
-msgid "Default Direcrory"
-msgstr ""
-
-#: functions.inc.php:504
+#: functions.inc.php:504 views/grid.php:11
 msgid "Default Directory"
 msgstr "Директория по умолчанию"
 
