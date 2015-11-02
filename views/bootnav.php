@@ -2,15 +2,21 @@
 	<a href="?display=directory&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Directory")?></a>
   <a href="config.php?display=directory" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Directories") ?></a>
 </div>
-<table id="dirgrid" data-url="ajax.php?module=directory&command=getJSON&jdata=grid" data-cache="false" data-toggle="table" data-search="true" data-pagination="true" data-toolbar="#toolbar-dirbootnav" class="table table-striped">
+<table id="dirgridrnav"
+ data-url="ajax.php?module=directory&command=getJSON&jdata=grid"
+ data-cache="false"
+ data-toggle="table"
+ data-search="true"
+ data-toolbar="#toolbar-dirbootnav"
+ class="table">
 	<thead>
 			<tr>
-			<th data-field="name" data-formatter="dirlinkformatter"><?php echo _("Directory")?></th>
+			<th data-field="name"><?php echo _("Directory")?></th>
 		</tr>
 	</thead>
 </table>
 <script type="text/javascript">
-  function dirlinkformatter(v,r){
-    return '<a href="?display=directory&view=form&id='+r['id']+'">'+v+'</a>';
-  }
+	$("#dirgridrnav").on('click-row.bs.table',function(e,row,elem){
+		window.location = '?display=directory&view=form&id='+row['id'];
+	});
 </script>

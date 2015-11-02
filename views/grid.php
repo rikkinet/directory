@@ -6,7 +6,14 @@
 	<a href="?display=directory&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Directory")?></a>
 </div>
 
-<table id="dirgrid" data-url="ajax.php?module=directory&command=getJSON&jdata=grid" data-cache="false" data-toggle="table" data-search="true" data-pagination="true" data-toolbar="#toolbar-all" class="table table-striped">
+<table id="dirgrid"
+			data-url="ajax.php?module=directory&command=getJSON&jdata=grid"
+			data-cache="false"
+			data-toggle="table" d
+			ata-search="true"
+			data-pagination="true"
+			data-toolbar="#toolbar-all"
+			class="table table-striped">
 	<thead>
 			<tr>
 			<th data-field="name"><?php echo _("Directory")?></th>
