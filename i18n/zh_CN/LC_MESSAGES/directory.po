@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2015-02-20 19:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -24,11 +24,11 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr "添加目录"
 
@@ -60,6 +60,10 @@ msgstr "播放分机"
 msgid "Announcement"
 msgstr "公告"
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr "应用"
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "来电显示名称前缀"
@@ -84,7 +88,7 @@ msgstr "自定义"
 msgid "Default"
 msgstr "默认"
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr "默认目录"
 
@@ -113,7 +117,8 @@ msgstr ""
 msgid "Dial"
 msgstr "拨打"
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "目录"
 
@@ -211,10 +216,6 @@ msgstr "无效目的地"
 msgid "Invalid Recording"
 msgstr "无效录音"
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "无效尝试"
@@ -223,7 +224,7 @@ msgstr "无效尝试"
 msgid "Invalid Retry Recording"
 msgstr "无效的录音"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 
@@ -393,9 +394,6 @@ msgstr ""
 #: functions.inc.php:310
 msgid "remove"
 msgstr "删除"
-
-#~ msgid "Applications"
-#~ msgstr "应用"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "添加新目录"

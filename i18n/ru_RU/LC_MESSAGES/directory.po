@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2015-04-22 16:59+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -27,11 +27,11 @@ msgstr ""
 "ALERT_INFO посылается при вызове из текущей директории. Можно использовать "
 "для отличия вызовов от разных SIP устройств."
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr "Добавить директорию"
 
@@ -63,6 +63,10 @@ msgstr "Анонс внутреннего номера"
 msgid "Announcement"
 msgstr "Приветствие"
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr "Приложения"
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "Имя префикса CallerID"
@@ -87,7 +91,7 @@ msgstr "Особое"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr "Директория по умолчанию"
 
@@ -118,7 +122,8 @@ msgstr ""
 msgid "Dial"
 msgstr "Набор"
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "Директории"
 
@@ -223,10 +228,6 @@ msgstr "Назначение для неверно набранных номер
 msgid "Invalid Recording"
 msgstr "Сообщение о неверно набранном номере"
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "Неверных попыток"
@@ -235,7 +236,7 @@ msgstr "Неверных попыток"
 msgid "Invalid Retry Recording"
 msgstr "Сообщение о неверных попытках"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 
@@ -422,9 +423,6 @@ msgstr "удалить"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "Добавить новую директорию"
-
-#~ msgid "Applications"
-#~ msgstr "Приложения"
 
 #~ msgid "Directory Options"
 #~ msgstr "Опции директории"

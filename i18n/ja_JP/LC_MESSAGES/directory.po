@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2014-04-17 09:53+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/directory/"
@@ -58,11 +58,11 @@ msgstr ""
 "音に使用することができます。このディレクトリから呼び出された際に送信されるア"
 "ラート情報。SIPデバイスの着信音に使用することができます。"
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr "ディレクトリを追加"
 
@@ -94,6 +94,10 @@ msgstr "内線をアナウンス"
 msgid "Announcement"
 msgstr "アナウンス"
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr "アプリケーション"
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "発信者ID名前プリフィックス"
@@ -118,7 +122,7 @@ msgstr "カスタム"
 msgid "Default"
 msgstr "デフォルト"
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr "デフォルトディレクトリ"
 
@@ -147,7 +151,8 @@ msgstr "無効な録音が再生された場合に、呼が送られる宛先。
 msgid "Dial"
 msgstr "ダイヤル"
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "ディレクトリー"
 
@@ -250,10 +255,6 @@ msgstr "エラー宛先"
 msgid "Invalid Recording"
 msgstr "エラー音声"
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "不正リトライ数"
@@ -262,7 +263,7 @@ msgstr "不正リトライ数"
 msgid "Invalid Retry Recording"
 msgstr "エラーリトライ音声"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 
@@ -443,9 +444,6 @@ msgstr "ok"
 #: functions.inc.php:310
 msgid "remove"
 msgstr "削除"
-
-#~ msgid "Applications"
-#~ msgstr "アプリケーション"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "新しいディレクトリを追加"

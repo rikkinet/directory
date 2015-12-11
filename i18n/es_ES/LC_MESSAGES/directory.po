@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2015-03-27 12:21+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,11 +29,11 @@ msgstr ""
 "ALERT_INFO que se enviará cuando se llama desde este Directorio. Puede ser "
 "utilizado como timbre especial para los dispositivos SIP."
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr "Agregar Directorio"
 
@@ -65,6 +65,10 @@ msgstr "Anunciar Extensión"
 msgid "Announcement"
 msgstr "Anuncio"
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr "Aplicaciones"
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "Nombre prefijo CallerID"
@@ -89,7 +93,7 @@ msgstr "Personalizado"
 msgid "Default"
 msgstr "Por defecto"
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr "Directorio Por Defecto"
 
@@ -118,7 +122,8 @@ msgstr "Destino para enviar la llamada después de reproducir Mensaje Inválido.
 msgid "Dial"
 msgstr "Marcar"
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "Directorio"
 
@@ -223,10 +228,6 @@ msgstr "Destino Inválido"
 msgid "Invalid Recording"
 msgstr "Mensaje Inválido"
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "Reintentos Inválidos"
@@ -235,7 +236,7 @@ msgstr "Reintentos Inválidos"
 msgid "Invalid Retry Recording"
 msgstr "Mensaje Intentos Inválidos"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 
@@ -422,9 +423,6 @@ msgstr "ok"
 #: functions.inc.php:310
 msgid "remove"
 msgstr "eliminar"
-
-#~ msgid "Applications"
-#~ msgstr "Aplicaciones"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "Agregar Nuevo Directorio"

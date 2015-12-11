@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX Directory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2010-06-22 22:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team:  <mickecamino@gmail.com>\n"
@@ -37,11 +37,11 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr "Lägg till katalog"
 
@@ -75,6 +75,10 @@ msgstr "Meddela anknytning"
 msgid "Announcement"
 msgstr "Välkomsthälsning"
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr ""
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr "Prefix för nummerpresentation"
@@ -99,7 +103,7 @@ msgstr "Anpassad"
 msgid "Default"
 msgstr "Standard"
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr "Standardkatalog"
 
@@ -129,7 +133,8 @@ msgstr ""
 msgid "Dial"
 msgstr ""
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "Katalog"
 
@@ -227,10 +232,6 @@ msgstr "Destination för ogiltigt svar"
 msgid "Invalid Recording"
 msgstr "Ogiltigt meddelande"
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr "Ogiltiga försök"
@@ -239,7 +240,7 @@ msgstr "Ogiltiga försök"
 msgid "Invalid Retry Recording"
 msgstr "Meddelande vid ogiltiga försök"
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 

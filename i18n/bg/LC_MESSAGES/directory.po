@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 10:25-0700\n"
+"POT-Creation-Date: 2015-12-10 16:44-0800\n"
 "PO-Revision-Date: 2014-07-22 15:33+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/directory/"
@@ -38,11 +38,11 @@ msgid ""
 "distinctive ring for SIP devices."
 msgstr ""
 
-#: functions.inc.php:226 views/grid.php:12
+#: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4
+#: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
 msgstr ""
 
@@ -74,6 +74,10 @@ msgstr ""
 msgid "Announcement"
 msgstr ""
 
+#: directory.i18n.php:6 directory.i18n.php:10
+msgid "Applications"
+msgstr "Приложения"
+
 #: functions.inc.php:58 views/form.php:104
 msgid "CallerID Name Prefix"
 msgstr ""
@@ -98,7 +102,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: functions.inc.php:504 views/grid.php:11
+#: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
 msgstr ""
 
@@ -127,7 +131,8 @@ msgstr ""
 msgid "Dial"
 msgstr ""
 
-#: functions.inc.php:220 page.directory.php:6 views/grid.php:10
+#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
+#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "Директория"
 
@@ -225,10 +230,6 @@ msgstr ""
 msgid "Invalid Recording"
 msgstr ""
 
-#: Directory.class.php:33
-msgid "Invalid Request"
-msgstr ""
-
 #: functions.inc.php:76 views/form.php:178
 msgid "Invalid Retries"
 msgstr ""
@@ -237,7 +238,7 @@ msgstr ""
 msgid "Invalid Retry Recording"
 msgstr ""
 
-#: views/bootnav.php:1
+#: views/bootnav.php:3
 msgid "List Directories"
 msgstr ""
 
@@ -407,6 +408,3 @@ msgstr ""
 #: functions.inc.php:310
 msgid "remove"
 msgstr ""
-
-#~ msgid "Applications"
-#~ msgstr "Приложения"
