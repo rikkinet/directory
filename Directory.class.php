@@ -21,20 +21,6 @@ class Directory implements \BMO {
 		$request['action'] = !empty($request['action']) ? $request['action'] : "";
 		switch($page){
 			case 'directory':
-				if($request['action'] == "getJSON"){
-					header('Content-Type: application/json');
-					switch ($request['jdata']) {
-						case 'grid':
-							echo $this->getGrid();
-							exit();
-						break;
-
-						default:
-							json_encode(array("Error"=>_("Invalid Request")));
-							exit();
-						break;
-					}
-				}
 				//check for ajax request and process that immediately
 				if(isset($_REQUEST['ajaxgettr'])){//got ajax request
 					$opts = $opts=explode('|', urldecode($_REQUEST['ajaxgettr']));
@@ -105,8 +91,8 @@ class Directory implements \BMO {
 		}
 	}
 	public function getGrid(){
-		$results = directory_list();
-		$def_dir = directory_get_default_dir();
+		$results = $this->listDirectories();
+		$def_dir = $this->getDefault();
 		$dirs = array();
 		if($results){
 			foreach ($results as $key=>$result){
@@ -125,7 +111,21 @@ class Directory implements \BMO {
 					);
 			}
 		}
-		return json_encode($dirs);
+		return $dirs;
+	}
+	public function listDirectories(){
+		$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$results = $stmt->fetchall(\PDO::FETCH_ASSOC);
+		return $results;
+	}
+	public function getDefault(){
+		$sql = "SELECT value FROM `admin` WHERE `variable` = 'default_directory'";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$ret = $stmt->fetchColumn();
+		return $ret ? $ret : '';
 	}
 	public function getActionBar($request) {
 		$buttons = array();
@@ -188,5 +188,39 @@ class Directory implements \BMO {
 			</script>
 		';
 		return $html;
+	}
+	public function ajaxRequest($req, &$setting) {
+		switch ($req) {
+			case 'getJSON':
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
+	public function ajaxHandler(){
+		switch ($_REQUEST['command']) {
+			case 'getJSON':
+				switch ($_REQUEST['jdata']) {
+					case 'grid':
+						return $this->getGrid();
+					break;
+
+					default:
+						return false;
+					break;
+				}
+			break;
+
+			default:
+				return false;
+			break;
+		}
+	}
+	public function getRightNav($request) {
+		if(isset($request['view']) && $request['view'] == 'form'){
+    	return load_view(__DIR__."/views/bootnav.php",array());
+		}
 	}
 }

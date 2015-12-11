@@ -2,9 +2,18 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
 ?>
+<div id="toolbar-all">
+	<a href="?display=directory&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Directory")?></a>
+</div>
 
-
-<table id="dirgrid" data-url="?display=directory&amp;action=getJSON&amp;jdata=grid&amp;quietmode=1" data-cache="false" data-height="299" data-toggle="table" class="table table-striped">
+<table id="dirgrid"
+			data-url="ajax.php?module=directory&command=getJSON&jdata=grid"
+			data-cache="false"
+			data-toggle="table" d
+			ata-search="true"
+			data-pagination="true"
+			data-toolbar="#toolbar-all"
+			class="table table-striped">
 	<thead>
 			<tr>
 			<th data-field="name"><?php echo _("Directory")?></th>
