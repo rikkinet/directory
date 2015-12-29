@@ -129,7 +129,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="alert_info"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="alert_info" name="alert_info" value="<?php echo stripslashes($alert_info)?>">
+						<?php echo FreePBX::View()->alertInfoDrawSelect("alert_info",stripslashes($alert_info));?>
 					</div>
 				</div>
 			</div>
