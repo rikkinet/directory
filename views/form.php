@@ -1,7 +1,8 @@
 <?php
 extract($request);
-if($action == '' && $id == ''){
+if(empty($action) && empty($id)){
 	$subhead = _("Add Directory");
+	$inusehtml = $action = $id = "";
 }else{
 	$subhead = _("Edit Directory");
 	$dir = directory_get_dir_details($request['id']);
@@ -23,28 +24,28 @@ if($action == '' && $id == ''){
 $recoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
 	foreach(recordings_list() as $r){
-		$r['id'] == $announcement?' SELECTED':'';
+		$selected = (!empty($announcement) && $r['id'] == $announcement)?' SELECTED':'';
 		$recoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
 	}
 }
 $invreprecoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
 	foreach(recordings_list() as $r){
-		$r['id'] == $repeat_recording?' SELECTED':'';
+		$selected = (!empty($repeat_recording) && $r['id'] == $repeat_recording)?' SELECTED':'';
 		$invreprecoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
 	}
 }
 $invrecoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
 	foreach(recordings_list() as $r){
-		$r['id'] == $invalid_recording?' SELECTED':'';
+		$selected = (!empty($invalid_recording) && $r['id'] == $invalid_recording)?' SELECTED':'';
 		$invrecoptions .= '<option value="'.$r['id'].'" $selected>'.$r['displayname'].'</option>';
 	}
 }
 ?>
 <h2><?php echo $subhead ?></h2>
 <?php echo $inusehtml?>
-<form action="" method="post" class="fpbx-submit" id="dirform" data-fpbx-delete="?display=directory&action=delete&id=<?php echo $id?>">
+<form action="" method="post" class="fpbx-submit" id="dirform" data-fpbx-delete="?display=directory&amp;action=delete&amp;id=<?php echo $id?>">
 
 <!--Directory Name-->
 <div class="element-container">
@@ -57,7 +58,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="dirname"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="dirname" name="dirname" value="<?php echo stripslashes($dirname)?>">
+						<input type="text" class="form-control" id="dirname" name="dirname" value="<?php echo isset($dirname) ? stripslashes($dirname) : ""?>">
 					</div>
 				</div>
 			</div>
@@ -81,7 +82,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="description" name="description" value="<?php echo  stripslashes($description)?>">
+						<input type="text" class="form-control" id="description" name="description" value="<?php echo isset($description) ? stripslashes($description) : ""?>">
 					</div>
 				</div>
 			</div>
@@ -105,7 +106,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="callid_prefix"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="callid_prefix" name="callid_prefix" value="<?php echo stripslashes($callid_prefix)?>">
+						<input type="text" class="form-control" id="callid_prefix" name="callid_prefix" value="<?php echo isset($callid_prefix) ? stripslashes($callid_prefix) : ""?>">
 					</div>
 				</div>
 			</div>
@@ -129,7 +130,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="alert_info"></i>
 					</div>
 					<div class="col-md-9">
-						<?php echo FreePBX::View()->alertInfoDrawSelect("alert_info",stripslashes($alert_info));?>
+						<?php echo FreePBX::View()->alertInfoDrawSelect("alert_info",isset($alert_info) ? stripslashes($alert_info) : "");?>
 					</div>
 				</div>
 			</div>
@@ -179,7 +180,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="repeat_loops"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="number" max='10' class="form-control" id="repeat_loops" name="repeat_loops" value="<?php echo $repeat_loops?$repeat_loops:'3' ?>">
+						<input type="number" max='10' class="form-control" id="repeat_loops" name="repeat_loops" value="<?php echo isset($repeat_loops)?$repeat_loops:'3' ?>">
 					</div>
 				</div>
 			</div>
@@ -279,9 +280,9 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="retivr"></i>
 					</div>
 					<div class="col-md-9 radioset">
-						<input type="radio" name="retivr" id="retivryes" value="1" <?php echo ($retivr == "1"?"CHECKED":"") ?>>
+						<input type="radio" name="retivr" id="retivryes" value="1" <?php echo (isset($retivr) && $retivr == "1"?"CHECKED":"") ?>>
 						<label for="retivryes"><?php echo _("Yes");?></label>
-						<input type="radio" name="retivr" id="retivrno" value="0" <?php echo ($retivr == "1"?"":"CHECKED") ?>>
+						<input type="radio" name="retivr" id="retivrno" value="0" <?php echo (isset($retivr) && $retivr == "1"?"":"CHECKED") ?>>
 						<label for="retivrno"><?php echo _("No");?></label>
 					</div>
 				</div>
@@ -306,9 +307,9 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="say_extension"></i>
 					</div>
 					<div class="col-md-9 radioset">
-						<input type="radio" name="say_extension" id="say_extensionyes" value="1" <?php echo ($say_extension == "1"?"CHECKED":"") ?>>
+						<input type="radio" name="say_extension" id="say_extensionyes" value="1" <?php echo (isset($say_extension) && $say_extension == "1"?"CHECKED":"") ?>>
 						<label for="say_extensionyes"><?php echo _("Yes");?></label>
-						<input type="radio" name="say_extension" id="say_extensionno" value="0" <?php echo ($say_extension == "1"?"":"CHECKED") ?>>
+						<input type="radio" name="say_extension" id="say_extensionno" value="0" <?php echo (isset($say_extension) && $say_extension == "1"?"":"CHECKED") ?>>
 						<label for="say_extensionno"><?php echo _("No");?></label>
 					</div>
 				</div>
@@ -322,7 +323,7 @@ if(function_exists('recordings_list')){
 	</div>
 </div>
 <!--END Announce Extension-->
-<?php echo directory_draw_entries($dir['id'])?>
+<?php echo directory_draw_entries(isset($dir) ? $dir['id'] : "")?>
 <input type='hidden' name="action" value="edit">
 <input type='hidden' name="id" value="<?php echo $id?>">
 <input type='hidden' name="display" value="directory">
