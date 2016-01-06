@@ -1,9 +1,9 @@
 <div id="toolbar-dirbootnav">
-	<a href="?display=directory&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Directory")?></a>
-  <a href="config.php?display=directory" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Directories") ?></a>
+	<a href="?display=directory&amp;view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Directory")?></a>
+	<a href="config.php?display=directory" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Directories") ?></a>
 </div>
 <table id="dirgridrnav"
- data-url="ajax.php?module=directory&command=getJSON&jdata=grid"
+ data-url="ajax.php?module=directory&amp;command=getJSON&amp;jdata=grid"
  data-cache="false"
  data-toggle="table"
  data-search="true"
