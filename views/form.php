@@ -19,6 +19,8 @@ if(empty($action) && empty($id)){
 				</div>
 			</div>
 		';
+	} else {
+		$inusehtml = "";
 	}
 }
 $recoptions = '<option value="0">'._("Default").'</option>';
