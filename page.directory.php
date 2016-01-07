@@ -5,7 +5,8 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 $heading = _("Directory");
 
-switch ($_REQUEST['view']) {
+$view = isset($_REQUEST['view']) ? $_REQUEST['view'] : '';
+switch ($view) {
 	case 'form':
 		$content = load_view(__DIR__.'/views/form.php', array('request' => $_REQUEST));
 	break;
