@@ -151,8 +151,8 @@ class Directory implements \BMO {
 				if (empty($request['id'])) {
 					unset($buttons['delete']);
 				}
-				if($request['view'] != 'form'){
-					unset($buttons);
+				if(empty($request['view']) || $request['view'] != 'form'){
+					$buttons = array();
 				}
 			break;
 		}
