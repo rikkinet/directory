@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 16:44-0800\n"
+"POT-Creation-Date: 2016-01-07 17:42-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: functions.inc.php:59 views/form.php:140
+#: functions.inc.php:59 views/form.php:143
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Adding directory tables if needed"
 msgstr ""
 
-#: functions.inc.php:59 views/form.php:128
+#: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
 msgstr ""
 
@@ -62,11 +62,11 @@ msgstr ""
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
-#: functions.inc.php:81 views/form.php:305
+#: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
 msgstr ""
 
-#: functions.inc.php:75 views/form.php:152
+#: functions.inc.php:75 views/form.php:155
 msgid "Announcement"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:104
+#: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Custom"
 msgstr ""
 
-#: functions.inc.php:64 views/form.php:23 views/form.php:30 views/form.php:37
+#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
 msgid "Default"
 msgstr ""
 
@@ -115,11 +115,11 @@ msgstr ""
 msgid "Delete Directory %s"
 msgstr ""
 
-#: functions.inc.php:57 views/form.php:92
+#: functions.inc.php:57 views/form.php:95
 msgid "Description of this directory."
 msgstr ""
 
-#: functions.inc.php:79 views/form.php:266
+#: functions.inc.php:79 views/form.php:269
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Directory %s: "
 msgstr ""
 
-#: functions.inc.php:57 views/form.php:80
+#: functions.inc.php:57 views/form.php:83
 msgid "Directory Description"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Directory General Options"
 msgstr ""
 
-#: functions.inc.php:56 views/form.php:56
+#: functions.inc.php:56 views/form.php:59
 msgid "Directory Name"
 msgstr ""
 
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Edit %s: %s"
 msgstr ""
 
-#: views/form.php:6
+#: views/form.php:7
 msgid "Edit Directory"
 msgstr ""
 
@@ -210,7 +210,7 @@ msgstr ""
 msgid "Exclude"
 msgstr ""
 
-#: functions.inc.php:75 views/form.php:166
+#: functions.inc.php:75 views/form.php:169
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
@@ -218,19 +218,19 @@ msgstr ""
 msgid "Include"
 msgstr ""
 
-#: functions.inc.php:79 views/form.php:254
+#: functions.inc.php:79 views/form.php:257
 msgid "Invalid Destination"
 msgstr ""
 
-#: functions.inc.php:78 views/form.php:228
+#: functions.inc.php:78 views/form.php:231
 msgid "Invalid Recording"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:178
+#: functions.inc.php:76 views/form.php:181
 msgid "Invalid Retries"
 msgstr ""
 
-#: functions.inc.php:77 views/form.php:202
+#: functions.inc.php:77 views/form.php:205
 msgid "Invalid Retry Recording"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Name Announcement"
 msgstr ""
 
-#: views/form.php:68
+#: views/form.php:71
 msgid "Name of this directory"
 msgstr ""
 
@@ -262,28 +262,28 @@ msgstr ""
 msgid "Name of this directory."
 msgstr ""
 
-#: views/form.php:285 views/form.php:312
+#: views/form.php:288 views/form.php:315
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:190
+#: functions.inc.php:76 views/form.php:193
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:116
+#: functions.inc.php:58 views/form.php:119
 msgid "Prefix to be appended to current CallerID Name."
 msgstr ""
 
-#: functions.inc.php:78 views/form.php:242
+#: functions.inc.php:78 views/form.php:245
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
 
-#: functions.inc.php:77 views/form.php:216
+#: functions.inc.php:77 views/form.php:219
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -293,7 +293,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:278
+#: functions.inc.php:80 views/form.php:281
 msgid "Return to IVR"
 msgstr ""
 
@@ -335,19 +335,19 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr ""
 
-#: functions.inc.php:81 views/form.php:320
+#: functions.inc.php:81 views/form.php:323
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:293
+#: functions.inc.php:80 views/form.php:296
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
 
-#: views/form.php:283 views/form.php:310
+#: views/form.php:286 views/form.php:313
 msgid "Yes"
 msgstr ""
 

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 16:44-0800\n"
+"POT-Creation-Date: 2016-01-07 17:42-0800\n"
 "PO-Revision-Date: 2014-04-17 09:53+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/directory/"
@@ -49,7 +49,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-#: functions.inc.php:59 views/form.php:140
+#: functions.inc.php:59 views/form.php:143
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -74,7 +74,7 @@ msgstr "新規エントリーを追加。"
 msgid "Adding directory tables if needed"
 msgstr "必要に応じてディレクトリテーブルを追加"
 
-#: functions.inc.php:59 views/form.php:128
+#: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
 msgstr "アラート情報"
 
@@ -86,11 +86,11 @@ msgstr "全てのユーザー"
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
-#: functions.inc.php:81 views/form.php:305
+#: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
 msgstr "内線をアナウンス"
 
-#: functions.inc.php:75 views/form.php:152
+#: functions.inc.php:75 views/form.php:155
 msgid "Announcement"
 msgstr "アナウンス"
 
@@ -98,7 +98,7 @@ msgstr "アナウンス"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: functions.inc.php:58 views/form.php:104
+#: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
 msgstr "発信者ID名前プリフィックス"
 
@@ -118,7 +118,7 @@ msgstr "このエントリーを削除するにはここをクリック"
 msgid "Custom"
 msgstr "カスタム"
 
-#: functions.inc.php:64 views/form.php:23 views/form.php:30 views/form.php:37
+#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
 msgid "Default"
 msgstr "デフォルト"
 
@@ -139,11 +139,11 @@ msgstr ""
 msgid "Delete Directory %s"
 msgstr "ディレクトリを削除 %s"
 
-#: functions.inc.php:57 views/form.php:92
+#: functions.inc.php:57 views/form.php:95
 msgid "Description of this directory."
 msgstr "このディレクトリの説明"
 
-#: functions.inc.php:79 views/form.php:266
+#: functions.inc.php:79 views/form.php:269
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr "無効な録音が再生された場合に、呼が送られる宛先。"
 
@@ -161,7 +161,7 @@ msgstr "ディレクトリー"
 msgid "Directory %s: "
 msgstr "ディレクトリ： %s"
 
-#: functions.inc.php:57 views/form.php:80
+#: functions.inc.php:57 views/form.php:83
 msgid "Directory Description"
 msgstr "ディレクトリ説明"
 
@@ -169,7 +169,7 @@ msgstr "ディレクトリ説明"
 msgid "Directory General Options"
 msgstr "ディレクトリ一般オプション"
 
-#: functions.inc.php:56 views/form.php:56
+#: functions.inc.php:56 views/form.php:59
 msgid "Directory Name"
 msgstr "ディレクトリ名"
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Edit %s: %s"
 msgstr "%sを編集: %s"
 
-#: views/form.php:6
+#: views/form.php:7
 msgid "Edit Directory"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Exclude"
 msgstr "除外"
 
-#: functions.inc.php:75 views/form.php:166
+#: functions.inc.php:75 views/form.php:169
 msgid "Greeting to be played on entry to the directory."
 msgstr "ディレクトリに入る際に再生される挨拶メッセージ。"
 
@@ -247,19 +247,19 @@ msgstr "ディレクトリに入る際に再生される挨拶メッセージ。
 msgid "Include"
 msgstr "含む"
 
-#: functions.inc.php:79 views/form.php:254
+#: functions.inc.php:79 views/form.php:257
 msgid "Invalid Destination"
 msgstr "エラー宛先"
 
-#: functions.inc.php:78 views/form.php:228
+#: functions.inc.php:78 views/form.php:231
 msgid "Invalid Recording"
 msgstr "エラー音声"
 
-#: functions.inc.php:76 views/form.php:178
+#: functions.inc.php:76 views/form.php:181
 msgid "Invalid Retries"
 msgstr "不正リトライ数"
 
-#: functions.inc.php:77 views/form.php:202
+#: functions.inc.php:77 views/form.php:205
 msgid "Invalid Retry Recording"
 msgstr "エラーリトライ音声"
 
@@ -283,7 +283,7 @@ msgstr "名前"
 msgid "Name Announcement"
 msgstr "名前のアナウンス"
 
-#: views/form.php:68
+#: views/form.php:71
 msgid "Name of this directory"
 msgstr ""
 
@@ -291,21 +291,21 @@ msgstr ""
 msgid "Name of this directory."
 msgstr "このディレクトリの名前。"
 
-#: views/form.php:285 views/form.php:312
+#: views/form.php:288 views/form.php:315
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:190
+#: functions.inc.php:76 views/form.php:193
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr "発信者からの無効な/合致しない応答を受信したときに再試行する回数"
 
-#: functions.inc.php:58 views/form.php:116
+#: functions.inc.php:58 views/form.php:119
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "現在の発信者ID名に追加されるプリフィックス"
 
-#: functions.inc.php:78 views/form.php:242
+#: functions.inc.php:78 views/form.php:245
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -314,7 +314,7 @@ msgstr ""
 "発信者は0を押している、または無効な／マッチしない返答が上限に達した時に発信者"
 "を代わりの宛先に送る前に再生されるプロンプト"
 
-#: functions.inc.php:77 views/form.php:216
+#: functions.inc.php:77 views/form.php:219
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -326,7 +326,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:278
+#: functions.inc.php:80 views/form.php:281
 msgid "Return to IVR"
 msgstr "IVRに戻る"
 
@@ -369,13 +369,13 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "ボイスメール挨拶"
 
-#: functions.inc.php:81 views/form.php:320
+#: functions.inc.php:81 views/form.php:323
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr "チェックされた場合、転送される内線番号が転送前にアナウンスされます。"
 
-#: functions.inc.php:80 views/form.php:293
+#: functions.inc.php:80 views/form.php:296
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -383,7 +383,7 @@ msgstr ""
 "選択された場合、コールが、\"IVRに戻る\"が選択されたIVRを通過する場合は、コー"
 "ルは無効にならずにそこに戻ります。"
 
-#: views/form.php:283 views/form.php:310
+#: views/form.php:286 views/form.php:313
 msgid "Yes"
 msgstr ""
 

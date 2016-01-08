@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX Directory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 16:44-0800\n"
+"POT-Creation-Date: 2016-01-07 17:42-0800\n"
 "PO-Revision-Date: 2010-06-22 22:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team:  <mickecamino@gmail.com>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "X-Poedit-Country: SWEDEN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: functions.inc.php:59 views/form.php:140
+#: functions.inc.php:59 views/form.php:143
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -53,7 +53,7 @@ msgstr "Lägg till ny post."
 msgid "Adding directory tables if needed"
 msgstr ""
 
-#: functions.inc.php:59 views/form.php:128
+#: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
 msgstr "Alert Info"
 
@@ -67,11 +67,11 @@ msgstr ""
 "Ett fel uppstod när servern kontaktades för att lägga till ny post, inget "
 "svar."
 
-#: functions.inc.php:81 views/form.php:305
+#: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
 msgstr "Meddela anknytning"
 
-#: functions.inc.php:75 views/form.php:152
+#: functions.inc.php:75 views/form.php:155
 msgid "Announcement"
 msgstr "Välkomsthälsning"
 
@@ -79,7 +79,7 @@ msgstr "Välkomsthälsning"
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:104
+#: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
 msgstr "Prefix för nummerpresentation"
 
@@ -99,7 +99,7 @@ msgstr "Klicka här för att ta bort posten"
 msgid "Custom"
 msgstr "Anpassad"
 
-#: functions.inc.php:64 views/form.php:23 views/form.php:30 views/form.php:37
+#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
 msgid "Default"
 msgstr "Standard"
 
@@ -120,11 +120,11 @@ msgstr ""
 msgid "Delete Directory %s"
 msgstr "Ta bort katalog %s"
 
-#: functions.inc.php:57 views/form.php:92
+#: functions.inc.php:57 views/form.php:95
 msgid "Description of this directory."
 msgstr "Ge en meningsfull beskrivning för denna katalog"
 
-#: functions.inc.php:79 views/form.php:266
+#: functions.inc.php:79 views/form.php:269
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 "Destination att skicka samtalet till efter Ogiltigt meddelande spelats upp"
@@ -143,7 +143,7 @@ msgstr "Katalog"
 msgid "Directory %s: "
 msgstr "Katalog %s: "
 
-#: functions.inc.php:57 views/form.php:80
+#: functions.inc.php:57 views/form.php:83
 msgid "Directory Description"
 msgstr "Beskrivning"
 
@@ -151,7 +151,7 @@ msgstr "Beskrivning"
 msgid "Directory General Options"
 msgstr ""
 
-#: functions.inc.php:56 views/form.php:56
+#: functions.inc.php:56 views/form.php:59
 msgid "Directory Name"
 msgstr "Katalognamn"
 
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Edit %s: %s"
 msgstr "Redigera %s: %s"
 
-#: views/form.php:6
+#: views/form.php:7
 msgid "Edit Directory"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Exclude"
 msgstr "Exkludera"
 
-#: functions.inc.php:75 views/form.php:166
+#: functions.inc.php:75 views/form.php:169
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
@@ -224,19 +224,19 @@ msgstr ""
 msgid "Include"
 msgstr "Inkludera"
 
-#: functions.inc.php:79 views/form.php:254
+#: functions.inc.php:79 views/form.php:257
 msgid "Invalid Destination"
 msgstr "Destination för ogiltigt svar"
 
-#: functions.inc.php:78 views/form.php:228
+#: functions.inc.php:78 views/form.php:231
 msgid "Invalid Recording"
 msgstr "Ogiltigt meddelande"
 
-#: functions.inc.php:76 views/form.php:178
+#: functions.inc.php:76 views/form.php:181
 msgid "Invalid Retries"
 msgstr "Ogiltiga försök"
 
-#: functions.inc.php:77 views/form.php:202
+#: functions.inc.php:77 views/form.php:205
 msgid "Invalid Retry Recording"
 msgstr "Meddelande vid ogiltiga försök"
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Name Announcement"
 msgstr ""
 
-#: views/form.php:68
+#: views/form.php:71
 msgid "Name of this directory"
 msgstr ""
 
@@ -268,22 +268,22 @@ msgstr ""
 msgid "Name of this directory."
 msgstr "Ge denna katalog ett beskrivande namn"
 
-#: views/form.php:285 views/form.php:312
+#: views/form.php:288 views/form.php:315
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:190
+#: functions.inc.php:76 views/form.php:193
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
 "Antal gånger att försöka vid ogiltigt/icke matchat försök från uppringaren"
 
-#: functions.inc.php:58 views/form.php:116
+#: functions.inc.php:58 views/form.php:119
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "Skriv in ett prefix att lägga till befintlig nummerpresentation"
 
-#: functions.inc.php:78 views/form.php:242
+#: functions.inc.php:78 views/form.php:245
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -293,7 +293,7 @@ msgstr ""
 "alternativ destination då uppringaren slagit 0 eller det maximala antalet "
 "ogiltiga försök (angivet i fältet Ogiltiga försök)"
 
-#: functions.inc.php:77 views/form.php:216
+#: functions.inc.php:77 views/form.php:219
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -305,7 +305,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:278
+#: functions.inc.php:80 views/form.php:281
 msgid "Return to IVR"
 msgstr "Återgå till IVR"
 
@@ -347,13 +347,13 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "Välkomstmeddelande för röstbrevlåda"
 
-#: functions.inc.php:81 views/form.php:320
+#: functions.inc.php:81 views/form.php:323
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:293
+#: functions.inc.php:80 views/form.php:296
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -362,7 +362,7 @@ msgstr ""
 "IVR som har \"Återgå till IVR\" valt, att returneras dit i stället för "
 "Destination vid ogiltigt svar."
 
-#: views/form.php:283 views/form.php:310
+#: views/form.php:286 views/form.php:313
 msgid "Yes"
 msgstr ""
 
