@@ -71,8 +71,8 @@ class Dir{
 	}
 
 	//get database handle, called by __construct()
-  // TODO: hardcoded mysql, deal with sqlite...
-  //
+	// TODO: hardcoded mysql, deal with sqlite...
+	//
 	function __construct_db(){
 		require_once("DB.php");
 		$dsn=array(
@@ -87,7 +87,7 @@ class Dir{
 	}
 
 	//get options associated with the current dir
- 	// TODO: handle getRow failures
+	// TODO: handle getRow failures
 	function __construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
@@ -95,8 +95,8 @@ class Dir{
 
 		$this->default_annoucement = $row['announcement'] === '0' ? true : false;
 
-		//If any non-defaults (non-zero id) then lookup files
- 		//
+		// If any non-defaults (non-zero id) then lookup files
+		//
 		if ($row['announcement'] || $row['repeat_recording'] || $row['invalid_recording']) {
 			$sql='SELECT id, filename from recordings where id in ('.$row['announcement'].','.$row['repeat_recording'].','.$row['invalid_recording'].')';
 			$res=$this->db->getAll($sql,DB_FETCHMODE_ASSOC);

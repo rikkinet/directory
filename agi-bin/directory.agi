@@ -28,8 +28,8 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 				$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['announcement'],3000,3);
 			}
 		} else {
- 			$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['repeat_recording'], 3000, 3);
-    	}
+			$search = $dir->agi->fastpass_get_data($buffer, $dir->dir['repeat_recording'], 3000, 3);
+	}
 		$search = $search['result'];//being set so we can use it later
 		$matches = $dir->search($search,1);
 		$loopcounter2++;
@@ -125,7 +125,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 }
 
 if ($loopcounter1) {
-  $dir->bail();
+	$dir->bail();
 }
 
 function call($contact){
