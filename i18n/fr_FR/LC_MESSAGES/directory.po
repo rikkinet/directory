@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-07 17:42-0800\n"
-"PO-Revision-Date: 2016-01-22 07:55+0200\n"
-"Last-Translator: Nicolas <forums@riendeau.org>\n"
+"PO-Revision-Date: 2016-02-01 00:59+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/directory/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -33,23 +33,23 @@ msgstr "Actions"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr ""
+msgstr "Ajouter un répertoire"
 
 #: functions.inc.php:262
 msgid "Add new entry."
-msgstr ""
+msgstr "Ajouter une nouvelle entrée."
 
 #: install.php:7
 msgid "Adding directory tables if needed"
-msgstr ""
+msgstr "Ajout des tables de répertoire si nécessaire"
 
 #: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
-msgstr ""
+msgstr "Info d'alerte"
 
 #: functions.inc.php:254
 msgid "All Users"
-msgstr ""
+msgstr "Tous les utilisateurs"
 
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
@@ -57,23 +57,23 @@ msgstr ""
 
 #: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
-msgstr ""
+msgstr "Annoncer le poste"
 
 #: functions.inc.php:75 views/form.php:155
 msgid "Announcement"
-msgstr ""
+msgstr "Annonce"
 
 #: directory.i18n.php:6 directory.i18n.php:10
 msgid "Applications"
-msgstr ""
+msgstr "Applications"
 
 #: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
-msgstr ""
+msgstr "Préfixe de nom d'ID appelant"
 
 #: install.php:37
 msgid "Can not create table: "
-msgstr ""
+msgstr "Ne peut créer la table : "
 
 #: functions.inc.php:253
 msgid "Choose One"
