@@ -167,7 +167,7 @@ class Dir{
 				$vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
 				$vm_dir = $vm_dir['data'];
 				dbug('got directory ' . $vm_dir . ' for user ' . $con['dial']);
-				//check to see if we have a greet.* and play it. otherwise, fallback to spelling the name
+				//check to see if we have a greet.* and play it. otherwise, try speaking the name
 
 				if ($vm_dir && $vm_dir != 'novm') {
 					if (!$this->vmbasedir) {
@@ -185,6 +185,21 @@ class Dir{
 							break 2;
 						}
 					}
+				}
+				//fallthough if not successfull
+			case 'tts':
+				// speak the name if possible, otherwise move on to spell it
+				$tmp = $this->agi_get_var('ASTSPOOLDIR') . '/tmp/directory-tts-' . time() . rand(100, 999);
+				system('flite -t "' . $con['name'] .'" -o ' . $tmp . '.wav', $exit_code);
+				if ($exit_code === 0) {
+						$ret = $this->agi->stream_file($tmp, $keys);
+						if ($ret['result']) {
+							$ret['result'] = chr($ret['result']);
+						}
+						unlink($tmp . '.wav');
+						break 2;
+				} else {
+					$ret = array('result' => '');
 				}
 				//fallthough if not successfull
 			case 'spell':
@@ -210,20 +225,7 @@ class Dir{
 				break;
 				//TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 				//we dont call the flite app cirectly as it still uses | as a parameter separator
-			case 'tts':
-				$tmp = $this->agi_get_var('ASTSPOOLDIR') . '/tmp/directory-tts-' . time() . rand(100, 999);
-				system('flite -t "' . $con['name'] .'" -o ' . $tmp . '.wav', $exit_code);
-				if ($exit_code === 0) {
-						$ret = $this->agi->stream_file($tmp, $keys);
-						if ($ret['result']) {
-							$ret['result'] = chr($ret['result']);
-						}
-						unlink($tmp . '.wav');
-				} else {
-					$ret = array('result' => '');
-				}
-
-				break;
+			
 			default:
 				if(is_numeric($con['audio'])){
 					$sql='SELECT filename from recordings where id = ?';
