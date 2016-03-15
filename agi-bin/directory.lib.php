@@ -189,14 +189,12 @@ class Dir{
 				//fallthough if not successfull
 			case 'tts':
 				// speak the name if possible, otherwise move on to spell it
-				$temporaryAudioFile = $this->agi_get_var('ASTSPOOLDIR') . '/tmp/directory-tts-' . time() . rand(100, 999);
-				system('flite -t "' . escapeshellarg($con['name']) .'" -o ' . $temporaryAudioFile . '.wav', $exitCode);
+				$temporaryAudioFile = $this->agi_get_var('ASTSPOOLDIR') . '/tmp/directory-tts-' . time() . rand(100, 999) . 'wav';
+				system('flite -t "' . escapeshellarg($con['name']) .'" -o ' . $temporaryAudioFile, $exitCode);
 				if (file_exists($temporaryAudioFile) && $exitCode === 0) {
 					$ret = $this->agi->stream_file($temporaryAudioFile, $keys);
-					if ($ret['result']) {
-						$ret['result'] = chr($ret['result']);
-					}
-					unlink($temporaryAudioFile . '.wav');
+					$ret['result'] = isset($ret['result']) ? chr($ret['result']) : NULL;
+					unlink($temporaryAudioFile);
 					break 2;
 				} else {
 					$ret = array('result' => '');
