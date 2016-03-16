@@ -10,12 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-07 17:42-0800\n"
-"PO-Revision-Date: 2016-01-07 17:42-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-03-15 22:07+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/directory/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:59 views/form.php:143
 msgid ""
@@ -25,27 +29,27 @@ msgstr ""
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
-msgstr ""
+msgstr "عملیات"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr ""
+msgstr "افزودن دایرکتوری"
 
 #: functions.inc.php:262
 msgid "Add new entry."
-msgstr ""
+msgstr "ورودی جدید."
 
 #: install.php:7
 msgid "Adding directory tables if needed"
-msgstr ""
+msgstr "در صورت نیاز جداول دایرکتوری را اضافه کن"
 
 #: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
-msgstr ""
+msgstr "اطلاعات هشدار"
 
 #: functions.inc.php:254
 msgid "All Users"
-msgstr ""
+msgstr "تمام کاربران"
 
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
@@ -53,43 +57,43 @@ msgstr ""
 
 #: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
-msgstr ""
+msgstr "اعلام داخلی"
 
 #: functions.inc.php:75 views/form.php:155
 msgid "Announcement"
-msgstr ""
+msgstr "اعلان"
 
 #: directory.i18n.php:6 directory.i18n.php:10
 msgid "Applications"
-msgstr ""
+msgstr "برنامه‌ ها"
 
 #: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
-msgstr ""
+msgstr "پیشوند نام شناسه تماس گیرنده"
 
 #: install.php:37
 msgid "Can not create table: "
-msgstr ""
+msgstr "نمیتواند جدول ایجاد کند： "
 
 #: functions.inc.php:253
 msgid "Choose One"
-msgstr ""
+msgstr "انتخاب کنید"
 
 #: functions.inc.php:310
 msgid "Click here to remove this entry"
-msgstr ""
+msgstr "برای حذف این ورودی اینجا کلیک کنید"
 
 #: functions.inc.php:255
 msgid "Custom"
-msgstr ""
+msgstr "شخصی"
 
 #: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
 msgid "Default"
-msgstr ""
+msgstr "پیشفرض"
 
 #: functions.inc.php:504 views/grid.php:20
 msgid "Default Directory"
-msgstr ""
+msgstr "دایرکتوری پیشفرض"
 
 #: functions.inc.php:500
 msgid "Default Group Inclusion"
@@ -97,16 +101,16 @@ msgstr ""
 
 #: Directory.class.php:138
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr ""
+msgstr "حذف دایرکتوری %s"
 
 #: functions.inc.php:57 views/form.php:95
 msgid "Description of this directory."
-msgstr ""
+msgstr "شرح این دایرکتوری."
 
 #: functions.inc.php:79 views/form.php:269
 msgid "Destination to send the call to after Invalid Recording is played."
@@ -114,33 +118,33 @@ msgstr ""
 
 #: functions.inc.php:226
 msgid "Dial"
-msgstr ""
+msgstr "شماره گیری"
 
 #: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
 #: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
-msgstr ""
+msgstr "دایرکتوری"
 
 #: functions.inc.php:579
 #, php-format
 msgid "Directory %s: "
-msgstr ""
+msgstr "دایرکتوری %s: "
 
 #: functions.inc.php:57 views/form.php:83
 msgid "Directory Description"
-msgstr ""
+msgstr "شرح دایرکتوری"
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr ""
+msgstr "گزینه های عمومی دایرکتوری"
 
 #: functions.inc.php:56 views/form.php:59
 msgid "Directory Name"
-msgstr ""
+msgstr "نام دایرکتوری"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
-msgstr ""
+msgstr "گزینه های دایرکتوری (DTMF)"
 
 #: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
@@ -149,34 +153,34 @@ msgstr ""
 #: functions.inc.php:609
 #, php-format
 msgid "Directory: %s"
-msgstr ""
+msgstr "دایرکتوری %s"
 
 #: functions.inc.php:554
 #, php-format
 msgid "Directory: %s "
-msgstr ""
+msgstr "دایرکتوری :%s "
 
 #: Directory.class.php:167
 msgid "Disabled"
-msgstr ""
+msgstr "غیر فعال"
 
 #: functions.inc.php:305
 #, php-format
 msgid "Edit %s: %s"
-msgstr ""
+msgstr "ویرایش %s:%s"
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr ""
+msgstr "ویرایش دایرکتوری"
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr ""
+msgstr "ویرایش دایرکتوری :%s"
 
 #: Directory.class.php:168
 msgid "Enabled"
-msgstr ""
+msgstr "فعال"
 
 #: install.php:138
 msgid ""
@@ -197,7 +201,7 @@ msgstr ""
 
 #: functions.inc.php:481
 msgid "Exclude"
-msgstr ""
+msgstr "گنجایش"
 
 #: functions.inc.php:75 views/form.php:169
 msgid "Greeting to be played on entry to the directory."
@@ -205,55 +209,55 @@ msgstr ""
 
 #: functions.inc.php:482
 msgid "Include"
-msgstr ""
+msgstr "شامل"
 
 #: functions.inc.php:79 views/form.php:257
 msgid "Invalid Destination"
-msgstr ""
+msgstr "داخلی نامعتبر"
 
 #: functions.inc.php:78 views/form.php:231
 msgid "Invalid Recording"
-msgstr ""
+msgstr "ضبط شده نامعتبر"
 
 #: functions.inc.php:76 views/form.php:181
 msgid "Invalid Retries"
-msgstr ""
+msgstr "تلاش مجدد نامعتبر"
 
 #: functions.inc.php:77 views/form.php:205
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "تلاش مجدد ضبط نامعتبر"
 
 #: views/bootnav.php:3
 msgid "List Directories"
-msgstr ""
+msgstr "فهرست دایرکتوری ها"
 
 #: install.php:128
 msgid "Migrating Directory"
-msgstr ""
+msgstr "انتقال دایرکتوری"
 
 #: install.php:172
 msgid "Migration Complete!"
-msgstr ""
+msgstr "انتقال کامل شد!"
 
 #: functions.inc.php:226
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
 #: functions.inc.php:226
 msgid "Name Announcement"
-msgstr ""
+msgstr "نام اعلان"
 
 #: views/form.php:71
 msgid "Name of this directory"
-msgstr ""
+msgstr "نام این دایرکتوری"
 
 #: functions.inc.php:56
 msgid "Name of this directory."
-msgstr ""
+msgstr "نام این دایرکتوری."
 
 #: views/form.php:288 views/form.php:315
 msgid "No"
-msgstr ""
+msgstr "خیر"
 
 #: functions.inc.php:76 views/form.php:193
 msgid ""
@@ -280,15 +284,15 @@ msgstr ""
 
 #: Directory.class.php:143
 msgid "Reset"
-msgstr ""
+msgstr "بازنشانی"
 
 #: functions.inc.php:80 views/form.php:281
 msgid "Return to IVR"
-msgstr ""
+msgstr "بازگشت به منو صوتی"
 
 #: assets/js/directory.js:103
 msgid "Select"
-msgstr ""
+msgstr "انتخاب"
 
 #: install.php:160
 msgid "Setting migrated directory as default"
@@ -296,23 +300,23 @@ msgstr ""
 
 #: functions.inc.php:295
 msgid "Spell Name"
-msgstr ""
+msgstr "نهجی نام"
 
 #: Directory.class.php:148
 msgid "Submit"
-msgstr ""
+msgstr "ارسال"
 
 #: functions.inc.php:296
 msgid "System Recordings:"
-msgstr ""
+msgstr "ضبط سیستمی："
 
 #: functions.inc.php:294
 msgid "Text to Speech"
-msgstr ""
+msgstr "متن به گفتار"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr ""
+msgstr "این ورودی اضافه شده"
 
 #: functions.inc.php:107
 msgid ""
@@ -322,7 +326,7 @@ msgstr ""
 
 #: functions.inc.php:293
 msgid "Voicemail Greeting"
-msgstr ""
+msgstr "خوش آمد ایمیل صوتی"
 
 #: functions.inc.php:81 views/form.php:323
 msgid ""
@@ -338,7 +342,7 @@ msgstr ""
 
 #: views/form.php:286 views/form.php:313
 msgid "Yes"
-msgstr ""
+msgstr "بله"
 
 #: functions.inc.php:504
 msgid ""
@@ -348,7 +352,7 @@ msgstr ""
 
 #: functions.inc.php:37
 msgid "[SYSTEM DEFAULT]"
-msgstr ""
+msgstr "[سیستم پیشفرض]"
 
 #: install.php:46
 msgid "adding say_extension field to directory_details.."
@@ -380,7 +384,7 @@ msgstr ""
 
 #: install.php:50
 msgid "fatal error"
-msgstr ""
+msgstr "خطای سیستمی"
 
 #: install.php:64
 msgid "no valid_recording field???"
@@ -388,8 +392,8 @@ msgstr ""
 
 #: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
 msgid "ok"
-msgstr ""
+msgstr "تایید"
 
 #: functions.inc.php:310
 msgid "remove"
-msgstr ""
+msgstr "حذف"
