@@ -1,53 +1,47 @@
 <?php
-//will be enabled when I (or someone) gose through this to ensure that we dont break anything
-//require_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freepbx.php');
-
+include 'phpagi.php';
 class Dir{
 	//agi class handler
-	var $agi;
+	public $agi;
 	//inital agi pased variables
-	var $agivar;
-	//asterisk manager class handler
-	var $ami;
+	public $agivar;
 	//pear::db database object handel
-	var $db;
+	public $db;
 	//options of the directory that we are currently working with
-	var $dir;
+	public $dir;
 	//the current directory that we are working with
-	var $directory;
+	public $directory;
 	//string we are searching for
-	var $searchstring;
-	//TODO: what is this var for?
-	var $vmbasedir='';
+	public $searchstring;
+	//voicemail base directory
+	public $vmbasedir = '';
 
 	// determine if annoucement is default so we can choose whether or not to play the
 	// "welcome-to-the-directory" recording
-	var $default_annoucement = false;
+	public $default_annoucement = false;
 
-	//this function is run by php automaticly when the class is initalized
-	function __construct(){
-		$this->agi=$this->__construct_agi();
-		//$this->ami=$this->__construct_ami();
-		$this->db=$this->__construct_db();
-		//$this->agivars=$this->__construct_inital_vars();
-		$this->directory=$this->agivar['dir'];
-		$this->dir=$this->__construct_dir_opts();
+	//this function is run by php automatically when the class is initalized
+	public function __construct(){
+		global $db;
+		$this->agi = $this->construct_agi();
+		$this->db = $db;
+		$this->directory = $this->agivar['dir'];
+		$this->dir = $this->construct_dir_opts();
 	}
 
 	//get agi handel/inital agi vars, called by __construct()
-	function __construct_agi(){
-		require_once('phpagi.php');
-		$agi=new AGI();
+	private function construct_agi(){
+		$agi = new AGI();
 		foreach($agi->request as $key => $value){//strip agi_ prefix from keys
-			if(substr($key,0,4)=='agi_'){
-				$opts[substr($key,4)]=$value;
+			if(substr($key,0,4) == 'agi_'){
+				$opts[substr($key,4)] = $value;
 			}
 		}
 
 		foreach($opts as $key => $value){//get passed in vars
-			if(substr($key,0,4)=='arg_'){
+			if(substr($key,0,4) == 'arg_'){
 				$expld=explode('=',$value);
-				$opts[$expld[0]]=$expld[1];
+				$opts[$expld[0]] = $expld[1];
 				unset($opts[$key]);
 			}
 		}
@@ -63,32 +57,9 @@ class Dir{
 		return $agi;
 	}
 
-	//get ami handel, called by __construct()
-	function __construct_ami(){
-		require_once('phpagi-asmanager.php');
-		$ami=new AGI_AsteriskManager();
-		return $ami;
-	}
-
-	//get database handle, called by __construct()
-	// TODO: hardcoded mysql, deal with sqlite...
-	//
-	function __construct_db(){
-		require_once("DB.php");
-		$dsn=array(
-			'phptype'  => $this->agi_get_var('AMPDBENGINE'),
-			'hostspec' => $this->agi_get_var('AMPDBHOST'),
-			'database' => $this->agi_get_var('AMPDBNAME'),
-			'username' => $this->agi_get_var('AMPDBUSER'),
-			'password' => $this->agi_get_var('AMPDBPASS'),
-		);
-		$db=DB::connect($dsn);
-		return $db;
-	}
-
 	//get options associated with the current dir
 	// TODO: handle getRow failures
-	function __construct_dir_opts(){
+	private function construct_dir_opts(){
 		$sql='SELECT * FROM directory_details WHERE ID = ?';
 		$row=$this->db->getRow($sql,array($this->directory),DB_FETCHMODE_ASSOC);
 		//TODO: Error Checking
@@ -117,12 +88,12 @@ class Dir{
 		return $row;
 	}
 
-	function default_annoucement() {
+	public function default_annoucement() {
 		return $this->default_annoucement;
 	}
 
 	//get a channel varibale
-	function agi_get_var($var){
+	public function agi_get_var($var){
 		global $agi_cache;
 		if (isset($agi_cache[$var])) {
 			return $agi_cache[$var];
@@ -140,7 +111,7 @@ class Dir{
 	// Return null on nothing pressed, false on error, otherwise the key
 	// TODO: make it so you can pass in an array:
 	//
-	function getKeypress($filename, $pressables='', $timeout=2000){
+	public function getKeypress($filename, $pressables='', $timeout=2000){
 		if (!is_array($filename)) {
 			$filename = array($filename);
 		}
@@ -161,7 +132,7 @@ class Dir{
 		}
 	}
 
-	function readContact($con, $keys='#'){
+	public function readContact($con, $keys='#'){
 		switch($con['audio']){
 			case 'vm':
 				$vm_dir = $this->agi->database_get('AMPUSER',$con['dial'].'/voicemail');
@@ -223,7 +194,7 @@ class Dir{
 				break;
 				//TODO: BUG: hardcoded to Flite, needs to either check what is there or be configurable
 				//we dont call the flite app cirectly as it still uses | as a parameter separator
-			
+
 			default:
 				if(is_numeric($con['audio'])){
 					$sql='SELECT filename from recordings where id = ?';
@@ -245,7 +216,7 @@ class Dir{
 			return $ret;
 		}
 
-	function search($key,$count=0){
+	public function search($key,$count=0){
 		if($key == ''){return false;}//requre search term
 
 		if(strstr($key,'0') !== false) {
@@ -286,7 +257,7 @@ class Dir{
 		return $res;
 	}
 
-	function bail() {
+	public function bail() {
 		//do something if we are exiting due to to many tries
 		//
 		dbug("User pressed zero, passing back recording of {$this->dir['invalid_recording']}");
@@ -304,7 +275,7 @@ class Dir{
 		exit;
 	}
 
-	function strip_accent($texte) {
+	public function strip_accent($texte) {
 		$texte = str_replace(
 			array(
 				'à', 'â', 'ä', 'á', 'ã', 'å',
@@ -340,5 +311,3 @@ class Dir{
 		return $texte;
 	}
 }
-
-?>

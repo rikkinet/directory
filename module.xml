@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.12</version>
+	<version>13.0.13</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -27,12 +27,13 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.13* FREEPBX-9167 allow combined recordings, fix bugs, upgrade class to php5
 		*13.0.12* FREEPBX-11894 Fix readContact tts.stream_file should not have extension. by Douglas Hammond
 		*13.0.11* prefer speak over spell by matphillips
 		*13.0.10* Recording dropdowns not reflecting proper values
 		*13.0.9* Support Alert Info drop down
 		*13.0.8* FREEPBX-9951 Japanese language prompts
-		*13.0.7* FREEPBX-10119 Fix recording prompts. 
+		*13.0.7* FREEPBX-10119 Fix recording prompts.
 		*13.0.6* FREEPBX-10118 Spelling
 		*13.0.5* FREEPBX-10121 Fix custom entries
 		*13.0.4* FREEPBX-9821 Fix validations on adding custom entries, also spruce up visuals
