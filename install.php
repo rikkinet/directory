@@ -9,7 +9,7 @@ out(_('Adding directory tables if needed'));
 $sql[] = "CREATE TABLE IF NOT EXISTS directory_details (
     id INT NOT NULL PRIMARY KEY $autoincrement,
     dirname varchar(50),
-    description varchar(150),    
+    description varchar(150),
     announcement INT,
     callid_prefix varchar(10),
     alert_info varchar(50),
@@ -46,9 +46,9 @@ if(DB::IsError($check)) {
   outn(_("adding say_extension field to directory_details.."));
   $sql = "ALTER TABLE directory_details ADD say_extension VARCHAR(5)";
   $result = $db->query($sql);
-  if(DB::IsError($result)) { 
+  if(DB::IsError($result)) {
     out(_("fatal error"));
-    die_freepbx($result->getDebugInfo()); 
+    die_freepbx($result->getDebugInfo());
   } else {
     out(_("ok"));
   }
@@ -60,7 +60,7 @@ if(!DB::IsError($check)) {
 	outn(_("dropping valid_details field.."));
 	$sql = "ALTER TABLE `directory_details` DROP `valid_recording`";
  	$result = $db->query($sql);
- 	if(DB::IsError($result)) { 
+ 	if(DB::IsError($result)) {
 		out(_("no valid_recording field???"));
 	} else {
 		out(_("ok"));
@@ -77,7 +77,7 @@ if (count($res) == 0) {
 	//if not add it
 	$sql = 'ALTER TABLE directory_entries ADD COLUMN e_id INT AFTER id';
 	$do = $db->query($sql);
-	if(DB::IsError($do)) { 
+	if(DB::IsError($do)) {
 		out(_("cannot add field e_id to table directory_entries \n" . $do->getDebugInfo()));
 	} else {
 		out(_("e_id added to table directory_entries"));
@@ -98,7 +98,7 @@ if (count($res) == 0) {
 		//update entire
 		$sql = 'INSERT INTO directory_entries (id, e_id, name, type, foreign_id, audio, dial) VALUES (?, ?, ?, ?, ?, ?, ?)';
 		$do = $db->query($sql, $de[$d]);
-		if(DB::IsError($do)) { 
+		if(DB::IsError($do)) {
 			out(_('cannot set e_id for directory_id = ' . $e['id'] . '. Please resubmit this directory manually to correct this issue.'));
 		}
 	}
@@ -116,7 +116,7 @@ if (!$migrated) {
 	$section = null;
 	$vmusers = array();
 	parse_voicemailconf(rtrim($amp_conf["ASTETCDIR"],"/")."/voicemail.conf", $vmconf, $section);
-	if (isset($vmconf) && $vmconf) {
+	if (isset($vmconf) && is_array($vmconf)) {
 		foreach ($vmconf['default'] as $ext => $vm) {
 			$vmusers[$ext] = $vm['name'];
 		}
@@ -127,34 +127,34 @@ if (!$migrated) {
 	if (isset($vmusers) && $vmusers) {
 		out(_("Migrating Directory"));
 		//TODO: make this the default directory
-		$vals = array('Migrated Directory', '', '0', '', '', '2', 
+		$vals = array('Migrated Directory', '', '0', '', '', '2',
 						'0', '0', 'app-blackhole,hangup,1', '', '1');
 		$sql = 'INSERT INTO directory_details (dirname, description, announcement,
 					callid_prefix, alert_info, repeat_loops, repeat_recording,
 					invalid_recording, invalid_destination, retivr, say_extension)
 					VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$new = $db->query($sql, $vals);
-		if(DB::IsError($new)) { 
+		if(DB::IsError($new)) {
 			die_freepbx(_('Error migrating to new directory! ERROR: Could not create new Directory.' . $new->getDebugInfo()));
 		}
 		//get the id of the new directory
 		$sql = ( ($amp_conf["AMPDBENGINE"] == "sqlite3") ? 'SELECT last_insert_rowid()' : 'SELECT LAST_INSERT_ID()');
 		$newdir = $db->getOne($sql);
 		$dirdest = 'directory,' . $newdir  . ',1';
-	
-		//insert all system users to the new directory, 
+
+		//insert all system users to the new directory,
 		//Just insert their ext. number, everythign else will be handeled automatically by directory
 		$e_id = 0;
 		foreach ($vmusers as $ext => $user) {
 			$vals = array($newdir, $e_id++, 'user', $ext, 'vm');
-			$sql = 'INSERT INTO directory_entries (id, e_id, type, foreign_id, audio) 
+			$sql = 'INSERT INTO directory_entries (id, e_id, type, foreign_id, audio)
 					VALUES (?, ?, ?, ?, ?)';
 			$q = $db->query($sql, $vals);
-			if(DB::IsError($q)) { 
+			if(DB::IsError($q)) {
 				die_freepbx(_('Error migrating to new directory! ERROR: Could not populate new Directory ' . $q->getDebugInfo()));
 			}
 		}
-	
+
 		//set as default directory
 		if (!isset($def_dir) || !$def_dir) {
 			out(_("Setting migrated directory as default"));
@@ -166,7 +166,7 @@ if (!$migrated) {
 	//Seem where done with migration - mark that in the database
 	$migrated_dir = (isset($newdir) && $newdir != "") ? $newdir : 'true';
 	$q = $db->query("REPLACE INTO `admin` (`variable`, value) VALUES ('directory28_migrated', '$migrated_dir')");
-	if(DB::IsError($q)) { 
+	if(DB::IsError($q)) {
 		die_freepbx(_('Error migrating to new directory! ERROR: Unable to mark Directory as migrated. Migration will probably be run again at next install/upgrade of this module. ' . $q->getDebugInfo()));
 	}
 	out(_('Migration Complete!'));
