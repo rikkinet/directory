@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-07 17:42-0800\n"
-"PO-Revision-Date: 2015-03-27 12:21+0200\n"
+"PO-Revision-Date: 2016-06-07 03:17+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"directory/es_ES/>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/directory/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:59 views/form.php:143
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
@@ -56,6 +56,8 @@ msgstr "Todos los Usuarios"
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
+"Ha ocurrido un Error tratando de contactar al servidor al agregar una fila, "
+"no hay respuesta."
 
 #: functions.inc.php:81 views/form.php:308
 msgid "Announce Extension"
@@ -103,7 +105,7 @@ msgstr "Grupo Inclusión por defecto"
 
 #: Directory.class.php:138
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: functions.inc.php:48
 #, php-format
@@ -164,7 +166,7 @@ msgstr "Directorio: %s "
 
 #: Directory.class.php:167
 msgid "Disabled"
-msgstr ""
+msgstr "Deshabilitado"
 
 #: functions.inc.php:305
 #, php-format
@@ -173,7 +175,7 @@ msgstr "Editar %s: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr ""
+msgstr "Editar Directorio"
 
 #: functions.inc.php:34
 #, php-format
@@ -182,7 +184,7 @@ msgstr "Editar Directorio: %s"
 
 #: Directory.class.php:168
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 #: install.php:138
 msgid ""
@@ -238,7 +240,7 @@ msgstr "Mensaje Intentos Inválidos"
 
 #: views/bootnav.php:3
 msgid "List Directories"
-msgstr ""
+msgstr "Listar Directorios"
 
 #: install.php:128
 msgid "Migrating Directory"
@@ -258,7 +260,7 @@ msgstr "Nombre Anuncio"
 
 #: views/form.php:71
 msgid "Name of this directory"
-msgstr ""
+msgstr "Nombre de este Directorio"
 
 #: functions.inc.php:56
 msgid "Name of this directory."
@@ -266,7 +268,7 @@ msgstr "Nombre para este Directorio."
 
 #: views/form.php:288 views/form.php:315
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: functions.inc.php:76 views/form.php:193
 msgid ""
@@ -301,7 +303,7 @@ msgstr ""
 
 #: Directory.class.php:143
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: functions.inc.php:80 views/form.php:281
 msgid "Return to IVR"
@@ -309,7 +311,7 @@ msgstr "Volver al IVR"
 
 #: assets/js/directory.js:103
 msgid "Select"
-msgstr ""
+msgstr "Seleccionar"
 
 #: install.php:160
 msgid "Setting migrated directory as default"
@@ -333,7 +335,7 @@ msgstr "Texto a voz"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr ""
+msgstr "Esta entrada ya ha sido añadida"
 
 #: functions.inc.php:107
 msgid ""
@@ -366,7 +368,7 @@ msgstr ""
 
 #: views/form.php:286 views/form.php:313
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: functions.inc.php:504
 msgid ""
