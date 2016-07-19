@@ -171,4 +171,12 @@ if (!$migrated) {
 	}
 	out(_('Migration Complete!'));
 }
-?>
+
+//remove broken links
+$files = array("cdir-please-enter-first-three.wav","cdir-transferring-further-assistance.wav","cdir-matching-entries-continue.wav","cdir-there-are.wav","cdir-welcome.wav","cdir-sorry-no-entries.wav","cdir-matching-entries-or-pound.wav");
+foreach($files as $file) {
+	$path = $amp_conf['ASTVARLIBDIR']."/sounds";
+	if(is_link($path."/fr/".$file) && !file_exists($path."/fr/".$file)) {
+		unlink($path."/fr/".$file);
+	}
+}
