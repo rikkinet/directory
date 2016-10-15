@@ -12,7 +12,7 @@ function directory_configpageload() {
 			$deet = array('dirname', 'description', 'repeat_loops', 'announcement',
 						'repeat_recording', 'invalid_recording',
 						'callid_prefix', 'alert_info', 'invalid_destination', 'retivr',
-						'say_extension', 'id');
+						'say_extension', 'id', 'rvolume');
 
 			foreach ($deet as $d) {
 				switch ($d){
@@ -384,10 +384,10 @@ function directory_save_dir_details($vals){
 	if ($vals['id']) {
 		$sql = 'REPLACE INTO directory_details (id,dirname,description,announcement,
 				callid_prefix,alert_info,repeat_loops,repeat_recording,
-				invalid_recording,invalid_destination,retivr,say_extension)
+				invalid_recording,invalid_destination,retivr,say_extension,rvolume)
 				VALUES (:id,:dirname,:description,:announcement,
 				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
-				:invalid_recording,:invalid_destination,:retivr,:say_extension)';
+				:invalid_recording,:invalid_destination,:retivr,:say_extension,:rvolume)';
 		$foo = $db->query($sql,$vals);
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
@@ -396,10 +396,10 @@ function directory_save_dir_details($vals){
 		unset($vals['id']);
 		$sql = 'INSERT INTO directory_details (dirname,description,announcement,
 				callid_prefix,alert_info,repeat_loops,repeat_recording,
-				invalid_recording,invalid_destination,retivr,say_extension)
+				invalid_recording,invalid_destination,retivr,say_extension,rvolume)
 				VALUES (:dirname,:description,:announcement,
 				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
-				:invalid_recording,:invalid_destination,:retivr,:say_extension)';
+				:invalid_recording,:invalid_destination,:retivr,:say_extension,:rvolume)';
 		$foo = $db->query($sql,$vals);
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());

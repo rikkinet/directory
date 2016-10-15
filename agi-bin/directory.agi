@@ -138,6 +138,9 @@ function call($contact){
 	if($dir->dir['alert_info'] != ''){
 		$dir->agi->set_alertinfo($dir->dir['alert_info']);
 	}
+	if(!empty($dir->dir['rvolume'])) {
+		$dir->agi->set_variable('RVOL',$dir->dir['rvolume']);
+	}
 	if($dir->dir['callid_prefix'] != ''){
 		$callid_name = $dir->agi->get_variable('CALLERID(name)');
 		$dir->agi->set_variable('CALLERID(name)',$dir->dir['callid_prefix'].$callid_name['data']);

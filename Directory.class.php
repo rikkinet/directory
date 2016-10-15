@@ -65,7 +65,7 @@ class Directory implements \BMO {
 			$requestvars = array('id','dirname','description','announcement',
 							'callid_prefix','alert_info','repeat_loops',
 							'repeat_recording','invalid_recording',
-							'invalid_destination','retivr','say_extension');
+							'invalid_destination','retivr','say_extension','rvolume');
 			foreach($requestvars as $var){
 				$vars[$var] = isset($_REQUEST[$var]) 	? $_REQUEST[$var]		: null;
 			}
