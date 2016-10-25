@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-07 17:42-0800\n"
+"POT-Creation-Date: 2016-10-24 17:00-0700\n"
 "PO-Revision-Date: 2016-06-07 03:17+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -41,10 +41,6 @@ msgstr "Agregar Directorio"
 msgid "Add new entry."
 msgstr "Agregar nueva entrada."
 
-#: install.php:7
-msgid "Adding directory tables if needed"
-msgstr "QAgregando tablas directory si es necesario"
-
 #: functions.inc.php:59 views/form.php:131
 msgid "Alert Info"
 msgstr "Info Alerta"
@@ -59,11 +55,11 @@ msgstr ""
 "Ha ocurrido un Error tratando de contactar al servidor al agregar una fila, "
 "no hay respuesta."
 
-#: functions.inc.php:81 views/form.php:308
+#: functions.inc.php:81 views/form.php:335
 msgid "Announce Extension"
 msgstr "Anunciar Extensión"
 
-#: functions.inc.php:75 views/form.php:155
+#: functions.inc.php:75 views/form.php:182
 msgid "Announcement"
 msgstr "Anuncio"
 
@@ -74,10 +70,6 @@ msgstr "Aplicaciones"
 #: functions.inc.php:58 views/form.php:107
 msgid "CallerID Name Prefix"
 msgstr "Nombre prefijo CallerID"
-
-#: install.php:37
-msgid "Can not create table: "
-msgstr "No se puede crear la tabla: "
 
 #: functions.inc.php:253
 msgid "Choose One"
@@ -116,7 +108,7 @@ msgstr "Eliminar Directorio %s"
 msgid "Description of this directory."
 msgstr "Una descripción para este Directorio."
 
-#: functions.inc.php:79 views/form.php:269
+#: functions.inc.php:79 views/form.php:296
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr "Destino para enviar la llamada después de reproducir Mensaje Inválido."
 
@@ -186,35 +178,11 @@ msgstr "Editar Directorio: %s"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: install.php:138
-msgid ""
-"Error migrating to new directory! ERROR: Could not create new Directory."
-msgstr ""
-"Error al migrar a nuevo directorio! ERROR: No se pudo crear el nuevo "
-"directorio."
-
-#: install.php:154
-msgid ""
-"Error migrating to new directory! ERROR: Could not populate new Directory "
-msgstr ""
-"Error al migrar a nuevo directorio ERROR: No se puede rellenar nuevo "
-"Directorio "
-
-#: install.php:170
-msgid ""
-"Error migrating to new directory! ERROR: Unable to mark Directory as "
-"migrated. Migration will probably be run again at next install/upgrade of "
-"this module. "
-msgstr ""
-"Error al migrar a nuevo directorio ERROR: No se puede marcar como Directorio "
-"migrado. La migracion probablemente se llevara a cabo nuevamente en la "
-"siguiente instalacion/actualizacion de este modulo. "
-
 #: functions.inc.php:481
 msgid "Exclude"
 msgstr "Excluir"
 
-#: functions.inc.php:75 views/form.php:169
+#: functions.inc.php:75 views/form.php:196
 msgid "Greeting to be played on entry to the directory."
 msgstr "Mensaje que será reproducido al entrar en el Directorio."
 
@@ -222,33 +190,25 @@ msgstr "Mensaje que será reproducido al entrar en el Directorio."
 msgid "Include"
 msgstr "Incluir"
 
-#: functions.inc.php:79 views/form.php:257
+#: functions.inc.php:79 views/form.php:284
 msgid "Invalid Destination"
 msgstr "Destino Inválido"
 
-#: functions.inc.php:78 views/form.php:231
+#: functions.inc.php:78 views/form.php:258
 msgid "Invalid Recording"
 msgstr "Mensaje Inválido"
 
-#: functions.inc.php:76 views/form.php:181
+#: functions.inc.php:76 views/form.php:208
 msgid "Invalid Retries"
 msgstr "Reintentos Inválidos"
 
-#: functions.inc.php:77 views/form.php:205
+#: functions.inc.php:77 views/form.php:232
 msgid "Invalid Retry Recording"
 msgstr "Mensaje Intentos Inválidos"
 
 #: views/bootnav.php:3
 msgid "List Directories"
 msgstr "Listar Directorios"
-
-#: install.php:128
-msgid "Migrating Directory"
-msgstr "Migrando Directorio"
-
-#: install.php:172
-msgid "Migration Complete!"
-msgstr "Migracion Completa!"
 
 #: functions.inc.php:226
 msgid "Name"
@@ -266,11 +226,15 @@ msgstr "Nombre de este Directorio"
 msgid "Name of this directory."
 msgstr "Nombre para este Directorio."
 
-#: views/form.php:288 views/form.php:315
+#: views/form.php:315 views/form.php:342
 msgid "No"
 msgstr "No"
 
-#: functions.inc.php:76 views/form.php:193
+#: views/form.php:159
+msgid "None"
+msgstr ""
+
+#: functions.inc.php:76 views/form.php:220
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
@@ -278,11 +242,18 @@ msgstr ""
 "Número de veces para volver a intentar cuando se recibe una respuesta "
 "inválida/no coincidente desde la persona que llama"
 
+#: views/form.php:171
+#, php-format
+msgid ""
+"Override the ringer volume. Note: This is only valid for %s phones at this "
+"time"
+msgstr ""
+
 #: functions.inc.php:58 views/form.php:119
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "Prefijo que se agregará al actual nombre de CallerID."
 
-#: functions.inc.php:78 views/form.php:245
+#: functions.inc.php:78 views/form.php:272
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -293,7 +264,7 @@ msgstr ""
 "de respuestas inválidas/no coincidentes (según lo determinado por Reintentos "
 "Inválidos)"
 
-#: functions.inc.php:77 views/form.php:219
+#: functions.inc.php:77 views/form.php:246
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -305,17 +276,17 @@ msgstr ""
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: functions.inc.php:80 views/form.php:281
+#: functions.inc.php:80 views/form.php:308
 msgid "Return to IVR"
 msgstr "Volver al IVR"
+
+#: views/form.php:154
+msgid "Ringer Volume Override"
+msgstr ""
 
 #: assets/js/directory.js:103
 msgid "Select"
 msgstr "Seleccionar"
-
-#: install.php:160
-msgid "Setting migrated directory as default"
-msgstr "Fijando Directorio migrado como por defecto"
 
 #: functions.inc.php:295
 msgid "Spell Name"
@@ -349,7 +320,7 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "Saludo Correo Vocal"
 
-#: functions.inc.php:81 views/form.php:323
+#: functions.inc.php:81 views/form.php:350
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
@@ -357,7 +328,7 @@ msgstr ""
 "Cuando se activa, el número de extensión a donde se pasa la llamada se dará "
 "a conocer antes de la transferencia"
 
-#: functions.inc.php:80 views/form.php:296
+#: functions.inc.php:80 views/form.php:323
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -366,7 +337,7 @@ msgstr ""
 "\"Volver al IVR\" seleccionado, hará que la llamada sea devuelta allí en "
 "lugar de un destino inválido."
 
-#: views/form.php:286 views/form.php:313
+#: views/form.php:313 views/form.php:340
 msgid "Yes"
 msgstr "Si"
 
@@ -382,18 +353,6 @@ msgstr ""
 msgid "[SYSTEM DEFAULT]"
 msgstr "[DEFAULT SISTEMA]"
 
-#: install.php:46
-msgid "adding say_extension field to directory_details.."
-msgstr "Agregando campo say_extension a tabla directory_details.."
-
-#: install.php:81
-msgid "cannot add field e_id to table directory_entries \n"
-msgstr "no se puede agregar el campo e_id a tabla directory_entries \n"
-
-#: install.php:102
-msgid "cannot set e_id for directory_id = "
-msgstr "no se puede fijar e_id para directory_id = "
-
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
 msgstr "eliminando default_directory y migrando llaves.."
@@ -402,29 +361,70 @@ msgstr "eliminando default_directory y migrando llaves.."
 msgid "dropping directory_details, directory_entries.."
 msgstr "parando directory_details, directory_entries.."
 
-#: install.php:60
-msgid "dropping valid_details field.."
-msgstr "parando campo valid_details.."
-
-#: install.php:83
-msgid "e_id added to table directory_entries"
-msgstr "e_id agregado a tabla directory_entries"
-
-#: install.php:50
-msgid "fatal error"
-msgstr "error fatal"
-
-#: install.php:64
-msgid "no valid_recording field???"
-msgstr "campo valid_recording no valido???"
-
-#: install.php:53 install.php:66 uninstall.php:5 uninstall.php:10
+#: uninstall.php:5 uninstall.php:10
 msgid "ok"
 msgstr "ok"
 
 #: functions.inc.php:310
 msgid "remove"
 msgstr "eliminar"
+
+#~ msgid "Adding directory tables if needed"
+#~ msgstr "QAgregando tablas directory si es necesario"
+
+#~ msgid "Can not create table: "
+#~ msgstr "No se puede crear la tabla: "
+
+#~ msgid ""
+#~ "Error migrating to new directory! ERROR: Could not create new Directory."
+#~ msgstr ""
+#~ "Error al migrar a nuevo directorio! ERROR: No se pudo crear el nuevo "
+#~ "directorio."
+
+#~ msgid ""
+#~ "Error migrating to new directory! ERROR: Could not populate new Directory "
+#~ msgstr ""
+#~ "Error al migrar a nuevo directorio ERROR: No se puede rellenar nuevo "
+#~ "Directorio "
+
+#~ msgid ""
+#~ "Error migrating to new directory! ERROR: Unable to mark Directory as "
+#~ "migrated. Migration will probably be run again at next install/upgrade of "
+#~ "this module. "
+#~ msgstr ""
+#~ "Error al migrar a nuevo directorio ERROR: No se puede marcar como "
+#~ "Directorio migrado. La migracion probablemente se llevara a cabo "
+#~ "nuevamente en la siguiente instalacion/actualizacion de este modulo. "
+
+#~ msgid "Migrating Directory"
+#~ msgstr "Migrando Directorio"
+
+#~ msgid "Migration Complete!"
+#~ msgstr "Migracion Completa!"
+
+#~ msgid "Setting migrated directory as default"
+#~ msgstr "Fijando Directorio migrado como por defecto"
+
+#~ msgid "adding say_extension field to directory_details.."
+#~ msgstr "Agregando campo say_extension a tabla directory_details.."
+
+#~ msgid "cannot add field e_id to table directory_entries \n"
+#~ msgstr "no se puede agregar el campo e_id a tabla directory_entries \n"
+
+#~ msgid "cannot set e_id for directory_id = "
+#~ msgstr "no se puede fijar e_id para directory_id = "
+
+#~ msgid "dropping valid_details field.."
+#~ msgstr "parando campo valid_details.."
+
+#~ msgid "e_id added to table directory_entries"
+#~ msgstr "e_id agregado a tabla directory_entries"
+
+#~ msgid "fatal error"
+#~ msgstr "error fatal"
+
+#~ msgid "no valid_recording field???"
+#~ msgstr "campo valid_recording no valido???"
 
 #~ msgid "Add a new Directory"
 #~ msgstr "Agregar Nuevo Directorio"
