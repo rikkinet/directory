@@ -372,8 +372,6 @@ function directory_get_default_dir() {
 
 }
 
-// TODO: clean this up passing in $vals with expected positions for insert is very error prone!
-//
 function directory_save_dir_details($vals){
 	global $db, $amp_conf;
 
@@ -388,7 +386,21 @@ function directory_save_dir_details($vals){
 				VALUES (:id,:dirname,:description,:announcement,
 				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
 				:invalid_recording,:invalid_destination,:retivr,:say_extension,:rvolume)';
-		$foo = $db->query($sql,$vals);
+		$foo = $db->query($sql, array(
+			'id' => $vals['id'],
+			'dirname' => $vals['dirname'],
+			'description' => $vals['description'],
+			'announcement' => $vals['announcement'],
+			'callid_prefix' => $vals['callid_prefix'],
+			'alert_info' => $vals['alert_info'],
+			'repeat_loops' => $vals['repeat_loops'],
+			'repeat_recording' => $vals['repeat_recording'],
+			'invalid_recording' => $vals['invalid_recording'],
+			'invalid_destination' => $vals['invalid_destination'],
+			'retivr' => $vals['retivr'],
+			'say_extension' => $vals['say_extension'],
+			'rvolume' => !empty($vals['rvolume']) ? $vals['rvolume'] : ''
+		));
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
 		}
@@ -400,7 +412,20 @@ function directory_save_dir_details($vals){
 				VALUES (:dirname,:description,:announcement,
 				:callid_prefix,:alert_info,:repeat_loops,:repeat_recording,
 				:invalid_recording,:invalid_destination,:retivr,:say_extension,:rvolume)';
-		$foo = $db->query($sql,$vals);
+		$foo = $db->query($sql, array(
+			'dirname' => $vals['dirname'],
+			'description' => $vals['description'],
+			'announcement' => $vals['announcement'],
+			'callid_prefix' => $vals['callid_prefix'],
+			'alert_info' => $vals['alert_info'],
+			'repeat_loops' => $vals['repeat_loops'],
+			'repeat_recording' => $vals['repeat_recording'],
+			'invalid_recording' => $vals['invalid_recording'],
+			'invalid_destination' => $vals['invalid_destination'],
+			'retivr' => $vals['retivr'],
+			'say_extension' => $vals['say_extension'],
+			'rvolume' => !empty($vals['rvolume']) ? $vals['rvolume'] : ''
+		));
 		if(DB::IsError($foo)) {
 			die_freepbx(print_r($vals,true).' '.$foo->getDebugInfo());
 		}
