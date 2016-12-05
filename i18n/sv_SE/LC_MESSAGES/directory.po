@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX Directory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-24 17:00-0700\n"
+"POT-Creation-Date: 2016-12-05 14:33-0600\n"
 "PO-Revision-Date: 2010-06-22 22:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team:  <mickecamino@gmail.com>\n"
@@ -95,11 +95,11 @@ msgstr "Anpassad"
 msgid "Default"
 msgstr "Standard"
 
-#: functions.inc.php:504 views/grid.php:20
+#: functions.inc.php:529 views/grid.php:20
 msgid "Default Directory"
 msgstr "Standardkatalog"
 
-#: functions.inc.php:500
+#: functions.inc.php:525
 msgid "Default Group Inclusion"
 msgstr "Inkludera i standardgrupp"
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Directory"
 msgstr "Katalog"
 
-#: functions.inc.php:579
+#: functions.inc.php:604
 #, php-format
 msgid "Directory %s: "
 msgstr "Katalog %s: "
@@ -155,12 +155,12 @@ msgstr ""
 msgid "Directory&nbsp;Entries"
 msgstr "Katalogval"
 
-#: functions.inc.php:609
+#: functions.inc.php:634
 #, php-format
 msgid "Directory: %s"
 msgstr "Katalog: %s"
 
-#: functions.inc.php:554
+#: functions.inc.php:579
 #, php-format
 msgid "Directory: %s "
 msgstr "Katalog: %s "
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: functions.inc.php:481
+#: functions.inc.php:506
 msgid "Exclude"
 msgstr "Exkludera"
 
@@ -195,7 +195,7 @@ msgstr "Exkludera"
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
-#: functions.inc.php:482
+#: functions.inc.php:507
 msgid "Include"
 msgstr "Inkludera"
 
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:504
+#: functions.inc.php:529
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
