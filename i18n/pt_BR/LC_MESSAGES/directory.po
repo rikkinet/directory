@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-05 14:33-0600\n"
-"PO-Revision-Date: 2016-12-12 21:59+0200\n"
+"PO-Revision-Date: 2016-12-12 22:05+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/directory/pt_BR/>\n"
@@ -357,16 +357,16 @@ msgstr "[SISTEMA PADRÃO]"
 
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
-msgstr ""
+msgstr "Excluindo default_directory e chaves de rastreamento de migração .."
 
 #: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
-msgstr ""
+msgstr "parando directory_details, directory_entries.."
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
-msgstr ""
+msgstr "ok"
 
 #: functions.inc.php:310
 msgid "remove"
-msgstr ""
+msgstr "remover"
