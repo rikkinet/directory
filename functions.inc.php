@@ -217,7 +217,7 @@ function directory_destinations(){
 
 	foreach($results as $row){
 		$row['dirname'] = ($row['dirname'])?$row['dirname']:'Directory '.$row['id'] ;
-		$extens[] = array('destination' => 'directory,' . $row['id'] . ',1', 'description' => $row['dirname'], 'category' => _('Directory'));
+		$extens[] = array('destination' => 'directory,' . $row['id'] . ',1', 'description' => $row['dirname'], 'category' => 'Directory');
 	}
 	return isset($extens)?$extens:null;
 }
