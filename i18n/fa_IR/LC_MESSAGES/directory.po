@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 14:33-0600\n"
+"POT-Creation-Date: 2017-03-17 13:22-0700\n"
 "PO-Revision-Date: 2016-04-02 20:25+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
@@ -61,7 +61,7 @@ msgstr "اعلام داخلی"
 msgid "Announcement"
 msgstr "اعلان"
 
-#: directory.i18n.php:6 directory.i18n.php:10
+#: directory.i18n.php:6
 msgid "Applications"
 msgstr "برنامه‌ ها"
 
@@ -114,8 +114,8 @@ msgstr "مقصدی که تماس پس از پخش پیام نادرست به آ�
 msgid "Dial"
 msgstr "شماره گیری"
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
-#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
+#: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
+#: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "دایرکتوری"
 

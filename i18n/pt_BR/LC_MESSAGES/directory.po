@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 14:33-0600\n"
+"POT-Creation-Date: 2017-03-17 13:22-0700\n"
 "PO-Revision-Date: 2016-12-12 22:05+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
-"Language-Team: Portuguese (Brazil) "
-"<http://weblate.freepbx.org/projects/freepbx/directory/pt_BR/>\n"
-"Language: pt_BR\n"
+"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
+"freepbx/directory/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -63,7 +63,7 @@ msgstr "Anunciar Ramal"
 msgid "Announcement"
 msgstr "Anúncio"
 
-#: directory.i18n.php:6 directory.i18n.php:10
+#: directory.i18n.php:6
 msgid "Applications"
 msgstr "Aplicações"
 
@@ -110,14 +110,15 @@ msgstr "Descrição deste diretório."
 
 #: functions.inc.php:79 views/form.php:296
 msgid "Destination to send the call to after Invalid Recording is played."
-msgstr "Destino para enviar a chamada após a Gravação Inválida ser reproduzida."
+msgstr ""
+"Destino para enviar a chamada após a Gravação Inválida ser reproduzida."
 
 #: functions.inc.php:226
 msgid "Dial"
 msgstr "Discar"
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
-#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
+#: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
+#: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "Diretório"
 
@@ -335,8 +336,8 @@ msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
-"Quando selecionado, se a chamada passar por uma URA que estava selecionado \""
-"Voltar para a URA\", a chamada será retornada para lá ao invés do destino "
+"Quando selecionado, se a chamada passar por uma URA que estava selecionado "
+"\"Voltar para a URA\", a chamada será retornada para lá ao invés do destino "
 "inválido."
 
 #: views/form.php:313 views/form.php:340
