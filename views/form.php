@@ -2,26 +2,11 @@
 extract($request);
 if(empty($action) && empty($id)){
 	$subhead = _("Add Directory");
-	$inusehtml = $action = $id = "";
+	$action = $id = "";
 }else{
 	$subhead = _("Edit Directory");
 	$dir = directory_get_dir_details($request['id']);
 	extract($dir);
-	$usage_list	= framework_display_destination_usage(directory_getdest($id));
-	if (!empty($usage_list)) {
-		$inusehtml = '
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">'.$usage_list['text'].'</h3>
-				</div>
-				<div class="panel-body">
-					'.$usage_list['tooltip'].'
-				</div>
-			</div>
-		';
-	} else {
-		$inusehtml = "";
-	}
 }
 $recoptions = '<option value="0">'._("Default").'</option>';
 if(function_exists('recordings_list')){
@@ -46,7 +31,6 @@ if(function_exists('recordings_list')){
 }
 ?>
 <h2><?php echo $subhead ?></h2>
-<?php echo $inusehtml?>
 <form action="" method="post" class="fpbx-submit" id="dirform" data-fpbx-delete="?display=directory&amp;action=delete&amp;id=<?php echo $id?>">
 
 <!--Directory Name-->
