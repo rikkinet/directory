@@ -13,7 +13,7 @@ switch ($view) {
 			$usage_list = framework_display_destination_usage(directory_getdest($_REQUEST['id']));
 			if (!empty($usage_list)) {
 				$usagehtml = <<< HTML
-<div class="panel panel-default">
+<div class="panel panel-default fpbx-usageinfo">
     <div class="panel-heading">
         $usage_list[text]
     </div>
