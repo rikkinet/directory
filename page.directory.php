@@ -6,8 +6,25 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 $heading = _("Directory");
 
 $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : '';
+$usagehtml = '';
 switch ($view) {
 	case 'form':
+		if (isset($_REQUEST['id'])) {
+			$usage_list = framework_display_destination_usage(directory_getdest($_REQUEST['id']));
+			if (!empty($usage_list)) {
+				$usagehtml = <<< HTML
+<div class="panel panel-default">
+    <div class="panel-heading">
+        $usage_list[text]
+    </div>
+    <div class="panel-body">
+        $usage_list[tooltip]
+    </div>
+</div>
+
+HTML;
+			}
+		}
 		$content = load_view(__DIR__.'/views/form.php', array('request' => $_REQUEST));
 	break;
 	default:
@@ -18,6 +35,7 @@ switch ($view) {
 ?>
 <div class="container-fluid">
 	<h1><?php echo $heading ?></h1>
+	<?php echo $usagehtml?>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-12">
