@@ -10,20 +10,7 @@ $usagehtml = '';
 switch ($view) {
 	case 'form':
 		if (isset($_REQUEST['id'])) {
-			$usage_list = framework_display_destination_usage(directory_getdest($_REQUEST['id']));
-			if (!empty($usage_list)) {
-				$usagehtml = <<< HTML
-<div class="panel panel-default fpbx-usageinfo">
-    <div class="panel-heading">
-        $usage_list[text]
-    </div>
-    <div class="panel-body">
-        $usage_list[tooltip]
-    </div>
-</div>
-
-HTML;
-			}
+			$usagehtml = FreePBX::View()->destinationUsage(directory_getdest($_REQUEST['id']));
 		}
 		$content = load_view(__DIR__.'/views/form.php', array('request' => $_REQUEST));
 	break;
