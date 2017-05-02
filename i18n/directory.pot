@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-17 13:22-0700\n"
+"POT-Creation-Date: 2017-05-02 12:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: functions.inc.php:59
-#: views/form.php:143
+#: views/form.php:127
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -41,7 +41,7 @@ msgid "Add new entry."
 msgstr ""
 
 #: functions.inc.php:59
-#: views/form.php:131
+#: views/form.php:115
 msgid "Alert Info"
 msgstr ""
 
@@ -54,12 +54,12 @@ msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
 #: functions.inc.php:81
-#: views/form.php:335
+#: views/form.php:319
 msgid "Announce Extension"
 msgstr ""
 
 #: functions.inc.php:75
-#: views/form.php:182
+#: views/form.php:166
 msgid "Announcement"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgid "Applications"
 msgstr ""
 
 #: functions.inc.php:58
-#: views/form.php:107
+#: views/form.php:91
 msgid "CallerID Name Prefix"
 msgstr ""
 
@@ -85,9 +85,9 @@ msgid "Custom"
 msgstr ""
 
 #: functions.inc.php:64
-#: views/form.php:26
-#: views/form.php:33
-#: views/form.php:40
+#: views/form.php:11
+#: views/form.php:18
+#: views/form.php:25
 msgid "Default"
 msgstr ""
 
@@ -110,12 +110,12 @@ msgid "Delete Directory %s"
 msgstr ""
 
 #: functions.inc.php:57
-#: views/form.php:95
+#: views/form.php:79
 msgid "Description of this directory."
 msgstr ""
 
 #: functions.inc.php:79
-#: views/form.php:296
+#: views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 
@@ -137,7 +137,7 @@ msgid "Directory %s: "
 msgstr ""
 
 #: functions.inc.php:57
-#: views/form.php:83
+#: views/form.php:67
 msgid "Directory Description"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgid "Directory General Options"
 msgstr ""
 
 #: functions.inc.php:56
-#: views/form.php:59
+#: views/form.php:43
 msgid "Directory Name"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgid "Exclude"
 msgstr ""
 
 #: functions.inc.php:75
-#: views/form.php:196
+#: views/form.php:180
 msgid "Greeting to be played on entry to the directory."
 msgstr ""
 
@@ -204,22 +204,22 @@ msgid "Include"
 msgstr ""
 
 #: functions.inc.php:79
-#: views/form.php:284
+#: views/form.php:268
 msgid "Invalid Destination"
 msgstr ""
 
 #: functions.inc.php:78
-#: views/form.php:258
+#: views/form.php:242
 msgid "Invalid Recording"
 msgstr ""
 
 #: functions.inc.php:76
-#: views/form.php:208
+#: views/form.php:192
 msgid "Invalid Retries"
 msgstr ""
 
 #: functions.inc.php:77
-#: views/form.php:232
+#: views/form.php:216
 msgid "Invalid Retry Recording"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 msgid "Name Announcement"
 msgstr ""
 
-#: views/form.php:71
+#: views/form.php:55
 msgid "Name of this directory"
 msgstr ""
 
@@ -243,23 +243,23 @@ msgstr ""
 msgid "Name of this directory."
 msgstr ""
 
-#: views/form.php:315
-#: views/form.php:342
+#: views/form.php:299
+#: views/form.php:326
 msgid "No"
 msgstr ""
 
-#: views/form.php:159
+#: views/form.php:143
 msgid "None"
 msgstr ""
 
 #: functions.inc.php:76
-#: views/form.php:220
+#: views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
 
-#: views/form.php:171
+#: views/form.php:155
 #, php-format
 msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
@@ -267,12 +267,12 @@ msgid ""
 msgstr ""
 
 #: functions.inc.php:58
-#: views/form.php:119
+#: views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
 msgstr ""
 
 #: functions.inc.php:78
-#: views/form.php:272
+#: views/form.php:256
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -280,7 +280,7 @@ msgid ""
 msgstr ""
 
 #: functions.inc.php:77
-#: views/form.php:246
+#: views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -291,11 +291,11 @@ msgid "Reset"
 msgstr ""
 
 #: functions.inc.php:80
-#: views/form.php:308
+#: views/form.php:292
 msgid "Return to IVR"
 msgstr ""
 
-#: views/form.php:154
+#: views/form.php:138
 msgid "Ringer Volume Override"
 msgstr ""
 
@@ -334,21 +334,21 @@ msgid "Voicemail Greeting"
 msgstr ""
 
 #: functions.inc.php:81
-#: views/form.php:350
+#: views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
 #: functions.inc.php:80
-#: views/form.php:323
+#: views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
 
-#: views/form.php:313
-#: views/form.php:340
+#: views/form.php:297
+#: views/form.php:324
 msgid "Yes"
 msgstr ""
 

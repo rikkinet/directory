@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-17 13:22-0700\n"
+"POT-Creation-Date: 2017-05-02 12:13-0400\n"
 "PO-Revision-Date: 2015-04-22 16:59+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -19,7 +19,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: functions.inc.php:59 views/form.php:143
+#: functions.inc.php:59 views/form.php:127
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -39,7 +39,7 @@ msgstr "Добавить директорию"
 msgid "Add new entry."
 msgstr "Добавить новую запись."
 
-#: functions.inc.php:59 views/form.php:131
+#: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
 msgstr "Информация для оповещения"
 
@@ -51,11 +51,11 @@ msgstr "Все пользователи"
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
-#: functions.inc.php:81 views/form.php:335
+#: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
 msgstr "Анонс внутреннего номера"
 
-#: functions.inc.php:75 views/form.php:182
+#: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
 msgstr "Приветствие"
 
@@ -63,7 +63,7 @@ msgstr "Приветствие"
 msgid "Applications"
 msgstr "Приложения"
 
-#: functions.inc.php:58 views/form.php:107
+#: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
 msgstr "Имя префикса CallerID"
 
@@ -79,7 +79,7 @@ msgstr "Кликнуть чтобы убрать эту запись"
 msgid "Custom"
 msgstr "Особое"
 
-#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
+#: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
 msgstr "По умолчанию"
 
@@ -100,11 +100,11 @@ msgstr ""
 msgid "Delete Directory %s"
 msgstr "Удалить директорию %s"
 
-#: functions.inc.php:57 views/form.php:95
+#: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
 msgstr "Описание текущего каталога."
 
-#: functions.inc.php:79 views/form.php:296
+#: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 "Назначение перенаправления вызова после воспроизведения Сообщения о неверном "
@@ -124,7 +124,7 @@ msgstr "Директории"
 msgid "Directory %s: "
 msgstr "Директория %s: "
 
-#: functions.inc.php:57 views/form.php:83
+#: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
 msgstr "Описание директории"
 
@@ -132,7 +132,7 @@ msgstr "Описание директории"
 msgid "Directory General Options"
 msgstr "Основные свойства директории"
 
-#: functions.inc.php:56 views/form.php:59
+#: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
 msgstr "Название директории"
 
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Exclude"
 msgstr "Исключая"
 
-#: functions.inc.php:75 views/form.php:196
+#: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
 msgstr "Сообщение, воспроизводимое при попадании в директорию."
 
@@ -188,19 +188,19 @@ msgstr "Сообщение, воспроизводимое при попадан
 msgid "Include"
 msgstr "Включая"
 
-#: functions.inc.php:79 views/form.php:284
+#: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
 msgstr "Назначение для неверно набранных номеров"
 
-#: functions.inc.php:78 views/form.php:258
+#: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
 msgstr "Сообщение о неверно набранном номере"
 
-#: functions.inc.php:76 views/form.php:208
+#: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
 msgstr "Неверных попыток"
 
-#: functions.inc.php:77 views/form.php:232
+#: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
 msgstr "Сообщение о неверных попытках"
 
@@ -216,7 +216,7 @@ msgstr "Имя"
 msgid "Name Announcement"
 msgstr "Название Приветствия"
 
-#: views/form.php:71
+#: views/form.php:55
 msgid "Name of this directory"
 msgstr ""
 
@@ -224,15 +224,15 @@ msgstr ""
 msgid "Name of this directory."
 msgstr "Имя текущей директории."
 
-#: views/form.php:315 views/form.php:342
+#: views/form.php:299 views/form.php:326
 msgid "No"
 msgstr ""
 
-#: views/form.php:159
+#: views/form.php:143
 msgid "None"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:220
+#: functions.inc.php:76 views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
@@ -240,18 +240,18 @@ msgstr ""
 "Количество неверных попыток, во время которых сообщается о неверно набранном "
 "номере или отсутствии совпадений."
 
-#: views/form.php:171
+#: views/form.php:155
 #, php-format
 msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:119
+#: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "Префикc, добавляемый к текущему имени CallerID."
 
-#: functions.inc.php:78 views/form.php:272
+#: functions.inc.php:78 views/form.php:256
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -261,7 +261,7 @@ msgstr ""
 "назначение при нажатии звонящим 0 или при достижении максимального "
 "количества неудачных попыток ввода"
 
-#: functions.inc.php:77 views/form.php:246
+#: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -273,11 +273,11 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:308
+#: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
 msgstr "Возврат в Интерактивное меню"
 
-#: views/form.php:154
+#: views/form.php:138
 msgid "Ringer Volume Override"
 msgstr ""
 
@@ -317,13 +317,13 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "Приветствие голосовой почты"
 
-#: functions.inc.php:81 views/form.php:350
+#: functions.inc.php:81 views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr "Если отмечено, будет сообщаться внутренний номер при переводе вызова"
 
-#: functions.inc.php:80 views/form.php:323
+#: functions.inc.php:80 views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -332,7 +332,7 @@ msgstr ""
 "текущее интерактивное меню, вместо того, чтобы уйти по назначению для "
 "неверно набранных номеров."
 
-#: views/form.php:313 views/form.php:340
+#: views/form.php:297 views/form.php:324
 msgid "Yes"
 msgstr ""
 
