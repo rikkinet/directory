@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.19</version>
+	<version>13.0.19.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -27,6 +27,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.19.1* FREEPBX-14767 The invalid retries setting under Directory module is not working
 		*13.0.19* FREEPBX-12690 add view for destinations usage
 		*13.0.18.1* FREEPBX-14262 option for Terminate call not visible for french language
 		*13.0.18* FREEI-337 Fix an issue with missing volume parameter
