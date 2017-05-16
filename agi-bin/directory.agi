@@ -37,7 +37,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$loopcounter2++;
 	}
 	//hangup if we failed to receive anything meanigfull
-	if($loopcounter2 == 3){//seem like we ran out of tries...
+	if($loopcounter2 == $dir->dir['repeat_loops']){//seem like we ran out of tries...
 		$dir->$agi->exec('background',$dir->dir['invalid_recording']);
 		$dir->bail();
 		break;
@@ -120,9 +120,8 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$matches=$dir->search($search);
 		call($matches[0]);
 	} else {
-		$dir->agi->stream_file($dir->dir['repeat_recording']);
 		$loopcounter1++;
-		$search = $matches = $loopcounter2 = 0;
+		$search = $matches = 0;
 	}
 }
 
