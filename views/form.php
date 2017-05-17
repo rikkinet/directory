@@ -193,7 +193,7 @@ if(function_exists('recordings_list')){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="repeat_loops"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="number" max='10' class="form-control" id="repeat_loops" name="repeat_loops" value="<?php echo isset($repeat_loops)?$repeat_loops:'3' ?>">
+						<input type="number" max='10' min='0' class="form-control" id="repeat_loops" name="repeat_loops" value="<?php echo isset($repeat_loops)?$repeat_loops:'3' ?>">
 					</div>
 				</div>
 			</div>
