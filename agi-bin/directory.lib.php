@@ -264,7 +264,18 @@ class Dir{
 		$this->agi->set_variable('DIR_INVALID_RECORDING',$this->dir['invalid_recording']);
 		if($this->agivar['retivr'] == 'true' && $this->agi_get_var('IVR_CONTEXT')){
 			$this->agi->set_extension('retivr');
-		}else{
+		}else{//FREEPBX-14810 :Ringer Volume Override and Alert Info is not working under Directory for Invalid Destination
+			if($this->dir['alert_info'] != ''){
+				$this->agi->set_variable('ALERT_INFO',$this->dir['alert_info']);
+			}
+		        if(!empty($this->dir['rvolume'])) {
+				 $this->agi->set_variable('RVOL',$this->dir['rvolume']);
+			}
+			if($dir->dir['callid_prefix'] != ''){
+				$callid_name = $this->agi->get_variable('CALLERID(name)');
+				$this->agi->set_variable('CALLERID(name)',$this->dir['callid_prefix'].$callid_name['data']);
+			}
+
 			$dest = explode(',',$this->dir['invalid_destination']);
 			$this->agi->set_variable('DIR_INVALID_CONTEXT',$dest['0']);
 			$this->agi->set_variable('DIR_INVALID_EXTEN',$dest['1']);
