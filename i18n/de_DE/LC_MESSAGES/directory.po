@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-02 12:13-0400\n"
-"PO-Revision-Date: 2016-02-04 23:09+0200\n"
-"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/directory/"
-"fr_FR/>\n"
+"PO-Revision-Date: 2017-03-19 19:30+0200\n"
+"Last-Translator: hammer125 <auswertung@aon.at>\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/directory/"
+"de_DE/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:59 views/form.php:127
 msgid ""
@@ -29,80 +29,82 @@ msgstr ""
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
-msgstr "Actions"
+msgstr "Aktionen"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr "Ajouter un répertoire"
+msgstr "Verzeichnis hinzufügen"
 
 #: functions.inc.php:262
 msgid "Add new entry."
-msgstr "Ajouter une nouvelle entrée."
+msgstr "Neuen Eintrag hinzufügen."
 
 #: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
-msgstr "Info d'alerte"
+msgstr "Alarm-Information"
 
 #: functions.inc.php:254
 msgid "All Users"
-msgstr "Tous les utilisateurs"
+msgstr "Alle Benutzer"
 
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
+"Ein Fehler passierte, als versucht wurde, den Server zu erreichen und eine "
+"Zeile einzufügen, keine Antwort."
 
 #: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
-msgstr "Annoncer le poste"
+msgstr "Ansage-Erweiterung"
 
 #: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
-msgstr "Annonce"
+msgstr "Ansage"
 
 #: directory.i18n.php:6
 msgid "Applications"
-msgstr "Applications"
+msgstr "Anwendungen"
 
 #: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
-msgstr "Préfixe de nom d'ID appelant"
+msgstr ""
 
 #: functions.inc.php:253
 msgid "Choose One"
-msgstr ""
+msgstr "Eines auswählen"
 
 #: functions.inc.php:310
 msgid "Click here to remove this entry"
-msgstr "Cliquer ici pour supprimer cette entrée"
+msgstr "Klicken Sie hier, um den Eintrag zu entfernen"
 
 #: functions.inc.php:255
 msgid "Custom"
-msgstr "Personnalisé"
+msgstr ""
 
 #: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
-msgstr "Par défaut"
+msgstr ""
 
 #: functions.inc.php:529 views/grid.php:20
 msgid "Default Directory"
-msgstr "Répertoire par défaut"
+msgstr "Standardverzeichnis"
 
 #: functions.inc.php:525
 msgid "Default Group Inclusion"
-msgstr "Inclusion du groupe par défaut"
+msgstr ""
 
 #: Directory.class.php:138
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Löschen"
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr "Supprimer le répertoire %s"
+msgstr "lösche Verzeichnis %s"
 
 #: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
-msgstr "Description de ce répertoire."
+msgstr "Beschreibung für dieses Verzeichnis."
 
 #: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
@@ -110,73 +112,73 @@ msgstr ""
 
 #: functions.inc.php:226
 msgid "Dial"
-msgstr "Composer"
+msgstr ""
 
 #: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
 #: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
-msgstr "Répertoire"
+msgstr ""
 
 #: functions.inc.php:604
 #, php-format
 msgid "Directory %s: "
-msgstr "Répertoire %s : "
+msgstr ""
 
 #: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
-msgstr "Description de ce répertoire"
+msgstr ""
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr "Options générales du répertoire"
+msgstr ""
 
 #: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
-msgstr "Nom du répertoire"
+msgstr ""
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
-msgstr "Options du répertoire (DTMF)"
+msgstr ""
 
 #: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
-msgstr "Répertoire&nbsp;Entrées"
+msgstr ""
 
 #: functions.inc.php:634
 #, php-format
 msgid "Directory: %s"
-msgstr "Répertoire : %s"
+msgstr ""
 
 #: functions.inc.php:579
 #, php-format
 msgid "Directory: %s "
-msgstr "Répertoire : %s "
+msgstr ""
 
 #: Directory.class.php:167
 msgid "Disabled"
-msgstr "Désactivé"
+msgstr ""
 
 #: functions.inc.php:305
 #, php-format
 msgid "Edit %s: %s"
-msgstr "Éditer %s : %s"
+msgstr ""
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr "Éditer le répertoire"
+msgstr ""
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr "Éditer le répertoire : %s"
+msgstr ""
 
 #: Directory.class.php:168
 msgid "Enabled"
-msgstr "Activé"
+msgstr ""
 
 #: functions.inc.php:506
 msgid "Exclude"
-msgstr "Exclure"
+msgstr ""
 
 #: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
@@ -184,15 +186,15 @@ msgstr ""
 
 #: functions.inc.php:507
 msgid "Include"
-msgstr "Inclure"
+msgstr ""
 
 #: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
-msgstr "Destination invalide"
+msgstr ""
 
 #: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
-msgstr "Enregistrement invalide"
+msgstr ""
 
 #: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
@@ -204,31 +206,31 @@ msgstr ""
 
 #: views/bootnav.php:3
 msgid "List Directories"
-msgstr "Liste des répertoires"
+msgstr ""
 
 #: functions.inc.php:226
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #: functions.inc.php:226
 msgid "Name Announcement"
-msgstr "Annonce du nom"
+msgstr ""
 
 #: views/form.php:55
 msgid "Name of this directory"
-msgstr "Nom de ce répertoire"
+msgstr ""
 
 #: functions.inc.php:56
 msgid "Name of this directory."
-msgstr "Nom de ce répertoire."
+msgstr ""
 
 #: views/form.php:299 views/form.php:326
 msgid "No"
-msgstr "Non"
+msgstr "Nein"
 
 #: views/form.php:143
 msgid "None"
-msgstr ""
+msgstr "Nichts"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
@@ -262,11 +264,11 @@ msgstr ""
 
 #: Directory.class.php:143
 msgid "Reset"
-msgstr "Réinitialiser"
+msgstr ""
 
 #: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
-msgstr "Retourner à l'IVR"
+msgstr ""
 
 #: views/form.php:138
 msgid "Ringer Volume Override"
@@ -274,27 +276,27 @@ msgstr ""
 
 #: assets/js/directory.js:103
 msgid "Select"
-msgstr "Sélectionner"
+msgstr ""
 
 #: functions.inc.php:295
 msgid "Spell Name"
-msgstr "Épeler le nom"
+msgstr ""
 
 #: Directory.class.php:148
 msgid "Submit"
-msgstr "Soumettre"
+msgstr ""
 
 #: functions.inc.php:296
 msgid "System Recordings:"
-msgstr "Enregistrements système :"
+msgstr ""
 
 #: functions.inc.php:294
 msgid "Text to Speech"
-msgstr "Synthèse vocale"
+msgstr ""
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr "Cette entrée à déjà été ajoutée"
+msgstr ""
 
 #: functions.inc.php:107
 msgid ""
@@ -320,7 +322,7 @@ msgstr ""
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
-msgstr "Oui"
+msgstr ""
 
 #: functions.inc.php:529
 msgid ""
@@ -342,45 +344,8 @@ msgstr ""
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
-msgstr "ok"
+msgstr "Ok"
 
 #: functions.inc.php:310
 msgid "remove"
-msgstr "supprime"
-
-#~ msgid "Adding directory tables if needed"
-#~ msgstr "Ajout des tables de répertoire si nécessaire"
-
-#~ msgid "Can not create table: "
-#~ msgstr "Ne peut créer la table : "
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Could not create new Directory."
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Le "
-#~ "nouveau répertoire n'a pu être créé."
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Could not populate new Directory "
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Le "
-#~ "nouveau répertoire n'a pu être chargé. "
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Unable to mark Directory as "
-#~ "migrated. Migration will probably be run again at next install/upgrade of "
-#~ "this module. "
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Il n'a "
-#~ "pas été possible de marquer le répertoire comme migré. La migration sera "
-#~ "probablement effectuée de nouveau lors de la prochaine installation/mise "
-#~ "à jour de ce module. "
-
-#~ msgid "Migrating Directory"
-#~ msgstr "MIgration de répertoire en cours"
-
-#~ msgid "Migration Complete!"
-#~ msgstr "Migration complétée !"
-
-#~ msgid "fatal error"
-#~ msgstr "erreur fatale"
+msgstr "entfernen"

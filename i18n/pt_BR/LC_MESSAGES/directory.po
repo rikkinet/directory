@@ -10,231 +10,238 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-02 12:13-0400\n"
-"PO-Revision-Date: 2016-02-04 23:09+0200\n"
-"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/directory/"
-"fr_FR/>\n"
+"PO-Revision-Date: 2016-12-12 22:05+0200\n"
+"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
+"freepbx/directory/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:59 views/form.php:127
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
 msgstr ""
+"ALERT_INFO que será enviado quando chamado a partir deste Diretório. Pode "
+"ser usado para o toque diferenciado para dispositivos SIP."
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
-msgstr "Actions"
+msgstr "Ações"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr "Ajouter un répertoire"
+msgstr "Adicionar Diretório"
 
 #: functions.inc.php:262
 msgid "Add new entry."
-msgstr "Ajouter une nouvelle entrée."
+msgstr "Adicionar novo elemento."
 
 #: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
-msgstr "Info d'alerte"
+msgstr "Informação de Alerta"
 
 #: functions.inc.php:254
 msgid "All Users"
-msgstr "Tous les utilisateurs"
+msgstr "Todos os Usuários"
 
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
+"Ocorreu um erro ao tentar entrar em contato com o servidor ao adicionar uma "
+"linha,não há resposta."
 
 #: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
-msgstr "Annoncer le poste"
+msgstr "Anunciar Ramal"
 
 #: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
-msgstr "Annonce"
+msgstr "Anúncio"
 
 #: directory.i18n.php:6
 msgid "Applications"
-msgstr "Applications"
+msgstr "Aplicações"
 
 #: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
-msgstr "Préfixe de nom d'ID appelant"
+msgstr "Nome do Prefixo do ID Chamador"
 
 #: functions.inc.php:253
 msgid "Choose One"
-msgstr ""
+msgstr "Selecione Um"
 
 #: functions.inc.php:310
 msgid "Click here to remove this entry"
-msgstr "Cliquer ici pour supprimer cette entrée"
+msgstr "Clique aqui para remover este elemento"
 
 #: functions.inc.php:255
 msgid "Custom"
-msgstr "Personnalisé"
+msgstr "Personalizado"
 
 #: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
-msgstr "Par défaut"
+msgstr "Padrão"
 
 #: functions.inc.php:529 views/grid.php:20
 msgid "Default Directory"
-msgstr "Répertoire par défaut"
+msgstr "Diretório Padrão"
 
 #: functions.inc.php:525
 msgid "Default Group Inclusion"
-msgstr "Inclusion du groupe par défaut"
+msgstr "Inclusão de Grupo Padrão"
 
 #: Directory.class.php:138
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Apagar"
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr "Supprimer le répertoire %s"
+msgstr "Apagar Diretório %s"
 
 #: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
-msgstr "Description de ce répertoire."
+msgstr "Descrição deste diretório."
 
 #: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
+"Destino para enviar a chamada após a Gravação Inválida ser reproduzida."
 
 #: functions.inc.php:226
 msgid "Dial"
-msgstr "Composer"
+msgstr "Discar"
 
 #: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
 #: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
-msgstr "Répertoire"
+msgstr "Diretório"
 
 #: functions.inc.php:604
 #, php-format
 msgid "Directory %s: "
-msgstr "Répertoire %s : "
+msgstr "Diretório %s: "
 
 #: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
-msgstr "Description de ce répertoire"
+msgstr "Descrição do Diretório"
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr "Options générales du répertoire"
+msgstr "Opções Gerais do Diretório"
 
 #: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
-msgstr "Nom du répertoire"
+msgstr "Nome do Diretório"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
-msgstr "Options du répertoire (DTMF)"
+msgstr "Opções (DTMF) do Diretório"
 
 #: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
-msgstr "Répertoire&nbsp;Entrées"
+msgstr "Diretório&nbsp;Entradas"
 
 #: functions.inc.php:634
 #, php-format
 msgid "Directory: %s"
-msgstr "Répertoire : %s"
+msgstr "Diretório: %s"
 
 #: functions.inc.php:579
 #, php-format
 msgid "Directory: %s "
-msgstr "Répertoire : %s "
+msgstr "Diretório: %s "
 
 #: Directory.class.php:167
 msgid "Disabled"
-msgstr "Désactivé"
+msgstr "Desabilitado"
 
 #: functions.inc.php:305
 #, php-format
 msgid "Edit %s: %s"
-msgstr "Éditer %s : %s"
+msgstr "Editar %s: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr "Éditer le répertoire"
+msgstr "Editar Diretório"
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr "Éditer le répertoire : %s"
+msgstr "Editar Diretório: %s"
 
 #: Directory.class.php:168
 msgid "Enabled"
-msgstr "Activé"
+msgstr "Habilitado"
 
 #: functions.inc.php:506
 msgid "Exclude"
-msgstr "Exclure"
+msgstr "Excluir"
 
 #: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
-msgstr ""
+msgstr "Saudação para ser reproduzida ao entrar no diretório."
 
 #: functions.inc.php:507
 msgid "Include"
-msgstr "Inclure"
+msgstr "Incluir"
 
 #: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
-msgstr "Destination invalide"
+msgstr "Destino Inválido"
 
 #: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
-msgstr "Enregistrement invalide"
+msgstr "Gravação Inválida"
 
 #: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
-msgstr ""
+msgstr "Tentativas Inválidas"
 
 #: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "Tentativa de Gravação Inválida"
 
 #: views/bootnav.php:3
 msgid "List Directories"
-msgstr "Liste des répertoires"
+msgstr "Listar Diretórios"
 
 #: functions.inc.php:226
 msgid "Name"
-msgstr "Nom"
+msgstr "Nome"
 
 #: functions.inc.php:226
 msgid "Name Announcement"
-msgstr "Annonce du nom"
+msgstr "Anúncio de Nome"
 
 #: views/form.php:55
 msgid "Name of this directory"
-msgstr "Nom de ce répertoire"
+msgstr "Nome deste diretório"
 
 #: functions.inc.php:56
 msgid "Name of this directory."
-msgstr "Nom de ce répertoire."
+msgstr "Nome deste diretório."
 
 #: views/form.php:299 views/form.php:326
 msgid "No"
-msgstr "Non"
+msgstr "Não"
 
 #: views/form.php:143
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
+"Número de vezes para tentar novamente ao receber uma resposta inválida/não "
+"coincidente do usuário chamador"
 
 #: views/form.php:155
 #, php-format
@@ -242,10 +249,12 @@ msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
+"Substituir o volume do toque. Observação: isso só é válido para telefones %s "
+"neste momento"
 
 #: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
-msgstr ""
+msgstr "Prefixo a ser anexado ao atual Nome do ID Chamador."
 
 #: functions.inc.php:78 views/form.php:256
 msgid ""
@@ -253,92 +262,107 @@ msgid ""
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
+"Aviso a ser reproduzido antes de enviar o usuário chamador para um destino "
+"alternativo por ter pressionando 0 ou recebido a quantidade máxima de "
+"respostas inválidas/incompatíveis (conforme determinado em Tentativas "
+"Inválidas)"
 
 #: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
 msgstr ""
+"Aviso a ser reproduzido quando uma resposta inválida/incompatível for "
+"recebida, antes de solicitar que o usuário chamador tente novamente"
 
 #: Directory.class.php:143
 msgid "Reset"
-msgstr "Réinitialiser"
+msgstr "Reiniciar"
 
 #: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
-msgstr "Retourner à l'IVR"
+msgstr "Voltar para a URA"
 
 #: views/form.php:138
 msgid "Ringer Volume Override"
-msgstr ""
+msgstr "Substituição do Volume do Toque"
 
 #: assets/js/directory.js:103
 msgid "Select"
-msgstr "Sélectionner"
+msgstr "Selecionar"
 
 #: functions.inc.php:295
 msgid "Spell Name"
-msgstr "Épeler le nom"
+msgstr "Dizer Nome"
 
 #: Directory.class.php:148
 msgid "Submit"
-msgstr "Soumettre"
+msgstr "Enviar"
 
 #: functions.inc.php:296
 msgid "System Recordings:"
-msgstr "Enregistrements système :"
+msgstr "Gravações do Sistema:"
 
 #: functions.inc.php:294
 msgid "Text to Speech"
-msgstr "Synthèse vocale"
+msgstr "Texto para Falar"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr "Cette entrée à déjà été ajoutée"
+msgstr "Este elemento já foi adicionado"
 
 #: functions.inc.php:107
 msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
 msgstr ""
+"Ligado a um Diretório que permite que todos os elemento nesse diretório "
+"sejam discado diretamente, conforme aparecem no diretório"
 
 #: functions.inc.php:293
 msgid "Voicemail Greeting"
-msgstr ""
+msgstr "Saudação de Correio de Voz"
 
 #: functions.inc.php:81 views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
+"Quando selecionado, o número do ramal a ser transferido será anunciado antes "
+"da transferência"
 
 #: functions.inc.php:80 views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
+"Quando selecionado, se a chamada passar por uma URA que estava selecionado "
+"\"Voltar para a URA\", a chamada será retornada para lá ao invés do destino "
+"inválido."
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
-msgstr "Oui"
+msgstr "Sim"
 
 #: functions.inc.php:529
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
 msgstr ""
+"Você pode incluir ou excluir este ramal/usuário do diretório padrão ao criar "
+"ou editar."
 
 #: functions.inc.php:37
 msgid "[SYSTEM DEFAULT]"
-msgstr ""
+msgstr "[SISTEMA PADRÃO]"
 
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
-msgstr ""
+msgstr "Excluindo default_directory e chaves de rastreamento de migração .."
 
 #: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
-msgstr ""
+msgstr "parando directory_details, directory_entries.."
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
@@ -346,41 +370,4 @@ msgstr "ok"
 
 #: functions.inc.php:310
 msgid "remove"
-msgstr "supprime"
-
-#~ msgid "Adding directory tables if needed"
-#~ msgstr "Ajout des tables de répertoire si nécessaire"
-
-#~ msgid "Can not create table: "
-#~ msgstr "Ne peut créer la table : "
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Could not create new Directory."
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Le "
-#~ "nouveau répertoire n'a pu être créé."
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Could not populate new Directory "
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Le "
-#~ "nouveau répertoire n'a pu être chargé. "
-
-#~ msgid ""
-#~ "Error migrating to new directory! ERROR: Unable to mark Directory as "
-#~ "migrated. Migration will probably be run again at next install/upgrade of "
-#~ "this module. "
-#~ msgstr ""
-#~ "Erreur lors de la migration vers le nouveau répertoire ! ERREUR : Il n'a "
-#~ "pas été possible de marquer le répertoire comme migré. La migration sera "
-#~ "probablement effectuée de nouveau lors de la prochaine installation/mise "
-#~ "à jour de ce module. "
-
-#~ msgid "Migrating Directory"
-#~ msgstr "MIgration de répertoire en cours"
-
-#~ msgid "Migration Complete!"
-#~ msgstr "Migration complétée !"
-
-#~ msgid "fatal error"
-#~ msgstr "erreur fatale"
+msgstr "remover"

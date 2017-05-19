@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 14:33-0600\n"
+"POT-Creation-Date: 2017-05-02 12:13-0400\n"
 "PO-Revision-Date: 2016-04-02 20:25+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: functions.inc.php:59 views/form.php:143
+#: functions.inc.php:59 views/form.php:127
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -41,7 +41,7 @@ msgstr "افزودن دایرکتوری"
 msgid "Add new entry."
 msgstr "ورودی جدید."
 
-#: functions.inc.php:59 views/form.php:131
+#: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
 msgstr "اطلاعات هشدار"
 
@@ -53,19 +53,19 @@ msgstr "تمام کاربران"
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr "در هنگام افزودن ردیف به سرور خطایی رخ داد،بدون پاسخ."
 
-#: functions.inc.php:81 views/form.php:335
+#: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
 msgstr "اعلام داخلی"
 
-#: functions.inc.php:75 views/form.php:182
+#: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
 msgstr "اعلان"
 
-#: directory.i18n.php:6 directory.i18n.php:10
+#: directory.i18n.php:6
 msgid "Applications"
 msgstr "برنامه‌ ها"
 
-#: functions.inc.php:58 views/form.php:107
+#: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
 msgstr "پیشوند نام شناسه تماس گیرنده"
 
@@ -81,7 +81,7 @@ msgstr "برای حذف این ورودی اینجا کلیک کنید"
 msgid "Custom"
 msgstr "شخصی"
 
-#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
+#: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
 msgstr "پیشفرض"
 
@@ -102,11 +102,11 @@ msgstr "حذف"
 msgid "Delete Directory %s"
 msgstr "حذف دایرکتوری %s"
 
-#: functions.inc.php:57 views/form.php:95
+#: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
 msgstr "شرح این دایرکتوری."
 
-#: functions.inc.php:79 views/form.php:296
+#: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr "مقصدی که تماس پس از پخش پیام نادرست به آن فرستاده میشود."
 
@@ -114,8 +114,8 @@ msgstr "مقصدی که تماس پس از پخش پیام نادرست به آ�
 msgid "Dial"
 msgstr "شماره گیری"
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
-#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
+#: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
+#: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "دایرکتوری"
 
@@ -124,7 +124,7 @@ msgstr "دایرکتوری"
 msgid "Directory %s: "
 msgstr "دایرکتوری %s: "
 
-#: functions.inc.php:57 views/form.php:83
+#: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
 msgstr "شرح دایرکتوری"
 
@@ -132,7 +132,7 @@ msgstr "شرح دایرکتوری"
 msgid "Directory General Options"
 msgstr "گزینه های عمومی دایرکتوری"
 
-#: functions.inc.php:56 views/form.php:59
+#: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
 msgstr "نام دایرکتوری"
 
@@ -180,7 +180,7 @@ msgstr "فعال"
 msgid "Exclude"
 msgstr "گنجایش"
 
-#: functions.inc.php:75 views/form.php:196
+#: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
 msgstr "خوش آمدگویی که در ورود به دایرکتوری پخش میشود."
 
@@ -188,19 +188,19 @@ msgstr "خوش آمدگویی که در ورود به دایرکتوری پخش 
 msgid "Include"
 msgstr "شامل"
 
-#: functions.inc.php:79 views/form.php:284
+#: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
 msgstr "داخلی نامعتبر"
 
-#: functions.inc.php:78 views/form.php:258
+#: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
 msgstr "ضبط شده نامعتبر"
 
-#: functions.inc.php:76 views/form.php:208
+#: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
 msgstr "تلاش مجدد نامعتبر"
 
-#: functions.inc.php:77 views/form.php:232
+#: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
 msgstr "تلاش مجدد ضبط نامعتبر"
 
@@ -216,7 +216,7 @@ msgstr "نام"
 msgid "Name Announcement"
 msgstr "نام اعلان"
 
-#: views/form.php:71
+#: views/form.php:55
 msgid "Name of this directory"
 msgstr "نام این دایرکتوری"
 
@@ -224,15 +224,15 @@ msgstr "نام این دایرکتوری"
 msgid "Name of this directory."
 msgstr "نام این دایرکتوری."
 
-#: views/form.php:315 views/form.php:342
+#: views/form.php:299 views/form.php:326
 msgid "No"
 msgstr "خیر"
 
-#: views/form.php:159
+#: views/form.php:143
 msgid "None"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:220
+#: functions.inc.php:76 views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
@@ -240,18 +240,18 @@ msgstr ""
 "Number of times to retry when receiving  an invalid/unmatched response from "
 "the caller"
 
-#: views/form.php:171
+#: views/form.php:155
 #, php-format
 msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:119
+#: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
 msgstr "پیشوندی که به نام شناسه تماس گیرنده فعلی اختصاص داده شده."
 
-#: functions.inc.php:78 views/form.php:272
+#: functions.inc.php:78 views/form.php:256
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
@@ -261,7 +261,7 @@ msgstr ""
 "due to the  caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 
-#: functions.inc.php:77 views/form.php:246
+#: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -273,11 +273,11 @@ msgstr ""
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: functions.inc.php:80 views/form.php:308
+#: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
 msgstr "بازگشت به منو صوتی"
 
-#: views/form.php:154
+#: views/form.php:138
 msgid "Ringer Volume Override"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "خوش آمد ایمیل صوتی"
 
-#: functions.inc.php:81 views/form.php:350
+#: functions.inc.php:81 views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
@@ -325,7 +325,7 @@ msgstr ""
 "When checked, the extension number being transferred  to will be announced "
 "prior to the transfer"
 
-#: functions.inc.php:80 views/form.php:323
+#: functions.inc.php:80 views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
@@ -334,7 +334,7 @@ msgstr ""
 "selected, the  call will be returned there instead of the Invalid "
 "destination."
 
-#: views/form.php:313 views/form.php:340
+#: views/form.php:297 views/form.php:324
 msgid "Yes"
 msgstr "بله"
 

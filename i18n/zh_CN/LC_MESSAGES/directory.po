@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 14:33-0600\n"
+"POT-Creation-Date: 2017-05-02 12:13-0400\n"
 "PO-Revision-Date: 2015-02-20 19:22-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
-#: functions.inc.php:59 views/form.php:143
+#: functions.inc.php:59 views/form.php:127
 msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
@@ -36,7 +36,7 @@ msgstr "添加目录"
 msgid "Add new entry."
 msgstr "添加新对象"
 
-#: functions.inc.php:59 views/form.php:131
+#: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
 msgstr "告警信息"
 
@@ -48,19 +48,19 @@ msgstr "所有用户"
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
-#: functions.inc.php:81 views/form.php:335
+#: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
 msgstr "播放分机"
 
-#: functions.inc.php:75 views/form.php:182
+#: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
 msgstr "公告"
 
-#: directory.i18n.php:6 directory.i18n.php:10
+#: directory.i18n.php:6
 msgid "Applications"
 msgstr "应用"
 
-#: functions.inc.php:58 views/form.php:107
+#: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
 msgstr "来电显示名称前缀"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Custom"
 msgstr "自定义"
 
-#: functions.inc.php:64 views/form.php:26 views/form.php:33 views/form.php:40
+#: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
 msgstr "默认"
 
@@ -97,11 +97,11 @@ msgstr ""
 msgid "Delete Directory %s"
 msgstr "删除目录 %s"
 
-#: functions.inc.php:57 views/form.php:95
+#: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
 msgstr "此目录描述"
 
-#: functions.inc.php:79 views/form.php:296
+#: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
 
@@ -109,8 +109,8 @@ msgstr ""
 msgid "Dial"
 msgstr "拨打"
 
-#: directory.i18n.php:4 directory.i18n.php:8 functions.inc.php:220
-#: page.directory.php:6 views/bootnav.php:14 views/grid.php:19
+#: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
+#: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
 msgstr "目录"
 
@@ -119,7 +119,7 @@ msgstr "目录"
 msgid "Directory %s: "
 msgstr ""
 
-#: functions.inc.php:57 views/form.php:83
+#: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
 msgstr "目录描述"
 
@@ -127,7 +127,7 @@ msgstr "目录描述"
 msgid "Directory General Options"
 msgstr "目录标准选项"
 
-#: functions.inc.php:56 views/form.php:59
+#: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
 msgstr "目录名称"
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Exclude"
 msgstr "排除"
 
-#: functions.inc.php:75 views/form.php:196
+#: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
 msgstr "播放进入此目录的问候语"
 
@@ -183,19 +183,19 @@ msgstr "播放进入此目录的问候语"
 msgid "Include"
 msgstr "包含"
 
-#: functions.inc.php:79 views/form.php:284
+#: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
 msgstr "无效目的地"
 
-#: functions.inc.php:78 views/form.php:258
+#: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
 msgstr "无效录音"
 
-#: functions.inc.php:76 views/form.php:208
+#: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
 msgstr "无效尝试"
 
-#: functions.inc.php:77 views/form.php:232
+#: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
 msgstr "无效的录音"
 
@@ -211,7 +211,7 @@ msgstr "名称"
 msgid "Name Announcement"
 msgstr "名称公告"
 
-#: views/form.php:71
+#: views/form.php:55
 msgid "Name of this directory"
 msgstr ""
 
@@ -219,39 +219,39 @@ msgstr ""
 msgid "Name of this directory."
 msgstr "此目录名称"
 
-#: views/form.php:315 views/form.php:342
+#: views/form.php:299 views/form.php:326
 msgid "No"
 msgstr ""
 
-#: views/form.php:159
+#: views/form.php:143
 msgid "None"
 msgstr ""
 
-#: functions.inc.php:76 views/form.php:220
+#: functions.inc.php:76 views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
 
-#: views/form.php:171
+#: views/form.php:155
 #, php-format
 msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
 
-#: functions.inc.php:58 views/form.php:119
+#: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
 msgstr ""
 
-#: functions.inc.php:78 views/form.php:272
+#: functions.inc.php:78 views/form.php:256
 msgid ""
 "Prompt to be played before sending the caller to an alternate destination "
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
 
-#: functions.inc.php:77 views/form.php:246
+#: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
@@ -261,11 +261,11 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:308
+#: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
 msgstr "返回IVR"
 
-#: views/form.php:154
+#: views/form.php:138
 msgid "Ringer Volume Override"
 msgstr ""
 
@@ -303,19 +303,19 @@ msgstr ""
 msgid "Voicemail Greeting"
 msgstr "语音邮箱问候"
 
-#: functions.inc.php:81 views/form.php:350
+#: functions.inc.php:81 views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
 
-#: functions.inc.php:80 views/form.php:323
+#: functions.inc.php:80 views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
 
-#: views/form.php:313 views/form.php:340
+#: views/form.php:297 views/form.php:324
 msgid "Yes"
 msgstr ""
 
