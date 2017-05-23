@@ -227,7 +227,7 @@ function directory_draw_entries_table_header_directory() {
 }
 function add_help_msg($help_id) {
 	$help = array(
-			_('Name') => "This should auto-populate with the extension's descriptive name. This is what users will search by when asked to enter the first 3 letters of the person's name. For example, if the name is Bartholomew, the caller would enter 227 for BAR. This field should be a name as the search option is based on Name and not the number."
+			_('Name') => _("This should auto-populate with the extension's descriptive name. This is what users will search by when asked to enter the first 3 letters of the person's name. For example, if the name is Bartholomew, the caller would enter 227 for BAR. This field should be a name as the search option is based on Name and not the number.")
 		     );
 	if(isset($help[$help_id])){
 		return $help_id . '<span class="help"><i class="fa fa-question-circle"></i><span style="display: none;">' .  $help[$help_id] . '</span></span>';
