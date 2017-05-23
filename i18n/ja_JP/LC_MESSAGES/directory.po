@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-02 12:13-0400\n"
+"POT-Creation-Date: 2017-05-23 16:49-0400\n"
 "PO-Revision-Date: 2014-04-17 09:53+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/directory/"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Add Directory"
 msgstr "ディレクトリを追加"
 
-#: functions.inc.php:262
+#: functions.inc.php:270
 msgid "Add new entry."
 msgstr "新規エントリーを追加。"
 
@@ -74,7 +74,7 @@ msgstr "新規エントリーを追加。"
 msgid "Alert Info"
 msgstr "アラート情報"
 
-#: functions.inc.php:254
+#: functions.inc.php:262
 msgid "All Users"
 msgstr "全てのユーザー"
 
@@ -98,15 +98,15 @@ msgstr "アプリケーション"
 msgid "CallerID Name Prefix"
 msgstr "発信者ID名前プリフィックス"
 
-#: functions.inc.php:253
+#: functions.inc.php:261
 msgid "Choose One"
 msgstr "一つを選択"
 
-#: functions.inc.php:310
+#: functions.inc.php:318
 msgid "Click here to remove this entry"
 msgstr "このエントリーを削除するにはここをクリック"
 
-#: functions.inc.php:255
+#: functions.inc.php:263
 msgid "Custom"
 msgstr "カスタム"
 
@@ -114,11 +114,11 @@ msgstr "カスタム"
 msgid "Default"
 msgstr "デフォルト"
 
-#: functions.inc.php:529 views/grid.php:20
+#: functions.inc.php:537 views/grid.php:20
 msgid "Default Directory"
 msgstr "デフォルトディレクトリ"
 
-#: functions.inc.php:525
+#: functions.inc.php:533
 msgid "Default Group Inclusion"
 msgstr "デフォルトグループに含まれる"
 
@@ -148,7 +148,7 @@ msgstr "ダイヤル"
 msgid "Directory"
 msgstr "ディレクトリー"
 
-#: functions.inc.php:604
+#: functions.inc.php:612
 #, php-format
 msgid "Directory %s: "
 msgstr "ディレクトリ： %s"
@@ -173,12 +173,12 @@ msgstr "ディレクトリオプション(DTMF)"
 msgid "Directory&nbsp;Entries"
 msgstr "ディレクトリ&nbsp;エントリー"
 
-#: functions.inc.php:634
+#: functions.inc.php:642
 #, php-format
 msgid "Directory: %s"
 msgstr "ディレクトリ： %s"
 
-#: functions.inc.php:579
+#: functions.inc.php:587
 #, php-format
 msgid "Directory: %s "
 msgstr "ディレクトリ： %s "
@@ -187,7 +187,7 @@ msgstr "ディレクトリ： %s "
 msgid "Disabled"
 msgstr ""
 
-#: functions.inc.php:305
+#: functions.inc.php:313
 #, php-format
 msgid "Edit %s: %s"
 msgstr "%sを編集: %s"
@@ -205,7 +205,7 @@ msgstr "ディレクトリを編集： %s"
 msgid "Enabled"
 msgstr ""
 
-#: functions.inc.php:506
+#: functions.inc.php:514
 msgid "Exclude"
 msgstr "除外"
 
@@ -213,7 +213,7 @@ msgstr "除外"
 msgid "Greeting to be played on entry to the directory."
 msgstr "ディレクトリに入る際に再生される挨拶メッセージ。"
 
-#: functions.inc.php:507
+#: functions.inc.php:515
 msgid "Include"
 msgstr "含む"
 
@@ -237,7 +237,7 @@ msgstr "エラーリトライ音声"
 msgid "List Directories"
 msgstr ""
 
-#: functions.inc.php:226
+#: functions.inc.php:226 functions.inc.php:230
 msgid "Name"
 msgstr "名前"
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: functions.inc.php:295
+#: functions.inc.php:303
 msgid "Spell Name"
 msgstr "名前のスペル"
 
@@ -319,16 +319,25 @@ msgstr "名前のスペル"
 msgid "Submit"
 msgstr "送信"
 
-#: functions.inc.php:296
+#: functions.inc.php:304
 msgid "System Recordings:"
 msgstr "システム録音:"
 
-#: functions.inc.php:294
+#: functions.inc.php:302
 msgid "Text to Speech"
 msgstr "テキスト to スピーチ(テキスト合成音声)"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
+msgstr ""
+
+#: functions.inc.php:230
+msgid ""
+"This should auto-populate with the extension's descriptive name. This is "
+"what users will search by when asked to enter the first 3 letters of the "
+"person's name. For example, if the name is Bartholomew, the caller would "
+"enter 227 for BAR. This field should be a name as the search option is based "
+"on Name and not the number."
 msgstr ""
 
 #: functions.inc.php:107
@@ -338,7 +347,7 @@ msgid ""
 msgstr ""
 "全てのエントリに直接ダイヤルする許可の権限を持つディレクトリが表示されます"
 
-#: functions.inc.php:293
+#: functions.inc.php:301
 msgid "Voicemail Greeting"
 msgstr "ボイスメール挨拶"
 
@@ -360,7 +369,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: functions.inc.php:529
+#: functions.inc.php:537
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -386,7 +395,7 @@ msgstr "directory_details, directory_entriesをドロップ中.."
 msgid "ok"
 msgstr "ok"
 
-#: functions.inc.php:310
+#: functions.inc.php:318
 msgid "remove"
 msgstr "削除"
 

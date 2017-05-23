@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-02 12:13-0400\n"
+"POT-Creation-Date: 2017-05-23 16:49-0400\n"
 "PO-Revision-Date: 2016-12-12 22:05+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -37,7 +37,7 @@ msgstr "Ações"
 msgid "Add Directory"
 msgstr "Adicionar Diretório"
 
-#: functions.inc.php:262
+#: functions.inc.php:270
 msgid "Add new entry."
 msgstr "Adicionar novo elemento."
 
@@ -45,7 +45,7 @@ msgstr "Adicionar novo elemento."
 msgid "Alert Info"
 msgstr "Informação de Alerta"
 
-#: functions.inc.php:254
+#: functions.inc.php:262
 msgid "All Users"
 msgstr "Todos os Usuários"
 
@@ -71,15 +71,15 @@ msgstr "Aplicações"
 msgid "CallerID Name Prefix"
 msgstr "Nome do Prefixo do ID Chamador"
 
-#: functions.inc.php:253
+#: functions.inc.php:261
 msgid "Choose One"
 msgstr "Selecione Um"
 
-#: functions.inc.php:310
+#: functions.inc.php:318
 msgid "Click here to remove this entry"
 msgstr "Clique aqui para remover este elemento"
 
-#: functions.inc.php:255
+#: functions.inc.php:263
 msgid "Custom"
 msgstr "Personalizado"
 
@@ -87,11 +87,11 @@ msgstr "Personalizado"
 msgid "Default"
 msgstr "Padrão"
 
-#: functions.inc.php:529 views/grid.php:20
+#: functions.inc.php:537 views/grid.php:20
 msgid "Default Directory"
 msgstr "Diretório Padrão"
 
-#: functions.inc.php:525
+#: functions.inc.php:533
 msgid "Default Group Inclusion"
 msgstr "Inclusão de Grupo Padrão"
 
@@ -122,7 +122,7 @@ msgstr "Discar"
 msgid "Directory"
 msgstr "Diretório"
 
-#: functions.inc.php:604
+#: functions.inc.php:612
 #, php-format
 msgid "Directory %s: "
 msgstr "Diretório %s: "
@@ -147,12 +147,12 @@ msgstr "Opções (DTMF) do Diretório"
 msgid "Directory&nbsp;Entries"
 msgstr "Diretório&nbsp;Entradas"
 
-#: functions.inc.php:634
+#: functions.inc.php:642
 #, php-format
 msgid "Directory: %s"
 msgstr "Diretório: %s"
 
-#: functions.inc.php:579
+#: functions.inc.php:587
 #, php-format
 msgid "Directory: %s "
 msgstr "Diretório: %s "
@@ -161,7 +161,7 @@ msgstr "Diretório: %s "
 msgid "Disabled"
 msgstr "Desabilitado"
 
-#: functions.inc.php:305
+#: functions.inc.php:313
 #, php-format
 msgid "Edit %s: %s"
 msgstr "Editar %s: %s"
@@ -179,7 +179,7 @@ msgstr "Editar Diretório: %s"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: functions.inc.php:506
+#: functions.inc.php:514
 msgid "Exclude"
 msgstr "Excluir"
 
@@ -187,7 +187,7 @@ msgstr "Excluir"
 msgid "Greeting to be played on entry to the directory."
 msgstr "Saudação para ser reproduzida ao entrar no diretório."
 
-#: functions.inc.php:507
+#: functions.inc.php:515
 msgid "Include"
 msgstr "Incluir"
 
@@ -211,7 +211,7 @@ msgstr "Tentativa de Gravação Inválida"
 msgid "List Directories"
 msgstr "Listar Diretórios"
 
-#: functions.inc.php:226
+#: functions.inc.php:226 functions.inc.php:230
 msgid "Name"
 msgstr "Nome"
 
@@ -291,7 +291,7 @@ msgstr "Substituição do Volume do Toque"
 msgid "Select"
 msgstr "Selecionar"
 
-#: functions.inc.php:295
+#: functions.inc.php:303
 msgid "Spell Name"
 msgstr "Dizer Nome"
 
@@ -299,17 +299,26 @@ msgstr "Dizer Nome"
 msgid "Submit"
 msgstr "Enviar"
 
-#: functions.inc.php:296
+#: functions.inc.php:304
 msgid "System Recordings:"
 msgstr "Gravações do Sistema:"
 
-#: functions.inc.php:294
+#: functions.inc.php:302
 msgid "Text to Speech"
 msgstr "Texto para Falar"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
 msgstr "Este elemento já foi adicionado"
+
+#: functions.inc.php:230
+msgid ""
+"This should auto-populate with the extension's descriptive name. This is "
+"what users will search by when asked to enter the first 3 letters of the "
+"person's name. For example, if the name is Bartholomew, the caller would "
+"enter 227 for BAR. This field should be a name as the search option is based "
+"on Name and not the number."
+msgstr ""
 
 #: functions.inc.php:107
 msgid ""
@@ -319,7 +328,7 @@ msgstr ""
 "Ligado a um Diretório que permite que todos os elemento nesse diretório "
 "sejam discado diretamente, conforme aparecem no diretório"
 
-#: functions.inc.php:293
+#: functions.inc.php:301
 msgid "Voicemail Greeting"
 msgstr "Saudação de Correio de Voz"
 
@@ -344,7 +353,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Sim"
 
-#: functions.inc.php:529
+#: functions.inc.php:537
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
@@ -368,6 +377,6 @@ msgstr "parando directory_details, directory_entries.."
 msgid "ok"
 msgstr "ok"
 
-#: functions.inc.php:310
+#: functions.inc.php:318
 msgid "remove"
 msgstr "remover"
