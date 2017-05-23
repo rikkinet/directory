@@ -133,7 +133,7 @@ function call($contact){
 	global $dir;
 	$dir->readContact($contact);
 	if($dir->dir['alert_info'] != ''){
-		$dir->agi->set_alertinfo($dir->dir['alert_info']);
+		$dir->agi->set_variable('ALERT_INFO',$dir->dir['alert_info']);
 	}
 	if(!empty($dir->dir['rvolume'])) {
 		$dir->agi->set_variable('RVOL',$dir->dir['rvolume']);
