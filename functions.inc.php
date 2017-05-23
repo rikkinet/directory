@@ -225,6 +225,16 @@ function directory_destinations(){
 function directory_draw_entries_table_header_directory() {
 	return  array(_('Name'), _('Name Announcement'), _('Dial'),_('Actions'));
 }
+function add_help_msg($help_id) {
+	$help = array(
+			_('Name') => "This should auto-populate with the extension's descriptive name. This is what users will search by when asked to enter the first 3 letters of the person's name. For example, if the name is Bartholomew, the caller would enter 227 for BAR. This field should be a name as the search option is based on Name and not the number."
+		     );
+	if(isset($help[$help_id])){
+		return $help_id . '<span class="help"><i class="fa fa-question-circle"></i><span style="display: none;">' .  $help[$help_id] . '</span></span>';
+	}else{
+		return $help_id;
+	}
+}
 
 function directory_draw_entries($id){
 	$sql='SELECT id,name FROM directory_entries ORDER BY name';
@@ -238,14 +248,12 @@ function directory_draw_entries($id){
 		foreach ($header as $h) {
 			if(is_array($h)) {
 				$html .= '<th ' . $h['attr']  . '/>';
-				$html .= $h['val'];
+				$html .= add_help_msg($h['val']);
 				$html .= '</th>';
 			} else {
-				$html .= '<th>' . $h . '</th>';
-
+				$html .= '<th>'. add_help_msg($h) .'</th>';
 			}
 		}
-
 	}
 	$html .= '</tr></thead>';
 
