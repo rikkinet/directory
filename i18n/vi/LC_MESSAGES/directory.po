@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:49-0400\n"
-"PO-Revision-Date: 2017-05-23 16:49-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-07-01 12:25+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/directory/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:59 views/form.php:127
 msgid ""
@@ -26,63 +29,64 @@ msgstr ""
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
-msgstr ""
+msgstr "Các thao tác"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr ""
+msgstr "Thêm Danh mục"
 
 #: functions.inc.php:270
 msgid "Add new entry."
-msgstr ""
+msgstr "Thêm mục nhập mới."
 
 #: functions.inc.php:59 views/form.php:115
 msgid "Alert Info"
-msgstr ""
+msgstr "Thông tin cảnh báo"
 
 #: functions.inc.php:262
 msgid "All Users"
-msgstr ""
+msgstr "Tất cả người dùng"
 
 #: assets/js/directory.js:83
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
+"Xảy ra lỗi khi cố liên lạc với máy chủ khi thêm một hàng, không hồi đáp."
 
 #: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
-msgstr ""
+msgstr "Thông báo máy nhanh"
 
 #: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
-msgstr ""
+msgstr "Thông báo"
 
 #: directory.i18n.php:6
 msgid "Applications"
-msgstr ""
+msgstr "Các ứng dụng"
 
 #: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
-msgstr ""
+msgstr "Hậu tố của tên CallerID"
 
 #: functions.inc.php:261
 msgid "Choose One"
-msgstr ""
+msgstr "Chọn một"
 
 #: functions.inc.php:318
 msgid "Click here to remove this entry"
-msgstr ""
+msgstr "Kích vào đây để xóa mục nhập này"
 
 #: functions.inc.php:263
 msgid "Custom"
-msgstr ""
+msgstr "Tùy chỉnh"
 
 #: functions.inc.php:64 views/form.php:11 views/form.php:18 views/form.php:25
 msgid "Default"
-msgstr ""
+msgstr "Mặc định"
 
 #: functions.inc.php:537 views/grid.php:20
 msgid "Default Directory"
-msgstr ""
+msgstr "Mặc định Danh mục"
 
 #: functions.inc.php:533
 msgid "Default Group Inclusion"
@@ -90,148 +94,151 @@ msgstr ""
 
 #: Directory.class.php:138
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr ""
+msgstr "Xóa Danh mục %s"
 
 #: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
-msgstr ""
+msgstr "Mô tả của Danh mục này."
 
 #: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
 msgstr ""
+"Điểm đích để gửi cuộc gọi đến khi Invalid Recording ( Ghi âm không hợp lệ ) "
+"được phát."
 
 #: functions.inc.php:226
 msgid "Dial"
-msgstr ""
+msgstr "Quay số"
 
 #: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
 #: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
-msgstr ""
+msgstr "Danh mục"
 
 #: functions.inc.php:612
 #, php-format
 msgid "Directory %s: "
-msgstr ""
+msgstr "Danh mục %s: "
 
 #: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
-msgstr ""
+msgstr "Mô tả Danh mục"
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr ""
+msgstr "Tùy chọn chung của Danh mục"
 
 #: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
-msgstr ""
+msgstr "Tên Danh mục"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
-msgstr ""
+msgstr "Tùy chọn của Danh mục (DTMF)"
 
 #: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
-msgstr ""
+msgstr "Danh mục&nbsp;Các mục nhập"
 
 #: functions.inc.php:642
 #, php-format
 msgid "Directory: %s"
-msgstr ""
+msgstr "Danh mục: %s"
 
 #: functions.inc.php:587
 #, php-format
 msgid "Directory: %s "
-msgstr ""
+msgstr "Danh mục: %s "
 
 #: Directory.class.php:167
 msgid "Disabled"
-msgstr ""
+msgstr "Bị vô hiệu"
 
 #: functions.inc.php:313
 #, php-format
 msgid "Edit %s: %s"
-msgstr ""
+msgstr "Chỉnh sửa %s: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr ""
+msgstr "Chỉnh sửa Danh mục"
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr ""
+msgstr "Chỉnh sửa danh mục; %s"
 
 #: Directory.class.php:168
 msgid "Enabled"
-msgstr ""
+msgstr "Được kích hoạt"
 
 #: functions.inc.php:514
 msgid "Exclude"
-msgstr ""
+msgstr "Không bao gồm"
 
 #: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
-msgstr ""
+msgstr "Lời chào trong mục nhập được phát tới Danh mục."
 
 #: functions.inc.php:515
 msgid "Include"
-msgstr ""
+msgstr "Bao gồm"
 
 #: functions.inc.php:79 views/form.php:268
 msgid "Invalid Destination"
-msgstr ""
+msgstr "Điểm đích không hợp lệ"
 
 #: functions.inc.php:78 views/form.php:242
 msgid "Invalid Recording"
-msgstr ""
+msgstr "Ghi âm không hợp lệ"
 
 #: functions.inc.php:76 views/form.php:192
 msgid "Invalid Retries"
-msgstr ""
+msgstr "Mục nhập không hợp lệ"
 
 #: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "Ghi lại Retry không hợp lệ"
 
 #: views/bootnav.php:3
 msgid "List Directories"
-msgstr ""
+msgstr "Danh sách danh mục"
 
 #: functions.inc.php:226 functions.inc.php:230
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #: functions.inc.php:226
 msgid "Name Announcement"
-msgstr ""
+msgstr "Tên thông báo"
 
 #: views/form.php:55
 msgid "Name of this directory"
-msgstr ""
+msgstr "Tên của danh mục"
 
 #: functions.inc.php:56
 msgid "Name of this directory."
-msgstr ""
+msgstr "Tên của danh mục này."
 
 #: views/form.php:299 views/form.php:326
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #: views/form.php:143
 msgid "None"
-msgstr ""
+msgstr "Không có"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
 "Number of times to retry when receiving an invalid/unmatched response from "
 "the caller"
 msgstr ""
+"Số lần thử lại khi nhân một phản hồi không hợp lê/ không khớp từ người gọi"
 
 #: views/form.php:155
 #, php-format
@@ -239,10 +246,12 @@ msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
+"Ghi đè âm lượng chuông. Lưu ý: Điều này chỉ hợp lệ cho %s điện thoại tại "
+"thời điệm này"
 
 #: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
-msgstr ""
+msgstr "Tiền tố được thêm vào tên CallerID hiện tại."
 
 #: functions.inc.php:78 views/form.php:256
 msgid ""
@@ -250,40 +259,45 @@ msgid ""
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
+"Nhắc nhở được phát trước khi gửi người gọi tới một điểm đích lựa chọn do "
+"người gọi nhấn 0 hoặc nhận được tối đa các phản hồi không họp lệ/ không khớp "
+"( như đã xác định tại Invalid Retry)"
 
 #: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
 msgstr ""
+"Nhắc nhở được phát khi nhận được một trả lời khôn hợp lê/ không khớp, "
+"trwuowcs khi nhắc nhở người gọi thử lại lần nữa"
 
 #: Directory.class.php:143
 msgid "Reset"
-msgstr ""
+msgstr "Cài đặt lại"
 
 #: functions.inc.php:80 views/form.php:292
 msgid "Return to IVR"
-msgstr ""
+msgstr "Quay lại IVR"
 
 #: views/form.php:138
 msgid "Ringer Volume Override"
-msgstr ""
+msgstr "Ghi đè âm lượng chuông"
 
 #: assets/js/directory.js:103
 msgid "Select"
-msgstr ""
+msgstr "Chọn"
 
 #: functions.inc.php:303
 msgid "Spell Name"
-msgstr ""
+msgstr "Đánh vần tên"
 
 #: Directory.class.php:148
 msgid "Submit"
-msgstr ""
+msgstr "Gửi đi"
 
 #: functions.inc.php:304
 msgid "System Recordings:"
-msgstr ""
+msgstr "Các ghi âm hệ thống:"
 
 #: functions.inc.php:302
 msgid "Text to Speech"
@@ -291,7 +305,7 @@ msgstr ""
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr ""
+msgstr "Mục nhập này được thêm"
 
 #: functions.inc.php:230
 msgid ""
@@ -307,16 +321,20 @@ msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
 msgstr ""
+"Liên kết với một danh mục ( Directory) cho phép tất cả các mục nhập (entry) "
+"trong thư mục đó được quay số trực tiếp, khi chúng xuất hiện trong danh mục"
 
 #: functions.inc.php:301
 msgid "Voicemail Greeting"
-msgstr ""
+msgstr "Lời chào thư thoại"
 
 #: functions.inc.php:81 views/form.php:334
 msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
+"Khi được kiểm tra, số máy nhanh đang được chuyển tới sẽ được thông báo trước "
+"khi chuyển"
 
 #: functions.inc.php:80 views/form.php:307
 msgid ""
@@ -326,17 +344,19 @@ msgstr ""
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: functions.inc.php:537
 msgid ""
 "You can include or exclude this extension/user from being part of the "
 "default directory when creating or editing."
 msgstr ""
+"Bạn có thể bao gồm hay loại trừ máy nhánh/ người dùng này ra khỏi một phần "
+"của mặc định Danh mục khi tạo hay chỉnh sửa."
 
 #: functions.inc.php:37
 msgid "[SYSTEM DEFAULT]"
-msgstr ""
+msgstr "[MẶC ĐỊNH HỆ THỐNG]"
 
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
@@ -348,8 +368,8 @@ msgstr ""
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
-msgstr ""
+msgstr "Ok"
 
 #: functions.inc.php:318
 msgid "remove"
-msgstr ""
+msgstr "Xóa"
