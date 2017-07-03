@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:49-0400\n"
-"PO-Revision-Date: 2017-07-03 09:04+0200\n"
+"PO-Revision-Date: 2017-07-03 09:19+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/directory/vi/>\n"
@@ -35,7 +35,7 @@ msgstr "Các thao tác"
 
 #: functions.inc.php:10 views/bootnav.php:2 views/form.php:4 views/grid.php:6
 msgid "Add Directory"
-msgstr "Thêm Danh mục"
+msgstr "Thêm Danh mục web"
 
 #: functions.inc.php:270
 msgid "Add new entry."
@@ -56,7 +56,7 @@ msgstr ""
 
 #: functions.inc.php:81 views/form.php:319
 msgid "Announce Extension"
-msgstr "Thông báo máy nhanh"
+msgstr "Thông báo máy nhánh"
 
 #: functions.inc.php:75 views/form.php:166
 msgid "Announcement"
@@ -88,7 +88,7 @@ msgstr "Mặc định"
 
 #: functions.inc.php:537 views/grid.php:20
 msgid "Default Directory"
-msgstr "Mặc định Danh mục"
+msgstr "Mặc định Danh mục  web"
 
 #: functions.inc.php:533
 msgid "Default Group Inclusion"
@@ -101,11 +101,11 @@ msgstr "Xóa"
 #: functions.inc.php:48
 #, php-format
 msgid "Delete Directory %s"
-msgstr "Xóa Danh mục %s"
+msgstr "Xóa Danh mục web %s"
 
 #: functions.inc.php:57 views/form.php:79
 msgid "Description of this directory."
-msgstr "Mô tả của Danh mục này."
+msgstr "Mô tả của Danh mục web này."
 
 #: functions.inc.php:79 views/form.php:280
 msgid "Destination to send the call to after Invalid Recording is played."
@@ -120,42 +120,42 @@ msgstr "Quay số"
 #: directory.i18n.php:4 directory.i18n.php:8 page.directory.php:6
 #: views/bootnav.php:14 views/grid.php:19
 msgid "Directory"
-msgstr "Danh mục"
+msgstr "Danh mục web"
 
 #: functions.inc.php:612
 #, php-format
 msgid "Directory %s: "
-msgstr "Danh mục %s: "
+msgstr "Danh mục web %s: "
 
 #: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
-msgstr "Mô tả Danh mục"
+msgstr "Mô tả Danh mục web"
 
 #: functions.inc.php:54
 msgid "Directory General Options"
-msgstr "Tùy chọn chung của Danh mục"
+msgstr "Tùy chọn chung của Danh mục  web"
 
 #: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
-msgstr "Tên Danh mục"
+msgstr "Tên Danh mục web"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
-msgstr "Tùy chọn của Danh mục (DTMF)"
+msgstr "Tùy chọn của Danh mục web (DTMF)"
 
 #: functions.inc.php:86
 msgid "Directory&nbsp;Entries"
-msgstr "Danh mục&nbsp;Các mục nhập"
+msgstr "Danh mục  web &nbsp;Các mục nhập"
 
 #: functions.inc.php:642
 #, php-format
 msgid "Directory: %s"
-msgstr "Danh mục: %s"
+msgstr "Danh mục  web: %s"
 
 #: functions.inc.php:587
 #, php-format
 msgid "Directory: %s "
-msgstr "Danh mục: %s "
+msgstr "Danh mục  web: %s "
 
 #: Directory.class.php:167
 msgid "Disabled"
@@ -168,12 +168,12 @@ msgstr "Chỉnh sửa %s: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
-msgstr "Chỉnh sửa Danh mục"
+msgstr "Chỉnh sửa Danh mục web"
 
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr "Chỉnh sửa danh mục; %s"
+msgstr "Chỉnh sửa danh mục  web: %s"
 
 #: Directory.class.php:168
 msgid "Enabled"
@@ -185,7 +185,7 @@ msgstr "Không bao gồm"
 
 #: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
-msgstr "Lời chào trong mục nhập được phát tới Danh mục."
+msgstr "Lời chào trong mục nhập được phát tới Danh mục web."
 
 #: functions.inc.php:515
 msgid "Include"
@@ -221,11 +221,11 @@ msgstr "Tên thông báo"
 
 #: views/form.php:55
 msgid "Name of this directory"
-msgstr "Tên của danh mục"
+msgstr "Tên của danh mục  web"
 
 #: functions.inc.php:56
 msgid "Name of this directory."
-msgstr "Tên của danh mục này."
+msgstr "Tên của danh mục web này."
 
 #: views/form.php:299 views/form.php:326
 msgid "No"
@@ -328,8 +328,8 @@ msgid ""
 "Tied to a Directory allowing all entries in that directory to be dialed "
 "directly, as they appear in the directory"
 msgstr ""
-"Liên kết với một danh mục ( Directory) cho phép tất cả các mục nhập (entry) "
-"trong thư mục đó được quay số trực tiếp, khi chúng xuất hiện trong danh mục"
+"Liên kết với một danh mục web cho phép tất cả các mục nhập (entry) trong thư "
+"mục đó được quay số trực tiếp, khi chúng xuất hiện trong danh mục"
 
 #: functions.inc.php:301
 msgid "Voicemail Greeting"
@@ -361,7 +361,7 @@ msgid ""
 "default directory when creating or editing."
 msgstr ""
 "Bạn có thể bao gồm hay loại trừ máy nhánh/ người dùng này ra khỏi một phần "
-"của mặc định Danh mục khi tạo hay chỉnh sửa."
+"của mặc định Danh mục web khi tạo hay chỉnh sửa."
 
 #: functions.inc.php:37
 msgid "[SYSTEM DEFAULT]"
