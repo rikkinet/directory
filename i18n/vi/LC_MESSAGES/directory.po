@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:49-0400\n"
-"PO-Revision-Date: 2017-07-01 12:25+0200\n"
+"PO-Revision-Date: 2017-07-03 09:04+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/directory/vi/>\n"
@@ -26,6 +26,8 @@ msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
 msgstr ""
+"Thông tin cảnh báo sẽ được sử khi được gọi từ danh mục web này. Có thể được "
+"sử dụng cho chuông đặc biệt đối với các thiết bị SIP."
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
@@ -90,7 +92,7 @@ msgstr "Mặc định Danh mục"
 
 #: functions.inc.php:533
 msgid "Default Group Inclusion"
-msgstr ""
+msgstr "Mặc định Group Inclusion"
 
 #: Directory.class.php:138
 msgid "Delete"
@@ -301,7 +303,7 @@ msgstr "Các ghi âm hệ thống:"
 
 #: functions.inc.php:302
 msgid "Text to Speech"
-msgstr ""
+msgstr "Tính năng Text to speech- Phát lại in văn bản dưới dạng lời nói"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
@@ -315,6 +317,11 @@ msgid ""
 "enter 227 for BAR. This field should be a name as the search option is based "
 "on Name and not the number."
 msgstr ""
+"Điều này sẽ tự động điền với tên mô tả của máy nhánh. Đây là cách mà người "
+"dùng sẽ sử dụng tìm kiếm khi được yêu cầu nhập 3 chữ cái đầu tiên của tên "
+"người đó. Ví dụ: nếu tên là Bartholomew, người gọi sẽ nhập 227 cho BAR. "
+"Trường này phải là một tên vì tùy chọn tìm kiếm dựa trên Tên chứ không phải "
+"số."
 
 #: functions.inc.php:107
 msgid ""
@@ -341,6 +348,8 @@ msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
+"Khi được chọn, nếu cuộc gọi truyền qua một IVR mà \"Return to IVR\" được "
+"chọn, cuộc gọi sẽ được bị trả về thay vì điểm đích không hợp lệ."
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
@@ -360,11 +369,12 @@ msgstr "[MẶC ĐỊNH HỆ THỐNG]"
 
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
-msgstr ""
+msgstr "Đang xóa danh mục web mặc định và các khóa theo dõi việc dịch chuyển.."
 
 #: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
 msgstr ""
+"Đang thả các chi tiết của danh mục web, các mục nhập của danh mục web..."
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
