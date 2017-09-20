@@ -37,7 +37,7 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 		$loopcounter2++;
 	}
 	//hangup if we failed to receive anything meanigfull
-	if($loopcounter2 == $dir->dir['repeat_loops']){//seem like we ran out of tries...
+	if($loopcounter2 == $dir->dir['repeat_loops'] && !$matches){//seem like we ran out of tries...
 		$dir->$agi->exec('background',$dir->dir['invalid_recording']);
 		$dir->bail();
 		break;
