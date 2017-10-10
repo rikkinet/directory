@@ -25,9 +25,16 @@ while($loopcounter1 <= $dir->dir['repeat_loops']){
 			$needs_welcome = false;
 			if ($dir->default_annoucement()) {
 				$search = $dir->agi->fastpass_get_data($buffer, 'cdir-welcome',100,3);
+				$buffer = $search['result'];
 			}
 			if ((strlen($buffer) < 3) && (strstr($search['result'],'0') === false)) {
-				$search = fastpass_get_data_multiple($dir->agi, $dir->dir['announcement'], 3000, 3);
+				$recdig_count = strlen($buffer);
+				$balance_digit = 3 - $recdig_count;
+				$search = fastpass_get_data_multiple($dir->agi, $dir->dir['announcement'], 3000, $balance_digit);
+				if(strlen($buffer)> 0){
+					$search = $buffer.$search;
+				}
+				$buffer = '';
 			}
 		} else {
 			$search = fastpass_get_data_multiple($dir->agi, $dir->dir['repeat_recording'], 3000, 3);
