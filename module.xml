@@ -8,8 +8,8 @@
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<type>setup</type>
 	<category>Applications</category>
-	<menuitems needsenginedb="yes">
-		<directory>Directory</directory>
+	<menuitems>
+		<directory needsenginedb="yes">Directory</directory>
 	</menuitems>
 	<popovers>
 		<directory>
