@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.19.5</version>
+	<version>13.0.19.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -27,6 +27,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.19.6* FREEPBX-15555 Exception Asterisk is not connected error issue fix 
 		*13.0.19.5* FREEPBX-15945 Allow digits to be captured during the "Welcome to the directory" message.
 		*13.0.19.4* FREEPBX-15502 Directory does not populate DIR_DIAL under certain conditions
 		*13.0.19.2* FREEPBX-14811 Able to set negative values for Invalid Retries under Directory
