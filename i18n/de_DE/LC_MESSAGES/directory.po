@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:49-0400\n"
-"PO-Revision-Date: 2018-10-17 15:00+0000\n"
+"PO-Revision-Date: 2018-10-19 21:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/directory/de/>\n"
 "Language: de_DE\n"
@@ -93,7 +93,7 @@ msgstr "Standardverzeichnis"
 
 #: functions.inc.php:533
 msgid "Default Group Inclusion"
-msgstr ""
+msgstr "Standardgruppe verwenden"
 
 #: Directory.class.php:138
 msgid "Delete"
@@ -165,7 +165,7 @@ msgstr "Deaktiviert"
 #: functions.inc.php:313
 #, php-format
 msgid "Edit %s: %s"
-msgstr ""
+msgstr "%s bearbeiten: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
@@ -206,7 +206,7 @@ msgstr "Ungültige Wiederholungen"
 
 #: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "Aufnahme für Wiederholung nach ungültiger Eingabe"
 
 #: views/bootnav.php:3
 msgid "List Directories"
@@ -234,7 +234,7 @@ msgstr "Nein"
 
 #: views/form.php:143
 msgid "None"
-msgstr "Nichts"
+msgstr "Kein*e"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
@@ -352,6 +352,9 @@ msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
+"Wird dies ausgewählt, wird ein Anruf, der zuvor durch einen Sprachdialog "
+"gelaufen ist, bei dem die Option „Zurück zum IVR“ gewählt war, wird der "
+"Anruf dorthin geleitet anstatt zum „Ziel bei Fehleingabe“."
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
@@ -372,6 +375,7 @@ msgstr "[SYSTEM STANDARD]"
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
 msgstr ""
+"Lösche <i>default_directory</i> und die Schlüssel zur Migrationsüberwachung.."
 
 #: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
