@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:49-0400\n"
-"PO-Revision-Date: 2018-07-27 13:00+0000\n"
+"PO-Revision-Date: 2018-10-19 21:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/directory/de/>\n"
 "Language: de_DE\n"
@@ -25,6 +25,9 @@ msgid ""
 "ALERT_INFO to be sent when called from this Directory. Can be used for "
 "distinctive ring for SIP devices."
 msgstr ""
+"ALERT_INFO, die gesendet werden soll, wenn von diesem Verzeichnis aus "
+"angerufen wird. Kann verwendet werden, um auf SIP-Geräten einen spezifischen "
+"Klingelton abzuspielen."
 
 #: functions.inc.php:226 views/grid.php:21
 msgid "Actions"
@@ -66,7 +69,7 @@ msgstr "Anwendungen"
 
 #: functions.inc.php:58 views/form.php:91
 msgid "CallerID Name Prefix"
-msgstr ""
+msgstr "Anruferkennung - Namenspräfix"
 
 #: functions.inc.php:261
 msgid "Choose One"
@@ -90,7 +93,7 @@ msgstr "Standardverzeichnis"
 
 #: functions.inc.php:533
 msgid "Default Group Inclusion"
-msgstr ""
+msgstr "Standardgruppe verwenden"
 
 #: Directory.class.php:138
 msgid "Delete"
@@ -135,7 +138,7 @@ msgstr "Generelle Optionen für das Verzeichnis"
 
 #: functions.inc.php:56 views/form.php:43
 msgid "Directory Name"
-msgstr ""
+msgstr "Verzeichnisname"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
@@ -162,7 +165,7 @@ msgstr "Deaktiviert"
 #: functions.inc.php:313
 #, php-format
 msgid "Edit %s: %s"
-msgstr ""
+msgstr "%s bearbeiten: %s"
 
 #: views/form.php:7
 msgid "Edit Directory"
@@ -171,7 +174,7 @@ msgstr "Verzeichnis bearbeiten"
 #: functions.inc.php:34
 #, php-format
 msgid "Edit Directory: %s"
-msgstr ""
+msgstr "Verzeichnis „%s“ bearbeiten"
 
 #: Directory.class.php:168
 msgid "Enabled"
@@ -183,7 +186,7 @@ msgstr "Ausschließen"
 
 #: functions.inc.php:75 views/form.php:180
 msgid "Greeting to be played on entry to the directory."
-msgstr ""
+msgstr "Begrüßung, die beim Aufruf des Verzeichnisses abgespielt werden soll."
 
 #: functions.inc.php:515
 msgid "Include"
@@ -203,7 +206,7 @@ msgstr "Ungültige Wiederholungen"
 
 #: functions.inc.php:77 views/form.php:216
 msgid "Invalid Retry Recording"
-msgstr ""
+msgstr "Aufnahme für Wiederholung nach ungültiger Eingabe"
 
 #: views/bootnav.php:3
 msgid "List Directories"
@@ -215,7 +218,7 @@ msgstr "Name"
 
 #: functions.inc.php:226
 msgid "Name Announcement"
-msgstr ""
+msgstr "Namensansage"
 
 #: views/form.php:55
 msgid "Name of this directory"
@@ -231,7 +234,7 @@ msgstr "Nein"
 
 #: views/form.php:143
 msgid "None"
-msgstr "Nichts"
+msgstr "Kein*e"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
@@ -253,6 +256,7 @@ msgstr ""
 #: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
 msgstr ""
+"Präfix, das an den Namen der aktuellen Anruferkennung angehängt werden soll."
 
 #: functions.inc.php:78 views/form.php:256
 msgid ""
@@ -260,12 +264,19 @@ msgid ""
 "due to the caller pressing 0 or receiving the maximum amount of invalid/"
 "unmatched responses (as determined by Invalid Retries)"
 msgstr ""
+"Aufforderung, die abgespielt werden soll, bevor der Anrufer zu einem "
+"alternativen Ziel verbunden wird, weil er entweder die 0 gewählt oder das "
+"Maximum an ungültigen/nicht übereinstimmenden Antworten (durch „Ungültige "
+"Wiederholungen“ festgelegt) erhalten hat"
 
 #: functions.inc.php:77 views/form.php:230
 msgid ""
 "Prompt to be played when an invalid/unmatched response is received, before "
 "prompting the caller to try again"
 msgstr ""
+"Aufforderung, die abgespielt werden soll, wenn eine ungültige/nicht "
+"übereinstimmende Antwort erhalten wird und bevor der Anrufer aufgefordert "
+"wird, es erneut zu versuchen"
 
 #: Directory.class.php:143
 msgid "Reset"
@@ -285,7 +296,7 @@ msgstr "Auswählen"
 
 #: functions.inc.php:303
 msgid "Spell Name"
-msgstr ""
+msgstr "Namen ansagen"
 
 #: Directory.class.php:148
 msgid "Submit"
@@ -293,15 +304,15 @@ msgstr "Absenden"
 
 #: functions.inc.php:304
 msgid "System Recordings:"
-msgstr ""
+msgstr "System-Aufnahmen:"
 
 #: functions.inc.php:302
 msgid "Text to Speech"
-msgstr ""
+msgstr "Text zu Sprache"
 
 #: assets/js/directory.js:24
 msgid "This entry has already been added"
-msgstr ""
+msgstr "Dieser Eintrag wurde bereits hinzugefügt"
 
 #: functions.inc.php:230
 msgid ""
@@ -311,6 +322,12 @@ msgid ""
 "enter 227 for BAR. This field should be a name as the search option is based "
 "on Name and not the number."
 msgstr ""
+"Dies sollte automatisch mit dem Namen der Nebenstelle ausgefüllt werden. "
+"Hiernach suchen Anwender, wenn sie aufgefordert werden, die ersten drei "
+"Buchstaben des Namens einer Person einzugeben. Lautet der Name z.B. "
+"Bartholomäus, würde der Anrufer 227 für BAR eingeben. Diese Feld sollte "
+"einen Namen enthalten, da die Suchoption auf Namen und nicht auf Nummern "
+"basiert."
 
 #: functions.inc.php:107
 msgid ""
@@ -327,12 +344,17 @@ msgid ""
 "When checked, the extension number being transferred to will be announced "
 "prior to the transfer"
 msgstr ""
+"Ist dies ausgewählt, wird die Nebenstellennummer, zu der durchgestellt wird, "
+"vor dem Durchstellen angesagt"
 
 #: functions.inc.php:80 views/form.php:307
 msgid ""
 "When selected, if the call passed through an IVR that had \"Return to IVR\" "
 "selected, the call will be returned there instead of the Invalid destination."
 msgstr ""
+"Wird dies ausgewählt, wird ein Anruf, der zuvor durch einen Sprachdialog "
+"gelaufen ist, bei dem die Option „Zurück zum IVR“ gewählt war, wird der "
+"Anruf dorthin geleitet anstatt zum „Ziel bei Fehleingabe“."
 
 #: views/form.php:297 views/form.php:324
 msgid "Yes"
@@ -353,10 +375,11 @@ msgstr "[SYSTEM STANDARD]"
 #: uninstall.php:7
 msgid "deleting default_directory and migration tracking keys.."
 msgstr ""
+"Lösche <i>default_directory</i> und die Schlüssel zur Migrationsüberwachung.."
 
 #: uninstall.php:3
 msgid "dropping directory_details, directory_entries.."
-msgstr ""
+msgstr "verwerfe <i>directory_details</i>, <i>directory_entries</i>.."
 
 #: uninstall.php:5 uninstall.php:10
 msgid "ok"
