@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-10 19:12+0530\n"
+"POT-Creation-Date: 2018-12-31 11:45+0530\n"
 "PO-Revision-Date: 2014-07-22 15:33+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/directory/"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "All Users"
 msgstr ""
 
-#: assets/js/directory.js:83
+#: assets/js/directory.js:87
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Default Group Inclusion"
 msgstr ""
 
-#: Directory.class.php:138
+#: Directory.class.php:149
 msgid "Delete"
 msgstr ""
 
@@ -145,6 +145,10 @@ msgstr ""
 msgid "Directory Name"
 msgstr ""
 
+#: assets/js/directory.js:20
+msgid "Directory Name Already Exist"
+msgstr ""
+
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
 msgstr ""
@@ -163,7 +167,7 @@ msgstr ""
 msgid "Directory: %s "
 msgstr ""
 
-#: Directory.class.php:167
+#: Directory.class.php:178
 msgid "Disabled"
 msgstr ""
 
@@ -181,7 +185,7 @@ msgstr ""
 msgid "Edit Directory: %s"
 msgstr ""
 
-#: Directory.class.php:168
+#: Directory.class.php:179
 msgid "Enabled"
 msgstr ""
 
@@ -271,7 +275,7 @@ msgid ""
 "prompting the caller to try again"
 msgstr ""
 
-#: Directory.class.php:143
+#: Directory.class.php:154
 msgid "Reset"
 msgstr ""
 
@@ -283,7 +287,7 @@ msgstr ""
 msgid "Ringer Volume Override"
 msgstr ""
 
-#: assets/js/directory.js:103
+#: assets/js/directory.js:107
 msgid "Select"
 msgstr ""
 
@@ -291,7 +295,7 @@ msgstr ""
 msgid "Spell Name"
 msgstr ""
 
-#: Directory.class.php:148
+#: Directory.class.php:159
 msgid "Submit"
 msgstr ""
 
@@ -303,7 +307,7 @@ msgstr ""
 msgid "Text to Speech"
 msgstr ""
 
-#: assets/js/directory.js:24
+#: assets/js/directory.js:28
 msgid "This entry has already been added"
 msgstr ""
 

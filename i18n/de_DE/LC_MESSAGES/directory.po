@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:49-0400\n"
+"POT-Creation-Date: 2018-12-31 11:45+0530\n"
 "PO-Revision-Date: 2018-10-19 21:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/directory/de/>\n"
@@ -49,7 +49,7 @@ msgstr "Alarm-Information"
 msgid "All Users"
 msgstr "Alle Benutzer"
 
-#: assets/js/directory.js:83
+#: assets/js/directory.js:87
 msgid "An Error occurred trying to contact the server adding a row, no reply."
 msgstr ""
 "Ein Fehler passierte, als versucht wurde, den Server zu erreichen und eine "
@@ -95,7 +95,7 @@ msgstr "Standardverzeichnis"
 msgid "Default Group Inclusion"
 msgstr "Standardgruppe verwenden"
 
-#: Directory.class.php:138
+#: Directory.class.php:149
 msgid "Delete"
 msgstr "Löschen"
 
@@ -140,6 +140,10 @@ msgstr "Generelle Optionen für das Verzeichnis"
 msgid "Directory Name"
 msgstr "Verzeichnisname"
 
+#: assets/js/directory.js:20
+msgid "Directory Name Already Exist"
+msgstr ""
+
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
 msgstr "Verzeichnisoptionen (DTMF)"
@@ -158,7 +162,7 @@ msgstr "Verzeichnis: %s"
 msgid "Directory: %s "
 msgstr "Verzeichnis: %s "
 
-#: Directory.class.php:167
+#: Directory.class.php:178
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -176,7 +180,7 @@ msgstr "Verzeichnis bearbeiten"
 msgid "Edit Directory: %s"
 msgstr "Verzeichnis „%s“ bearbeiten"
 
-#: Directory.class.php:168
+#: Directory.class.php:179
 msgid "Enabled"
 msgstr "Aktiviert"
 
@@ -278,7 +282,7 @@ msgstr ""
 "übereinstimmende Antwort erhalten wird und bevor der Anrufer aufgefordert "
 "wird, es erneut zu versuchen"
 
-#: Directory.class.php:143
+#: Directory.class.php:154
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -290,7 +294,7 @@ msgstr "Zurück zu IVR"
 msgid "Ringer Volume Override"
 msgstr "Ruftonlautstärke überschreiben"
 
-#: assets/js/directory.js:103
+#: assets/js/directory.js:107
 msgid "Select"
 msgstr "Auswählen"
 
@@ -298,7 +302,7 @@ msgstr "Auswählen"
 msgid "Spell Name"
 msgstr "Namen ansagen"
 
-#: Directory.class.php:148
+#: Directory.class.php:159
 msgid "Submit"
 msgstr "Absenden"
 
@@ -310,7 +314,7 @@ msgstr "System-Aufnahmen:"
 msgid "Text to Speech"
 msgstr "Text zu Sprache"
 
-#: assets/js/directory.js:24
+#: assets/js/directory.js:28
 msgid "This entry has already been added"
 msgstr "Dieser Eintrag wurde bereits hinzugefügt"
 

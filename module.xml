@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.19.7</version>
+	<version>13.0.19.8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -27,6 +27,7 @@
 		<module>recordings ge 3.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.19.8* FREEPBX-15211 Able to create Empty as well as Multiple Directory with same Name 
 		*13.0.19.7* Fixing FREEPBX-18621 Reset button under Directories not working 
 		*13.0.19.6* FREEPBX-15555 Exception Asterisk is not connected error issue fix 
 		*13.0.19.5* FREEPBX-15945 Allow digits to be captured during the "Welcome to the directory" message.
