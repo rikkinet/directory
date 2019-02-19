@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-15 16:50-0500\n"
-"PO-Revision-Date: 2016-04-02 20:25+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
-"directory/fa/>\n"
-"Language: fa\n"
+"PO-Revision-Date: 2019-01-25 13:33+0000\n"
+"Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
+"Language-Team: Persian <http://*/projects/freepbx/directory/fa/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: functions.inc.php:59 views/form.php:127
 msgid ""
@@ -138,11 +137,11 @@ msgstr "نام دایرکتوری"
 
 #: assets/js/directory.js:23
 msgid "Directory Name Already Exist"
-msgstr ""
+msgstr "نام دایرکتوری موجود است"
 
 #: assets/js/directory.js:20
 msgid "Directory Name Can not be Blank"
-msgstr ""
+msgstr "نام دایرکتوری نمی‌تواند خالی باشد"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
@@ -238,7 +237,7 @@ msgstr "خیر"
 
 #: views/form.php:143
 msgid "None"
-msgstr ""
+msgstr "هیچکدام"
 
 #: functions.inc.php:76 views/form.php:204
 msgid ""
@@ -254,6 +253,8 @@ msgid ""
 "Override the ringer volume. Note: This is only valid for %s phones at this "
 "time"
 msgstr ""
+"Override the ringer volume. Note: This is only valid for %s1 phones at this "
+"time"
 
 #: functions.inc.php:58 views/form.php:103
 msgid "Prefix to be appended to current CallerID Name."
@@ -287,7 +288,7 @@ msgstr "بازگشت به منو صوتی"
 
 #: views/form.php:138
 msgid "Ringer Volume Override"
-msgstr ""
+msgstr "بازنویسی صدای زنگ"
 
 #: assets/js/directory.js:110
 msgid "Select"
@@ -321,6 +322,11 @@ msgid ""
 "enter 227 for BAR. This field should be a name as the search option is based "
 "on Name and not the number."
 msgstr ""
+"This should auto-populate with the extension's descriptive name. This is "
+"what users will search by when asked to enter the first 3 letters of the "
+"person's name. For example, if the name is Bartholomew, the caller would "
+"enter 227 for BAR. This field should be a name as the search option is based "
+"on Name and not the number."
 
 #: functions.inc.php:107
 msgid ""
