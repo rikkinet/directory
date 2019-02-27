@@ -82,6 +82,7 @@ class Directory implements \BMO {
 					\fwmsg::set_dest($this_dest[0]);
 					needreload();
 					$_REQUEST['id'] = $vars['id'];
+					unset($_REQUEST['view']);
 				break;
 				case 'delete':
 					directory_delete($vars['id']);
