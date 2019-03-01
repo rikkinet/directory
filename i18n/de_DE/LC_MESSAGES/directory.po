@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-15 16:50-0500\n"
-"PO-Revision-Date: 2018-10-19 21:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"PO-Revision-Date: 2019-02-21 11:00+0000\n"
+"Last-Translator: hammer125 <auswertung@mariner.at>\n"
 "Language-Team: German <http://*/projects/freepbx/directory/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgstr "Verzeichnis"
 #: functions.inc.php:612
 #, php-format
 msgid "Directory %s: "
-msgstr "Verezeichnis %s: "
+msgstr "Verzeichnis %s: "
 
 #: functions.inc.php:57 views/form.php:67
 msgid "Directory Description"
@@ -142,11 +142,11 @@ msgstr "Verzeichnisname"
 
 #: assets/js/directory.js:23
 msgid "Directory Name Already Exist"
-msgstr ""
+msgstr "Verzeichnisname existiert bereits"
 
 #: assets/js/directory.js:20
 msgid "Directory Name Can not be Blank"
-msgstr ""
+msgstr "Verzeichnisname kann nicht leer sein"
 
 #: functions.inc.php:61
 msgid "Directory Options (DTMF)"
