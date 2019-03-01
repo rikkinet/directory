@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:50-0500\n"
+"POT-Creation-Date: 2019-03-01 16:58+0530\n"
 "PO-Revision-Date: 2019-02-21 11:00+0000\n"
 "Last-Translator: hammer125 <auswertung@mariner.at>\n"
 "Language-Team: German <http://*/projects/freepbx/directory/de/>\n"
@@ -95,7 +95,7 @@ msgstr "Standardverzeichnis"
 msgid "Default Group Inclusion"
 msgstr "Standardgruppe verwenden"
 
-#: Directory.class.php:149
+#: Directory.class.php:150
 msgid "Delete"
 msgstr "Löschen"
 
@@ -166,7 +166,7 @@ msgstr "Verzeichnis: %s"
 msgid "Directory: %s "
 msgstr "Verzeichnis: %s "
 
-#: Directory.class.php:178
+#: Directory.class.php:179
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -184,7 +184,7 @@ msgstr "Verzeichnis bearbeiten"
 msgid "Edit Directory: %s"
 msgstr "Verzeichnis „%s“ bearbeiten"
 
-#: Directory.class.php:179
+#: Directory.class.php:180
 msgid "Enabled"
 msgstr "Aktiviert"
 
@@ -286,7 +286,7 @@ msgstr ""
 "übereinstimmende Antwort erhalten wird und bevor der Anrufer aufgefordert "
 "wird, es erneut zu versuchen"
 
-#: Directory.class.php:154
+#: Directory.class.php:155
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -306,7 +306,7 @@ msgstr "Auswählen"
 msgid "Spell Name"
 msgstr "Namen ansagen"
 
-#: Directory.class.php:159
+#: Directory.class.php:160
 msgid "Submit"
 msgstr "Absenden"
 
