@@ -18,14 +18,16 @@
 		</directory>
  	</popovers>
 	<hooks>
-  <ivr namespace="FreePBX\modules" class="Ivr">
-    <method namespace="FreePBX\Modules" class="Directory" callingMethod="pageHook">ivrHook</method>
-  </ivr>
-</hooks>
+      <ivr namespace="FreePBX\modules" class="Ivr">
+        <method namespace="FreePBX\Modules" class="Directory" callingMethod="pageHook">ivrHook</method>
+      </ivr>
+    </hooks>
 	<depends>
 		<version>13.0.42</version>
 		<module>recordings ge 3.3.8</module>
 	</depends>
+  	<description>The directory module allows you to create directories of users that can be accessed by callers through modules like the IVR.</description>
+	<more-info>https://wiki.freepbx.org/display/F2/Directory+Module</more-info>
 	<changelog>
 		*13.0.19.12* Fixing FREEPBX-17867 
 		*13.0.19.11* Fixing FREEPBX-18337 
