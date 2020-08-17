@@ -2,7 +2,7 @@
 	<rawname>directory</rawname>
 	<repo>standard</repo>
 	<name>Directory</name>
-	<version>13.0.19.12</version>
+	<version>13.0.19.13</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -29,6 +29,7 @@
   	<description>The directory module allows you to create directories of users that can be accessed by callers through modules like the IVR.</description>
 	<more-info>https://wiki.freepbx.org/display/F2/Directory+Module</more-info>
 	<changelog>
+		*13.0.19.13* Packaging of ver 13.0.19.13
 		*13.0.19.12* Fixing FREEPBX-17867 
 		*13.0.19.11* Fixing FREEPBX-18337 
 		*13.0.19.10* FREEPBX-19461 directory - when more than 10 results failing 
