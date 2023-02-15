@@ -170,7 +170,7 @@ foreach ($results as $row) {
 				$ext->add($c, 'retivr', '', new ext_goto('1','return','${IVR_CONTEXT}'));
 				$ext->add($c, 'h', '', new ext_macro('hangupcall'));
 			}
-			break;
+
 	}
 
 
