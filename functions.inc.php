@@ -147,21 +147,21 @@ function directory_get_config($engine) {
 			$results=sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 			if($results){
 				$c = 'directory';
-				// Note create a dial-id label for each directory to allow other modules to hook on a per
-				// directory basis. (Otherwise we could have consolidated this into a call extension)
-				foreach ($results as $row) {
-					$ext->add($c, $row['id'], '', new ext_playback('calling'));
-					$ext->add($c, $row['id'], '', new ext_answer(''));
-					$ext->add($c, $row['id'], '', new ext_wait('1'));
-					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id']
-											. ',retivr=' . ($row['retivr'] ? 'true' : 'false')
-											));
-					if ($row['say_extension']) {
-						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
-						$ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
-					}
-					$ext->add($c, $row['id'], 'dial-'.$row['id'], new ext_ringing());
-					$ext->add($c, $row['id'], '', new ext_goto('1','${DIR_DIAL}','from-internal'));
+foreach ($results as $row) {
+    $ext->add($c, $row['id'], '', new ext_playback('calling'));
+    $ext->add($c, $row['id'], '', new ext_answer(''));
+    $ext->add($c, $row['id'], '', new ext_wait('1'));
+    $ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id']
+                                        . ',retivr=' . ($row['retivr'] ? 'true' : 'false')
+                                        ));
+    if ($row['say_extension']) {
+        $ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
+        $ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
+    }
+    $ext->add($c, $row['id'], 'dial-'.$row['id'], new ext_ringing());
+    $ext->add($c, $row['id'], '', new ext_goto('1','${DIR_DIAL}','from-internal'));
+}
+
 				}
 				$ext->add($c, 'invalid', 'invalid', new ext_playback('${DIR_INVALID_RECORDING}'));
 				$ext->add($c, 'invalid', '', new ext_ringing());
