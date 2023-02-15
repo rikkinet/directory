@@ -172,7 +172,7 @@ foreach ($results as $row) {
 			}
 			break;
 	}
-}
+
 
 function directory_list() {
 	$sql='SELECT id,dirname FROM directory_details ORDER BY dirname';
