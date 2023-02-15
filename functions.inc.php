@@ -156,6 +156,7 @@ function directory_get_config($engine) {
 											. ',retivr=' . ($row['retivr'] ? 'true' : 'false')
 											));
 					if ($row['say_extension']) {
+						$ext->add($c, $row['id'], '', new ext_playback('calling'));
 						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
 						$ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
 					}
