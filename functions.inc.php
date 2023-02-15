@@ -148,8 +148,8 @@ function directory_get_config($engine) {
 			if($results){
 				$c = 'directory';
 foreach ($results as $row) {
-    $ext->add($c, $row['id'], '', new ext_playback('calling'));
     $ext->add($c, $row['id'], '', new ext_answer(''));
+	$ext->add($c, $row['id'], '', new ext_playback('calling'));
     $ext->add($c, $row['id'], '', new ext_wait('1'));
     $ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id']
                                         . ',retivr=' . ($row['retivr'] ? 'true' : 'false')
