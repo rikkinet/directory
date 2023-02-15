@@ -150,13 +150,13 @@ function directory_get_config($engine) {
 				// Note create a dial-id label for each directory to allow other modules to hook on a per
 				// directory basis. (Otherwise we could have consolidated this into a call extension)
 				foreach ($results as $row) {
+					$ext->add($c, $row['id'], '', new ext_playback('calling'));
 					$ext->add($c, $row['id'], '', new ext_answer(''));
 					$ext->add($c, $row['id'], '', new ext_wait('1'));
 					$ext->add($c, $row['id'], '', new ext_agi('directory.agi,dir=' . $row['id']
 											. ',retivr=' . ($row['retivr'] ? 'true' : 'false')
 											));
 					if ($row['say_extension']) {
-						$ext->add($c, $row['id'], '', new ext_playback('calling'));
 						$ext->add($c, $row['id'], '', new ext_playback('pls-hold-while-try&to-extension'));
 						$ext->add($c, $row['id'], '', new ext_saydigits('${DIR_DIAL}'));
 					}
